@@ -1,0 +1,24 @@
+@mixin base-position($media-key, $media-value) {
+
+    $BASE_POSITION : (
+            a:absolute,
+            f:fixed,
+            r:relative,
+            s:static,
+    );
+
+    @each $position-key, $position-value in $BASE_POSITION {
+
+        @if ($media-key == m) {
+            .pos-#{$position-key} {
+                position : $position-value;
+            }
+        } @else {
+            @media (min-width : map_get($MEDIA, #{$media-key})) {
+                .pos-#{$media-key}-#{$position-key} {
+                    position : $position-value;
+                }
+            }
+        }
+    }
+}

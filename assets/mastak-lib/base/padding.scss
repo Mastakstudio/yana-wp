@@ -1,0 +1,88 @@
+@mixin base-padding($media-key, $media-value) {
+
+    $BASE_WAY : (
+            xx:0,
+            l:left,
+            r:right,
+            yy:0,
+            t:top,
+            b:bottom,
+            aa:0
+    );
+
+    $PADDING_PARTS : (
+            '00':0,
+            '05':.5rem,
+            '10':1rem,
+            '15':1.5rem,
+            '20':2rem,
+            '25':2.5rem,
+            '30':3rem,
+            '35':3.5rem,
+            '40':4rem,
+    );
+
+    @each $part-key, $part-value in $PADDING_PARTS {
+
+        @each $way-key, $way-value in $BASE_WAY {
+
+            @if ($media-key == m) {
+
+                @if ($way-key == xx) {
+                    .px-#{$part-key} {
+                        padding-left  : $part-value;
+                        padding-right : $part-value;
+                    }
+                } @else if ($way-key == yy) {
+                    .py-#{$part-key} {
+                        padding-top  : $part-value;
+                        padding-bottom : $part-value;
+                    }
+                } @else if ($way-key == aa) {
+                    .p-#{$part-key} {
+                        padding    : {
+                            top    : $part-value;
+                            bottom : $part-value;
+                            left   : $part-value;
+                            right  : $part-value;
+                        }
+                    }
+                } @else {
+                    .p#{$way-key}-#{$part-key} {
+                        padding-#{$way-value}: $part-value;
+                    }
+                }
+
+            } @else {
+
+                @media (min-width : map_get($MEDIA, #{$media-key})) {
+
+                    @if ($way-key == xx) {
+                        .px-#{$media-key}-#{$part-key} {
+                            padding-left  : $part-value;
+                            padding-right : $part-value;
+                        }
+                    } @else if ($way-key == yy) {
+                        .py-#{$media-key}-#{$part-key} {
+                            padding-top  : $part-value;
+                            padding-bottom : $part-value;
+                        }
+                    } @else if ($way-key == aa) {
+                        .p-#{$media-key}-#{$part-key} {
+                            padding    : {
+                                top    : $part-value;
+                                bottom : $part-value;
+                                left   : $part-value;
+                                right  : $part-value;
+                            }
+                        }
+                    } @else {
+                        .p#{$way-key}-#{$media-key}-#{$part-key} {
+                            padding-#{$way-value}: $part-value;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
