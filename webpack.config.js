@@ -30,7 +30,7 @@ let entries = {
 let pugs = {
     index: {
         title: "index title"
-    },
+    }
 
 };
 
