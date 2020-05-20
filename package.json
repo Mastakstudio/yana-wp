@@ -1,5 +1,5 @@
 {
-    "name": "FalconGlen",
+    "name": "Yana",
     "version": "0.0.1",
     "scripts": {
         "macwp": "NODE_ENV=wp-production webpack --mode production",
@@ -47,14 +47,9 @@
         "bemto.pug": "^2.1.0",
         "browser-sync": "^2.26.7",
         "inputmask": "^4.0.9",
-        "intl-tel-input": "^17.0.0",
-        "isotope-layout": "^3.0.6",
         "jquery": "^3.5.0",
-        "jquery-bridget": "^2.0.1",
         "jquery-validation": "^1.19.1",
         "jquery-viewport-checker": "^1.8.8",
-        "jquery.maskedinput": "^1.4.1",
-        "packery": "^2.1.2",
         "paroller.js": "^1.4.6",
         "swiper": "^4.3.5"
     }
