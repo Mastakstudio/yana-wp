@@ -1,0 +1,13 @@
+@import "position";
+@import "padding";
+@import "margin";
+@import "display";
+
+@mixin base-setup() {
+    @each $media-key, $media-value in $MEDIA {
+        @include base-position($media-key, $media-value);
+        @include base-padding($media-key, $media-value);
+        @include base-margin($media-key, $media-value);
+        @include base-display($media-key, $media-value);
+    }
+}

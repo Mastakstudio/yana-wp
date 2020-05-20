@@ -1,0 +1,27 @@
+//COLOR:
+$BLACK_01 : rgba(#000000, .1);
+$BLACK_02 : rgba(#000000, .2);
+$BLACK_03 : rgba(#000000, .3);
+$BLACK_04 : rgba(#000000, .4);
+$BLACK_05 : rgba(#000000, .5);
+$BLACK_06 : rgba(#000000, .6);
+$BLACK_07 : rgba(#000000, .7);
+$BLACK_08 : rgba(#000000, .8);
+$BLACK_09 : rgba(#000000, .9);
+$BLACK : #000000;
+$WHITE : #ffffff;
+
+$DARK : #505a6a;
+$ORANGE : #fbbe49;
+$RED : #f85c5d;
+
+//MIXINS
+@import "./../mastak-lib/mixins";
+
+@mixin button-sign() {
+    background-color : $ORANGE;
+    color            : $RED;
+    text-transform   : uppercase;
+    font-weight      : 800;
+    letter-spacing   : 0;
+}

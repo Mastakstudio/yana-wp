@@ -1,0 +1,101 @@
+@mixin base-margin($media-key, $media-value) {
+
+    $BASE_WAY : (
+            xx:0,
+            l:left,
+            r:right,
+            yy:0,
+            t:top,
+            b:bottom,
+            aa:0
+    );
+
+    $MARGIN_PARTS : (
+            '00':0,
+            '05':.5rem,
+            '10':1rem,
+            '15':1.5rem,
+            '20':2rem,
+            '25':2.5rem,
+            '30':3rem,
+            '35':3.5rem,
+            '40':4rem,
+            'auto':'auto'
+    );
+
+    @each $part-key, $part-value in $MARGIN_PARTS {
+
+        @each $way-key, $way-value in $BASE_WAY {
+
+            @if ($media-key == m) {
+
+                @if ($way-key == xx) {
+                    .mx-#{$part-key} {
+                        margin-left  : $part-value;
+                        margin-right : $part-value;
+                    }
+                } @else if ($way-key == yy) {
+                    @if ($part-key != auto) {
+                        .my-#{$part-key} {
+                            margin-top    : $part-value;
+                            margin-bottom : $part-value;
+                        }
+                    }
+                } @else if ($way-key == aa) {
+                    @if ($part-key != auto) {
+                        .m-#{$part-key} {
+                            margin     : {
+                                top    : $part-value;
+                                bottom : $part-value;
+                                left   : $part-value;
+                                right  : $part-value;
+                            }
+                        }
+                    }
+                } @else {
+                    @if (not($part-key == auto and ($way-key == t or $way-key == b))) {
+                        .m#{$way-key}-#{$part-key} {
+                            margin-#{$way-value}: $part-value;
+                        }
+                    }
+                }
+
+            } @else {
+
+                @media (min-width : map_get($MEDIA, #{$media-key})) {
+
+                    @if ($way-key == xx) {
+                        .mx-#{$media-key}-#{$part-key} {
+                            margin-left  : $part-value;
+                            margin-right : $part-value;
+                        }
+                    } @else if ($way-key == yy) {
+                        @if ($part-key != auto) {
+                            .my-#{$media-key}-#{$part-key} {
+                                margin-top    : $part-value;
+                                margin-bottom : $part-value;
+                            }
+                        }
+                    } @else if ($way-key == aa) {
+                        @if ($part-key != auto) {
+                            .m-#{$media-key}-#{$part-key} {
+                                margin     : {
+                                    top    : $part-value;
+                                    bottom : $part-value;
+                                    left   : $part-value;
+                                    right  : $part-value;
+                                }
+                            }
+                        }
+                    } @else {
+                        @if (not($part-key == auto and ($way-key == t or $way-key == b))) {
+                            .m#{$way-key}-#{$media-key}-#{$part-key} {
+                                margin-#{$way-value}: $part-value;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
