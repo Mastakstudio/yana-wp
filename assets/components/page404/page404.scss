@@ -1,0 +1,332 @@
+@import "./../../common/constants";
+
+.page404 {
+  flex-grow: 1;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  background:  #F2F2F2;
+  min-height: 530px;
+
+  @include sm {
+    min-height: 800px;
+  }
+
+  @include md {
+    min-height: 600px;
+  }
+
+  @include xhd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__inner {
+
+  }
+
+  &__front {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include sm {
+      flex-direction: row;
+
+    }
+
+  }
+  &__front-text {
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+
+    @include sm {
+      padding-top: 145px;
+      min-width: 550px;
+      width: 550px;
+    }
+
+
+    @include lg {
+      padding-left: 40px;
+      width: 650px;
+      min-width: 650px;
+      padding-bottom: 100px;
+    }
+    @include hd {
+      padding-left: 80px;
+      padding-top: 200px;
+    }
+    @include xhd {
+      padding-left: 280px;
+      width: 910px;
+      min-width: 910px;
+    }
+
+  }
+
+  &__front-heading {
+    width: 200px;
+    margin-bottom: 1.5rem;
+
+    @include sm {
+      width: 300px;
+    }
+
+    @include lg {
+      width: 365px;
+    }
+
+    @include xl {
+      width: 460px;
+    }
+  }
+
+  &__front-subtitle {
+    font-weight: bold;
+    font-size: 28px;
+    color: #515C9C;
+    margin-bottom: 1rem;
+
+    @include sm {
+      font-size: 36px;
+      line-height: 49px;
+    }
+  }
+
+  &__front-description  {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 1rem 0;
+
+    @include sm {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @include lg {
+      font-size: 24px;
+      line-height: 33px;
+      margin: 2rem 0;
+    }
+
+    SPAN {
+      font-weight: normal;
+      color: #565656;
+    }
+
+    A {
+      color: #515C9C;
+      text-decoration-line: underline;
+      font-style: normal;
+      font-weight: bold;
+    }
+  }
+
+
+  &__front-background {
+    min-width: 528px;
+    width: 528px;
+    position: absolute;
+    top: 130px;
+    right: 0;
+
+    @include sm {
+      min-width: 895px;
+      width: 895px;
+      top: 90px;
+    }
+    @include md {
+      top: 0px;
+    }
+
+    @include lg {
+
+    }
+
+    @include hd {
+      min-width: 1680px;
+      width: 1680px;
+      top: -400px;
+    }
+
+  }
+
+  &__front-background-pic {
+    width: 100%;
+    height: auto;
+  }
+
+
+  &__blueberry-1 {
+    position: absolute;
+    top: 119px;
+    left: 532px;
+    width: 50px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 1s;
+
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 238px;
+      width: 55px;
+      left: 425px;
+    }
+    @include lg {
+      top: 232px;
+      width: 70px;
+      left: 380px;
+    }
+
+    @include xl {
+      //top: 185px;
+      //left: 540px;
+      width: 80px;
+    }
+
+    @include hd {
+      top: 590px;
+      width: 80px;
+      left: 895px;
+    }
+
+    @include xhd {
+      top: 655px;
+      left: 680px;
+    }
+  }
+  &__blueberry-2 {
+    position: absolute;
+    top: 95px;
+    left: 500px;
+    width: 60px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 200px;
+      width: 70px;
+      left: 380px;
+    }
+    @include lg {
+      top: 180px;
+      width: 90px;
+      left: 320px;
+    }
+
+    @include xl {
+      //top: 120px;
+      left: 270px;
+      width: 134px;
+    }
+
+    @include hd {
+      top: 570px;
+      width: 135px;
+      left: 570px;
+    }
+
+    @include xhd {
+      top: 620px;
+      left: 405px;
+    }
+  }
+  &__blueberry-3 {
+    display: none;
+    position: absolute;
+    top: 170px;
+    left: 695px;
+    width: 60px;
+    height: auto;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 2s;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 415px;
+      left: 585px;
+      width: 70px;
+    }
+
+    @include lg {
+      top: 420px;
+      left: 760px;
+      width: 85px;
+    }
+
+    @include xl {
+      //top: 400px;
+      //left: 760px;
+      width: 110px;
+    }
+    @include hd {
+      top: 800px;
+      left: 1165px;
+      width: 110px;
+    }
+  }
+  &__blueberry-4 {
+    position: absolute;
+    top: 420px;
+    left: 695px;
+    width: 65px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 3s;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 150px;
+      left: 650px;
+      width: 80px;
+    }
+    @include lg {
+      top: 100px;
+      width: 95px;
+    }
+
+    @include xl {
+      //top: 100px;
+      //left: 870px;
+      width: 95px;
+    }
+
+    @include hd {
+      top: 500px;
+      left: 1420px;
+      width: 115px;
+    }
+  }
+
+}
+
+//@keyframes float {
+//  0% {
+//    transform: translateY(0px);
+//  }
+//  50% {
+//    transform: translateY(-20px);
+//  }
+//  100% {
+//    transform: translateY(0px);
+//  }
+//}

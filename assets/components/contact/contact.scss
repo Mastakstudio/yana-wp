@@ -1,0 +1,661 @@
+@import "./../../common/constants";
+
+.contact {
+
+  flex-grow: 1;
+
+  &__inner {
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+    background:  #F2F2F2;
+  }
+
+  &__wrapper-title{
+    background: url(./../../images/header-b.jpg) no-repeat center center;
+    background-size: 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: -webkit-box;
+  }
+
+
+  &__title{
+    margin-top: 48px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 71px;
+    line-height: 1;
+    letter-spacing: -8px;
+    font-family: "Open Sans", sans-serif;
+
+    @include sm{
+      margin-top: 80px;
+      margin-bottom: 20px;
+      font-size: 110px;
+      letter-spacing: -15px;
+    }
+
+    @include lg{
+      font-size: 130px;
+    }
+
+  }
+
+  &__editor{
+    margin: 1rem 0;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 3rem;
+
+    @include lg {
+      margin: 2rem 0;
+    }
+
+    p{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    strong{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    em{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+      font-style: italic;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    del{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    a{
+      text-decoration: none;
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    ul{
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+      li{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        padding-left: 15px;
+        list-style-type: disc;
+        list-style: inside;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+    }
+
+    ol{
+
+      list-style-type: decimal;
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ul{
+
+        list-style-type: disc;
+        padding-left: 15px;
+
+
+      }
+
+    }
+
+    ol{
+
+      list-style-type: decimal !important;
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      li{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        padding-left: 15px;
+        list-style-type: decimal !important;
+        list-style: inside;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+    }
+    ul {
+
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ul{
+
+        padding-left: 15px;
+
+        li{
+          margin: .5rem 0;
+          font-family: "Open Sans", sans-serif;
+          padding-left: 15px;
+          list-style-type: disc;
+          list-style: inside;
+
+          @include lg {
+            margin: 1rem 0;
+          }
+        }
+
+      }
+
+    }
+    ol {
+
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ol{
+
+        padding-left: 15px;
+
+        li{
+          margin: .5rem 0;
+          font-family: "Open Sans", sans-serif;
+          padding-left: 15px;
+          list-style-type: decimal !important;
+          list-style: inside;
+
+          @include lg {
+            margin: 1rem 0;
+          }
+        }
+
+      }
+
+    }
+
+    blockquote {
+
+      padding-left: 20px;
+
+
+      p{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+
+      cite{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        font-style: italic;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+
+    }
+    h2 {
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    h3 {
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    h4{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+  }
+
+  &__front {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+
+
+
+    @include sm {
+      flex-direction: row;
+    }
+
+  }
+
+  &__front-text {
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+
+    @include sm {
+      padding-top: 145px;
+      min-width: 550px;
+     width: 550px;
+      padding-bottom: 100px;
+    }
+
+
+    @include lg {
+      padding-left: 40px;
+      width: 650px;
+      min-width: 650px;
+      padding-bottom: 100px;
+    }
+    @include hd {
+      padding-left: 80px;
+    }
+
+    @include xhd {
+      min-width: 955px;
+
+    }
+  }
+
+
+
+  &__front-subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #565656;
+    margin: 1rem 0;
+
+    @include sm {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @include lg {
+      font-size: 24px;
+      line-height: 33px;
+      margin: 2rem 0;
+    }
+  }
+
+  &__hours-title {
+    font-weight: bold;
+    font-size: 28px;
+    color: #515C9C;
+    margin-bottom: 1rem;
+
+    @include sm {
+      font-size: 36px;
+      line-height: 49px;
+    }
+  }
+
+  &__hours-subtitle {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.64px;
+    color: #515C9C;
+    margin: .5rem 0;
+
+    @include sm {
+      font-size: 16px;
+      line-height: 23px;
+    }
+
+    @include lg {
+      font-size: 18px;
+      margin: 1rem 0;
+    }
+  }
+  &__hours-subtitle_gray {
+    color: #565656;
+    font-weight: normal;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  &__description-gray {
+    color: #565656;
+  }
+
+  &__description-purple {
+    color: #515C9C;
+    font-weight: bold;
+  }
+
+  &__note {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    color: #565656;
+    margin-left: 15px;
+  }
+
+  &__front-background {
+    min-width: 165vw;
+    width: 165vw;
+    left: -208px;
+    position: relative;
+    margin-top: -85vw;
+
+    @include sm {
+      min-width: 1350px;
+      width: 1350px;
+      margin-top: 0;
+      left: 0;
+      top: -245px;
+      position: absolute;
+
+    }
+    @include md {
+      min-width: 1400px;
+      width: 1400px;
+    }
+
+    @include lg {
+      position: absolute;
+      min-width: 1024px;
+      width: 1024px;
+      left: unset;
+      right: 0;
+      top: 0;
+    }
+
+    @include hd {
+      min-width: 1680px;
+      width: 1680px;
+      top: -400px;
+    }
+
+  }
+
+  &__front-background-pic {
+    width: 100%;
+    height: auto;
+  }
+
+
+  &__location {
+    position: relative;
+    z-index: 1;
+    margin-top: -85px;
+    display: flex;
+    flex-direction: column;
+
+    @include sm {
+      flex-direction: row;
+      background: #ffffff;
+      margin-top: 0;
+    }
+  }
+
+  &__location-text {
+    padding: 30px 0px;
+
+    @include sm {
+      min-width: 335px;
+    }
+
+    @include lg {
+      padding: 55px 0px 100px 40px;
+      min-width: 500px;
+    }
+
+    @include hd {
+      padding: 55px 0px 100px 80px;
+      min-width: 600px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    margin-bottom: 15px;
+    filter: brightness(0.8);
+  }
+
+  &__link-text {
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.64px;
+    color: #3D241C;
+  }
+
+  &__link-icon {
+    margin-right: 10px;
+  }
+
+  &__map {
+    width: 100%;
+    height: 300px;
+
+    @include sm {
+      height: auto;
+    }
+  }
+
+  &__blueberry-1 {
+    position: absolute;
+    top: 619px;
+    left: 532px;
+    width: 50px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 1s;
+
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 438px;
+      width: 55px;
+      left: 725px;
+    }
+    @include lg {
+      top: 232px;
+      width: 70px;
+      left: 500px;
+    }
+
+    @include xl {
+      top: 185px;
+      width: 80px;
+      left: 540px;
+    }
+
+    @include hd {
+      top: 590px;
+      width: 80px;
+      left: 895px;
+    }
+
+    @include xhd {
+      top: 655px;
+      left: 680px;
+    }
+  }
+  &__blueberry-2 {
+    position: absolute;
+    top: 595px;
+    left: 500px;
+    width: 60px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 400px;
+      width: 70px;
+      left: 680px;
+    }
+    @include lg {
+      top: 180px;
+      width: 90px;
+      left: 440px;
+    }
+
+    @include xl {
+      top: 120px;
+      width: 134px;
+      left: 440px;
+    }
+
+    @include hd {
+      top: 570px;
+      width: 135px;
+      left: 570px;
+    }
+
+    @include xhd {
+      top: 620px;
+      left: 405px;
+    }
+  }
+  &__blueberry-3 {
+    display: none;
+    position: absolute;
+    top: 670px;
+    left: 695px;
+    width: 60px;
+    height: auto;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 2s;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 615px;
+      left: 885px;
+      width: 70px;
+    }
+
+    @include lg {
+      top: 420px;
+      left: 760px;
+      width: 85px;
+    }
+
+    @include xl {
+      top: 400px;
+      left: 760px;
+      width: 110px;
+    }
+    @include hd {
+      top: 800px;
+      left: 1165px;
+      width: 110px;
+    }
+  }
+  &__blueberry-4 {
+    position: absolute;
+    top: 420px;
+    left: 695px;
+    width: 65px;
+    height: auto;
+    display: none;
+    //animation: float 6s ease-in-out infinite;
+    //animation-delay: 3s;
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      top: 350px;
+      left: 950px;
+      width: 80px;
+    }
+    @include lg {
+      top: 100px;
+      left: 900px;
+      width: 95px;
+    }
+
+    @include xl {
+      top: 100px;
+      left: 870px;
+      width: 95px;
+    }
+
+    @include hd {
+      top: 500px;
+      left: 1420px;
+      width: 115px;
+    }
+  }
+}
+
+//@keyframes float {
+//  0% {
+//    transform: translateY(0px);
+//  }
+//  50% {
+//    transform: translateY(-20px);
+//  }
+//  100% {
+//    transform: translateY(0px);
+//  }
+//}

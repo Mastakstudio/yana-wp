@@ -1,0 +1,156 @@
+$MAX-WIDTH_LG : 1200px;
+$MAX-WIDTH_HD : 1728px;
+
+$COLUMNS : 12;
+
+@mixin iner() {
+
+    .container {
+        padding   : {
+            left  : .5rem;
+            right : .5rem;
+        }
+        width: 100%;
+        position : relative;
+
+        @include sm {
+            padding   : {
+                left  : 1rem;
+                right : 1rem;
+            }
+        }
+
+        @include md {
+            padding   : {
+                left  : 1.5rem;
+                right : 1.5rem;
+            }
+        }
+
+        @include lg {
+            max-width    : $MAX-WIDTH_LG;
+            padding      : 0;
+            margin-left  : auto;
+            margin-right : auto;
+        }
+
+        @include hd {
+            max-width : $MAX-WIDTH_HD;
+        }
+    }
+
+    @include row();
+}
+
+@mixin row() {
+
+    .row {
+
+        max-width : initial;
+        display   : flex;
+        flex-wrap : wrap;
+        margin    : {
+            right : -.5rem;
+            left  : -.5rem;
+        }
+
+        @include md {
+            margin    : {
+                right : -1rem;
+                left  : -1rem;
+            }
+        }
+    }
+
+    .col-base {
+        padding   : {
+            right : .375rem;
+            left  : .375rem;
+        }
+
+        @include sm {
+            padding   : {
+                right : .5rem;
+                left  : .5rem;
+            }
+        }
+
+        @include md {
+            padding   : {
+                right : 1rem;
+                left  : 1rem;
+            }
+        }
+    }
+
+    @for $i from 1 through $COLUMNS {
+        .col-#{$i} {
+
+            @extend .col-base;
+
+            max-width : (100% /  $COLUMNS) * $i;
+            flex      : 1 0 (100% /  $COLUMNS) * $i;
+        }
+    }
+
+    @for $i from 0 through $COLUMNS {
+
+        @if $i == 0 {
+            .col-offset-0 {
+                margin-left : 0;
+            }
+        } @else {
+            .col-offset-#{$i} {
+                margin-left : (100% /  $COLUMNS) * $i;
+            }
+        }
+    }
+
+    @each $key, $value in $MEDIA {
+
+        @if $key == xl {
+
+        } @else if $key == xll {
+
+        } @else if $key == xhd {
+
+        } @else {
+            @for $i from 1 through $COLUMNS {
+                @include col($i, $key);
+            }
+        }
+    }
+}
+
+@mixin col($i, $media) {
+
+    .col-#{$media}-#{$i} {
+
+        @extend .col-base;
+
+        @media (min-width : map_get($MEDIA, #{$media})) {
+            max-width : (100% /  $COLUMNS) * $i;
+            flex      : 1 0 (100% /  $COLUMNS) * $i;
+        }
+    }
+    @if $i == 1 {
+        .col-offset-#{$media}-0 {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : 0;
+            }
+        }
+
+        .col-offset-#{$media}-1 {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : (100% /  $COLUMNS) * 1;
+            }
+        }
+
+    } @else {
+        .col-offset-#{$media}-#{$i} {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : (100% /  $COLUMNS) * $i;
+            }
+        }
+    }
+}

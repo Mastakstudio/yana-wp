@@ -1,0 +1,286 @@
+@import "./../../common/constants";
+
+.about-main{
+  background: #F2F2F2;
+  overflow-x: hidden;
+
+
+
+
+  &__title{
+    width: 194px;
+    height: 57px;
+
+    @include md{
+      width: 462px;
+      height: 134px;
+    }
+
+  }
+
+  &__description{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 30px;
+    letter-spacing: -2.33333px;
+    color: #515C9C;
+    display: block;
+    margin-top: 20px;
+
+    strong{
+      font-weight: bold;
+    }
+
+    @include sm{
+      margin-top: 50px;
+    }
+
+    @include md{
+      font-size: 72px;
+      line-height: 64px;
+    }
+
+    @include lg{
+      margin-top: 81px;
+    }
+  }
+
+  &__text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #565656;
+    display: block;
+    margin-top: 30px;
+
+    @include md{
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    @include lg{
+      margin-top: 44px;
+    }
+
+  }
+
+  &__subtext{
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.642857px;
+    color: #565656;
+
+
+    @include lg{
+      display: block;
+      margin-top: 4rem;
+    }
+
+
+
+
+  }
+
+  &__wrapper{
+
+    position: relative;
+    z-index: 2;
+
+    @include sm{
+      width: 50%;
+    }
+
+    @include lg{
+      padding-left: 4%;
+    }
+
+    @media (min-width : 1320px) {
+      padding-left: 6%;
+    }
+
+    @media (min-width : 1400px) {
+      padding-left: 8%;
+    }
+
+    @media (min-width : 1600px) {
+      padding-left: 14%;
+    }
+
+
+    @include hd{
+      padding-left: 5%;
+    }
+
+
+
+    @include xhd{
+      padding-left: 13%;
+    }
+
+    @media (min-width : 2500px) {
+      padding-left: 16%;
+    }
+
+
+
+
+
+  }
+
+
+  &__image{
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 50px;
+    z-index: 1;
+
+    @include m-land{
+      padding-bottom: 80px;
+    }
+
+    @include sm{
+      width: 50%;
+    }
+
+    @include md{
+      padding-bottom: 100px;
+    }
+
+    @include lg{
+      padding-bottom: 200px;
+    }
+  }
+
+  &__image-back{
+    min-width: 824px;
+    height: auto;
+    margin-left: -400px;
+    margin-top: -77px;
+
+    @include m-land{
+      min-width: 100%;
+      margin-left: 0;
+    }
+
+    @include md{
+      min-width: 1408px;
+      height: 774px;
+      margin-left: -600px;
+      margin-top: -166px;
+    }
+
+
+    @include hd{
+      margin-left: unset;
+      position: absolute;
+      right: 0;
+      min-height: 1000px;
+    }
+
+
+
+  }
+
+  &__more{
+
+    background: linear-gradient(180.58deg, #19B551 0.58%, #009339 115.24%);
+    border-radius: 31px;
+    width: 102px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 44px;
+
+    @include md{
+      width: 216px;
+      height: 54px;
+    }
+
+    @include lg{
+      margin-top: 6rem;
+    }
+
+
+
+
+    span{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 14px;
+      text-align: center;
+      color: #FFFFFF;
+
+
+      @include md{
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+
+  }
+
+  &__image-men{
+    position: absolute;
+    top: 30px;
+    min-width: 724px;
+    right: 0;
+
+    @include m-land{
+      position: absolute;
+      top: 0px;
+      min-width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    @include sm{
+    min-width: 724px;
+    left: unset;
+    right: 0;
+  }
+
+    @include md{
+      min-width: 1000px;
+      min-height: auto;
+    }
+
+    @include lg{
+      top: 153px;
+    }
+
+    @include hd{
+      min-width: 1456px;
+      min-height: 732px;
+      top: -75px;
+    }
+
+
+  }
+
+  &__outer{
+
+    @include sm{
+      display: flex;
+    }
+
+  }
+
+  &__container{
+    padding-bottom: 20px;
+
+    @include hd{
+      padding-bottom: 350px;
+    }
+
+  }
+
+
+
+}

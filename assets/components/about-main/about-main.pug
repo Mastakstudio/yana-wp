@@ -1,0 +1,19 @@
+mixin about-main()
+    +b.about-main
+        +e.inner
+            +e.container
+                .container
+                    +e.title(src=require('./../images/about-main-title.png'), alt='Background')
+                +e.outer
+                    +e.wrapper
+                        .container
+                            +e.SPAN.description
+                                strong We
+                                |  proudly grow
+                            +e.SPAN.text certified organic blueberries on land that has been in my family for 4 generations.
+                            +e.SPAN.subtext Located in Western Canada, in beautiful British Columbia, one of the world’s best locations for growing highbush blueberries. Falconglen Organic Farms is a nationally recognized premium organic blueberry brand that has built an excellent reputation for growing and supplying superior quality varieties of fresh organic blueberries, boxed in our uniquely designed eco-friendly retail packaging and sold through major grocery retailers across Canada. We also offer an expanded range of high quality organic blueberry superfood products such as frozen, freeze-dried, powdered and vegan chocolates.
+                            +e.A.more(href="")
+                                span Learn more
+                    +e.image
+                        +e.image-back(src=require('./../images/about-main.png'), alt='Background')
+                        +e.image-men(src=require('./../images/about-men.png'), alt='Background')

@@ -1,0 +1,233 @@
+@import "./../../common/constants";
+
+.wholesale {
+
+
+  &__inner{
+    background-image: url(../../images/whole.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 88% 50%;
+    position: relative;
+    height: 363px;
+
+
+    @include lg{
+      height: 577px;
+      background-position: 68% 14%;
+    }
+
+
+    @include hd{
+      background-position: 68% 31%;
+    }
+
+    @include xhd{
+      background-position: 68% 38%;
+    }
+  }
+
+  &__blueberry1{
+    position: absolute;
+    display: none;
+
+    @include sm{
+      width: 80px;
+      height: 74px;
+      left: 150px;
+      top: -37px;
+      display: block;
+    }
+
+  }
+
+  &__blueberry2{
+    position: absolute;
+    width: 56px;
+    height: 55px;
+    right: 20px;
+    top: -60px;
+
+    @include sm{
+      width: 124px;
+      height: 123px;
+      top: -70px;
+    }
+
+
+    @include md{
+      top: -104px;
+    }
+
+
+    @include lg{
+      top: -26px;
+      right: 74px;
+    }
+
+
+    @include hd{
+      top: -3%;
+      right: 26%;
+    }
+  }
+
+  &__blueberry3{
+    position: absolute;
+    width: 62px;
+    height: 58px;
+    bottom: -48px;
+    right: 25px;
+
+    @include sm{
+      width: 82px;
+      height: 73px;
+      bottom: 70px;
+      right: 320px;
+    }
+
+    @include md{
+      right: 473px;
+    }
+
+
+    @include lg{
+      right: 560px;
+    }
+
+    @include hd{
+      right: 50%;
+    }
+  }
+
+  &__blueberry4{
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    top: 149px;
+
+
+    @include sm{
+      top: 260px;
+      left: 300px;
+    }
+
+    @include lg{
+      top: 450px;
+      left: 400px;
+    }
+
+    @include hd{
+      top: 100%;
+      left: 33%;
+    }
+  }
+
+  &__title{
+    width: 261px;
+    height: 78px;
+    margin-top: 20px;
+
+    @include sm{
+      width: 550px;
+      height: auto;
+    }
+
+    @include lg{
+      width: 984px;
+      height: 311px;
+      margin-top: 39px;
+    }
+
+  }
+
+  &__content{
+    margin-top: 160px;
+
+    @include sm{
+      margin-top: 0px;
+    }
+  }
+
+  &__text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #565656;
+
+    @include sm{
+      font-size: 24px;
+      line-height: 33px;
+      display: block;
+      text-align: left;
+    }
+
+  }
+
+  &__link{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #515C9C;
+    border-bottom: 1px dashed #515C9C;
+
+    @include sm{
+      font-size: 24px;
+      line-height: 33px;
+      text-align: left;
+    }
+
+  }
+
+  &__item{
+
+    //transform: translateY(-50px);
+    opacity: 1;
+    transition: 1s all;
+
+
+    &_active{
+     // transform: translateY(0);
+      opacity: 1;
+      transition: 1s all;
+    }
+
+
+  }
+
+
+
+
+}
+
+//.wholesale__item_move:nth-child(1){
+//   animation: float 6s ease-in-out forwards;
+// }
+//
+//.wholesale__item_move:nth-child(2){
+//  animation: float 6s ease-in-out forwards .3s;
+//}
+//
+//.wholesale__item_move:nth-child(3){
+//  animation: float 6s ease-in-out forwards .6s;
+//}
+//
+//.wholesale__item_move:nth-child(4){
+//  animation: float 6s ease-in-out forwards .9s;
+//}
+//
+//
+//@keyframes float {
+//  0% {
+//    transform: translateY(0px);
+//  }
+//  50% {
+//    transform: translateY(-20px);
+//  }
+//  100% {
+//    transform: translateY(0px);
+//  }
+//}

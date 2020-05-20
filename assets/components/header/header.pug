@@ -1,0 +1,175 @@
+mixin header()
+    +b.header
+        +e.back
+        +e.blur
+            +e.IMG.blur-image1(src=require('./../images/image1.png'), alt='Background')
+            +e.IMG.blur-image2(src=require('./../images/image2.png'), alt='Background')
+            +e.IMG.blur-image3(src=require('./../images/image3.png'), alt='Background')
+            +e.IMG.blur-image4(src=require('./../images/image4.png'), alt='Background')
+            +e.IMG.blur-image5(src=require('./../images/image5.png'), alt='Background')
+        +e.menu-inner
+            .container
+                +e.menu-close
+                    span
+                    span
+                +e.A.login.log-in.header__mobile(href="")
+                    +e.login-image(src=require('./../images/login.svg'), alt='Background')
+                    span Login
+                // Авторизированный пользователь
+                //+e.A.login.account-img.header__mobile(href="")
+                //    +e.login-image(src=require('./../images/account.png'), alt='Background')
+                //    span Paul Falcon
+                +e.UL.menu-list
+                    +e.LI.menu-item
+                        +e.A.menu-item-link.header__menu-item-link_active(href="") Home
+                    +e.LI.menu-item
+                        +e.A.menu-item-link Products
+                        +e.UL.menu-item-inner
+                            +e.LI.menu-item-inner-li
+                                +e.A(href="")
+                                    +e.menu-item-inner-container
+                                        +e.IMG.menu-item-inner-image(src=require('./../images/img1.png'), alt='Background')
+                                    +e.menu-item-inner-title
+                                        strong Fresh
+                                        span   Organic Blueberries
+                            +e.LI.menu-item-inner-li
+                                +e.A(href="")
+                                    +e.menu-item-inner-container
+                                        +e.IMG.menu-item-inner-image(src=require('./../images/img2.png'), alt='Background')
+                                    +e.menu-item-inner-title
+                                        strong Fresh
+                                        span  Organic Blueberries
+                            +e.LI.menu-item-inner-li
+                                +e.A(href="")
+                                    +e.menu-item-inner-container
+                                        +e.IMG.menu-item-inner-image(src=require('./../images/img3.png'), alt='Background')
+                                    +e.menu-item-inner-title
+                                        strong Fresh
+                                        span  Organic Blueberries
+                            +e.LI.menu-item-inner-li
+                                +e.A(href="")
+                                    +e.menu-item-inner-container
+                                        +e.IMG.menu-item-inner-image(src=require('./../images/img4.png'), alt='Background')
+                                    +e.menu-item-inner-title
+                                        strong Fresh
+                                        span  Organic Blueberries
+                            +e.LI.menu-item-inner-li
+                                +e.A(href="")
+                                    +e.menu-item-inner-container
+                                        +e.IMG.menu-item-inner-image(src=require('./../images/img5.png'), alt='Background')
+                                    +e.menu-item-inner-title
+                                        strong Fresh
+                                        span  Organic Blueberries
+                    +e.LI.menu-item
+                        +e.A.menu-item-link(href="") About us
+                    +e.LI.menu-item
+                        +e.A.menu-item-link(href="") For wholesale buyers
+                    +e.LI.menu-item
+                        +e.A.menu-item-link(href="") Contact
+        .container
+            +e.cart-inner
+                .container
+                    +e.cart-content
+                        +e.cart-content-text
+                            +e.SPAN.cart-content-title Cart
+                            +e.cart-content-close
+                        +e.cart-content-change
+                            +e.cart-content-metryc-inner
+                                +e.cart-content-metryc-content.active
+                                    +e.cart-content-inner
+                                        +e.SPAN.cart-content-title
+                                            strong Fresh
+                                            |  Organic Blueberries
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-close
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                    +e.cart-content-inner
+                                        +e.SPAN.cart-content-title
+                                            strong Fresh
+                                            |  Organic Blueberries
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-close
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                    +e.cart-content-inner
+                                        +e.SPAN.cart-content-title
+                                            strong Fresh
+                                            |  Organic Blueberries
+                                        +e.A.add-link Available only on pre-order for July-August
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-close
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-close
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                            +e.cart-order
+                                +e.cart-order-content
+                                    +e.SPAN.cart-order-total Total:
+                                    +e.SPAN.cart-order-price  0
+                                    +e.SPAN.cart-order-price-name  USD
+                                +e.cart-order-buttons
+                                    +e.A.cart-order-button(id="continue") Shop more
+                                    +e.A.cart-order-button(href="") Checkout
+        .container
+            +e.inner
+                +e.A.logo(href="" id = 'menu')
+                    +e.logo-image(src=require('./../images/logo.png'), alt='Background')
+                +e.part
+                    +e.menu
+                        +e.menu-burger
+                            span
+                            span
+                    +e.A.map(href="")
+                        +e.map-image(src=require('./../images/map.svg'), alt='Background')
+                        span view on map
+                    +e.A.phone.header__desctop(href="tel:778-859-2743")
+                        +e.phone-image(src=require('./../images/phone.svg'), alt='Background')
+                        span 778-859-2743
+                +e.part
+                    +e.A.mail(href="mailto:778-859-2743")
+                        +e.mail-image(src=require('./../images/mail.svg'), alt='Background')
+                        span info@falconglen.ca
+                    +e.A.phone.header__mobile(href="tel:778-859-2743")
+                        +e.phone-image(src=require('./../images/phone.svg'), alt='Background')
+                        span 778-859-2743
+                    +e.A.login.log-in.header__desctop()
+                        +e.login-image(src=require('./../images/login.svg'), alt='Background')
+                        span Login
+                    // Авторизированный пользователь
+                    //+e.A.login.account-img.header__desctop
+                        +e.login-image(src=require('./../images/account.png'), alt='Background')
+                        span Paul Falcon
+                    +e.cart
+                        +e.SPAN.cart-number 1
+                        +e.cart-image(src=require('./../images/cart.svg'), alt='Background')

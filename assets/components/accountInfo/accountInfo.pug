@@ -1,0 +1,103 @@
+mixin accountInfo()
+    +b.accountInfo
+        .container
+            +e.inner
+                +e.wrapper-title
+                    +e.SPAN.title Account
+                +e.SPAN.tabs-title Order № 00001
+                +e.list
+                    +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                        +e.cart-item-add
+                            +e.cart-item-image-inner
+                                +e.cart-item-image(src=require('./../images/order1.png'), alt='Background')
+                            +e.cart-item-title
+                                +e.item-close(src=require('./../images/close-prod.png'), alt='Background')
+                                +e.item-title
+                                    strong Fresh
+                                    |  Organic Blueberries
+                            +e.cart-item-content
+                                +e.SPAN.cart-item-content-title 30 lb/box
+                            +e.cart-item-cost
+                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                            +e.SPAN.cart-item-price-total
+                                +e.SPAN.cart-item-price.real-price  23.00
+                                +e.SPAN.cart-item-price  CAD
+                    +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                        +e.cart-item-add
+                            +e.cart-item-image-inner
+                                +e.cart-item-image(src=require('./../images/order1.png'), alt='Background')
+                            +e.cart-item-title
+                                +e.item-close(src=require('./../images/close-prod.png'), alt='Background')
+                                +e.item-title
+                                    strong Fresh
+                                    |  Organic Blueberries
+                            +e.cart-item-content
+                                +e.SPAN.cart-item-content-title 30 lb/box
+                            +e.cart-item-cost
+                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                            +e.SPAN.cart-item-price-total
+                                +e.SPAN.cart-item-price.real-price  23.00
+                                +e.SPAN.cart-item-price  CAD
+                +e.agree
+                    +e.agree-container
+                        +e.delivery
+                            +e.delivery-price
+                                +e.delivery-price-title Delivery:
+                                +e.delivery-price-cost 3.75 USD
+                            +e.delivery-tax
+                                +e.delivery-tax-title Tax:
+                                +e.delivery-tax-cost 2.77 USD
+                        +e.tabs-total
+                            +e.SPAN.tabs-total-totle Total:
+                            +e.SPAN.tabs-total-price 200.00
+                            +e.SPAN.tabs-total-val USD
+                            +e.cart-content-metryc-content
+                +e.tabs-ship
+                    +e.back(src=require('./../images/order-back.png'), alt='Background')
+                    .container
+                        +e.tabs-ship-form
+                            +e.tabs-ship-item
+                                +e.LABEL.tabs-ship-label Title*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Title
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label First Name*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text First Name*
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label Last Name*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Last Name*
+                            +e.line
+                            +e.tabs-ship-item
+                                +e.LABEL.tabs-ship-label Country*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Country*
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label Address
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Address
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label House Number and street*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text House Number and street*
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label Address line 2 (optional)
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Address line 2 (optional)
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label City*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text City*
+                            +e.tabs-ship-item
+                                +e.LABEL.tabs-ship-label Region/Province*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Region/Province*
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label Postal Code*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text Postal Code*
+                            +e.tabs-ship-item.input
+                                +e.LABEL.tabs-ship-label Phone Number*
+                                +e.tabs-container-item-inner-tab
+                                    +e.SPAN.tabs-container-item-inner-tab-text  Postal Code*

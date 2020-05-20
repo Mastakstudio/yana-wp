@@ -1,0 +1,304 @@
+@import "./../../common/constants";
+
+.banner {
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+
+    @include xhd{
+        padding-bottom: 334px;
+    }
+
+
+    &__banner-image{
+        background-image: url(../../images/banner__back.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 394px;
+        z-index: 2;
+        top: 0;
+        left: 0;
+
+        transition: .5s all ease;
+
+
+
+        @include sm{
+            height: 601px;
+            //filter: blur(2px);
+        }
+
+
+
+        @include lg{
+            height: 807px;
+            //filter: blur(2px);
+
+            &_active{
+                //filter: blur(0);
+                transition: .5s all ease;
+            }
+
+        }
+
+        @include hd{
+            height: 853px;
+            background-position: bottom;
+        }
+
+        @include xhd{
+            height: 1200px;
+        }
+
+    }
+
+    &__bush-first{
+        display: none;
+        position: absolute;
+        z-index: 3;
+
+        @include lg{
+            display: block;
+            width: 690px;
+            height: 532px;
+            right: -400px;
+            top: 221px;
+            //filter: blur(2px);
+            transition: .5s all ease;
+
+            &_active{
+                //filter: blur(0);
+                transition: .5s all ease;
+            }
+
+        }
+
+        @include hd{
+            width: 800px;
+            height: 600px;
+            right: -306px;
+            top: 207px;
+        }
+
+        @include xhd{
+            width: 960px;
+            height: 700px;
+            right: -465px;
+            top: 445px;
+        }
+
+    }
+
+    &__bush-second{
+        display: none;
+        position: absolute;
+        z-index: 3;
+
+        @include lg{
+            display: block;
+            width: 690px;
+            height: 532px;
+            right: 100px;
+            top: 230px;
+            //filter: blur(2px);
+            transition: .5s all ease;
+
+            &_active{
+                //filter: blur(0);
+                transition: .5s all ease;
+            }
+        }
+
+        @include hd{
+            width: 800px;
+            height: 600px;
+            right: 314px;
+            top: 207px;
+        }
+
+        @include xhd{
+            width: 960px;
+            height: 700px;
+            right: 160px;
+            top: 445px;
+        }
+    }
+
+    &__blueberries{
+        position: absolute;
+        z-index: 4;
+        right: -77px;
+        top: 57px;
+        width: 283px;
+
+        @include sm{
+            position: absolute;
+            z-index: 4;
+            right: -137px;
+            top: 107px;
+            width: 418px;
+            transform: rotate(28deg);
+        }
+
+        @include md{
+            right: -137px;
+            top: -23px;
+            width: 558px;
+        }
+
+        @include lg{
+            transform: rotate(0deg);
+            width: 569px;
+            top: -3px;
+            //filter: blur(2px);
+            transition: .5s all ease;
+
+            &_active{
+                //filter: blur(0);
+                transition: .5s all ease;
+            }
+        }
+
+
+        @include hd{
+            width: 683px;
+            top: 6px;
+        }
+
+        @include xhd{
+            width: 1011px;
+            top: 5px;
+            right: -450px;
+        }
+
+
+    }
+
+    &__inner{
+        padding-top: 30px;
+        padding-bottom: 220px;
+        overflow: hidden;
+
+        @include sm{
+            padding-bottom: 208px;
+        }
+
+        @include lg{
+            padding-bottom: 430px;
+        }
+
+        @include hd{
+            padding-bottom: 416px;
+        }
+
+    }
+
+    &__title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 26px;
+        letter-spacing: -1.44444px;
+        color: #515C9C;
+
+
+
+        strong{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 26px;
+            line-height: 26px;
+            letter-spacing: -1.44444px;
+            color: #515C9C;
+
+            @include sm{
+                font-size: 72px;
+                line-height: 64px;
+            }
+        }
+
+
+        @include sm{
+            font-size: 72px;
+            line-height: 64px;
+        }
+
+    }
+
+
+    &__content{
+        padding-top: 30px;
+        position: relative;
+        z-index: 5;
+
+        @include sm{
+            padding-top: 71px;
+        }
+
+        @include hd{
+            padding-top: 120px;
+        }
+
+    }
+
+    &__subtitle{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #565656;
+
+        @include sm{
+            font-size: 28px;
+            line-height: 38px;
+            margin-top: 10px;
+            display: block;
+        }
+
+    }
+
+    &__more{
+        background: linear-gradient(180.58deg, #19B551 0.58%, #009339 115.24%);
+        border-radius: 31px;
+        width: 102px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+        @include sm{
+            width: 248px;
+            height: 62px;
+        }
+
+
+        span{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+            color: #FFFFFF;
+
+            @include sm{
+                font-size: 24px;
+                line-height: 23px;
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+}

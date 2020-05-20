@@ -1,0 +1,18 @@
+mixin page404()
+    +b.page404
+        +e.inner
+            +e.front
+                +e.front-text
+                    .container
+                        +e.front-heading
+                            +e.front-heading-pic(src=require('./../images/404-title.png'), alt='Title')
+                        +e.front-subtitle Page not found
+                        +e.front-description
+                            +e.SPAN We’re sorry, the page you have looked for does not exist in our database! Maybe go to our &#32;
+                            +e.A(href='#') home page
+                +e.front-background
+                    +e.front-background-pic(src=require('./../images/contact-background.png'), alt='Background')
+                    +e.blueberry-1(src=require('./../images/image3.png'), alt='Blueberry')
+                    +e.blueberry-2(src=require('./../images/image2.png'), alt='Blueberry')
+                    +e.blueberry-3(src=require('./../images/image4.png'), alt='Blueberry')
+                    +e.blueberry-4(src=require('./../images/image1.png'), alt='Blueberry')

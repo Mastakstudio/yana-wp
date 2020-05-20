@@ -1,0 +1,48 @@
+mixin popup()
+    +b.popup
+        +e.inner
+            +e.blur
+            +e.content
+                +e.IMG.close(src=require('./../images/popup-image.png'), alt='Background')
+                +e.title Account
+                +e.cart-content-metryc-content.active
+                    +e.UL.tabs-caption
+                        li.active Login
+                        li Register
+                    +e.tabs-inner
+                        +e.tabs-content.active
+                            +e.FORM.form
+                                +e.INPUT.input(placeholder="E-mail" type="text" name="email")
+                                +e.INPUT.input(placeholder="Password" type="text" name="password")
+                                +e.A.forget(href="") Forgot password
+                                +e.A.button Sign In
+                                +e.soc-content
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc1.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc2.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc3.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc4.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc5.svg'), alt='Mastak logo')
+                        +e.tabs-content
+                            +e.FORM.form
+                                +e.INPUT.input(placeholder="Name" type="text" name="name")
+                                +e.INPUT.input(placeholder="E-mail" type="text" name="email")
+                                +e.INPUT.input(placeholder="Password" type="text" name="password")
+                                +e.INPUT.input(placeholder="Confirm password" type="text" name="confirmPassword")
+                                +e.A.forget(href="")
+                                +e.A.button Registration
+                                +e.soc-content
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc1.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc2.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc3.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc4.svg'), alt='Mastak logo')
+                                    +e.A.soc-link(href="")
+                                        +e.soc-image(src=require('./../images/soc5.svg'), alt='Mastak logo')

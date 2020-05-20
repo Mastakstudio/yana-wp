@@ -1,0 +1,18 @@
+mixin banner()
+    +b.banner
+        +e.banner-image
+        .container
+            +e.inner
+                +e.bush-first(src=require('./../images/kust1.png'), alt='Background')
+                +e.bush-second(src=require('./../images/kust2.png'), alt='Background')
+                +e.blueberries.banner__blueberries_active(src=require('./../images/blue.png'), alt='Background')
+                +e.content
+                    +e.H1.title
+                        strong Premium
+                        |  quality
+                        br
+                        strong  organic
+                        |  products
+                    +e.SPAN.subtitle from our farm to your table
+                    +e.more
+                        span Learn more

@@ -1,0 +1,389 @@
+mixin product-main()
+    +b.product-main
+        +e.inner
+            +e.wrapper
+                +e.close
+                .container
+                    +e.title-container
+                        +e.title(src=require('./../images/product-main.png'), alt='Background')
+                        +e.cart-content-change-text
+                            +e.cart-content-currency
+                                +e.SPAN.cart-content-currency-span_active CAD
+                                +e.INPUT.cart-content-currency-scroll(type="range" name="vol" min="0" max="1" value="0")
+                                span USD
+                            +e.cart-content-metryc
+                                +e.cart-content-metryc-tabs
+                                    +e.UL.cart-content-metryc-caption
+                                        li.active Metric System
+                                        li U.S. System
+                +e.list
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue1.jpg")})` )
+                        +e.SPAN.item-titile
+                            strong Fresh
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                                    +e.A.add-link
+                                        span Available only on pre-order
+                                        span for July-August
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue2.jpg")})` )
+                        +e.SPAN.item-titile
+                            strong Fresh
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue3.svg")})` )
+                        +e.SPAN.item-titile
+                            strong Fresh
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue4.svg")})` )
+                        +e.SPAN.item-titile
+                            strong Fresh
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue5.svg")})` )
+                        +e.SPAN.item-titile
+                            strong Fresh
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                    +e.item
+                        +e.item-image(style=`background-image:url(${require("./../images/blue6.png")})` )
+                        +e.SPAN.item-titile
+                            strong Dark chocolate covered
+                            br
+                            |  Organic Blueberries
+                        +e.A.item-link(href="") Learn more
+                        +e.item-more
+                            +e.IMG.item-more-plus(src=require('./../images/plus1.png'), alt='Background')
+                            +e.SPAN.item-more-text Add to cart
+                        +e.cart-content
+                            +e.item-close
+                            +e.cart-content-change
+                                +e.cart-content-metryc-inner
+                                    +e.cart-content-metryc-content.active
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                        +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                            +e.cart-item-content
+                                                +e.SPAN.cart-item-content-title 30 lb/box
+                                                +e.SPAN.cart-item-content-price-total
+                                                    +e.SPAN.cart-item-content-price.real-price  23.00
+                                                    +e.SPAN.cart-item-content-price  CAD
+                                            +e.cart-item-cost
+                                                +e.SPAN.cart-item-minus –
+                                                +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                +e.SPAN.cart-item-plus +
+                                +e.cart-order
+                                    +e.cart-order-content
+                                        +e.SPAN.cart-order-total Total:
+                                        +e.SPAN.cart-order-price  0
+                                        +e.SPAN.cart-order-price-name  USD
+                    //+e.item.product-main__not-item
+                    //    +e.SPAN.item-titile
+                    //        strong Fresh
+                    //        br
+                    //        |  Organic Blueberries
+                    //    +e.A.item-link(href="") Learn more
+

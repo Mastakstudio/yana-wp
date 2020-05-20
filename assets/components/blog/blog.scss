@@ -1,0 +1,128 @@
+@import "./../../common/constants";
+
+.blog {
+
+  flex-grow: 1;
+  background: #F2F2F2;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+  min-height: 90vh;
+
+  &__wrapper-title{
+    background: url(./../../images/header-b.jpg) no-repeat center center;
+    background-size: 150% 100%;
+    background-position: -110px 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: -webkit-box;
+
+    @include sm{
+      background-position: -265px 100%;
+    }
+
+    @include md{
+      background-position: -200px 100%;
+    }
+
+    @include lg{
+      background-position: -250px 100%;
+    }
+
+  }
+
+
+  &__title{
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18vw;
+    line-height: 1;
+    letter-spacing: -8px;
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+
+    @include sm{
+      font-size: 14vw;
+      margin-top: 80px;
+    }
+
+    @include md{
+      margin-bottom: 20px;
+      font-size: 10vw;
+      letter-spacing: -8px;
+    }
+
+
+    @include hd{
+      font-size: 9vw;
+    }
+
+    @include xhd{
+      font-size: 7vw;
+    }
+
+  }
+
+
+
+  &__grid-item {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include m-land{
+      width: 70%;
+    }
+
+    @include sm{
+      width: 48%;
+      float: left;
+      margin-left: 5px;
+      margin-right: 5px;
+
+    }
+
+    @include md{
+      width: 32%;
+    }
+
+    @include lg{
+      width: 24%;
+
+    }
+
+    @include hd{
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 19%;
+    }
+
+  }
+
+  h2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1;
+    color: #515C9C;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    z-index: 2;
+    position: relative;
+  }
+
+
+}
+
+.grid-item .instagram-media.instagram-media-rendered{
+  min-width: unset !important;
+}
+
+#grid{
+  overflow-y: hidden;
+}

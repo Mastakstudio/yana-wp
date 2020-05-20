@@ -1,0 +1,132 @@
+mixin product()
+    +b.product
+        .container
+            +e.inner
+                +e.H1.title
+                    strong Fresh
+                    br
+                    |  Organic Blueberries
+                +e.content
+                    +e.wrapper-inner
+                        +e.cart-content-change-text
+                            +e.cart-content-change-text-inner
+                                +e.cart-content-currency-chose Choose currency
+                                +e.cart-content-currency
+                                    +e.SPAN.cart-content-currency-span_active CAD
+                                    +e.INPUT.cart-content-currency-scroll(type="range" name="vol" min="0" max="1" value="0")
+                                    span USD
+                            +e.cart-content-metryc
+                                +e.cart-content-metryc-tabs
+                                    +e.UL.cart-content-metryc-caption
+                                        li.active Metric System
+                                        li U.S. System
+                        +e.cart-content-metryc-inner
+                            +e.cart-content-metryc-content.active
+                                +e.list
+                                    +e.item
+                                        +e.wrapper
+                                            +e.item-list
+                                                +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                                    +e.cart-item-content
+                                                        +e.SPAN.cart-item-content-title 30 lb/box
+                                                        +e.SPAN.cart-item-content-price-total
+                                                            +e.SPAN.cart-item-content-price.real-price  23.00
+                                                            +e.SPAN.cart-item-content-price  CAD
+                                                    +e.cart-item-cost
+                                                        +e.SPAN.cart-item-minus –
+                                                        +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                        +e.SPAN.cart-item-plus +
+                                                +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                                    +e.cart-item-content
+                                                        +e.SPAN.cart-item-content-title 30 lb/box
+                                                        +e.SPAN.cart-item-content-price-total
+                                                            +e.SPAN.cart-item-content-price.real-price  23.00
+                                                            +e.SPAN.cart-item-content-price  CAD
+                                                    +e.cart-item-cost
+                                                        +e.SPAN.cart-item-minus –
+                                                        +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                        +e.SPAN.cart-item-plus +
+                                                +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                                    +e.cart-item-content
+                                                        +e.SPAN.cart-item-content-title 30 lb/box
+                                                        +e.SPAN.cart-item-content-price-total
+                                                            +e.SPAN.cart-item-content-price.real-price  23.00
+                                                            +e.SPAN.cart-item-content-price  CAD
+                                                    +e.cart-item-cost
+                                                        +e.SPAN.cart-item-minus –
+                                                        +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                        +e.SPAN.cart-item-plus +
+                                                +e.cart-item(data-price="23.00" data-quantity="0" data-total="0")
+                                                    +e.cart-item-content
+                                                        +e.SPAN.cart-item-content-title 100 g package
+                                                        +e.SPAN.cart-item-content-price-total
+                                                            +e.SPAN.cart-item-content-price.real-price  23.00
+                                                            +e.SPAN.cart-item-content-price  CAD
+                                                    +e.cart-item-cost
+                                                        +e.SPAN.cart-item-minus –
+                                                        +e.INPUT.cart-item-number(type="number" readonly="readonly" value="0" placeholder="0")
+                                                        +e.SPAN.cart-item-plus +
+                                                +e.add
+                                                    +e.cart-order
+                                                        +e.cart-order-content
+                                                            +e.SPAN.cart-order-total Total:
+                                                            +e.SPAN.cart-order-price  0
+                                                            +e.SPAN.cart-order-price-name  USD
+                                                    +e.A.add-link Available only on pre-order for July-August
+                                                    +e.dop-text.product__dop-text_mobile
+                                                        +e.IMG.dop-text-image(src=require('./../images/vosk.svg'), alt='Background')
+                                                        +e.SPAN.dop-text-content Once your pre-order has been placed we will contact you to arrange flexible pickup and delivery options that will meet your expectations
+                                                    +e.more
+                                                        span Add to cart
+                        +e.dop-text.product__dop-text_desktope
+                            +e.IMG.dop-text-image(src=require('./../images/vosk.svg'), alt='Background')
+                            +e.SPAN.dop-text-content Once your pre-order has been placed we will contact you to arrange flexible pickup and delivery options that will meet your expectations
+                    +e.gallery
+                        +e.swiper-container.swiper-container
+                            +e.swiper-wrapper.swiper-wrapper
+                                +e.swiper-slide.swiper-slide(src=require('./../images/image.png'), alt='Background')
+                                +e.swiper-slide.swiper-slide(src=require('./../images/image.png'), alt='Background')
+                                +e.swiper-slide.swiper-slide(src=require('./../images/image.png'), alt='Background')
+                            +e.swiper-pagination.swiper-pagination
+                +e.wrapper
+                    +e.SPAN.wrapper-title Pickup and delivery
+                    +e.wrapper-list
+                        +e.wrapper-item
+                            +e.wrapper-item-title
+                                +e.SPAN.wrapper-item-title-number 1
+                                +e.SPAN.wrapper-item-title-text Vancouver area only – delivery
+                            +e.wrapper-item-content
+                                +e.SPAN.wrapper-item-content-title DoorDash app*
+                                +e.SPAN.wrapper-item-content-text
+                                    UL
+                                        LI one
+                                        LI two
+                                        LI three
+                        +e.wrapper-item
+                            +e.wrapper-item-title
+                                +e.SPAN.wrapper-item-title-number 2
+                                +e.SPAN.wrapper-item-title-text GVRD/Fraser Valley – delivery
+                            +e.wrapper-item-content
+                                +e.SPAN.wrapper-item-content-title Possible courier options*
+                                +e.SPAN.wrapper-item-content-text only during summer harvest July to August, see availability
+                        +e.wrapper-item
+                            +e.wrapper-item-title
+                                +e.SPAN.wrapper-item-title-number 3
+                                +e.SPAN.wrapper-item-title-text Vancouver/GVRD/Fraser Valley areas – pickup
+                            +e.wrapper-item-content
+                                +e.SPAN.wrapper-item-content-title Farm pickup Langley*
+                                +e.SPAN.wrapper-item-content-text only during summer harvest July to August, see availability
+        +e.about
+            .container
+                +e.about-wrapper
+                    +e.IMG.blur-image1(src=require('./../images/image1.png'), alt='Background')
+                    +e.IMG.blur-image2(src=require('./../images/image2.png'), alt='Background')
+                    +e.IMG.blur-image3(src=require('./../images/image3.png'), alt='Background')
+                    +e.IMG.blur-image4(src=require('./../images/image4.png'), alt='Background')
+                    +e.IMG.blur-image5(src=require('./../images/image5.png'), alt='Background')
+                    +e.SPAN.wrapper-title About
+                    +e.SPAN.about-desc Falconglen Organic Farms grows some of the healthiest, best tasting varieties of high-bush blueberries available!
+                    +e.about-text
+                        P Our varieties are well known for their large size and most importantly, their delicious blueberry flavour.
+                        P We carefully pick our blueberries at their peak of ripeness and offer the following package sizes and pickup/delivery options during the fresh blueberry harvest season in British Columbia, Canada –
+                            strong  early July to late August.

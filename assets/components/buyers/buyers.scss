@@ -1,0 +1,712 @@
+@import "./../../common/constants";
+
+.buyers{
+  flex-grow: 1;
+  background: #F2F2F2;
+  overflow-x: hidden;
+
+  &__wrapper-title{
+    background: url(./../../images/header-b.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 40px;
+
+
+
+    @include sm{
+      margin-top: 75px;
+
+    }
+
+    @include md{
+      background-size: 100%;
+    }
+
+  }
+
+
+  &__title{
+    margin-top: 48px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 71px;
+    line-height: 1;
+    letter-spacing: -8px;
+    font-family: "Open Sans", sans-serif;
+
+    @include sm{
+      margin-top: 80px;
+      margin-bottom: 20px;
+      font-size: 97px;
+      letter-spacing: -15px;
+    }
+
+    @include md{
+      font-size: 120px;
+    }
+
+  }
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+
+
+    @include sm{
+      flex-direction: row;
+      margin-top: 2rem;
+    }
+
+
+  }
+
+  &__contact-wrapper{
+    position: relative;
+
+    @include sm{
+      padding-bottom: 0;
+    }
+
+  }
+
+  &__content{
+    margin-top: 1rem;
+
+    @include sm{
+      width: 50%;
+      padding-right: 20px;
+    }
+
+    @include lg{
+      width: 60%;
+    }
+
+  }
+
+  &__text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1;
+    color: #565656;
+
+    @include md{
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+  }
+
+  &__desc{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.642857px;
+    color: #565656;
+    display: block;
+    margin-top: 1rem;
+
+    @include md{
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: 0.642857px;
+    }
+
+  }
+
+  &__gallery{
+    margin-top: 2rem;
+
+    @include sm{
+      margin-top: 1rem;
+      width: 50%;
+    }
+
+    @include lg{
+      width: 40%;
+    }
+
+  }
+
+  &__swiper-container{
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  &__swiper-pagination{
+    bottom: 0px !important;
+  }
+
+  &__blueberry1{
+    display: none;
+  }
+  &__blueberry2{
+    display: none;
+  }
+  &__blueberry3{
+    display: none;
+  }
+  &__blueberry4{
+    display: none;
+  }
+  &__blueberry5{
+    display: none;
+  }
+
+
+  @include md{
+    &__blueberry1{
+      position: absolute;
+      display: none;
+      z-index: 2;
+
+      @include sm{
+        width: 80px;
+        height: 74px;
+        left: 150px;
+        top: 40%;
+        display: block;
+      }
+
+      @include hd{
+        left: 47%;
+        top: 50%;
+      }
+
+    }
+
+    &__blueberry2{
+      display: block;
+      position: absolute;
+      width: 56px;
+      height: 55px;
+      right: 20px;
+      top: -60px;
+      z-index: 2;
+
+      @include sm{
+        width: 124px;
+        height: 123px;
+        top: -70px;
+      }
+
+
+      @include md{
+        top: 34%;
+        right: 3%;
+      }
+
+    }
+
+    &__blueberry3{
+      display: block;
+      position: absolute;
+      width: 62px;
+      height: 58px;
+      bottom: -48px;
+      right: 25px;
+      z-index: 2;
+
+      @include sm{
+        width: 82px;
+        height: 73px;
+        bottom: 70px;
+        right: 320px;
+      }
+
+      @include md{
+        right: 473px;
+      }
+
+
+      @include lg{
+        right: 560px;
+      }
+
+      @include hd{
+        right: 32%;
+        top: 74%;
+      }
+    }
+
+    &__blueberry4{
+      display: block;
+      position: absolute;
+      width: 76px;
+      height: 76px;
+      top: 149px;
+      z-index: 2;
+
+
+      @include sm{
+        top: 260px;
+        left: 300px;
+      }
+
+      @include lg{
+        top: 450px;
+        left: 400px;
+      }
+
+      @include hd{
+        top: 83%;
+        left: 33%;
+      }
+    }
+  }
+
+
+  &__contact-inner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+
+    @include sm{
+      flex-direction: row;
+      background: #FFFFFF;
+      box-shadow: 0px 7px 51px rgba(152, 182, 230, 0.5);
+    }
+
+    @include lg{
+      margin-top: 4rem;
+    }
+
+  }
+
+  &__contact-content{
+
+
+    @include sm{
+      width: 60%;
+      padding: 20px;
+    }
+
+    @include lg{
+      padding: 40px;
+
+    }
+
+  }
+
+  &__contact-title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #515C9C;
+  }
+
+  &__contact-desc{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.642857px;
+    color: #565656;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__contact-text{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+
+    img{
+      width: 21px;
+    }
+
+    span{
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      display: block;
+      margin-left: 15px;
+      color: #515C9C;
+
+    }
+
+  }
+
+  &__contact-image{
+
+    position: relative;
+
+    align-items: flex-end;
+    justify-content: center;
+    display: none;
+
+
+
+    @include sm{
+      width: 40%;
+      display: flex;
+    }
+
+  }
+
+  &__editor{
+    margin: 1rem 0;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 3rem;
+    z-index: 2;
+
+    @include lg {
+      margin: 2rem 0;
+    }
+
+    p{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    strong{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    em{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+      font-style: italic;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    del{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    a{
+      text-decoration: none;
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+    ul{
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+      li{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        padding-left: 15px;
+        list-style-type: disc;
+        list-style: inside;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+    }
+
+    ol{
+
+      list-style-type: decimal;
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ul{
+
+        list-style-type: disc;
+        padding-left: 15px;
+
+
+      }
+
+    }
+
+    ol{
+
+      list-style-type: decimal !important;
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      li{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        padding-left: 15px;
+        list-style-type: decimal !important;
+        list-style: inside;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+    }
+    ul {
+
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ul{
+
+        padding-left: 15px;
+
+        li{
+          margin: .5rem 0;
+          font-family: "Open Sans", sans-serif;
+          padding-left: 15px;
+          list-style-type: disc;
+          list-style: inside;
+
+          @include lg {
+            margin: 1rem 0;
+          }
+        }
+
+      }
+
+    }
+    ol {
+
+      margin-top: .5px;
+
+      @include lg{
+        margin-top: 1rem;
+      }
+
+      ol{
+
+        padding-left: 15px;
+
+        li{
+          margin: .5rem 0;
+          font-family: "Open Sans", sans-serif;
+          padding-left: 15px;
+          list-style-type: decimal !important;
+          list-style: inside;
+
+          @include lg {
+            margin: 1rem 0;
+          }
+        }
+
+      }
+
+    }
+
+    blockquote {
+
+      padding-left: 20px;
+
+
+      p{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+
+      cite{
+        margin: .5rem 0;
+        font-family: "Open Sans", sans-serif;
+        font-style: italic;
+
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+
+    }
+    h2 {
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    h3 {
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+    h4{
+      margin: 1rem 0;
+      font-family: "Open Sans", sans-serif;
+
+      @include lg {
+        margin: 2rem 0;
+      }
+    }
+
+  }
+
+
+  &__back{
+    width: 100%;
+    height: auto;
+    margin-top: -143px;
+    display: none;
+    z-index: 1;
+    position: relative;
+
+    @include sm{
+      margin-top: -411px;
+    }
+
+    @include md{
+      margin-top: -524px;
+      display: block;
+    }
+
+    @include lg{
+      margin-top: -611px;
+    }
+
+    @include hd{
+      margin-top: -1000px;
+    }
+
+    @include xhd{
+      margin-top: -1200px;
+    }
+
+  }
+
+
+  &__back2{
+    width: 100%;
+    height: auto;
+    margin-top: -567px;
+
+    @media (min-width : 375px) {
+      margin-top: -658px;
+    }
+
+    @media (min-width : 410px) {
+      margin-top: -720px;
+    }
+
+
+
+    @include sm{
+      margin-top: -1300px;
+    }
+
+
+
+    @include md{
+      margin-top: -524px;
+      display: none;
+    }
+
+    @include lg{
+      margin-top: -611px;
+    }
+
+    @include hd{
+      margin-top: -1000px;
+    }
+
+    @include xhd{
+      margin-top: -1200px;
+    }
+
+  }
+
+}
+
+.swiper-pagination-bullet{
+  background: #E8F3FF;
+  border: 1px solid #9DADB6;
+  box-sizing: border-box;
+  border-radius: 7.5px;
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+
+
+.swiper-pagination-bullet-active{
+  background: #FFFFFF;
+  border: 1px solid #9DADB6;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(81, 92, 156, 0.194083);
+}
+
+//@include md{
+//  .buyers__item_move:nth-child(1){
+//    animation: float 6s ease-in-out forwards;
+//  }
+//
+//  .buyers__item_move:nth-child(2){
+//    animation: float 6s ease-in-out forwards .3s;
+//  }
+//
+//  .buyers__item_move:nth-child(3){
+//    animation: float 6s ease-in-out forwards .6s;
+//  }
+//
+//  .buyers__item_move:nth-child(4){
+//    animation: float 6s ease-in-out forwards .9s;
+//  }
+//}
+
+
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
