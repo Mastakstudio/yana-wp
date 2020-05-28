@@ -1,0 +1,151 @@
+mixin course-page()
+    +b.course-page
+        .container
+            +e.inner
+                +e.content
+                    +title('онлайн курс «БЕРЕМЕННОСТЬ И РОДЫ»')(class='title_blue')
+                    +text('В данном разделе вы можете в формате видео получить информацию по конкретной тематике касаемо беременности и родов, подготовки к ним, а также пройти тестирование по усвоенному материалу, для получения диплома')(class='text_black')
+                +e.links
+                    +links()
+        +e.wrapper
+            +image()(src=require('./../images/course-page.png'))
+        .container
+            +e.list
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Психология беременности, родов и родительства
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course1.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/button.png'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Кормление двойни
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Мамино молоко. Сцеживание и хранение
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Основы грудного вскармливания
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 4
+                                        +e.SPAN.type-content-item-text Позиции для кормления
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 5
+                                        +e.SPAN.type-content-item-text Преимущества грудного вскрамливания
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 6
+                                        +e.SPAN.type-content-item-text Принципы успешного грудного вскармливания
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 7
+                                        +e.SPAN.type-content-item-text Рацион кормящей мамы
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 8
+                                        +e.SPAN.type-content-item-text Техника грудного вскармливания
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/button.png'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 30, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')()
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Первый год жизни малыша
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course2.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/button.png'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Адаптация малыша после родов
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Особенности периодна новорожденности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Уход за новорожденным в роддоме
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/button.png'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')()

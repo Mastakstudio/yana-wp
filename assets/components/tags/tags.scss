@@ -1,0 +1,280 @@
+@import "./../../common/constants";
+
+.tags{
+
+  background-image: url(./../../images/tags-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -140px;
+  position: relative;
+
+  @include m-land{
+    margin-top: -315px;
+  }
+
+  @include sm{
+    background-image: url(./../../images/tags-desktop.png);
+    background-size: 100% 100%;
+    margin-top: -270px;
+  }
+
+  @include md{
+    margin-top: -326px;
+  }
+
+
+  @include lg{
+    background-image: url(./../../images/tags-desktop.png);
+    background-size: 100% 100%;
+    margin-top: -387px;
+  }
+
+
+  @include hd{
+    margin-top: -501px;
+  }
+
+  @include xhd{
+    margin-top: -565px;
+  }
+
+
+  &__first{
+    padding-top: 125px;
+
+    @include sm{
+      padding-top: 50px;
+    }
+
+    @include xhd{
+      margin-left: -200px;
+    }
+  }
+
+
+  &__mobile-first{
+    width: 238px;
+    height: 112px;
+
+    @include m-land{
+      margin-left: 50px;
+    }
+
+    @include md{
+      display: none;
+    }
+
+  }
+
+  &__content{
+    margin-top: 68px;
+
+    @include m-land{
+      width: 70%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include sm{
+      width: 283px;
+      margin-left: auto;
+      padding-right: 127px;
+      margin-right: auto;
+      margin-top: 91px;
+    }
+
+    @include md{
+      width: 432px;
+      margin-top: 33px;
+    }
+
+    @include lg{
+      padding-right: 275px;
+    }
+
+   @include hd{
+     width: 534px;
+     margin-top: 85px;
+   }
+
+
+
+  }
+
+  &__second{
+
+    @include sm{
+      margin-top: -193px;
+    }
+  }
+
+  &__mobile-second{
+    width: 292px;
+    height: 204.22px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include m-land{
+      margin-left: 137px;
+    }
+
+    @include sm{
+      margin-right: unset;
+    }
+
+    @include md{
+      display: none;
+    }
+
+  }
+
+  &__desktop-first{
+    width: 254px;
+    height: 96px;
+    display: none;
+
+    @include md{
+      display: block;
+    }
+
+    @include hd{
+      width: 316px;
+      height: auto;
+    }
+
+
+
+  }
+
+  &__desktop-second{
+    width: 266px;
+    height: 67.79px;
+    display: none;
+
+    @include md{
+      display: block;
+      margin-top: 23px;
+      padding-bottom: 97px;
+    }
+
+    @include lg{
+      width: 266px;
+      height: 67.79px;
+    }
+
+    @include hd{
+      width: 388px;
+      height: auto;
+    }
+
+
+  }
+
+  &__desktop-third{
+    width: 254px;
+    height: 96px;
+    display: none;
+
+    @include md{
+      display: block;
+      margin-left: auto;
+      margin-top: -53px;
+      padding-bottom: 28px;
+      padding-right: 74px;
+
+    }
+
+   @include lg{
+     width: 413px;
+     height: 146px;
+     padding-right: 10px;
+   }
+
+    @include hd{
+      width: 528px;
+      height: 146px;
+      padding-right: 10px;
+      padding-bottom: 100px;
+    }
+
+
+
+
+  }
+
+  &__desktop-fourth{
+    width: 254px;
+    height: 96px;
+    display: none;
+
+    @include md{
+      display: block;
+      margin-left: auto;
+      padding-bottom: 50px;
+    }
+
+    @include lg{
+      width: 527px;
+      height: 135px;
+    }
+
+    @include hd{
+      width: 667px;
+      height: auto;
+    }
+
+
+  }
+
+
+  &__animate{
+    opacity: 0;
+    transition: 1s all;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+  .visible{
+    opacity: 1;
+    transition: 1s all;
+  }
+
+  &__inner{
+    position: relative;
+  }
+
+
+  &__logo{
+    display: none;
+
+    @include lg{
+      display: block;
+      width: 147px;
+      height: 147px;
+      position: absolute;
+      left: 0;
+      bottom: 200px;
+    }
+
+    @include hd{
+      bottom: 320px;
+    }
+
+    @include xhd{
+      width: 218px;
+      height: 218px;
+      left: -300px;
+      bottom: 245px;
+    }
+
+  }
+
+}

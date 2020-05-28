@@ -1,0 +1,36 @@
+@import "./../../common/constants";
+
+.title{
+
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 32px;
+  margin-top: 0;
+  display: block;
+
+  @include md{
+    font-size: 52px;
+    line-height: 46px;
+  }
+
+  @include hd{
+    font-size: 56px;
+    line-height: 52px;
+  }
+
+  &_blue{
+    color: #00B2FF;
+  }
+
+  &_white{
+    color: #ffffff;
+  }
+
+  &_orange{
+    letter-spacing: 0.5px;
+    color: #FFF1C1;
+  }
+
+}

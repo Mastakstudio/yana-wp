@@ -1,0 +1,16 @@
+mixin question()
+    +b.question
+        +e.wrapper
+        .container
+            +e.inner
+                +e.content
+                    +e.title
+                        +title('Остались вопросы?')(class='title_blue')
+                    +e.FORM.form(id="questionForm")
+                        +form-input('Имя')(name='name' type='text' placeholder="Имя")
+                        +form-input('Телефон или электронная почта')(name='text' type='text' placeholder="Телефон или электронная почта")
+                        +form-textarea('Сообщение')(name='comment' type='text' placeholder="Сообщение")
+                        +custom-button('Отправить')(type='submit')
+                +e.image(src=require('./../images/hand.png'), alt='')
+            +e.IMG.logo(src=require('./../images/logo-dop.png'), alt='')
+

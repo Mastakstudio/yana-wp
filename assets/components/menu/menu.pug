@@ -1,0 +1,21 @@
+mixin menu()
+    +b.menu
+        .container
+            +e.inner
+                +e.type
+                    +e.A.auth(href="")
+                        span войти / зарегистрироваться
+                    +e.switch
+                        label.lbl-off(for='switch-orange') родитель
+                        input#switch-orange.switch(type='checkbox')
+                        label.lbl-on(for='switch-orange') специалист
+                +e.UL.list
+                    +e.LI.item.menu__item_active
+                        a(href='') пройти курс
+                    +e.LI.item
+                        a(href='') Эксперты
+                    +e.LI.item
+                        a(href='') вопрос-ответ
+                    +e.LI.item
+                        a(href='') интерактивная карта
+                +social()(class='social_menu')

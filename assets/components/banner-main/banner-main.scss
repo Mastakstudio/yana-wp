@@ -1,0 +1,326 @@
+@import "./../../common/constants";
+
+.banner-main{
+
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 538px;
+  min-height: 518px;
+
+
+
+  @media (min-width: 375px) {
+    padding-bottom: 623px;
+  }
+
+  @media (min-width: 410px) {
+    padding-bottom: 689px;
+  }
+
+  @media (min-width: 768px) {
+    padding-bottom: 620px;
+    min-height: 145px;
+  }
+
+  @include md{
+    min-height: 200px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-bottom: 650px;
+
+  }
+
+  @media (min-width: 1920px) {
+    padding-bottom: 751px;
+    min-height: 145px;
+  }
+
+  @media (min-width: 2299px) {
+    padding-bottom: 950px;
+  }
+
+
+
+
+  &__inner{
+    padding-top: 18px;
+    position: relative;
+    z-index: 3;
+
+    @media (min-width: 768px) {
+      display: flex;
+
+    }
+
+
+
+  }
+
+  .title{
+
+
+
+    @media (min-width: 768px) {
+      width: 300px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 430px;
+      padding-top: 60px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 480px;
+    }
+
+
+
+  }
+
+  .text{
+    width: 236px;
+
+    @media (max-width : 768px - 1px) and (orientation : landscape) {
+      width: 80%;
+    }
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
+
+    @media (min-width: 768px) {
+      width: 366px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 657px;
+    }
+
+
+
+  }
+
+  &__content{
+    position: relative;
+    padding-bottom: 30px;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__form{
+    @media (min-width: 768px) {
+      width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__link{
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+
+    span{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 14px;
+      color: #00B2FF;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      width: 71px;
+      display: block;
+      margin-top: -8px;
+
+      @media (max-width : 768px - 1px) and (orientation : landscape) {
+        width: auto;
+      }
+
+      @media (min-width: 768px) {
+        width: unset;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      @media (min-width: 1920px) {
+        font-size: 14px;
+      }
+
+
+
+
+    }
+
+    img{
+
+    }
+
+  }
+
+  &__girl-write{
+    width: 204px;
+    height: 198px;
+    position: absolute;
+    right: -40px;
+    top: 183px;
+
+    @media (max-width : 768px - 1px) and (orientation : landscape) {
+      top: 80px;
+    }
+
+    @media (min-width: 768px) {
+      right: 2px;
+      top: 192px;
+    }
+
+    @media (min-width: 1024px) {
+      right: -34px;
+      top: 222px;
+      width: 296px;
+      height: auto;
+
+    }
+
+    @media (min-width: 1280px) {
+      width: 393px;
+      height: 384px;
+      right: -77px;
+      top: 139px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 535px;
+      height: 522px;
+      right: -348px;
+      top: 45px;
+    }
+
+    @media (min-width: 2299px) {
+      width: 663px;
+      height: 646px;
+      right: -215px;
+      top: 18px;
+    }
+
+
+
+
+
+
+
+  }
+
+  &__bad{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    width: 100%;
+    height: auto;
+
+    @media (max-width : 768px - 1px) and (orientation : landscape) {
+      top: 40px;
+    }
+
+
+
+    @media (min-width: 768px) {
+      width: 560px;
+      top: 131px;
+    }
+
+    @media (min-width: 768px) {
+      width: 628px;
+      top: 5px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 800px;
+      top: -58px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 890px;
+      top: -51px;
+    }
+
+    @media (min-width: 2299px) {
+      width: 1150px;
+      top: -30px;
+    }
+
+
+  }
+
+  &__baby{
+    width: 216.51px;
+    height: 216.51px;
+    position: absolute;
+    z-index: 2;
+    top: 239px;
+    right: -4px;
+
+    @media (max-width : 768px - 1px) and (orientation : landscape) {
+      top: 270px;
+    }
+
+    @media (min-width: 768px) {
+      width: 258.51px;
+      height: auto;
+      top: 341px;
+      right: 48px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 307px;
+      top: 224px;
+      right: -4px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 345.54px;
+      height: 345.54px;
+      top: 290px;
+      right: 24px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 402.96px;
+      height: 402.96px;
+      right: 42px;
+    }
+
+    @media (min-width: 2299px) {
+      width: 563.62px;
+      height: 563.62px;
+      top: 349px;
+    }
+
+
+
+
+
+
+
+  }
+
+  &__image{
+    position: relative;
+    margin-top: -250px;
+
+    @media (min-width: 768px) {
+      z-index: 2;
+    }
+
+  }
+
+}

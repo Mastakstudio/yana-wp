@@ -1,0 +1,46 @@
+mixin account()
+    +b.account
+        .container
+            +e.inner
+                +e.content
+                    +title('личный кабинет')(class='title_blue')
+                    +text('Здесь вы можете добавить либо изменить информацию о себе. Данная информация необходима для формирования и регистрации в базе данных Сертификата о прохождении курса.')(class='text_black')
+                +e.links
+                    +links()
+        +e.wrapper
+            +image()(src=require('./../images/account.png'))
+        .container
+            +e.list
+                +e.item.disable
+                    +e.item-head
+                        +e.SPAN.item-title ФИО
+                        +e.BUTTON.item-update Исправить
+                    +e.item-inputs
+                        +e.item-input
+                            +form-input('Фамилия')(name='surname' type='text' value="Эллоида")
+                        +e.item-input
+                            +form-input('Имя')(name='name' type='text')
+                        +e.item-input
+                            +form-input('Отчество')(name='secondName' type='text')
+                +e.item.account__passport
+                    +e.item-head
+                        +e.SPAN.item-title Паспорт
+                        +e.BUTTON.item-update Исправить
+                    +e.item-inputs
+                        +e.item-input
+                            +form-input('Серия')(name='serial' type='text')
+                        +e.item-input
+                            +form-input('Номер паспорта')(name='number' type='text')
+                        +e.item-input
+                            +form-input('Кем выдан')(name='who' type='text')
+                        +e.item-input
+                            +form-input('Когда')(name='when' type='text')
+                +e.item
+                    +e.item-head
+                        +e.SPAN.item-title Дата рождения
+                        +e.BUTTON.item-update Исправить
+                    +e.item-inputs
+                        +e.item-input
+                            +e.LABEL.item-label Дата рождения
+                            +e.INPUT.date(type="date" name="date")
+                +custom-button('Сохранить')

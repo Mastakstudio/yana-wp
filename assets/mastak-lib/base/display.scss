@@ -1,0 +1,26 @@
+@mixin base-display($media-key, $media-value) {
+
+    $BASE_DISPLAY : (
+            n:none,
+            b:block,
+            ib:inline-block,
+            i:inline,
+            f:flex,
+            if:inline-flex
+    );
+
+    @each $display-key, $display-value in $BASE_DISPLAY {
+
+        @if ($media-key == m) {
+            .d-#{$display-key} {
+                display : #{$display-value};
+            }
+        } @else {
+            @media (min-width : map_get($MEDIA, #{$media-key})) {
+                .d-#{$media-key}-#{$display-key} {
+                    display : #{$display-value};
+                }
+            }
+        }
+    }
+}

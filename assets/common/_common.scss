@@ -1,0 +1,101 @@
+@import "fonts";
+@import "reset";
+@import "constants";
+/*    Add Swiper styles */
+@import "./../../node_modules/swiper/dist/css/swiper.min.css";
+
+/**
+    Add Fontawesome styles
+    @import '~@fortawesome/fontawesome-free/css/all';
+*/
+A {
+    cursor: pointer;
+    text-decoration: none;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background: #F2F8FC;
+}
+
+
+*{
+    outline: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+.app {
+    display        : flex;
+    flex-direction : column;
+    min-height     : 100vh;
+
+    &__h_100vh {
+        height : 100vh;
+    }
+
+    header {
+        flex-shrink : 0;
+    }
+
+    main {
+        flex : 1;
+    }
+
+    footer {
+        flex-shrink : 0;
+    }
+
+    .checkout, .reviews__inner, .program-wrapper, .contacts-wrapper, .single-wrapper, .page-wrapper, .page404, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
+        position : relative;
+        z-index  : 1;
+    }
+
+    .program{
+        position : relative;
+        z-index  : 2;
+    }
+
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.wrapper{
+    flex-grow: 1;
+}
+
+@include loader();
+@include iner();
+@include base-setup();
+
+/**
+    Add Editor
+    @include editor-content();
+*/
+@include editor-content {
+    color : #565656;
+}
+
+;
+
+@include customize-support {
+    /**
+        Add any css
+     */
+}

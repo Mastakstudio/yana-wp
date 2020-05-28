@@ -1,0 +1,37 @@
+mixin page-experts()
+    +b.page-experts
+        .container
+            +e.inner
+                +e.content
+                    +title('наши ЭКСПЕРТы')(class='title_blue')
+                    +text('Наша команда провела более 50-ти интервью и документальных съёмок с экспертами в области акушерства и гинекологии, неонатологии, педиатрии, психологиии и педагогики, юриспруденции. ')(class='text_black')
+                    +e.A.link(href="#modal")
+                        span Просмотреть промо-видео
+                        +e.IMG(src=require('./../images/play.png'), alt='')
+                    +e.IMG.image-experts(src=require('./../images/experts.png'), alt='')
+                +e.list
+                    +e.item
+                        +e.item-image
+                            IMG(src=require('./../images/expert1.png'), alt='')
+                        +e.item-content
+                            +e.SPAN.item-title Дмитрий трофимчик
+                            +e.SPAN.item-text врач акушер-гинеколог
+                    +e.item
+                        +e.item-image
+                            IMG(src=require('./../images/expert2.png'), alt='')
+                        +e.item-content
+                            +e.SPAN.item-title Татьяна гетман
+                            +e.SPAN.item-text врач стоматолог-терапевт
+                    +e.item
+                        +e.item-image
+                            IMG(src=require('./../images/expert3.png'), alt='')
+                        +e.item-content
+                            +e.SPAN.item-title Оксана коротких
+                            +e.SPAN.item-text врач акушер-гинеколог
+                    +e.item
+                        +e.item-image
+                            IMG(src=require('./../images/expert4.png'), alt='')
+                        +e.item-content
+                            +e.SPAN.item-title светлана брашевец
+                            +e.SPAN.item-text врач акушер-гинеколог, консультант по ГВ
+    +popup('https://www.youtube.com/embed/jemgIOAjGDw')

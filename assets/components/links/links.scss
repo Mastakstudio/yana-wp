@@ -1,0 +1,36 @@
+@import "./../../common/constants";
+
+
+.links{
+
+  &__inner{
+    background: #FFFFFF;
+    box-shadow: inset 0px 2px 6px rgba(121, 121, 121, 0.54);
+    border-radius: 42.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+  &__item{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #46555A;
+    padding: 8px 24px;
+    cursor: pointer;
+
+    &_active{
+      background: #00B2FF;
+      box-shadow: 0px 2px 4px #7ED8FF;
+      border-radius: 42.5px;
+      color: #ffffff;
+    }
+
+  }
+
+}

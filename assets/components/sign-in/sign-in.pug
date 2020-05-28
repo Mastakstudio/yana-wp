@@ -1,0 +1,51 @@
+mixin sign-in()
+    +b.sign-in
+        .container
+            +e.inner
+                +e.tabs-content
+                    input(type='radio' name='toggle' checked='' id="login")
+                    input(type='radio' name='toggle' id="auth")
+                    +e.tabs
+                        label(for='login') ВОЙТИ
+                        label(for='auth') зарегистрироваться
+                        span
+                    +e.content
+                        .login-page
+                            +e.inner
+                                +e.content-type
+                                    +title('войти')(class='title_blue')
+                            +e.list
+                                +e.item
+                                    +e.item-head
+                                        +e.SPAN.item-title Через социальные сети
+                                        +social()(class='social_account')
+                                +e.item
+                                    +e.item-head
+                                        +e.SPAN.item-title Или через e-mail
+                                    +e.item-inputs
+                                        +e.item-input
+                                            +form-input('Ваш e-mail')(name='email' type='text')
+                                        +e.item-input
+                                            +form-input('Пароль')(name='password' type='password')
+                                +custom-button('Войти')
+                        .auth-page
+                            +e.inner
+                                +e.content-type
+                                    +title('регистрация')(class='title_blue')
+                            +e.list
+                                +e.item
+                                    +e.item-head
+                                        +e.SPAN.item-title Через социальные сети
+                                        +social()(class='social_account')
+                                +e.item
+                                    +e.item-head
+                                        +e.SPAN.item-title Или через e-mail
+                                    +e.item-inputs
+                                        +e.item-input
+                                            +form-input('Ваш e-mail')(name='email' type='text')
+                                        +e.item-input
+                                            +form-input('Придумайте пароль (минимум 8 символов)')(name='password' type='password')
+                                        +e.item-input
+                                            +form-input('Повторите пароль')(name='confirmPassword' type='password')
+                                +custom-button('Зарегестрироваться')
+        +image()(src=require('./../images/account.png'))

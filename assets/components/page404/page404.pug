@@ -1,0 +1,8 @@
+mixin page404()
+    +b.page404
+        +e.inner
+            +e.content
+                +e.SPAN.title 404
+                +e.SPAN.desc Страница не найдена
+                +e.SPAN.text Неправильно набран адрес, или такой страницы на сайте не существует. Начните с главной страницы или воспользуйтесь меню.
+            +e.IMG.image(src=require('./../images/page404.png'), alt='')

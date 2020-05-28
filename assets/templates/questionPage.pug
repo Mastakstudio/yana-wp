@@ -1,0 +1,13 @@
+include ./../mixins
+doctype html
+html
+    +head()
+    body(class="app")
+        //+loader('loader__spinner_falcon')
+        main.main
+            +header()
+            +page-banner()
+            +question()
+            +services()
+            +partners()
+            +footer()

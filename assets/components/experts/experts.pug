@@ -1,0 +1,18 @@
+mixin experts()
+    +b.experts
+        +e.inner
+            .container
+                +e.content
+                    +title('МНЕНИЯ ЭКСПЕРТОВ')(class='title_blue')
+                    +text('Наша команда провела более 50-ти интервью и документальных съёмок с экспертами в области акушерства и гинекологии, неонатологии, педиатрии, психологиии и педагогики, юриспруденции.')(class='text_black')
+                +e.IMG.logo(src=require('./../images/logo-dop.png'), alt='')
+            +e.text
+                .container
+                    .experts__video_wrapper
+                        .experts__video
+                            .experts__video_inner
+                                A.experts__video_link(href="#modal")
+                                    img(src=require('./../images/experts-arrow.png'), alt='')
+                                    span смотреть
+                +e.IMG.girl-business(src=require('./../images/girl-business.png'), alt='')
+        +popup('https://www.youtube.com/embed/jemgIOAjGDw')

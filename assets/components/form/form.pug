@@ -1,0 +1,42 @@
+mixin form()
+    +b.form
+        +e.inner
+            +e.tabs-content
+                input(type='radio' name='toggle' checked='' id="login")
+                input(type='radio' name='toggle' id="auth")
+                +e.tabs
+                    label(for='login') ВОЙТИ
+                    label(for='auth') зарегистрироваться
+                    span
+                +e.content
+                    .login-content
+                        .logIn
+                            form(id="sign-in")
+                                +form-input('Логин')(name='login' type='text')
+                                +form-input('Пароль')(name='password' type='password')
+                                .logIn__remember
+                                    .logIn__container
+                                        | Запомнить
+                                        input(type='checkbox')
+                                        SPAN.logIn__checkmark
+                                .logIn__type
+                                    +custom-button('Войти')(type='submit')
+                                    span
+                                        | Нажимая кнопку "Войти" я
+                                        a(href='') принимаю пользовательское соглашение
+                    .auth-content
+                        .logUp
+                            form(id="sign-up")
+                                +form-input('Логин')(name='login' type='text')
+                                +form-input('Пароль')(name='password' type='password')
+                                +form-input('Подтвердить пароль')(name="confirmPassword" type="password")
+                                .logUp__remember
+                                    .logUp__container
+                                        | Запомнить
+                                        input(type='checkbox')
+                                        SPAN.logUp__checkmark
+                                .logUp__type
+                                    +custom-button('Зарегестрироваться')(type='submit')
+                                    span
+                                        | Нажимая кнопку "Войти" я
+                                        a(href='') принимаю пользовательское соглашение

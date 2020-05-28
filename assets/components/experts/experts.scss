@@ -1,0 +1,235 @@
+@import "./../../common/constants";
+.experts{
+
+  margin-top: 52px;
+
+  &__video{
+    background-image: url(./../../images/experts-video.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 145.09px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transform: translateY(0);
+    transition: 1s all;
+    z-index: 1;
+
+
+    @media (min-width: 768px) {
+      width: 574px;
+      height: 320px;
+      margin-right: unset;
+    }
+
+    @media (min-width: 1024px) {
+      width: 770px;
+      height: 435px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 910px;
+      height: 481px;
+    }
+
+    &:hover{
+      transform: translateY(10px);
+      transition: 1s all;
+    }
+
+
+
+  }
+
+  &__inner{
+    position: relative;
+  }
+
+  &__text{
+    background: radial-gradient(172.81% 49.08% at 14.1% 65.23%, #BDEEF4 0%, rgba(228, 220, 249, 0.53125) 46.88%, rgba(255, 255, 255, 0) 100%);
+
+    @media (min-width: 768px) {
+      padding-bottom: 300px;
+    }
+
+    @include lg{
+      padding-bottom: 450px;
+
+    }
+  }
+
+
+
+  &__video_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    height: 145.09px;
+    z-index: 3;
+    position: relative;
+
+
+
+    @media (min-width: 768px) {
+      width: 574px;
+      height: 320px;
+      margin-right: unset;
+      margin-left: auto;
+
+    }
+
+    @media (min-width: 1024px) {
+      width: 770px;
+      height: 435px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 910px;
+      height: 481px;
+    }
+
+
+
+
+    img{
+      width: 54.33px;
+      height: 54.33px;
+
+
+      @media (min-width: 1024px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    span {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 30px;
+      text-align: center;
+      text-decoration-line: underline;
+      color: #FFFFFF;
+      display: flex;
+
+      @media (min-width: 1024px) {
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+
+
+
+  }
+
+  &__video_inner{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  &__girl-business{
+    width: 269.6px;
+    height: 184.91px;
+    margin-bottom: -26px;
+    margin-left: -16px;
+    margin-top: 20px;
+    z-index: 2;
+    position: relative;
+
+    @media (min-width: 768px) {
+      width: 400px;
+      height: auto;
+      margin-top: -138px;
+      margin-left: -110px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 600px;
+      margin-top: -199px;
+      margin-left: -203px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: -232px;
+      margin-left: 0;
+    }
+
+    @media (min-width: 1920px) {
+      width: 715px;
+      margin-top: -317px;
+    }
+
+    @media (min-width: 2299px) {
+      width: 750px;
+      margin-left: -150px;
+    }
+
+
+  }
+
+
+  &__content{
+
+
+
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+      width: 639px;
+    }
+
+
+  }
+
+  &__logo{
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+      width: 147px;
+      height: 147px;
+      position: absolute;
+      right: 50px;
+      top: 0;
+    }
+
+    @media (min-width: 1920px) {
+      right: 149px;
+      top: -33px;
+
+    }
+
+    @media (min-width: 2299px) {
+      width: 218px;
+      height: 218px;
+      right: 100px;
+      top: -85px;
+    }
+
+  }
+
+  .popup-overlay{
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+  }
+
+  &__video_wrapper{
+    position: relative;
+    z-index: 2;
+  }
+
+}

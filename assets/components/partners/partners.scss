@@ -1,0 +1,77 @@
+@import "./../../common/constants";
+
+.partners{
+
+  background: #ffffff;
+  padding-top: 33px;
+  padding-bottom: 100px;
+
+  &__image{
+    height: 100px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  &__slide{
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    width: 186px !important;
+
+    @include lg{
+      width: 240px !important;
+    }
+
+    @include hd{
+      width: 350px !important;
+    }
+
+    @include xhd{
+      width: 300px !important;
+    }
+
+  }
+
+  &__button-prev{
+    display: none;
+
+    @include sm{
+      display: block;
+    }
+
+  }
+
+  &__button-next{
+    display: none;
+
+    @include sm{
+      display: block;
+    }
+  }
+
+  &__title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #415056;
+    margin-top: 21px;
+
+    @include lg{
+      width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+}

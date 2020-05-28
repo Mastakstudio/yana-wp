@@ -1,0 +1,24 @@
+mixin passCourse()
+    +b.passCourse
+        .container.over
+            +e.inner
+                +e.title
+                    +title('Пройдя курс вы получаете')(class='title_blue')
+                +e.IMG.logo(src=require('./../images/logo-dop.png'), alt='')
+                +e.content
+                    .passCourse__circle
+                        .passCourse__circle_second
+                        +e.list
+                            .passCourse__item
+                                .passCourse__item_number
+                                    span 1
+                                SPAN.passCourse__item_title Подготовку  К беременности и родам
+                            .passCourse__item
+                                .passCourse__item_number
+                                    span 2
+                                SPAN.passCourse__item_title Практические знания
+                            .passCourse__item
+                                .passCourse__item_number
+                                    span 3
+                                SPAN.passCourse__item_title СЕРТИФИКАТ
+                +e.IMG.couple(src=require('./../images/couple.png'), alt='')

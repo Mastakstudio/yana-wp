@@ -1,0 +1,181 @@
+@import "./../../common/constants";
+
+.page-banner{
+
+  margin-top: 20px;
+
+  &__wrapper{
+
+    img{
+      width: 100%;
+
+      @include m-land{
+        width: 50%;
+        margin-left: auto;
+        display: block;
+      }
+
+      @include sm{
+        width: 70%;
+        margin-left: auto;
+        display: block;
+        margin-top: -70px;
+      }
+
+      @include md{
+        margin-top: -150px;
+        width: 60%;
+      }
+
+    }
+
+  }
+
+  .text{
+
+    @include sm{
+      width: 433px;
+    }
+
+    @include hd{
+      font-size: 20px;
+      line-height: 26px;
+      width: 546px;
+    }
+
+  }
+
+  .title{
+
+    @include md{
+      padding-top: 80px;
+    }
+
+    @include hd{
+      width: 757px;
+      font-size: 95px;
+      line-height: 95px;
+      padding-top: 145px;
+
+    }
+
+  }
+
+  .links{
+    display: none;
+
+    @include md{
+      display: block;
+    }
+
+  }
+
+
+  &__inner{
+
+    @include sm{
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+
+
+  &__list{
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    @include sm{
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+
+
+
+  }
+
+  &__item{
+    border-bottom: 1px dashed #B8B8B8;
+    padding: 18px 14px;
+    transition: .5s background-color;
+    background-color: transparent;
+
+    &:nth-child(1){
+      border-top: 1px dashed #B8B8B8;
+    }
+
+    &_active{
+      transition: .5s background-color;
+      background-color: #ffffff;
+    }
+
+
+    @include lg{
+      padding: 24px 14px;
+    }
+
+  }
+
+  &__content-item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__number{
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 24px;
+    color: #00B2FF;
+
+    @include md{
+      font-size: 32px;
+      line-height: 24px;
+    }
+
+  }
+
+  &__title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #00B2FF;
+    display: block;
+    margin-left: 14px;
+
+    @include md{
+      font-size: 16px;
+      line-height: 35px;
+    }
+
+  }
+
+  &__button{
+    display: block;
+    margin-left: auto;
+    width: 39.9px;
+    height: 39.9px;
+    transition: .5s transform;
+    transform: rotate(0);
+
+    &_active{
+      transform: rotate(45deg);
+      transition: .5s transform;
+    }
+
+  }
+
+  &__text-item{
+    display: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+
+
+
+
+}

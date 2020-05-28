@@ -1,0 +1,29 @@
+mixin services()
+    +b.services
+        +e.wrapper
+        .container
+            +e.inner
+                +e.content
+                    +e.SPAN.desc Больше поддержки  можно получить на
+                    +title('Интерактивная карта беслпатных услуг для беременных')(class="title_white")
+                    +text('Выберите категорию необходимой поддержки и на экране появится интерактивная карта бесплатных услуг с выбранными организациями Минска или  Могилева, Минской или Могилевской области')(class="text_black")
+                +e.list
+                    +e.item
+                        .services__item-container
+                            IMG.services__item-image(src=require('./../images/nurse.png'), alt='')
+                        SPAN.services__item-title Медицинская поддержка
+                    +e.item
+                        IMG.services__item-image(src=require('./../images/chat.png'), alt='')
+                        SPAN.services__item-title психологическая поддержка
+                    +e.item
+                        IMG.services__item-image(src=require('./../images/home.png'), alt='')
+                        SPAN.services__item-title социальная поддержка
+                    +e.item
+                        IMG.services__item-image(src=require('./../images/law.png'), alt='')
+                        SPAN.services__item-title юридическая поддержка
+                    +e.item
+                        IMG.services__item-image(src=require('./../images/book.png'), alt='')
+                        SPAN.services__item-title саморазвитие
+        +e.image-content
+            +e.castle(src=require('./../images/town2.png'), alt='')
+            +e.library(src=require('./../images/town.png'), alt='')
