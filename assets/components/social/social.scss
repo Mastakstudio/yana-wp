@@ -1,0 +1,122 @@
+@import "./../../common/constants";
+
+.social{
+  margin-top: 70px;
+
+  &__list{
+    display: flex;
+    align-items: center;
+  }
+
+  &__item{
+    margin-right: 16px;
+
+  }
+
+  &_menu{
+
+    .social__item{
+
+      opacity: 0;
+
+      &:nth-child(1){
+        opacity: 1;
+        transition: .5s all 1s;
+      }
+      &:nth-child(2){
+        opacity: 1;
+        transition: .5s all 1.2s;
+      }
+      &:nth-child(3){
+        opacity: 1;
+        transition: .5s all 1.4s;
+      }
+      &:nth-child(4){
+        opacity: 1;
+        transition: .5s all 1.6s;
+      }
+
+    }
+  }
+
+  &_blue{
+
+    display: none;
+    align-items: flex-start;
+    margin-top: 0;
+
+    .social__list{
+      align-items: flex-start;
+    }
+
+    .social__item{
+
+      margin-left: 12px;
+      margin-right: 12px;
+
+      svg{
+        width: 18px;
+        height: 18.78px;
+
+
+      }
+
+      path{
+        fill: #009EE0;
+      }
+
+      &:nth-child(4){
+        width: 21.14px;
+        height: 15.45px;
+      }
+
+    }
+
+
+    @include md{
+      display: flex;
+
+    }
+
+
+  }
+
+
+  &_account{
+    align-items: flex-start;
+    margin-top: 0;
+
+    .social__list{
+      align-items: flex-start;
+    }
+
+    .social__item{
+
+      margin-left: 12px;
+      margin-right: 12px;
+
+      svg{
+        width: 50px;
+        height: 50px;
+      }
+
+      path{
+        fill: #009EE0;
+      }
+
+      &:nth-child(4){
+
+        width: 50px;
+
+      }
+
+    }
+
+
+    @include md{
+      display: flex;
+
+    }
+  }
+
+}

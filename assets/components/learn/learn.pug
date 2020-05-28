@@ -1,0 +1,39 @@
+mixin learn()
+    +b.learn
+        .container
+            +e.inner
+                +e.titile
+                    +title('как пройти обучение')(class='title_blue')
+                +e.list
+                    +e.IMG.line-mobile(src=require('./../images/step-line-mobile.png'), alt='')
+                    +e.IMG.line-desktop(src=require('./../images/step-line-desktop.png'), alt='')
+                    +e.item
+                        +e.SPAN.number 1
+                        .learn__item-content
+                            .learn__item-wrapper
+                                IMG.learn__item-image(src=require('./../images/step1.png'), alt='')
+                                SPAN.learn__item-title Зарегистрируйтесь
+                            SPAN.learn__item-text Заполните простую форму и станьте участников онлайн курса
+                    +e.item
+                        +e.SPAN.number 2
+                        .learn__item-content
+                            .learn__item-wrapper
+                                IMG.learn__item-image(src=require('./../images/step2.png'), alt='')
+                                SPAN.learn__item-title ПРОСМОТРИТЕ ОБУЧАЮЩЕЕ ВИДЕО и ИЗУЧИТЕ МАТЕРИАЛЫ КУРСА
+                            SPAN.learn__item-text Смотрите обучающее видео от наших экспертов, общайтесь на форуме, скачивайте дополнительные материалы
+                    +e.item
+                        +e.SPAN.number 3
+                        .learn__item-content
+                            .learn__item-wrapper
+                                IMG.learn__item-image(src=require('./../images/step3.png'), alt='')
+                                SPAN.learn__item-title пройдите тест
+                            SPAN.learn__item-text Ответьте правильнео на вопросы по тематике изложенной в видеофайле
+                    +e.item
+                        +e.SPAN.number 4
+                        .learn__item-content
+                            .learn__item-wrapper
+                                IMG.learn__item-image(src=require('./../images/step4.png'), alt='')
+                                SPAN.learn__item-title получите сертификат
+                            SPAN.learn__item-text Ответив правильно на все наши вопросы вы получаете сертификат
+            +e.logo(src=require('./../images/logo-dop.png'), alt='')
+        +e.girl-comp(src=require('./../images/girl-comp.png'), alt='')

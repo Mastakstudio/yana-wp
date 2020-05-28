@@ -1,0 +1,26 @@
+mixin partners()
+    +b.partners
+        .container
+            +e.inner
+                +e.container.swiper-container
+                    +e.wrapper.swiper-wrapper
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner1.png'), alt='')
+                            +e.SPAN.title минский областной исполнительный комитет
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner2.png'), alt='')
+                            +e.SPAN.title комитет по здравоохранению мингорисполкома и комитет по труду и соцзащите мингорисполкома
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner3.png'), alt='')
+                            +e.SPAN.title могилевский областной исполнительный комитет
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner4.png'), alt='')
+                            +e.SPAN.title могилевская центральная поликлиника
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner5.png'), alt='')
+                            +e.SPAN.title комитет по труду и соцзащите миноблисполкома
+                        +e.slide.swiper-slide
+                            +e.image(src=require('./../images/partner1.png'), alt='')
+                            +e.SPAN.title минский областной исполнительный комитет
+                    +e.button-prev.swiper-button-prev
+                    +e.button-next.swiper-button-next

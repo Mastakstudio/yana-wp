@@ -52,6 +52,7 @@
         "jquery-validation": "^1.19.1",
         "jquery-viewport-checker": "^1.8.8",
         "paroller.js": "^1.4.6",
+        "remodal": "^1.1.1",
         "rimraf": "^3.0.2",
         "swiper": "^4.3.5"
     }

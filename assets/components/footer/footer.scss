@@ -2,4 +2,473 @@
 
 .footer {
 
+
+    margin-top: -47px;
+
+    position: relative;
+    padding-bottom: 20px;
+    overflow: hidden;
+
+    &__wrapper-content{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &__part{
+        display: none;
+        width: .5rem;
+        background: linear-gradient(270deg, #9C9EFD 0%, #29BFFF 98.47%);
+        transform: rotate(-180deg);
+        height: 100%;
+        margin-top: 32px;
+
+        @include m-land{
+            display: block;
+            flex-grow: 0;
+        }
+
+        @include sm{
+            display: block;
+            flex-grow: 0;
+            width: 1rem;
+        }
+
+        @include md{
+            width: 1.5rem;
+            margin-top: 33px;
+        }
+
+        @include lg{
+            width: 2.5rem;
+            margin-top: 36px;
+        }
+
+        @include hd{
+            width: 100px;
+            margin-top: 37px;
+        }
+
+        @include xhd{
+            width: 380px;
+            margin-top: 36px;
+        }
+
+    }
+
+
+    &__back-logo{
+
+        display: none;
+
+        @include m-land{
+            background-image: url(./../../images/foot-do2.png);
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            max-width: 398px;
+            width: 398px;
+            min-width: 398px;
+            height: 100%;
+            flex-grow: 1;
+            margin-left: -90px;
+
+        }
+
+        @include sm{
+            background-image: url(./../../images/foot-do2.png);
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            max-width: 398px;
+            width: 398px;
+            min-width: 398px;
+            height: 100%;
+            flex-grow: 1;
+            margin-left: -90px;
+
+        }
+
+        @include md{
+            margin-left: -58px;
+        }
+
+        @include lg{
+            margin-left: -1px;
+        }
+
+        @include xhd{
+            margin-left: -15px;
+        }
+
+    }
+
+
+    &__image-wrapper{
+        display: none;
+
+        @include m-land{
+            display: block;
+            background: linear-gradient(270deg, #9C9EFD 0%, #29BFFF 98.47%);
+            flex-grow: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 46px;
+        }
+
+
+        @include sm{
+            display: block;
+            background: linear-gradient(270deg, #9C9EFD 0%, #29BFFF 98.47%);
+            flex-grow: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 44px;
+        }
+
+        @include md{
+            margin-top: 36px;
+        }
+
+        @include hd{
+            margin-top: 37px;
+        }
+
+        @include xhd{
+            margin-top: 36px;
+        }
+
+    }
+
+    &__background{
+        background-image: url(./../../images/footer-back-mobile.png);
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 0;
+        width: 450px;
+        height: 100%;
+
+
+        @include m-land{
+            width: 100%;
+            display: none;
+        }
+
+        @include sm{
+            width: 100%;
+            display: none;
+        }
+    }
+
+
+    &__wrapper{
+        width: 100%;
+        margin-top: -79px;
+
+
+
+    }
+
+    .social__footer{
+        margin-top: 0;
+        padding-top: 40px;
+        width: 170px;
+        margin-left: auto;
+
+        @include m-land{
+            margin-top: 0;
+            padding-top: 40px;
+            width: 100%;
+            margin-left: auto;
+        }
+
+        @include sm{
+            margin-top: 0;
+            padding-top: 40px;
+            width: 100%;
+            margin-left: auto;
+        }
+
+
+        @include md{
+            padding-top: 0;
+            align-items: center;
+            display: flex;
+            width: 25%;
+        }
+
+        @include lg{
+            justify-content: center;
+        }
+    }
+
+    .social__item:last-child{
+        margin-right: 0;
+    }
+
+    .social__list{
+
+        @include m-land{
+            justify-content: flex-end;
+        }
+
+        @include sm{
+            justify-content: flex-end;
+        }
+
+    }
+
+
+    &__wrapper-logo{
+        min-width: 109px;
+        min-height: 109px;
+        width: 109px;
+        height: 109px;
+        display: block;
+        z-index: 2;
+        margin-left: 10px;
+
+    }
+
+
+
+
+
+    &__logo{
+        min-width: 109px;
+        min-height: 109px;
+        width: 109px;
+        height: 109px;
+        display: block;
+        margin-top: -30px;
+        margin-left: 6px;
+
+        @media (min-width : 375px) {
+            margin-left: 62px;
+        }
+
+        @media (min-width : 410px) {
+            margin-left: 102px;
+        }
+
+        @include m-land{
+            margin-left: 40px;
+        }
+
+        @include sm{
+            margin-left: 44px;
+        }
+
+        @include md{
+            margin-left: 81px;
+            margin-top: -40px;
+        }
+
+        @include lg{
+            margin-left: 150px;
+            margin-top: -40px;
+        }
+
+        @include hd{
+            margin-left: 196px;
+        }
+
+        @include xhd{
+            margin-left: 385px;
+        }
+
+    }
+
+    &__image-logo{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__inner{
+        display: flex;
+        padding-top: 38px;
+        flex-wrap: wrap;
+
+        @include md{
+            padding-top: 49px;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+
+    &__inner-wrapper{
+
+        @include m-land{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: -20px;
+        }
+
+        @include sm{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: -20px;
+        }
+
+        @include md{
+            padding-left: 10%;
+        }
+
+        @include lg{
+            margin-top: -66px;
+        }
+
+    }
+
+
+    &__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+
+        @include m-land{
+            width: 32%;
+            align-items: flex-start;
+        }
+
+        @include sm{
+            width: 32%;
+            align-items: flex-start;
+        }
+
+        @include md{
+            width: 20%;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include lg{
+            padding-top: 20px;
+        }
+
+    }
+
+    &__link{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+        margin-bottom: 6px;
+        text-decoration: none;
+    }
+
+    &__image{
+        width: 206px;
+        height: 37px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 27px;
+
+        @include m-land{
+            width: 32%;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        @include sm{
+            width: 32%;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        @include md{
+            width: 20%;
+            height: auto;
+        }
+
+    }
+
+    &__develop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        width: 100%;
+
+        @include m-land{
+            margin-top: -9px;
+            width: 32%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include sm{
+            margin-top: -9px;
+            width: 32%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include md{
+            width: 20%;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 26px;
+        }
+
+
+    }
+
+    &__develop-title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 8px;
+
+        @include m-land{
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+        @include sm{
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+        @include md{
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+
+    }
+
+    &__develop-image{
+        width: 64.94px;
+        height: 16.21px;
+
+        @include md{
+            margin-top: -3px;
+        }
+
+    }
+
+
 }

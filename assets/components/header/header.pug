@@ -1,2 +1,20 @@
 mixin header()
     +b.header
+        +e.line
+        +e.square
+        +e.inner
+            .container
+                +e.content
+                    +e.burger
+                        span
+                        span
+                    +e.A.logo-link(href='/')
+                        +e.logo-oval
+                        +e.logo-wrapper
+                            +e.IMG.logo(src=require('./../images/logo.svg'), alt='')
+                    +e.A.auth(href="#")
+                        span войти / зарегистрироваться
+                    +e.desktop
+                        +e.A.login(href='') &Bcy;&acy;&rcy;&bcy;&acy;&rcy;&acy; &Rcy;&acy;&dcy;&zcy;&iukcy;&vcy;&iukcy;&lcy;
+                        +social()(class='social_blue')
+        +menu()

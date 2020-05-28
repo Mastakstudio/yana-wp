@@ -1,0 +1,6 @@
+mixin popup(src)
+    +b.popup
+        .remodal(data-remodal-id='modal')
+            button.remodal-close(data-remodal-action='close')
+            iframe(width='100%' height='100%' src=src frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+

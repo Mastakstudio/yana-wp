@@ -10,7 +10,6 @@ $COLUMNS : 12;
             left  : .5rem;
             right : .5rem;
         }
-        width: 100%;
         position : relative;
 
         @include sm {
@@ -28,15 +27,27 @@ $COLUMNS : 12;
         }
 
         @include lg {
-            max-width    : $MAX-WIDTH_LG;
-            padding      : 0;
-            margin-left  : auto;
-            margin-right : auto;
+            padding   : {
+                left  : 2.5rem;
+                right : 2.5rem;
+            }
+
         }
 
         @include hd {
-            max-width : $MAX-WIDTH_HD;
+            padding   : {
+                left  : 100px;
+                right : 100px;
+            }
         }
+
+        @include xhd{
+            padding   : {
+                left  : 380px;
+                right : 380px;
+            }
+        }
+
     }
 
     @include row();

@@ -10,22 +10,25 @@
 */
 A {
     cursor: pointer;
+    text-decoration: none;
 }
 body {
-    font-family : 'MyriadPro', sans-serif;
-    position    : relative;
-    //height      : 100vh;
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     overflow-x: hidden;
-    height      : 100%;
-
-
+    background: #F2F8FC;
 }
+
 
 *{
     outline: none;
 }
 
-
+a {
+    cursor: pointer;
+}
 
 .app {
     display        : flex;
@@ -65,231 +68,15 @@ body {
     min-height: 100vh;
 }
 
-.editor{
-    margin: 1rem 0;
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 3rem;
-    z-index: 2;
-
-    @include lg {
-        margin: 2rem 0;
-    }
-
-    p{
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-
-    strong{
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-        font-weight: bold;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-    em{
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-        font-style: italic;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-    del{
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-    a{
-        text-decoration: none;
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-    ul{
-        margin-top: .5px;
-
-        @include lg{
-            margin-top: 1rem;
-        }
-        li{
-            margin: .5rem 0;
-            font-family: "Open Sans", sans-serif;
-            padding-left: 15px;
-            list-style-type: disc;
-            list-style: inside;
-
-            @include lg {
-                margin: 1rem 0;
-            }
-        }
-    }
-
-    ol{
-
-        list-style-type: decimal;
-        margin-top: .5px;
-
-        @include lg{
-            margin-top: 1rem;
-        }
-
-        ul{
-
-            list-style-type: disc;
-            padding-left: 15px;
-
-
-        }
-
-    }
-
-    ol{
-
-        list-style-type: decimal !important;
-        margin-top: .5px;
-
-        @include lg{
-            margin-top: 1rem;
-        }
-
-        li{
-            margin: .5rem 0;
-            font-family: "Open Sans", sans-serif;
-            padding-left: 15px;
-            list-style-type: decimal !important;
-            list-style: inside;
-
-            @include lg {
-                margin: 1rem 0;
-            }
-        }
-    }
-    ul {
-
-        margin-top: .5px;
-
-        @include lg{
-            margin-top: 1rem;
-        }
-
-        ul{
-
-            padding-left: 15px;
-
-            li{
-                margin: .5rem 0;
-                font-family: "Open Sans", sans-serif;
-                padding-left: 15px;
-                list-style-type: disc;
-                list-style: inside;
-
-                @include lg {
-                    margin: 1rem 0;
-                }
-            }
-
-        }
-
-    }
-    ol {
-
-        margin-top: .5px;
-
-        @include lg{
-            margin-top: 1rem;
-        }
-
-        ol{
-
-            padding-left: 15px;
-
-            li{
-                margin: .5rem 0;
-                font-family: "Open Sans", sans-serif;
-                padding-left: 15px;
-                list-style-type: decimal !important;
-                list-style: inside;
-
-                @include lg {
-                    margin: 1rem 0;
-                }
-            }
-
-        }
-
-    }
-
-    blockquote {
-
-        padding-left: 20px;
-
-
-        p{
-            margin: .5rem 0;
-            font-family: "Open Sans", sans-serif;
-
-            @include lg {
-                margin: 1rem 0;
-            }
-        }
-
-        cite{
-            margin: .5rem 0;
-            font-family: "Open Sans", sans-serif;
-            font-style: italic;
-
-            @include lg {
-                margin: 1rem 0;
-            }
-        }
-
-    }
-    h2 {
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-
-    h3 {
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-
-    h4{
-        margin: 1rem 0;
-        font-family: "Open Sans", sans-serif;
-
-        @include lg {
-            margin: 2rem 0;
-        }
-    }
-
-}
 
 .main{
     display: flex;
     flex-direction: column;
+
+}
+
+.wrapper{
+    flex-grow: 1;
 }
 
 @include loader();

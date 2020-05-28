@@ -1,0 +1,97 @@
+@import "./../../common/constants";
+
+.page404{
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include sm{
+    padding-top: unset;
+    padding-bottom: unset;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__inner{
+    display: flex;
+    justify-content: center;
+
+    @include sm{
+      align-items: center;
+    }
+
+  }
+
+  &__image{
+    width: 81.48px;
+    min-width: 81.48px;
+
+    @include sm{
+      width: 126.41px;
+      min-width: 126.41px;
+    }
+
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+
+    @include sm{
+      width: 350px;
+    }
+
+  }
+
+  &__title{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 110px;
+    line-height: 124px;
+    color: #00B2FF;
+
+    @include sm{
+      font-size: 200px;
+      line-height: 200px;
+    }
+
+  }
+
+  &__desc{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #00B2FF;
+
+    @include sm{
+      font-size: 36px;
+      line-height: 35px;
+      margin-top: -20px;
+    }
+
+  }
+
+  &__text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7.05915px;
+    line-height: 10px;
+
+    color: #46555A;
+
+    @include sm{
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 19px;
+      display: block;
+    }
+
+  }
+
+}

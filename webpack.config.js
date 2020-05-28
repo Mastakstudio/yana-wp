@@ -25,12 +25,40 @@ const THEME_NAME = 'Yana';
 
 let entries = {
     index: './index.js',
+    questionPage: './questionPage.js',
+    course: './course.js',
+    test: './test.js',
+    experts: './experts.js',
+    account: './account.js',
+    page404: './page404.js',
+    signIn: './signIn.js',
 };
 
 let pugs = {
     index: {
         title: "index title"
-    }
+    },
+    questionPage: {
+        questionPage: "questionPage title"
+    },
+    course: {
+        course: "course title"
+    },
+    test: {
+        test: "test title"
+    },
+    experts: {
+        experts: "experts title"
+    },
+    account: {
+        account: "account title"
+    },
+    page404: {
+        page404: "page404 title"
+    },
+    signIn: {
+        signIn: "signIn title"
+    },
 
 };
 

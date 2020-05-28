@@ -1,0 +1,516 @@
+@import "./../../common/constants";
+
+.passCourse{
+
+  .over{
+    overflow: hidden;
+  }
+
+  @include sm{
+    margin-top: -289px;
+    border-top-right-radius: 37%;
+    background: #F2F8FC;
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+  }
+
+  @include md{
+    border-top-right-radius: 22%;
+  }
+
+
+  @include lg{
+    border-top-right-radius: 39%;
+    margin-top: -459px;
+  }
+
+  @include xhd{
+    border-top-right-radius: 29%;
+  }
+
+  &__logo{
+    display: none;
+
+    @include lg{
+      display: block;
+      width: 147px;
+      height: 147px;
+      position: absolute;
+      right: 50px;
+      top: 700px;
+    }
+
+    @media (min-width: 1920px) {
+      right: 100px;
+      top: 900px;
+    }
+
+    @media (min-width: 2299px) {
+      width: 218px;
+      height: 218px;
+      right: 100px;
+      top: 600px;
+    }
+
+  }
+
+
+  &__title{
+    margin-top: 60px;
+    width: 179px;
+
+    @include sm{
+      width: 180px;
+    }
+
+    @include md{
+      width: 259px;
+    }
+
+    @include hd{
+      width: 292px;
+    }
+
+  }
+
+  &__circle{
+    width: 543px;
+    height: 543px;
+    background-image: url(./../../images/circle.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-left: -50px;
+    position: relative;
+
+    @include m-land{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include sm{
+      margin-left: auto;
+      margin-right: 50px;
+      margin-top: -50px;
+    }
+
+    @include md{
+      width: 817px;
+      height: 817px;
+    }
+
+    @include lg{
+      margin-right: 100px;
+    }
+
+    @include hd{
+      width: 1008px;
+      height: 1008px;
+
+    }
+
+    @include xhd{
+    }
+
+
+
+
+
+  }
+
+  &__circle_second{
+    mix-blend-mode: normal;
+    opacity: 0.33;
+    border: 1.32925px dashed #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 100%;
+    width: 362.89px;
+    height: 362.89px;
+    position: absolute;
+    left: 92px;
+    top: 92px;
+
+
+    @include md{
+      width: 546px;
+      height: 546px;
+      left: 129px;
+      top: 129px;
+    }
+
+    @include hd{
+      width: 675px;
+      height: 674px;
+      left: 170px;
+      top: 170px;
+    }
+
+
+    @include xhd{
+    }
+  }
+
+  &__item_number{
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include md{
+      width: 122px;
+      height: 122px;
+    }
+
+    span{
+      font-family: "Bebas Neue";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      padding-top: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFA132;
+
+      @include md{
+        font-size: 58px;
+        line-height: 32px;
+      }
+
+    }
+
+  }
+
+  &__list{
+    position: relative;
+  }
+
+
+  &__item_title{
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.664627px;
+    color: #FFF1BF;
+    display: block;
+    margin-top: 12px;
+
+    @include md{
+      font-size: 46px;
+      line-height: 50px;
+    }
+
+  }
+
+  .addAnimate{
+
+    .passCourse__item{
+      &:nth-child(1){
+        animation: myOrbit 1s ease-in-out forwards;
+
+        @include md{
+          animation: myOrbit 1s ease-in-out forwards;
+        }
+
+      }
+
+      &:nth-child(2){
+        animation: myOrbit2 1s ease-in-out forwards .5s;
+
+        @include md{
+          animation: myOrbit2 1s ease-in-out forwards .5s;
+        }
+
+      }
+
+
+      &:nth-child(3){
+        animation: myOrbit3 1s ease-in-out forwards 1s;
+
+        @include md{
+          animation: myOrbit3 1s ease-in-out forwards 1s;
+        }
+
+      }
+    }
+
+  }
+
+  &__item{
+    width: 132px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+
+
+    @include md{
+      width: 350px;
+    }
+
+
+    &:nth-child(1){
+      position: absolute;
+      right: 208px;
+      top: 248px;
+
+      @include md{
+        right: 237px;
+        top: 354px;
+      }
+
+      @include hd{
+        right: 332px;
+        top: 447px;
+      }
+
+      @include xhd{
+      }
+
+    }
+
+    &:nth-child(2){
+      position: absolute;
+      left: 206px;
+      top: 247px;
+
+      @include md{
+        width: 300px;
+        left: 259px;
+        top: 353px;
+      }
+
+      @include hd{
+        left: 352px;
+        top: 441px;
+      }
+
+
+      @include xhd{
+      }
+
+    }
+
+
+    &:nth-child(3){
+      position: absolute;
+      right: 206px;
+      top: 248px;
+
+      @include md{
+        right: 235px;
+        top: 352px;
+      }
+
+      @include hd{
+        right: 327px;
+        top: 439px;
+      }
+
+
+      @include xhd{
+      }
+
+    }
+
+  }
+
+
+  &__couple{
+    width: 256.86px;
+    height: 294.65px;
+    margin-top: -159px;
+    margin-left: -27px;
+    position: relative;
+
+
+    @include sm{
+      margin-left: 72px;
+    }
+
+
+    @include md{
+      width: 350px;
+      height: auto;
+      margin-top: -200px;
+    }
+
+
+    @include lg{
+      width: 503px;
+      height: 577px;
+      margin-top: -550px;
+      margin-left: 0;
+    }
+
+
+    @include hd{
+      margin-top: -650px;
+      margin-left: 200px;
+      width: 620.59px;
+      height: 711.89px;
+    }
+
+
+    @include xhd{
+      width: 776.07px;
+      height: 890.24px;
+      margin-left: -100px;
+    }
+
+
+  }
+
+
+
+}
+
+@keyframes myOrbit {
+  0%{
+      transform: translateY(0);
+      opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+     transform: translateY(-182px);
+    opacity: 1;
+  }
+}
+
+@keyframes myOrbit2 {
+  0%{
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(-178px);
+    opacity: 1;
+  }
+
+}
+
+@keyframes myOrbit3 {
+
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(180px);
+    opacity: 1;
+  }
+}
+
+
+@include md{
+  @keyframes myOrbit {
+    0%{
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(-262px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes myOrbit2 {
+
+    0%{
+      transform: translateX(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateX(-273px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes myOrbit3 {
+
+    0%{
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(262px);
+      opacity: 1;
+    }
+  }
+}
+
+
+@include hd{
+  @keyframes myOrbit {
+
+    0%{
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(-333px);
+      opacity: 1;
+    }
+
+  }
+
+  @keyframes myOrbit2 {
+
+    0%{
+      transform: translateX(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateX(-326px);
+      opacity: 1;
+    }
+
+  }
+
+  @keyframes myOrbit3 {
+
+    0%{
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(333px);
+      opacity: 1;
+    }
+
+  }
+}

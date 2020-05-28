@@ -1,0 +1,135 @@
+mixin test()
+    +b.test
+        .container
+            +e.inner
+                +e.head
+                    +e.head-text
+                        +e.SPAN.theme тема занятия
+                        +title('беременность')(class='title_blue')
+                        +image()(src=require('./../images/test.png'))
+                    +e.head-list
+                        +e.A.head-item.test__video(href="#")
+                            IMG(src=require('./../images/play-video.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text Подготовка к беременности
+                                +e.SPAN.head-item-link (видео)
+                        +e.A.head-item.test__video(href="#")
+                            IMG(src=require('./../images/play-video.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text Секс во время беременности
+                                +e.SPAN.head-item-link (видео)
+                        +e.A.head-item.test__video(href="#")
+                            IMG(src=require('./../images/play-video.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text Стоматологический уход во время беременности
+                                +e.SPAN.head-item-link (видео)
+                        +e.A.head-item.test__video(href="#")
+                            IMG(src=require('./../images/play-video.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text Токсикоз 1 половины беременности
+                                +e.SPAN.head-item-link (видео)
+                        +e.A.head-item.test__pdf(href="#")
+                            IMG(src=require('./../images/pdf.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 6-20 неделя
+                                +e.SPAN.head-item-link (инфографика)
+                        +e.A.head-item.test__pdf(href="#")
+                            IMG(src=require('./../images/pdf.png'))
+                            +e.head-item-content
+                                +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 22-40 неделя
+                                +e.SPAN.head-item-link (инфографика)
+        +e.wrapper
+            +e.wrapper-inner
+            .container
+                +e.content
+                    +title('тестирование')(class='title_blue')
+                    +e.content-list
+                        +e.content-item(data-id='question-1')
+                            +e.content-item-head
+                                +e.SPAN.content-number 1
+                                +e.SPAN.content-title Нужно ли готовиться к зачатию ребенка?
+                            +e.content-item-check
+                                +e.content-check.correct
+                                    +e.LABEL.container
+                                        | К зачатию ребенка не надо готовиться.
+                                        input(type='radio' checked='checked' name='question-1')
+                                        +e.SPAN.checkmark
+                                +e.content-check
+                                    +e.LABEL.container
+                                        | За 2-3 месяца до планируемого зачатия будущим родителям рекомендовано принимать фолиевую кислоту, и пройти обследование состояния здоровья, вести здоровый образ жизни.
+                                        input(type='radio' name='question-1')
+                                        +e.SPAN.checkmark
+                        +e.content-item(data-id='question-2')
+                            +e.content-item-head
+                                +e.SPAN.content-number 2
+                                +e.SPAN.content-title Беременность это
+                            +e.content-item-check
+                                +e.content-check.error
+                                    +e.LABEL.container
+                                        | Болезнь, при которой надо постоянно лечится
+                                        input(type='radio' checked='checked' name='question-2')
+                                        +e.SPAN.checkmark
+                                +e.content-check.error
+                                    +e.LABEL.container
+                                        | Беременность – естественное физиологическое состояние, во время которого в организме женщины происходят изменения создающие условия, для вынашивания и развития ребенка.
+                                        input(type='radio' name='question-2')
+                                        +e.SPAN.checkmark
+                        +e.content-item(data-id='question-3')
+                            +e.content-item-head
+                                +e.SPAN.content-number 3
+                                +e.SPAN.content-title У вас токсикоз первой половины беременности. Нужно ли обращаться при этом к врачу?
+                            +e.content-item-check
+                                +e.content-check
+                                    +e.LABEL.container
+                                        | Не нужно
+                                        input(type='radio' checked='checked' name='question-3')
+                                        +e.SPAN.checkmark
+                                +e.content-check
+                                    +e.LABEL.container
+                                        | Нужно
+                                        input(type='radio' name='question-3')
+                                        +e.SPAN.checkmark
+                                +e.content-check.error
+                                    +e.LABEL.container
+                                        | Нужно, если наблюдается многократная рвота
+                                        input(type='radio' name='question-3')
+                                        +e.SPAN.checkmark
+                +e.resource
+                    +e.SPAN.resource-title Дополнительные ресурсы:
+                    +e.resource-list
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Про беременность от подготовки до послеродового периода
+                            +e.A.resource-item-link(href="") http://ffl.unicef.by/bezopasnoe_materinstvo/
+                            +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/files/24_37.pdf http://ffl.unicef.by/uploads/userfiles/images/04_safe_motherhood.jpg
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Гигиена и питание беременных
+                            +e.A.resource-item-link(href="") https://bambinostory.com/gigiena-beremennyh/
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Отеки при беременности
+                            +e.A.resource-item-link(href="") https://bambinostory.com/oteki-pri-beremennosti/
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Про подготовку к беременности
+                            +e.A.resource-item-link(href="") http://ffl.unicef.by/planirovanie_beremennosti/
+                            +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/files/16_23.pdf
+                            +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/images/03_family_planning.jpg
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Питание при беременности. Общие рекомендации
+                            +e.A.resource-item-link(href="") http://profilaktika.tomsk.ru/?p=21548
+                            +e.A.resource-item-link(href="") https://pandaland.kz/articles/beremennost-i-rody/podgotovka-k-rodam/vitaminy-dlya-beremennyh-polza-i-vred
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Беременность: физиологические изменения
+                            +e.A.resource-item-link(href="") https://medportal.ru/enc/procreation/physiology/physiology/ -
+                        +e.resource-item
+                            +e.SPAN.resource-item-name Беременность по триместрам. Полезные советы акушеров-гинекологов
+                            +e.A.resource-item-link(href="") https://medportal.ru/enc/procreation/reading/58/
+                        +e.resource-item
+                            +e.SPAN.resource-item-name 1 триместр - Витамины для беременных
+                            +e.A.resource-item-link(href="") https://pandaland.kz/articles/beremennost-i-rody/zdorove-261/vitaminy-dlya-beremennyh-v-pervyj-trimestr
+                        +e.resource-item
+                            +e.SPAN.resource-item-name 2 триместр - Питание для беременных
+                            +e.A.resource-item-link(href="") http://comfort-kitchen.ru/health/diets/pitanie-pri-beremennosti-vo-vtorom-trimestre.html
+                        +e.resource-item
+                            +e.SPAN.resource-item-name 2-3 триместр - питание для беременных
+                            +e.A.resource-item-link(href="") https://www.moirebenok.ua/pregnancy-and-birth/pitanie/pitanie-budushchej-mamy-vtoroj-i-tretij-trimestr/
+
+
