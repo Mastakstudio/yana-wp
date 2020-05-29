@@ -13,8 +13,6 @@ function crb_attach_theme_options()
         ->set_icon('dashicons-admin-generic')
         ->add_tab(__('Main options'), [
             Field::make_image(PREFIX . 'main_logo', 'Logo'),
-	        Field::make_file(PREFIX . 'background_video', 'Background video')->set_width(50),
-	        Field::make_file(PREFIX . 'background_404_video', 'background_video (404)')->set_width(50),
 	        Field::make_separator('contact_order_mail', 'Email для заказа звонка'),
 	        Field::make_separator('contact_info_separator', 'Контакты'),
 	        Field::make_text(PREFIX . 'phone_number', 'Phone')->set_width(50),
@@ -35,5 +33,14 @@ function crb_attach_theme_options()
 	        	Field::make_file('file')
 	        ])->set_layout('tabbed-horizontal')
 
-        ]);
+        ])
+        ->add_tab(' partners', [
+		    Field::make_complex(PREFIX.'partners', 'Партнёры')
+		         ->add_fields('card', 'Карточки',[
+			         Field::make_image('img_id', 'Иконка'),
+			         Field::make_text('title', 'Заголовок'),
+			         Field::make_text('link', 'Ссылка')
+		         ])
+		         ->set_layout('tabbed-vertical')
+	    ]);
 }
