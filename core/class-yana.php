@@ -61,6 +61,10 @@ class Yana{
             wp_enqueue_style(PREFIX.'common', Assets::getCss('common'), false, null);
             if (is_page_template('template-homepage.php')) {
                 wp_enqueue_style(PREFIX.'home', Assets::getCss('index'), false, null);
+            }elseif (is_page_template('template-account.php')){
+	            wp_enqueue_style(PREFIX.'account', Assets::getCss('account'), false, null);
+            }elseif (is_page_template('template-signin.php')){
+	            wp_enqueue_style(PREFIX.'signIn', Assets::getCss('signIn'), false, null);
             }
         }
         /**
@@ -74,6 +78,10 @@ class Yana{
             wp_enqueue_script(PREFIX.'commons', Assets::getJs('common'), false, null, true);
             if (is_page_template('template-homepage.php')) {
                 wp_enqueue_script(PREFIX.'index', Assets::getJs('index'), false, null, true);
+            }elseif (is_page_template('template-account.php')){
+	            wp_enqueue_script(PREFIX.'account', Assets::getJs('account'), false, null, true);
+            }elseif (is_page_template('template-signin.php')){
+	            wp_enqueue_script(PREFIX.'signIn', Assets::getJs('signIn'), false, null, true);
             }
         }
 
