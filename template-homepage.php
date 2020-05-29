@@ -22,7 +22,7 @@ get_template_part('/core/views/home/experts');
                         <div class="passCourse__list">
                             <div class="passCourse__item">
                                 <div class="passCourse__item_number"><span>1</span></div>
-                                <SPAN class="passCourse__item_title">Подготовку  К беременности и родам</SPAN>
+                                <SPAN class="passCourse__item_title">Подготовку К беременности и родам</SPAN>
                             </div>
                             <div class="passCourse__item">
                                 <div class="passCourse__item_number"><span>2</span></div>
@@ -135,7 +135,7 @@ get_template_part('/core/views/home/experts');
         <div class="container">
             <div class="services__inner">
                 <div class="services__content"><span
-                            class="services__desc">Больше поддержки  можно получить на</span><span
+                            class="services__desc">Больше поддержки можно получить на</span><span
                             class="title title_white">Интерактивная карта беслпатных услуг для беременных</span>
                     <p class="text text_black">Выберите категорию необходимой поддержки и на экране появится
                         интерактивная карта бесплатных услуг с выбранными организациями Минска или Могилева, Минской или

@@ -9,12 +9,15 @@ function crb_home_page_settings()
 {
     Container::make_post_meta("Home Page Settings")
         ->where('post_template', '=', 'template-homepage.php')
-        ->add_fields([
-	        Field::make_textarea(THEME_NAME.'_desc', 'Текст перед видео'),
-        ]);
-}
-
-add_action('carbon_fields_post_meta_container_saved','test_hook', 20, 2);
-function test_hook(){
-	$aaaa = 'aaaa';
+	    ->add_tab("welcome",[
+		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
+		    Field::make_text(PREFIX.'experts_video_link', 'Видео "МНЕНИЯ ЭКСПЕРТОВ"'),
+		    Field::make_complex(PREFIX.'sos_not_alone_links', 'Ссылки на sos-notalone')
+		    ->add_fields('card', 'Карточки',[
+			    Field::make_image('img_id', 'Иконка'),
+			    Field::make_text('title', 'Заголовок'),
+			    Field::make_text('link', 'Ссылка')
+		    ])
+		    ->set_layout('tabbed-vertical')
+	    ]);
 }

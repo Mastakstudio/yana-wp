@@ -11,16 +11,13 @@ $falconGlen = (object)[
     'main' => require 'core/class-yana.php'
 ];
 
-//require 'core/functions/falconGlen-functions.php';
+require 'core/functions/functions.php';
 //require 'core/ajax/getPosts.php';
 //require 'inc/storefront-template-hooks.php';
 //require 'inc/storefront-template-functions.php';
 //require 'core/wordpress-shims.php';
 
 
-//if (!isset($_COOKIE['weight_unit']) || empty($_COOKIE['weight_unit'])){
-//	setcookie("weight_unit", 'default', time()+3600, "/");
-//}
 
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {

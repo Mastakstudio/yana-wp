@@ -56,6 +56,7 @@ class Yana{
          * Styles
          */
 
+	    wp_enqueue_style(PREFIX.'theme-common', BASE_URL.'/style.css', false, null);
         if (file_exists( get_template_directory()."/src/assets.json")) {
             wp_enqueue_style(PREFIX.'common', Assets::getCss('common'), false, null);
             if (is_page_template('template-homepage.php')) {

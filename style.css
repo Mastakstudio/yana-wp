@@ -4,3 +4,11 @@ Author:       Mastak studio
 Author URI:   https://mastakstudio.com/
 Version:      0.0.1
  */
+
+.remodal iframe,
+.remodal object,
+.remodal embed,
+.remodal video {
+    width: 100%;
+    height: 100%;
+}
