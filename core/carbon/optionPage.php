@@ -26,8 +26,7 @@ function crb_attach_theme_options()
 	        Field::make_text(PREFIX . 'order_contact_email', 'Email для получения писем'),
 	        Field::make_checkbox(PREFIX . 'auto_send_mail', 'Автоматичеси отчечать на запрс презинтации'),
 	        Field::make_text(PREFIX . 'mail_title', 'Заголовок письма'),
-	        Field::make_rich_text(PREFIX . 'mail_body', 'Содиржание письма')
-	             ->help_text("{{client_name}} - имя из формы, {{client_phone}} - телефон из формы, {{client_email}} - email из формы, {{client_city}}- город из формы"),
+	        Field::make_rich_text(PREFIX . 'mail_body', 'Содиржание письма'),
 	        Field::make_complex(PREFIX.'attached_files', 'Прикреплённые файлы')
 	        ->add_fields([
 	        	Field::make_file('file')
