@@ -66,6 +66,10 @@
 
   }
 
+  #sign-in{
+    padding-top: 30px;
+  }
+
   &__tabs-content [id*="login"]:checked ~ &__tabs{
 
     span{

@@ -172,8 +172,10 @@
   }
 
   &__button{
-    width: 39.9px;
-    height: 39.9px;
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+    min-height: 29px;
     display: block;
     margin-left: auto;
     transform: rotate(0);
@@ -518,6 +520,8 @@
     margin-right: auto;
     margin-top: 15px;
     margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(50px);
 
     img{
       width: 100%;
@@ -535,8 +539,8 @@
     }
 
     @include hd{
-      width: 292px;
-      min-width: 292px;
+      width: 200px;
+      min-width: 200px;
       margin-top: 25px;
     }
 
@@ -583,4 +587,11 @@
 
 
 
+}
+
+
+.course-page__image-content-item.visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s all;
 }

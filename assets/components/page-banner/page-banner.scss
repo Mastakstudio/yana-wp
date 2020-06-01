@@ -156,10 +156,12 @@
   &__button{
     display: block;
     margin-left: auto;
-    width: 39.9px;
-    height: 39.9px;
     transition: .5s transform;
     transform: rotate(0);
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+    min-height: 29px;
 
     &_active{
       transform: rotate(45deg);

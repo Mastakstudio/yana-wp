@@ -132,9 +132,7 @@
 
   }
 
-  &__desktop-first{
-    width: 254px;
-    height: 96px;
+  &__tags__item{
     display: none;
 
     @include md{
@@ -142,67 +140,313 @@
     }
 
     @include hd{
-      width: 316px;
-      height: auto;
     }
 
 
 
   }
 
-  &__desktop-second{
-    width: 266px;
-    height: 67.79px;
-    display: none;
+  &__item-title{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.301693px;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: .5s all;
 
-    @include md{
-      display: block;
-      margin-top: 23px;
-      padding-bottom: 97px;
+    &_active{
+      opacity: 1;
+      transition: .5s all;
     }
+
 
     @include lg{
-      width: 266px;
-      height: 67.79px;
+      letter-spacing: 0.5px;
     }
-
-    @include hd{
-      width: 388px;
-      height: auto;
-    }
-
-
   }
 
-  &__desktop-third{
-    width: 254px;
-    height: 96px;
+  &__item{
+
+    flex-direction: column;
     display: none;
 
     @include md{
-      display: block;
+      display: flex;
+    }
+  }
+
+  .link{
+    margin-top: 20px;
+  }
+
+  .tags__left{
+
+
+    .tags__item-title:nth-child(1){
+      font-size: 36px;
+      line-height: 28px;
+      color: #FFF1C1;
+
+
+      @include lg{
+        font-size: 52px;
+        line-height: 46px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(2){
+      font-size: 26.638px;
+      line-height: 14px;
+      margin-top: 16px;
+      margin-left: -5px;
+
+      @include lg{
+        font-size: 35.4783px;
+        line-height: 20px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(3){
+      font-size: 21.8183px;
+      line-height: 15px;
+      margin-top: 1px;
+      margin-left: 66px;
+
+      @include lg{
+        font-size: 23px;
+        line-height: 8px;
+        margin-top: 18px;
+        margin-left: 93px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(4){
+      font-size: 28.6234px;
+      line-height: 14px;
+      margin-top: 14px;
+      margin-left: 150px;
+
+      @include lg{
+        font-size: 30px;
+        line-height: 16px;
+        margin-top: 26px;
+        margin-left: 54px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(5){
+      font-size: 21.8812px;
+      line-height: 14px;
+      margin-top: 5px;
+      margin-left: 5px;
+
+      @include lg{
+        font-size: 30.2012px;
+        line-height: 21px;
+        margin-top: 35px;
+        margin-left: 15px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(6){
+      font-size: 12px;
+      line-height: 6px;
+      margin-top: 1px;
+      margin-left: 150px;
+      padding-bottom: 50px;
+
+      @include lg{
+        font-size: 42.236px;
+        line-height: 20px;
+        margin-top: -30px;
+        margin-left: 177px;
+      }
+
+    }
+
+  }
+
+  .tags__right{
+    display: none;
+
+    @include md{
+      display: flex;
+      align-items: flex-end;
       margin-left: auto;
       margin-top: -53px;
       padding-bottom: 28px;
-      padding-right: 74px;
 
     }
 
    @include lg{
-     width: 413px;
-     height: 146px;
      padding-right: 10px;
    }
 
     @include hd{
-      width: 528px;
-      height: 146px;
       padding-right: 10px;
       padding-bottom: 100px;
+      padding-top: 50px;
     }
 
+    .tags__item-title:nth-child(1){
+      font-size: 30.1297px;
+      line-height: 17px;
+      margin-top: 0;
+      margin-right: 149px;
 
+      @include lg{
+        font-size: 42px;
+        line-height: 24px;
+        margin-top: 0;
+        margin-right: 210px;
+      }
 
+    }
+
+    .tags__item-title:nth-child(2){
+      font-size: 18px;
+      line-height: 7px;
+      margin-top: -24px;
+      margin-right: 0;
+
+      @include lg{
+        font-size: 30px;
+        line-height: 10px;
+        margin-top: 20px;
+        margin-right: 30px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(3){
+      font-size: 21.6513px;
+      line-height: 14px;
+      margin-top: 35px;
+      margin-right: 92px;
+
+      @include lg{
+        font-size: 30.1814px;
+        line-height: 19px;
+        margin-top: 15px;
+        margin-right: 269px;
+
+      }
+
+    }
+
+    .tags__item-title:nth-child(4){
+      font-size: 28.6949px;
+      line-height: 17px;
+      margin-top: 8px;
+      margin-right: 238px;
+
+      @include lg{
+        font-size: 40px;
+        line-height: 24px;
+        margin-top: -5px;
+        margin-right: 23px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(5){
+      font-size: 21.6655px;
+      line-height: 15px;
+      margin-top: 10px;
+      margin-right: 17px;
+
+      @include lg{
+        font-size: 36px;
+        line-height: 19px;
+        margin-top: 10px;
+        margin-right: 153px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(6){
+      font-size: 25.8255px;
+      line-height: 14px;
+      margin-top: -1px;
+      margin-right: 144px;
+
+      @include lg{
+
+        font-size: 42px;
+        line-height: 24px;
+        margin-top: 0px;
+        margin-right: 351px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(7){
+      font-size: 30.1297px;
+      line-height: 17px;
+      margin-top: 27px;
+      margin-right: 189px;
+
+      @include lg{
+        font-size: 30.2012px;
+        line-height: 21px;
+        letter-spacing: 0.171598px;
+        margin-top: -5px;
+        margin-right: 0;
+      }
+
+    }
+
+    .tags__item-title:nth-child(8){
+      font-size: 30.1297px;
+      line-height: 17px;
+      margin-top: -20px;
+      margin-right: 40px;
+
+      @include lg{
+        font-size: 40px;
+        line-height: 24px;
+        margin-top: 30px;
+        margin-right: 273px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(9){
+      font-size: 21.5212px;
+      line-height: 7px;
+      margin-top: 24px;
+      margin-right: 58px;
+
+      @include lg{
+        font-size: 42px;
+        line-height: 24px;
+        margin-top: -30px;
+        margin-right: 60px;
+      }
+
+    }
+
+    .tags__item-title:nth-child(10){
+      font-size: 28.6949px;
+      line-height: 17px;
+      margin-top: 16px;
+      margin-right: 214px;
+      padding-bottom: 10px;
+
+      @include lg{
+        font-size: 30px;
+        line-height: 10px;
+        margin-top: 50px;
+        margin-right: 285px;
+      }
+
+    }
 
   }
 
@@ -244,7 +488,7 @@
 
   .visible{
     opacity: 1;
-    transition: 1s all;
+    transition: 1s all .5s;
   }
 
   &__inner{
@@ -276,5 +520,32 @@
     }
 
   }
+
+}
+
+
+@keyframes anim {
+
+  0%{
+    transform: translateX(0) translateY(0);
+  }
+
+  25%{
+    transform: translateX(20px) translateY(20px);
+  }
+
+
+  50%{
+    transform: translateX(0) translateY(40px);
+  }
+
+  75%{
+    transform: translateX(-20px) translateY(20);
+  }
+
+  100%{
+    transform: translateX(0) translateY(0);
+  }
+
 
 }

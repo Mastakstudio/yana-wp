@@ -69,10 +69,15 @@
       width: 341.18px;
     }
 
+    @include lg{
+      margin-top: 30px;
+      padding: 12px 46px;
+      border-radius: 21.5px;
+    }
+
     @include hd{
       width: 420.69px;
-      height: 56.72px;
-      border-radius: 21.5px;
+
     }
 
   }

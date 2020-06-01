@@ -37,8 +37,8 @@
       width: 147px;
       height: 147px;
       position: absolute;
-      right: 50px;
-      top: 700px;
+      right: 30px;
+      top: 507px;
     }
 
     @media (min-width: 1920px) {
@@ -50,7 +50,7 @@
       width: 218px;
       height: 218px;
       right: 100px;
-      top: 600px;
+      top: 550px;
     }
 
   }
@@ -97,17 +97,20 @@
     }
 
     @include md{
-      width: 817px;
-      height: 817px;
+      width: 600px;
+      height: 600px;
     }
 
+
+
     @include lg{
-      margin-right: 100px;
+      margin-right: 197px;
+      margin-top: -111px;
     }
 
     @include hd{
-      width: 1008px;
-      height: 1008px;
+      width: 700px;
+      height: 700px;
 
     }
 
@@ -134,17 +137,17 @@
 
 
     @include md{
-      width: 546px;
-      height: 546px;
-      left: 129px;
-      top: 129px;
+      width: 450px;
+      height: 450px;
+      left: 75px;
+      top: 75px;
     }
 
     @include hd{
-      width: 675px;
-      height: 674px;
-      left: 170px;
-      top: 170px;
+      width: 550px;
+      height: 550px;
+      left: 77px;
+      top: 77px;
     }
 
 
@@ -153,32 +156,31 @@
   }
 
   &__item_number{
-    width: 50px;
-    height: 50px;
+    width: 0;
+    height: 0 ;
     background: #ffffff;
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
 
-    @include md{
-      width: 122px;
-      height: 122px;
-    }
 
     span{
       font-family: "Bebas Neue";
       font-style: normal;
       font-weight: bold;
-      font-size: 30px;
+      font-size: 0;
       padding-top: 10px;
       text-align: center;
       text-transform: uppercase;
       color: #FFA132;
 
+
+
       @include md{
-        font-size: 58px;
-        line-height: 32px;
+        font-size: 0;
+        line-height: 0;
       }
 
     }
@@ -201,47 +203,47 @@
     color: #FFF1BF;
     display: block;
     margin-top: 12px;
+    opacity: 0;
+    transform: translateY(50px);
 
     @include md{
-      font-size: 46px;
-      line-height: 50px;
+      font-size: 36px;
+      line-height: 34px;
+
+
     }
+
 
   }
 
-  .addAnimate{
-
-    .passCourse__item{
-      &:nth-child(1){
-        animation: myOrbit 1s ease-in-out forwards;
-
-        @include md{
-          animation: myOrbit 1s ease-in-out forwards;
-        }
-
-      }
-
-      &:nth-child(2){
-        animation: myOrbit2 1s ease-in-out forwards .5s;
-
-        @include md{
-          animation: myOrbit2 1s ease-in-out forwards .5s;
-        }
-
-      }
+  .passCourse__item:nth-child(2){
 
 
-      &:nth-child(3){
-        animation: myOrbit3 1s ease-in-out forwards 1s;
-
-        @include md{
-          animation: myOrbit3 1s ease-in-out forwards 1s;
-        }
-
+    @include md{
+      .passCourse__item_title{
+        width: 200px;
       }
     }
 
+
+
   }
+
+
+  .passCourse__item:nth-child(1){
+
+
+    @include md{
+      .passCourse__item_title{
+        width: 300px;
+      }
+    }
+
+
+
+  }
+
+
 
   &__item{
     width: 132px;
@@ -249,7 +251,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
 
 
     @include md{
@@ -261,15 +262,18 @@
       position: absolute;
       right: 208px;
       top: 248px;
+      transform: translateY(-182px);
 
       @include md{
-        right: 237px;
-        top: 354px;
+        right: 127px;
+        top: 301px;
+        transform: translateY(-262px);
       }
 
       @include hd{
-        right: 332px;
-        top: 447px;
+        right: 176px;
+        top: 376px;
+        transform: translateY(-333px);
       }
 
       @include xhd{
@@ -281,16 +285,19 @@
       position: absolute;
       left: 206px;
       top: 247px;
+      transform: translateX(-178px);
 
       @include md{
         width: 300px;
-        left: 259px;
-        top: 353px;
+        left: 213px;
+        top: 204px;
+        transform: translateX(-273px);
       }
 
       @include hd{
-        left: 352px;
-        top: 441px;
+        left: 266px;
+        top: 267px;
+        transform: translateX(-326px);
       }
 
 
@@ -304,15 +311,18 @@
       position: absolute;
       right: 206px;
       top: 248px;
+      transform: translateY(180px);
 
       @include md{
-        right: 235px;
-        top: 352px;
+        right: 129px;
+        top: 206px;
+        transform: translateY(262px);
       }
 
       @include hd{
-        right: 327px;
-        top: 439px;
+        right: 178px;
+        top: 237px;
+        transform: translateY(333px);
       }
 
 
@@ -340,13 +350,13 @@
     @include md{
       width: 350px;
       height: auto;
-      margin-top: -200px;
+      margin-top: -347px;
     }
 
 
     @include lg{
-      width: 503px;
-      height: 577px;
+      width: 419px;
+      height: 470px;
       margin-top: -550px;
       margin-left: 0;
     }
@@ -361,9 +371,9 @@
 
 
     @include xhd{
-      width: 776.07px;
-      height: 890.24px;
-      margin-left: -100px;
+      width: 500px;
+      height: auto;
+      margin-left: 123px;
     }
 
 
@@ -373,144 +383,44 @@
 
 }
 
-@keyframes myOrbit {
-  0%{
+
+.addAnimate{
+
+  .passCourse__item{
+
+    .passCourse__item_number{
+      width: 50px;
+      height: 50px;
+      opacity: 1;
+      transition: 1s all;
+
+
+      span{
+        font-size: 30px;
+        transition: 1s all;
+      }
+
+      @include md{
+        width: 70px;
+        height: 70px;
+
+        span{
+          font-size: 40px;
+          line-height: 32px;
+        }
+
+      }
+    }
+
+
+
+
+    .passCourse__item_title{
+      opacity: 1;
       transform: translateY(0);
-      opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-     transform: translateY(-182px);
-    opacity: 1;
-  }
-}
-
-@keyframes myOrbit2 {
-  0%{
-    transform: translateX(0);
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    transform: translateX(-178px);
-    opacity: 1;
-  }
-
-}
-
-@keyframes myOrbit3 {
-
-  0%{
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    transform: translateY(180px);
-    opacity: 1;
-  }
-}
-
-
-@include md{
-  @keyframes myOrbit {
-    0%{
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateY(-262px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes myOrbit2 {
-
-    0%{
-      transform: translateX(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateX(-273px);
-      opacity: 1;
-    }
-  }
-
-  @keyframes myOrbit3 {
-
-    0%{
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateY(262px);
-      opacity: 1;
-    }
-  }
-}
-
-
-@include hd{
-  @keyframes myOrbit {
-
-    0%{
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateY(-333px);
-      opacity: 1;
+      transition: 1s all 1s;
     }
 
   }
 
-  @keyframes myOrbit2 {
-
-    0%{
-      transform: translateX(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateX(-326px);
-      opacity: 1;
-    }
-
-  }
-
-  @keyframes myOrbit3 {
-
-    0%{
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateY(333px);
-      opacity: 1;
-    }
-
-  }
 }

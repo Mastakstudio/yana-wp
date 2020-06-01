@@ -9,6 +9,12 @@
   line-height: 32px;
   margin-top: 0;
   display: block;
+  opacity: 0;
+  transform: translateX(-100px);
+
+
+
+
 
   @include md{
     font-size: 52px;
@@ -32,5 +38,13 @@
     letter-spacing: 0.5px;
     color: #FFF1C1;
   }
+
+}
+
+.title.visible{
+
+  opacity: 1;
+  transform: translateX(0);
+  transition: 1s all;
 
 }

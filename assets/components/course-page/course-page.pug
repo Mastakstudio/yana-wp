@@ -13,14 +13,325 @@ mixin course-page()
             +e.list
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Психология беременности, родов и родительства
+                        +e.SPAN.title Все о беременности
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course1.png'))
                             +e.text-content-item
                                 +e.title-content-item
                                     span Освещенные темы
-                                    +e.IMG.button(src=require('./../images/button.png'))
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Подготовка к беременности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Стоматологический уход во время беременности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Токсикоз 1 половины беременности
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 30, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Внутриутробное развитие ребенка
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course2.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Адаптация малыша после родов
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Особенности периодна новорожденности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Уход за новорожденным в роддоме
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Все о родах
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course3.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text В роддоме. Что? Где? Когда? В приемном и предродовом отделении
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text В роддоме. Что? Где? Когда? В родильном зале, послеродовой палате, выписка из роддома
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Обезболивание в родах
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 4
+                                        +e.SPAN.type-content-item-text Партнерские роды
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 5
+                                        +e.SPAN.type-content-item-text Роды. Как и когда
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 6
+                                        +e.SPAN.type-content-item-text Физиология родов
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Послеродовой период
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course4.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Гигиена послеродового периода
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text МАСТИТ
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Сексуальная жизнь после родов
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 4
+                                        +e.SPAN.type-content-item-text Уход после родов
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Уход за новорожденным малышом
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course5.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Адаптация малыша после родов
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Особенности периодна новорожденности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Уход за новорожденным в роддоме
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Грудное вскармливание
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course6.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
                                 +e.list-content-item
                                     +e.SPAN.type-content-item
                                         +e.type-content-item-number
@@ -57,66 +368,7 @@ mixin course-page()
                     +e.info-item
                         +e.title-info-item
                             span информация
-                            +e.IMG.button(src=require('./../images/button.png'))
-                        +e.content-info-item
-                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
-                            +e.time-info-item(data-time="Jun 30, 2020 00:00:00")
-                                ul
-                                    li
-                                        span Дней:
-                                        span.days
-                                    li
-                                        span Часов:
-                                        span.hours
-                                    li
-                                        span Минут:
-                                        span.minutes
-                            +e.text-info-item
-                                +e.type-text-info-item
-                                    +e.SPAN.type-text-info-item-title Вопросов всего:
-                                    +e.line
-                                    +e.SPAN.type-text-info-item-number 7
-                                +e.type-text-info-item
-                                    +e.SPAN.type-text-info-item-title Отвечено:
-                                    +e.line
-                                    +e.SPAN.type-text-info-item-number 4
-                                +e.type-text-info-item
-                                    +e.SPAN.type-text-info-item-title Правильно:
-                                    +e.line
-                                    +e.SPAN.type-text-info-item-number 2
-                            +e.procent-info-item
-                                +e.circle-procent-info-item
-                                +e.SPAN.procent-info-item-number 70%
-                                +e.SPAN.procent-info-item-text усвоенного материала
-                        +e.link-to
-                            +link('Продолжить обучение')()
-                +e.item
-                    +e.content-item
-                        +e.SPAN.title Первый год жизни малыша
-                        +e.inner-content-item
-                            +e.image-content-item
-                                +e.IMG.about-image(src=require('./../images/course2.png'))
-                            +e.text-content-item
-                                +e.title-content-item
-                                    span Освещенные темы
-                                    +e.IMG.button(src=require('./../images/button.png'))
-                                +e.list-content-item
-                                    +e.SPAN.type-content-item
-                                        +e.type-content-item-number
-                                            span 1
-                                        +e.SPAN.type-content-item-text Адаптация малыша после родов
-                                    +e.SPAN.type-content-item
-                                        +e.type-content-item-number
-                                            span 2
-                                        +e.SPAN.type-content-item-text Особенности периодна новорожденности
-                                    +e.SPAN.type-content-item
-                                        +e.type-content-item-number
-                                            span 3
-                                        +e.SPAN.type-content-item-text Уход за новорожденным в роддоме
-                    +e.info-item
-                        +e.title-info-item
-                            span информация
-                            +e.IMG.button(src=require('./../images/button.png'))
+                            +e.IMG.button(src=require('./../images/plus.svg'))
                         +e.content-info-item
                             +e.SPAN.desc-info-item До окончания выполнения задания осталось:
                             +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
@@ -148,4 +400,232 @@ mixin course-page()
                                 +e.SPAN.procent-info-item-number 70%
                                 +e.SPAN.procent-info-item-text усвоенного материала
                         +e.link-to
-                            +link('Продолжить обучение')()
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Первый год жизни малыша
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course7.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Берегите зубы с рождения!
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Вскармливание малышей до и с 6 месяцев
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Закаливание
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 4
+                                        +e.SPAN.type-content-item-text Рацион ребенка после года
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Безопасность и развивающие отношения с ребенком
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course8.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Ваш малыш растет. Взаимодействие с ребенком
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text У вас появился малыш. Основные правила безопасности
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Психология беременности, родов и родительства
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course9.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Взаимодействия отца и ребенка
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Забота о молодой маме в послеродовом периоде
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Папа - это по доброй воле
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 4
+                                        +e.SPAN.type-content-item-text Профилактика послеродовой депрессии
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")
+                +e.item
+                    +e.content-item
+                        +e.SPAN.title Социальные гарантии и семейный капитал
+                        +e.inner-content-item
+                            +e.image-content-item
+                                +e.IMG.about-image(src=require('./../images/course10.png'))
+                            +e.text-content-item
+                                +e.title-content-item
+                                    span Освещенные темы
+                                    +e.IMG.button(src=require('./../images/plus.svg'))
+                                +e.list-content-item
+                    +e.info-item
+                        +e.title-info-item
+                            span информация
+                            +e.IMG.button(src=require('./../images/plus.svg'))
+                        +e.content-info-item
+                            +e.SPAN.desc-info-item До окончания выполнения задания осталось:
+                            +e.time-info-item(data-time="Jun 21, 2020 00:00:00")
+                                ul
+                                    li
+                                        span Дней:
+                                        span.days
+                                    li
+                                        span Часов:
+                                        span.hours
+                                    li
+                                        span Минут:
+                                        span.minutes
+                            +e.text-info-item
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Вопросов всего:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 7
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Отвечено:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 4
+                                +e.type-text-info-item
+                                    +e.SPAN.type-text-info-item-title Правильно:
+                                    +e.line
+                                    +e.SPAN.type-text-info-item-number 2
+                            +e.procent-info-item
+                                +e.circle-procent-info-item
+                                +e.SPAN.procent-info-item-number 70%
+                                +e.SPAN.procent-info-item-text усвоенного материала
+                        +e.link-to
+                            +link('Продолжить обучение')(src="/test.html" target="_blank")

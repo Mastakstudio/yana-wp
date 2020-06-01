@@ -5,19 +5,29 @@ mixin tags()
                 +e.first
                     +e.mobile-first.tags__animate
                         img(src=require('./../images/tags-mobile-first.png'))
-                    +e.desktop-first.tags__animate
-                        img(src=require('./../images/tags-desctope-first.png'))
-                    +e.desktop-second.tags__animate
-                        img(src=require('./../images/tags-desctope-second.png'))
+                    +e.item.tags__left
+                        +e.SPAN.item-title Испытываешь
+                        +e.SPAN.item-title Страх
+                        +e.SPAN.item-title Раздражительность
+                        +e.SPAN.item-title Подавленность
+                        +e.SPAN.item-title Сомнения
+                        +e.SPAN.item-title стресс
                 +e.content
                     +title('Мы поможем получить всесторонние знания')(class='title_orange')
                     +text('А также дадим  возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения')(class='text_white')
-                    +link('Зарегистрироваться')
+                    +link('Зарегистрироваться')(src="/signIn.html" target="_blank")
                 +e.second
                     +e.mobile-second.tags__animate
                         img(src=require('./../images/tags-mobile-second.png'))
-                    +e.desktop-third.tags__animate
-                        img(src=require('./../images/tags-desctope-third.png'))
-                    +e.desktop-fourth.tags__animate
-                        img(src=require('./../images/tags-desctope-fourth.png'))
+                    +e.item.tags__right
+                        +e.SPAN.item-title родительство
+                        +e.SPAN.item-title готовность к родам
+                        +e.SPAN.item-title открываю новое
+                        +e.SPAN.item-title опыт
+                        +e.SPAN.item-title осознанность
+                        +e.SPAN.item-title радость
+                        +e.SPAN.item-title знания
+                        +e.SPAN.item-title поддержка
+                        +e.SPAN.item-title я не одна
+                        +e.SPAN.item-title у меня все получается
                 +e.IMG.logo(src=require('./../images/logo-dop.png') )
