@@ -65,6 +65,7 @@ class Yana{
 	            wp_enqueue_style(PREFIX.'account', Assets::getCss('account'), false, null);
             }elseif (is_page_template('template-signin.php')){
 	            wp_enqueue_style(PREFIX.'signIn', Assets::getCss('signIn'), false, null);
+	            wp_enqueue_style('signinfix', BASE_URL.'/src_fix/css/signin.css' , false, null);
             }
         }
         /**

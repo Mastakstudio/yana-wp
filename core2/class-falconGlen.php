@@ -60,7 +60,7 @@ class FalconGlen{
         if (file_exists( get_template_directory()."/src/assets.json")) {
             wp_enqueue_style('commons', Assets::getCss('common'), false, null);
             wp_enqueue_style('style-common', BASE_URL.'/style.css' , false, null);
-	        wp_enqueue_style('style-common2', BASE_URL.'/src2/style.css' , false, null);
+	        wp_enqueue_style('style-common2', BASE_URL.'/src_fix/style.css' , false, null);
 
             if (is_page_template('template-homepage.php') ) {
                 wp_enqueue_style('home', Assets::getCss('index'), false, null);
