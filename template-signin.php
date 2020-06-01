@@ -15,7 +15,8 @@ get_template_part( '/core/views/headerView' );
                         <input type="radio" name="toggle" id="auth">
                         <div class="sign-in__tabs">
                             <label for="login">ВОЙТИ</label>
-                            <label for="auth">зарегистрироваться</label><span></span>
+                            <label for="auth">зарегистрироваться</label>
+                            <span></span>
                         </div>
                         <div class="sign-in__content">
                             <div class="login-page">
@@ -24,7 +25,17 @@ get_template_part( '/core/views/headerView' );
                                         <span class="title title_blue">войти</span>
                                     </div>
                                 </div>
-                                <div class="sign-in__list">
+                                <form class="sign-in__list" name="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
+	                                <?php
+
+	                                /**
+	                                 * Fires following the 'Password' field in the login form.
+	                                 *
+	                                 * @since 2.1.0
+	                                 */
+	                                do_action( 'login_form' );
+
+	                                ?>
                                     <div class="sign-in__item">
                                         <div class="sign-in__item-head">
                                             <span class="sign-in__item-title">Через социальные сети</span>
@@ -61,20 +72,20 @@ get_template_part( '/core/views/headerView' );
                                         <div class="sign-in__item-inputs">
                                             <div class="sign-in__item-input">
                                                 <div class="form-input__item">
-                                                    <label class="form-input__item-label">Ваш e-mail</label>
-                                                    <input class="form-input__item-input" name="email" type="text"/>
+                                                    <label class="form-input__item-label" for="user_login">Ваш e-mail</label>
+                                                    <input class="form-input__item-input" name="log" value="<?php echo esc_attr( $user_login ); ?>" autocapitalize="off"/>
                                                 </div>
                                             </div>
                                             <div class="sign-in__item-input">
                                                 <div class="form-input__item">
-                                                    <label class="form-input__item-label">Пароль</label>
-                                                    <input class="form-input__item-input" name="password" type="password"/>
+                                                    <label class="form-input__item-label" for="user_pass">Пароль</label>
+                                                    <input class="form-input__item-input" name="pwd" id="user_pass" type="password"/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <BUTTON class="custom-button">Войти</BUTTON>
-                                </div>
+                                    <button class="custom-button">Войти</button>
+                                </form>
                             </div>
                             <div class="auth-page">
                                 <div class="sign-in__inner">
@@ -82,7 +93,17 @@ get_template_part( '/core/views/headerView' );
                                         <span class="title title_blue">регистрация</span>
                                     </div>
                                 </div>
-                                <div class="sign-in__list">
+                                <form class="sign-in__list" name="registerform" id="registerform" action="<?php echo esc_url( site_url( 'wp-login.php?action=register', 'login_post' ) ); ?>" method="post" novalidate="novalidate">
+	                                <?php
+
+	                                /**
+	                                 * Fires following the 'Email' field in the user registration form.
+	                                 *
+	                                 * @since 2.1.0
+	                                 */
+	                                do_action( 'register_form' );
+
+	                                ?>
                                     <div class="sign-in__item">
                                         <div class="sign-in__item-head">
                                             <span class="sign-in__item-title">Через социальные сети</span>
@@ -118,8 +139,8 @@ get_template_part( '/core/views/headerView' );
                                         <div class="sign-in__item-inputs">
                                             <div class="sign-in__item-input">
                                                 <div class="form-input__item">
-                                                    <label class="form-input__item-label">Ваш e-mail</label>
-                                                    <input class="form-input__item-input" name="email" type="text" />
+                                                    <label class="form-input__item-label" for="user_email">Ваш e-mail</label>
+                                                    <input class="form-input__item-input" name="user_email" id="user_email" />
                                                 </div>
                                             </div>
                                             <div class="sign-in__item-input">
@@ -137,7 +158,7 @@ get_template_part( '/core/views/headerView' );
                                         </div>
                                     </div>
                                     <button class="custom-button">Зарегестрироваться</button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
