@@ -4,11 +4,7 @@ require __DIR__ . '/homePage.php';
 require __DIR__ . '/aboutPage.php';
 require __DIR__ . '/productMeta.php';
 require __DIR__ . '/contactPage.php';
-require __DIR__ . '/buyersPage.php';
-require __DIR__ . '/deliveryPage.php';
-require __DIR__ . '/editorBlocks.php';
 require __DIR__ . '/redirectPage.php';
-require __DIR__ . '/defaultPage.php';
 
 
 function product_selecting()

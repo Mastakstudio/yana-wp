@@ -7,9 +7,9 @@ use Carbon_Fields\Field;
 add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
 function crb_attach_theme_options()
 {
-    Container::make_theme_options( 'theme_settings','Настройки темы')
+    $themeSettings = Container::make_theme_options( 'theme_settings','Настройки темы')
         ->set_page_file('theme-options')
-        ->set_page_menu_title('Theme Settings')
+        ->set_page_menu_title('Настройки темы')
         ->set_icon('dashicons-admin-generic')
         ->add_tab(__('Main options'), [
             Field::make_image(PREFIX . 'main_logo', 'Logo'),
@@ -33,6 +33,11 @@ function crb_attach_theme_options()
 	        ])->set_layout('tabbed-horizontal')
 
         ])
+        ->add_tab(__('forms'), [
+	        Field::make_select(PREFIX . 'login_page', 'Login Page')
+	        ->set_options(page_selecting()),
+
+        ])
         ->add_tab(' partners', [
 		    Field::make_complex(PREFIX.'partners', 'Партнёры')
 		         ->add_fields('card', 'Карточки',[
@@ -42,4 +47,12 @@ function crb_attach_theme_options()
 		         ])
 		         ->set_layout('tabbed-vertical')
 	    ]);
+
+    Container::make_theme_options('social_settings', 'Настройки Авторизации')
+	    ->set_page_parent($themeSettings)
+	    ->add_tab('Страницы',[
+	    	Field::make_select(PREFIX.'account_page', 'Страница акаунта')
+		    ->set_options(page_selecting())
+	    ]);
+    ;
 }

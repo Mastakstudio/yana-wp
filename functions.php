@@ -12,13 +12,18 @@ $falconGlen = (object)[
 ];
 
 require 'core/functions/functions.php';
+require 'core/UserManager.php';
 //require 'core/ajax/getPosts.php';
 //require 'inc/storefront-template-hooks.php';
 //require 'inc/storefront-template-functions.php';
 //require 'core/wordpress-shims.php';
 
 
-
+function admin_default_page() {
+	$accountPageId = carbon_get_theme_option(PREFIX.'account_page');
+	return get_permalink($accountPageId);
+}
+add_filter('login_redirect', 'admin_default_page',10 ,3);
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/core/carbon/index.php';

@@ -53,7 +53,6 @@ class ACCOUNT_AJAX
     public static function do_prosuhsi_account_ajax() {
         global $wp_query;
 
-        // phpcs:disable WordPress.Security.NonceVerification.NoNonceVerification
         if ( ! empty( $_GET['prosushi_account-ajax'] ) ) {
             $wp_query->set( 'prosushi_account-ajax', sanitize_text_field( wp_unslash( $_GET['prosushi_account-ajax'] ) ) );
         }
@@ -90,7 +89,7 @@ class ACCOUNT_AJAX
 
         $user_data = ['user_login' => $_POST['username'], 'user_password' => $_POST['password'], 'remember' => !empty($_POST['rememberme'])];
 
-        $loginResult = wp_signon($user_data);
+        $loginResult = wp_signon();
 
         if ( strtolower(get_class($loginResult)) == 'wp_user' ) {
             //User login successful
@@ -105,7 +104,7 @@ class ACCOUNT_AJAX
             $return['user'] = [
                 'displayName' => $displayName
                 ];
-            $return['myAccountLink'] = get_permalink(wc_get_page_id("myaccount"));
+            $return['myAccountLink'] = get_permalink(1);
 
         } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
             //User login failed

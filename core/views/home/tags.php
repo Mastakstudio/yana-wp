@@ -1,4 +1,5 @@
 <?php
+$login_page = carbon_get_theme_option(PREFIX . 'login_page'); 
 ?>
 
 <div class="tags">
@@ -15,10 +16,14 @@
                             src="/wp-content/themes/Yana/src/icons/tags-desctope-second.png">
                 </div>
             </div>
-            <div class="tags__content"><span
-                        class="title title_orange">Мы поможем получить всесторонние знания</span>
-                <p class="text text_white">А также дадим возможность сравнить мнения, проанализировать разный опыт и
-                    даже познакомится с документальными кадрами рождения</p><a class="link">Зарегистрироваться</a>
+            <div class="tags__content">
+                <span class="title title_orange">Мы поможем получить всесторонние знания</span>
+                <p class="text text_white">
+                    А также дадим возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения
+                </p>
+                <?php if (isset($login_page) || empty($login_page) ){
+                    echo '<a class="link" href="'.get_permalink($login_page).'">Зарегистрироваться</a>';
+                }?>
             </div>
             <div class="tags__second">
                 <div class="tags__mobile-second tags__animate"><img
