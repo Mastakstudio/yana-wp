@@ -8,6 +8,8 @@
   background-size: cover;
   margin-top: -140px;
   position: relative;
+  padding-top: 120px;
+  padding-bottom: 90px;
 
   @include m-land{
     margin-top: -315px;
@@ -41,10 +43,13 @@
 
 
   &__first{
-    padding-top: 125px;
 
     @include sm{
       padding-top: 50px;
+    }
+
+    @include md{
+      padding-top: 20px;
     }
 
     @include xhd{
@@ -56,9 +61,14 @@
   &__mobile-first{
     width: 238px;
     height: 112px;
+    display: none;
 
     @include m-land{
       margin-left: 50px;
+    }
+
+    @include sm{
+      display: block;
     }
 
     @include md{
@@ -68,7 +78,9 @@
   }
 
   &__content{
-    margin-top: 68px;
+
+    width: 85%;
+    margin-left: 12.5%;
 
     @include m-land{
       width: 70%;
@@ -117,6 +129,7 @@
     padding-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
+    display: none;
 
     @include m-land{
       margin-left: 137px;
@@ -124,6 +137,7 @@
 
     @include sm{
       margin-right: unset;
+      display: block;
     }
 
     @include md{

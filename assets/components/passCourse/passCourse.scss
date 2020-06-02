@@ -75,14 +75,14 @@
   }
 
   &__circle{
-    width: 543px;
-    height: 543px;
+    width: 450px;
+    height: 450px;
     background-image: url(./../../images/circle.png);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 40px;
-    margin-left: -50px;
+    margin-left: -27px;
     position: relative;
 
     @include m-land{
@@ -129,11 +129,11 @@
     border: 1.32925px dashed #FFFFFF;
     box-sizing: border-box;
     border-radius: 100%;
-    width: 362.89px;
-    height: 362.89px;
+    width: 320px;
+    height: 320px;
     position: absolute;
-    left: 92px;
-    top: 92px;
+    left: 68px;
+    top: 68px;
 
 
     @include md{
@@ -260,8 +260,8 @@
 
     &:nth-child(1){
       position: absolute;
-      right: 208px;
-      top: 248px;
+      right: 151px;
+      top: 224px;
       transform: translateY(-182px);
 
       @include md{
@@ -283,8 +283,8 @@
 
     &:nth-child(2){
       position: absolute;
-      left: 206px;
-      top: 247px;
+      left: 184px;
+      top: 181px;
       transform: translateX(-178px);
 
       @include md{
@@ -309,8 +309,8 @@
 
     &:nth-child(3){
       position: absolute;
-      right: 206px;
-      top: 248px;
+      right: 148px;
+      top: 176px;
       transform: translateY(180px);
 
       @include md{

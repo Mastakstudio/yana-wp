@@ -7,8 +7,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/course-page/course-page.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/course-page/course-page.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/footer/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/footer/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/footer/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/learn/learn.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/learn/learn.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/learn/learn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/learn/learn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/passCourse/passCourse.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/passCourse/passCourse.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/passCourse/passCourse.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/passCourse/passCourse.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/tags/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/tags/tags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/tags/tags.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/tags/tags.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/girl-comp.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/girl-comp.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +79,7 @@
       <workItem from="1590065090537" duration="22226000" />
       <workItem from="1590390552886" duration="53785000" />
       <workItem from="1590738660469" duration="15912000" />
-      <workItem from="1590991987624" duration="5499000" />
+      <workItem from="1590991987624" duration="11431000" />
     </task>
     <servers />
   </component>

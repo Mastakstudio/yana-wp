@@ -7,11 +7,15 @@ $(document).ready(function(){
     $('.tags__animate').viewportChecker(
     );
 
-    $('.tags__item').viewportChecker(
-        {
-            classToAdd: 'visible addView',
-        }
-    );
+
+
+    if ($(window).width() >= 1024) {
+        $('.tags__item').viewportChecker(
+            {
+                classToAdd: 'visible addView',
+            }
+        );
+    }
 
     $('.tags__item.addView .tags__item-title').each(function(i){
         let row = $(this);

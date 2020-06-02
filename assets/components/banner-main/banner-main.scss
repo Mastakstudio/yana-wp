@@ -58,20 +58,17 @@
   }
 
   .title{
+    width: 240px;
 
 
-
-    @media (min-width: 768px) {
-      width: 300px;
-    }
 
     @media (min-width: 1024px) {
-      width: 430px;
+      width: 330px;
       padding-top: 60px;
     }
 
     @media (min-width: 1920px) {
-      width: 480px;
+      width: 400px;
     }
 
 

@@ -14,12 +14,15 @@ mixin footer()
                     +e.wrapper
                         .container
                             +e.inner-wrapper
-                                +social()(class="social__footer")
+                                +e.A.inner-wrapper-link
+                                    +e.IMG.inner-wrapper-image(src=require('./../images/sos.svg'), alt='')
                                 +e.links
                                     +e.A.link(href="#") Карта сайта
                                     +e.A.link(href="#") Интерактивная карта “Ты не одна”
                                 +e.IMG.image(src=require('./../images/canada.svg'), alt='')
-                                +e.A.develop(target="_blank" href="https://mastakstudio.com/")
-                                    +e.SPAN.develop-title Developed:
-                                    +e.IMG.develop-image(src=require('./../images/develop.svg'), alt='')
+                                +e.wrapper-link
+                                    +social()(class="social__footer")
+                                    +e.A.develop(target="_blank" href="https://mastakstudio.com/")
+                                        +e.SPAN.develop-title Developed:
+                                        +e.IMG.develop-image(src=require('./../images/develop.svg'), alt='')
 
