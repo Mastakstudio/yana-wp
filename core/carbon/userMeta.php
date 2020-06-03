@@ -7,22 +7,27 @@ use Carbon_Fields\Field;
 add_action('carbon_fields_register_fields', 'crb_user_settings');
 function crb_user_settings()
 {
-    Container::make_post_meta("available_educations", "Доступное обучение")
-        ->where('post_type', '=', 'training')
+    Container::make_user_meta("user_meta", "Доступное информация")
         ->add_fields(
             [
-                Field::make_complex("blocks", "Блоки")
-                    ->add_fields('base',"Базовый",[
-                        Field::make_rich_text("content", "Контент")
-                    ])
-                    ->add_fields('advanced',"Продвинутый",[
-                        Field::make_rich_text("content", "Контент")
-                    ])
-                    ->add_fields('business_partner',"Бизнес-партнер",[
-                        Field::make_rich_text("content", "Контент")
-                    ])
-                    ->set_duplicate_groups_allowed( false )
-                    ->set_collapsed( true )
+	            Field::make_text(PREFIX."second_name", "Отчество")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(PREFIX."passport_series", "Серия паспорта")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(PREFIX."passport_number", "Номер паспорта")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(PREFIX."passport_when", "Когда выдан")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(PREFIX."passport_who", "Кем выдан")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(PREFIX."birthday", "Дата рождения")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value("")
             ]
         );
 

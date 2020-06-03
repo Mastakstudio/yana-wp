@@ -52,7 +52,9 @@ function crb_attach_theme_options()
 	    ->set_page_parent($themeSettings)
 	    ->add_tab('Страницы',[
 	    	Field::make_select(PREFIX.'account_page', 'Страница акаунта')
-		    ->set_options(page_selecting())
+		         ->set_options(page_selecting()),
+		    Field::make_select(PREFIX.'signin_page', 'Страница авторизации')
+		         ->set_options(page_selecting())
 	    ]);
     ;
 }

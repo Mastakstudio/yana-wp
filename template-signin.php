@@ -2,7 +2,11 @@
 /**
  * Template name: signIn
  */
-$userManager = new UserManager();
+$userManager = UserManager::getInstance();
+$currentUser = $userManager::GetCurrentUser();
+if ($currentUser !== false){
+	$userManager->RedirectToAccount();
+}
 $userManager->Init();
 
 get_header();

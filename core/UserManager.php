@@ -1,18 +1,18 @@
 <?php
 
-
 class UserManager {
 
-	private $accountPage = '';
+	private static $accountPage = '';
+	private static $signinPage = '';
+	private static $current_user = [];
+	private static $instances = [];
 
-	public function __construct() {
-		$accountPageId = carbon_get_theme_option(PREFIX.'account_page');
-		$this->accountPage = get_permalink($accountPageId);
-		add_filter( 'auth_redirect_scheme', [$this, 'auth_redirect_scheme'], 10, 1 );
+	private function __construct() {
+		add_filter( 'auth_redirect_scheme', [$this, 'AuthRedirectScheme'], 10, 1 );
 	}
 
-	private function auth_redirect_scheme(){
-	    return $this->accountPage;
+	private function AuthRedirectScheme(){
+	    return static::$accountPage;
     }
 
 	public function LogIn(){
@@ -31,21 +31,21 @@ class UserManager {
 
 //		$loginResult = wp_authenticate( $log, $pwd );
 
-
+		$result = [];
 		if ( strtolower(get_class($loginResult)) == 'wp_user' ) {
 			$this->RedirectToAccount();
 		} elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
 			//User login failed
 			/* @var WP_Error $loginResult */
-			$return['result'] = false;
-			$return['error'] = $loginResult->get_error_message();
+			$result['result'] = false;
+			$result['error'] = $loginResult->get_error_message();
 		} else {
 			//Undefined Error
-			$return['result'] = false;
-			$return['error'] = 'An undefined error has ocurred';
+			$result['result'] = false;
+			$result['error'] = 'An undefined error has ocurred';
 		}
 
-		return result;
+		return $result;
 	}
 	public function LogOut(){
 
@@ -57,9 +57,8 @@ class UserManager {
 				'error' => 'invalid form data'
 			];
 		}
-		$log = $_POST['log'];
-		$pwd = $_POST['user_email'];
-		$errors = register_new_user( $_POST['email'], $_POST['email']);
+		$pwd = $_POST['pwd'];
+		$errors = register_new_user( $_POST['user_email'], $_POST['user_email']);
 
 		$result = [];
 		if ( is_wp_error($errors) ){
@@ -73,17 +72,22 @@ class UserManager {
 		if( is_multisite() ){
 		    add_user_to_blog(get_current_blog_id(), $errors, get_option('default_role'));
 		}
-		wp_set_password($_POST['password'], $errors);
+		wp_set_password($_POST['pwd'], $errors);
+		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
 
-		$loginResult = wp_authenticate_username_password(NULL, $log , $pwd );
+		$loginResult = wp_authenticate_username_password(NULL, $_POST['user_email'] , $pwd );
 		wp_set_current_user($loginResult->ID, $loginResult->user_email);
 		wp_set_auth_cookie($loginResult->ID);
 
 		$this->RedirectToAccount();
 	}
 
-	private function RedirectToAccount(){
-		if ( wp_redirect( $this->accountPage ) )
+	public function RedirectToAccount(){
+		if ( wp_redirect( static::$accountPage ) )
+			exit;
+	}
+	public function RedirectToSignIn(){
+		if ( wp_redirect( static::$signinPage ) )
 			exit;
 	}
 
@@ -100,7 +104,6 @@ class UserManager {
 
 	public function RegistrationForm(){
 		?>
-
 		<form class="sign-in__list" action="<?= get_the_permalink().'?registration' ?>" method="post" novalidate="novalidate">
 
 			<div class="sign-in__item">
@@ -218,5 +221,34 @@ class UserManager {
 			<button class="custom-button">Войти</button>
 		</form>
 		<?php
+	}
+
+	public static function GetCurrentUser(){
+	    return self::$current_user[0];
+	}
+
+	protected function __clone() { }
+
+	public function __wakeup()
+	{
+		throw new \Exception("Cannot unserialize a singleton.");
+	}
+
+	public static function getInstance(): UserManager
+	{
+		$cls = static::class;
+		if (!isset(self::$instances[$cls])) {
+			self::$instances[$cls] = new static;
+			$accountPageId = carbon_get_theme_option(PREFIX.'account_page');
+			$signinPage = carbon_get_theme_option(PREFIX.'signin_page');
+
+			self::$accountPage = get_permalink($accountPageId);
+			self::$signinPage = get_permalink($signinPage);
+
+			if (count(self::$current_user) === 0){
+				self::$current_user[] = CustomUser::UserIsAuthorized();
+			}
+		}
+		return self::$instances[$cls];
 	}
 }

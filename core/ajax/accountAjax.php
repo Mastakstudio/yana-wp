@@ -125,13 +125,13 @@ class ACCOUNT_AJAX
      * AJAX registration.
      */
     public static function registration() {
-        $return = [];
+        $result = [];
         if( get_option('users_can_register') ){
             $errors = register_new_user( $_POST['email'], $_POST['email']);
             if ( !is_wp_error($errors) ) {
                 //Success
-                $return['result'] = true;
-                $return['message'] = 'Registration complete. Please check your e-mail.';
+                $result['result'] = true;
+                $result['message'] = 'Registration complete. Please check your e-mail.';
                 //add user to blog if multisite
                 if( is_multisite() ){
                     add_user_to_blog(get_current_blog_id(), $errors, get_option('default_role'));
@@ -146,41 +146,41 @@ class ACCOUNT_AJAX
                     //User login successful
                     /**@var WP_User loginResult*/
                     $user = $loginResult;
-                    $return['result'] = true;
+                    $result['result'] = true;
 
                     $userName =  !empty($user->first_name) ? $user->first_name : '';
                     $userName .=  !empty($user->last_name) ? ' '. $user->last_name : '';
                     $displayName = !empty($userName) ? $userName : $user->user_email;
-                    $return['user'] = [
+                    $result['user'] = [
                         'displayName' => $displayName
                     ];
-                    $return['myAccountLink'] = get_permalink(wc_get_page_id("myaccount"));
+                    $result['myAccountLink'] = get_permalink(wc_get_page_id("myaccount"));
 
                 } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
                     //User login failed
                     /* @var WP_Error $loginResult */
-                    $return['result'] = false;
-                    $return['error'] = $loginResult->get_error_message();
+                    $result['result'] = false;
+                    $result['error'] = $loginResult->get_error_message();
                 } else {
                     //Undefined Error
-                    $return['result'] = false;
-                    $return['error'] = 'An undefined error has ocurred';
+                    $result['result'] = false;
+                    $result['error'] = 'An undefined error has ocurred';
                 }
 
-                wp_send_json_success($return);
+                wp_send_json_success($result);
                 die();
 
             }else{
                 //Something's wrong
-                $return['result'] = false;
-                $return['error'] = $errors->get_error_message();
+                $result['result'] = false;
+                $result['error'] = $errors->get_error_message();
             }
-            $return['action'] = 'register';
+            $result['action'] = 'register';
         }else{
-            $return['result'] = false;
-            $return['error'] = 'Registration has been disabled.';
+            $result['result'] = false;
+            $result['error'] = 'Registration has been disabled.';
         }
-        wp_send_json($return, 200);
+        wp_send_json($result, 200);
         die();
     }
 }
