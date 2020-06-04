@@ -71,6 +71,9 @@ class Yana{
             elseif (is_singular('course') || is_page_template('template-course.php')){
 	            wp_enqueue_style(PREFIX.'course', Assets::getCss('course'), false, null);
             }
+            elseif (is_singular('course') || is_page_template('template-test.php')){
+	            wp_enqueue_style(PREFIX.'test', Assets::getCss('test'), false, null);
+            }
             elseif (is_page_template('template-experts.php')){
 	            wp_enqueue_style(PREFIX.'experts', Assets::getCss('experts'), false, null);
             }
@@ -101,6 +104,9 @@ class Yana{
             }
             elseif (is_singular('course') || is_page_template('template-course.php')){
 	            wp_enqueue_script(PREFIX.'course', Assets::getJs('course'), false, null, true);
+            }
+            elseif (is_singular('course') || is_page_template('template-test.php')){
+	            wp_enqueue_script(PREFIX.'test', Assets::getJs('test'), false, null, true);
             }
             elseif (is_page_template('template-experts.php')){
 	            wp_enqueue_script(PREFIX.'experts', Assets::getJs('experts'), false, null, true);

@@ -2,14 +2,6 @@
 /**
  * Template name: course
  */
-//
-//$userManager = UserManager::getInstance();
-///**@var CustomUser $currentUser*/
-//$currentUser = $userManager::GetCurrentUser();
-//if ( ! $currentUser ) {
-//	$userManager->RedirectToSignIn();
-//}
-//var_dump( $currentUser );
 
 get_header();
 get_template_part( '/core/views/headerView' );

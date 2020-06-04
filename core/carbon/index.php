@@ -2,6 +2,7 @@
 require __DIR__ . '/optionPage.php';
 require __DIR__ . '/homePage.php';
 require __DIR__ . '/userMeta.php';
+require __DIR__ . '/courseMeta.php';
 
 add_action('after_setup_theme', 'meta_init_load');
 function meta_init_load()
