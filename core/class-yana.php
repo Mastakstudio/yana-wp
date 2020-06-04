@@ -61,11 +61,24 @@ class Yana{
             wp_enqueue_style(PREFIX.'common', Assets::getCss('common'), false, null);
             if (is_page_template('template-homepage.php')) {
                 wp_enqueue_style(PREFIX.'home', Assets::getCss('index'), false, null);
-            }elseif (is_page_template('template-account.php')){
+            }
+            elseif (is_404() || is_page_template('template-404.php')){
+	            wp_enqueue_style(PREFIX.'page404', Assets::getCss('page404'), false, null);
+            }
+            elseif (is_page_template('template-faq.php')){
+	            wp_enqueue_style(PREFIX.'questionPage', Assets::getCss('questionPage'), false, null);
+            }
+            elseif (is_singular('course') || is_page_template('template-course.php')){
+	            wp_enqueue_style(PREFIX.'course', Assets::getCss('course'), false, null);
+            }
+            elseif (is_page_template('template-experts.php')){
+	            wp_enqueue_style(PREFIX.'experts', Assets::getCss('experts'), false, null);
+            }
+            elseif (is_page_template('template-account.php')){
 	            wp_enqueue_style(PREFIX.'account', Assets::getCss('account'), false, null);
-            }elseif (is_page_template('template-signin.php')){
+            }
+            elseif (is_page_template('template-signin.php')){
 	            wp_enqueue_style(PREFIX.'signIn', Assets::getCss('signIn'), false, null);
-	            wp_enqueue_style('signinfix', BASE_URL.'/src_fix/css/signin.css' , false, null);
             }
         }
         /**
@@ -79,9 +92,23 @@ class Yana{
             wp_enqueue_script(PREFIX.'commons', Assets::getJs('common'), false, null, true);
             if (is_page_template('template-homepage.php')) {
                 wp_enqueue_script(PREFIX.'index', Assets::getJs('index'), false, null, true);
-            }elseif (is_page_template('template-account.php')){
+            }
+            elseif (is_404() || is_page_template('template-404.php')){
+	            wp_enqueue_script(PREFIX.'page404', Assets::getJs('page404'), false, null, true);
+            }
+            elseif (is_page_template('template-faq.php')){
+	            wp_enqueue_script(PREFIX.'questionPage', Assets::getJs('questionPage'), false, null, true);
+            }
+            elseif (is_singular('course') || is_page_template('template-course.php')){
+	            wp_enqueue_script(PREFIX.'course', Assets::getJs('course'), false, null, true);
+            }
+            elseif (is_page_template('template-experts.php')){
+	            wp_enqueue_script(PREFIX.'experts', Assets::getJs('experts'), false, null, true);
+            }
+            elseif (is_page_template('template-account.php')){
 	            wp_enqueue_script(PREFIX.'account', Assets::getJs('account'), false, null, true);
-            }elseif (is_page_template('template-signin.php')){
+            }
+            elseif (is_page_template('template-signin.php')){
 	            wp_enqueue_script(PREFIX.'signIn', Assets::getJs('signIn'), false, null, true);
             }
         }
