@@ -9,7 +9,7 @@ $currentUser = $userManager::GetCurrentUser();
 if ( ! $currentUser ) {
 	$userManager->RedirectToSignIn();
 }
-var_dump( $currentUser );
+//var_dump( $currentUser );
 
 get_header();
 get_template_part( '/core/views/headerView' );
@@ -47,19 +47,19 @@ get_template_part( '/core/views/headerView' );
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Фамилия</label>
-                                <input class="form-input__item-input" name="surname" type="text" value="<?= $currentUser->user->last_name?>" />
+                                <input class="form-input__item-input" name="surname" type="text" value="<?= $currentUser->user->last_name ?>" />
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Имя</label>
-                                <input class="form-input__item-input" name="name" type="text" value="<?= $currentUser->user->first_name?>"/>
+                                <input class="form-input__item-input" name="name" type="text" value="<?= $currentUser->user->first_name ?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Отчество</label>
-                                <input class="form-input__item-input" name="secondName" type="text" value="<?= $currentUser->second_name?>"/>
+                                <input class="form-input__item-input" name="secondName" type="text" value="<?= $currentUser->second_name ?>"/>
                             </div>
                         </div>
                     </div>

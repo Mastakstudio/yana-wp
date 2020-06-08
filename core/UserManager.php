@@ -246,7 +246,7 @@ class UserManager {
 			self::$signinPage = get_permalink($signinPage);
 
 			if (count(self::$current_user) === 0){
-				self::$current_user[] = CustomUser::UserIsAuthorized();
+				self::$current_user[] = new CustomUser();
 			}
 		}
 		return self::$instances[$cls];
