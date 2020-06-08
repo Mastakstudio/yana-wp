@@ -9,16 +9,41 @@ function crb_course_settings()
 {
     Container::make_post_meta("Meta")
         ->where('post_type', '=', 'course')
-        ->where( 'post_level', 'CUSTOM', function( $post_level ) { return ( $post_level === 1 ); } )
+        ->where('post_template', '=', 'default')
        ->add_fields([
 	       Field::make_textarea(PREFIX.'subtitle', 'Подзаголовок'),
-	       Field::make_complex('parts', 'занятия')
-		       ->add_fields('lesson',[
-			       Field::make_select('lesson_id', 'Занятие')
-			       ->set_options(course_part_selecting())
-		       ])
-		       ->set_layout('tabbed-horizontal')
+
+
+//	       Field::make_complex('parts', 'занятия')
+//		       ->add_fields('lesson',[
+//			       Field::make_select('lesson_id', 'Занятие')
+//			       ->set_options(course_part_selecting())
+//		       ])
+//		       ->set_layout('tabbed-horizontal')
        ]);
+	Container::make_post_meta("Course Part")
+	         ->where('post_type', '=', 'course')
+	         ->where('post_template', '=', 'template-course-part.php')
+	         ->add_fields([
+		         Field::make_complex(PREFIX.'preview_desc', 'Превью описание')
+		              ->add_fields('list',[
+			              Field::make_complex(PREFIX.'preview_desc', 'Превью описание')
+			                   ->add_fields('items',[
+			                   	Field::make_textarea('text', 'Текст')
+			                   ])
+			                   ->set_layout('tabbed-vertical')
+		              ])
+			         ->add_fields('editor',[
+				         Field::make_rich_text('text', 'Текст')
+			         ])->set_max(1),
+		         Field::make_complex(PREFIX.'main_info', 'Главная информация')
+		              ->add_fields('video', 'Видео',[
+			              Field::make_text('youtube_link', 'Ссылка на youtube')
+		              ])
+		              ->add_fields('link', 'Ссылка',[
+			              Field::make_text('link', 'Ссылка')
+		              ])
+	         ]);
 }
 
 function course_part_selecting()

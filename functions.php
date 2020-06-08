@@ -11,6 +11,7 @@ $falconGlen = (object)[
     'main' => require 'core/class-yana.php'
 ];
 
+require 'core/views/menu/secondMenu.php';
 require 'core/wordpressShims.php';
 require 'core/functions/functions.php';
 require 'core/customPostType/index.php';

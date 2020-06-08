@@ -32,4 +32,3 @@ function trainings_init(){
         'show_in_rest'       => true,
     ]);
 }
-

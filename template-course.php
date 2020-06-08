@@ -13,10 +13,7 @@ get_template_part( '/core/views/headerView' );
                     <p class="text text_black">В данном разделе вы можете в формате видео получить информацию по конкретной тематике касаемо беременности и родов, подготовки к ним, а также пройти тестирование по усвоенному материалу, для получения диплома</p>
                 </div>
                 <div class="course-page__links">
-                    <div class="links">
-                        <div class="links__inner"><a class="links__item">Пройти курс</a><a class="links__item links__item links__item_active">ВОПРОС-ОТВЕТ</a><a class="links__item">Профиль</a>
-                        </div>
-                    </div>
+	                <?php secondMenuView()?>
                 </div>
             </div>
         </div>

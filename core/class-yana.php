@@ -26,7 +26,7 @@ class Yana{
          */
         register_nav_menus([
             'main_menu' => 'Main Menu',
-//            'mobile_menu' => 'Mobile Menu',
+            'second_menu' => 'Second Menu',
         ]);
 
         /*
@@ -68,11 +68,12 @@ class Yana{
             elseif (is_page_template('template-faq.php')){
 	            wp_enqueue_style(PREFIX.'questionPage', Assets::getCss('questionPage'), false, null);
             }
-            elseif (is_singular('course') || is_page_template('template-course.php')){
-	            wp_enqueue_style(PREFIX.'course', Assets::getCss('course'), false, null);
-            }
-            elseif (is_singular('course') || is_page_template('template-test.php')){
-	            wp_enqueue_style(PREFIX.'test', Assets::getCss('test'), false, null);
+            elseif (is_singular('course')){
+            	if (is_page_template('template-course-part.php')){
+		            wp_enqueue_style(PREFIX.'test', Assets::getCss('test'), false, null);
+	            }else{
+		            wp_enqueue_style(PREFIX.'course', Assets::getCss('course'), false, null);
+	            }
             }
             elseif (is_page_template('template-experts.php')){
 	            wp_enqueue_style(PREFIX.'experts', Assets::getCss('experts'), false, null);
@@ -187,7 +188,13 @@ class Yana{
 
 
     public function set_menu_classes($classes, $item, $args){
-        if ($args->theme_location === 'main_menu') {
+        if ($args->theme_location === 'second_menu') {
+	        $classes[] = 'links__item';
+	        if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
+		        $classes[] = 'links__item_active';
+
+        }
+        else if ($args->theme_location === 'main_menu') {
             if ($item->menu_item_parent == 0) {
                 $classes[] = 'header__menu-item';
                 if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
@@ -211,26 +218,7 @@ class Yana{
 		return $classes;
 	}
 
-	public function header_meta(){
-        ?>
-        <meta property="og:image" content="">
-        <meta property="og:title" content="">
-        <meta property="og:url" content="">
-        <meta name="description" content="">
-        <meta name="Keywords" content="">
-        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-        <link rel="canonical" href="">
-        <meta property="og:locale" content="ru_RU">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="">
-        <meta property="og:description" content="">
-        <meta property="og:url" content="">
-        <meta property="og:site_name" content="">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:title" content="">
-        <?php
-    }
+	public function header_meta(){}
 }
 
 return new Yana();

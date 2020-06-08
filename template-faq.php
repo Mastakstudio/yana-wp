@@ -21,10 +21,7 @@ get_template_part( '/core/views/headerView' );
                     <p class="text text_black">В данном разделе вы можете получить ответ на наиболее часто возникающие вопросы касательно онлайн курса &quot;БЕРЕМЕННОСТЬ И РОДЫ&quot;</p>
                 </div>
                 <div class="page-banner__links">
-                    <div class="links">
-                        <div class="links__inner"><a class="links__item">Пройти курс</a><a class="links__item links__item links__item_active">ВОПРОС-ОТВЕТ</a><a class="links__item">Профиль</a>
-                        </div>
-                    </div>
+                    <?php secondMenuView() ?>
                 </div>
             </div>
         </div>

@@ -6,6 +6,9 @@
 
 get_header();
 get_template_part( '/core/views/headerView' );
+//global $post;
+//var_dump($post);
+//var_dump(is_page_template('template-course-part.php'));
 ?>
     <div class="test">
         <div class="container">

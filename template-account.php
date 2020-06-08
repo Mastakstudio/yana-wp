@@ -23,13 +23,7 @@ get_template_part( '/core/views/headerView' );
                     </p>
                 </div>
                 <div class="account__links">
-                    <div class="links">
-                        <div class="links__inner">
-                            <a class="links__item">Пройти курс</a>
-                            <a class="links__item links__item links__item_active">ВОПРОС-ОТВЕТ</a>
-                            <a class="links__item">Профиль</a>
-                        </div>
-                    </div>
+	                <?php secondMenuView() ?>
                 </div>
             </div>
         </div>
