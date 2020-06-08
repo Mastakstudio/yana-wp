@@ -12,10 +12,10 @@
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  transition: 1s all;
+  transition: 1s background;
 
   &:hover{
     background: linear-gradient(88.39deg, rgba(255, 122, 80, 0.906465) -6.88%, #FFD9A0 99.5%);
-    transition: 1s all;
+    transition: 1s background;
   }
 }

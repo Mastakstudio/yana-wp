@@ -8,36 +8,49 @@ mixin test()
                         +title('беременность')(class='title_blue')
                         +image()(src=require('./../images/test.png'))
                     +e.head-list
-                        +e.A.head-item.test__video(href="#")
-                            IMG(src=require('./../images/play-video.png'))
+                        +e.A.head-item.test__video(href="#modal1")
+                            IMG(src=require('./../images/play-video.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text Подготовка к беременности
                                 +e.SPAN.head-item-link (видео)
-                        +e.A.head-item.test__video(href="#")
-                            IMG(src=require('./../images/play-video.png'))
+                                +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal1")
+                        +e.A.head-item.test__video(href="#modal2")
+                            IMG(src=require('./../images/play-video.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text Секс во время беременности
                                 +e.SPAN.head-item-link (видео)
-                        +e.A.head-item.test__video(href="#")
-                            IMG(src=require('./../images/play-video.png'))
+                                +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal2")
+                        +e.A.head-item.test__video(href="#modal3")
+                            IMG(src=require('./../images/play-video.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text Стоматологический уход во время беременности
                                 +e.SPAN.head-item-link (видео)
-                        +e.A.head-item.test__video(href="#")
-                            IMG(src=require('./../images/play-video.png'))
+                                +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal3")
+                        +e.A.head-item.test__video(href="#modal4")
+                            IMG(src=require('./../images/play-video.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text Токсикоз 1 половины беременности
                                 +e.SPAN.head-item-link (видео)
+                                +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal4")
                         +e.A.head-item.test__pdf(href="#")
-                            IMG(src=require('./../images/pdf.png'))
+                            IMG(src=require('./../images/pdf.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 6-20 неделя
                                 +e.SPAN.head-item-link (инфографика)
                         +e.A.head-item.test__pdf(href="#")
-                            IMG(src=require('./../images/pdf.png'))
+                            IMG(src=require('./../images/pdf.svg'))
                             +e.head-item-content
                                 +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 22-40 неделя
                                 +e.SPAN.head-item-link (инфографика)
+                +e.dop-text
+                    +e.dop-text-title
+                        +e.IMG.dop-text-image(src=require('./../images/txt.svg'))
+                        span Текстовая версия раздела
+                        +e.IMG.button(src=require('./../images/plus.svg'))
+                    +e.dop-text-content
+                        .experts__content
+                            P В данном разделе вы можете в формате видео получить информацию по конкретной тематике касаемо беременности и родов, подготовки к ним, а также пройти тестирование по усвоенному материалу, для получения диплома
+                            P В данном разделе вы можете в формате видео получить информацию по конкретной тематике касаемо беременности и родов, подготовки к ним, а также пройти тестирование по усвоенному материалу, для получения диплома
         +e.wrapper
             +e.wrapper-inner
             .container

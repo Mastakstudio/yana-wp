@@ -38,10 +38,12 @@ function crb_course_settings()
 			         ])->set_max(1),
 		         Field::make_complex(PREFIX.'main_info', 'Главная информация')
 		              ->add_fields('video', 'Видео',[
-			              Field::make_text('youtube_link', 'Ссылка на youtube')
+			              Field::make_text('text', 'Текст ссылки'),
+			              Field::make_text('youtube_link', 'Ссылка на youtube'),
 		              ])
 		              ->add_fields('link', 'Ссылка',[
-			              Field::make_text('link', 'Ссылка')
+			              Field::make_text('text', 'Текст ссылки'),
+			              Field::make_text('link', 'Ссылка'),
 		              ])
 	         ]);
 }

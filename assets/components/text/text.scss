@@ -5,6 +5,8 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
+  opacity: 0;
+  transform: translateX(-100px);
 
 
   @include md{
@@ -21,5 +23,13 @@
   &_white{
     color: #FFFFFF;
   }
+
+}
+
+.text.visible{
+
+  opacity: 1;
+  transform: translateX(0);
+  transition: 1s all .5s;
 
 }

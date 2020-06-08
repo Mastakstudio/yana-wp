@@ -8,4 +8,5 @@ $(document).ready(function(){
     $('.passCourse__content').viewportChecker({
         classToAdd: 'addAnimate',
     });
+
 });

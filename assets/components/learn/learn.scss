@@ -260,6 +260,8 @@
     text-transform: uppercase;
     color: #FFAD32;
     margin-right: 30px;
+    transform: translateX(-50px);
+    opacity: 0;
 
     @include hd{
       padding-top: 50px;
@@ -276,6 +278,8 @@
     width: 146px;
     height: 107.66px;
     margin-bottom: 24px;
+    transform: translateX(50px);
+    opacity: 0;
 
     @include hd{
       width: 224.5px;
@@ -294,6 +298,8 @@
     display: block;
     margin-bottom: 18px;
     width: 205px;
+    transform: translateX(50px);
+    opacity: 0;
 
     @include sm{
       width: 380px;
@@ -317,6 +323,7 @@
     color: #46555A;
     display: block;
     width: 202.8px;
+    opacity: 0;
 
 
     @include sm{
@@ -342,7 +349,7 @@
 
     @include lg{
       display: block;
-      height: 787.32px;
+      height: 700px;
       position: absolute;
       top: 250px;
       right: 0;
@@ -350,7 +357,7 @@
 
 
     @include hd{
-      height: 985px;
+      height: 900px;
       top: 390px;
     }
 
@@ -387,5 +394,33 @@
 
   }
 
+
+}
+
+
+.learn__item.visible{
+
+  .learn__number{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s all;
+  }
+
+  .learn__item-image{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s all .5s;
+  }
+
+  .learn__item-title{
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s all 1s;
+  }
+
+  .learn__item-text{
+    opacity: 1;
+    transition: 1s all 1.5s;
+  }
 
 }

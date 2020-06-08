@@ -28,7 +28,7 @@ function trainings_init(){
         'has_archive'        => false,
         'hierarchical'       => true,
         'menu_position'      => null,
-        'supports'           => ['title'],
+        'supports'           => ['title', 'editor'],
         'show_in_rest'       => true,
     ]);
 }

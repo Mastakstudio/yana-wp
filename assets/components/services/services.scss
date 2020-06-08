@@ -151,6 +151,8 @@
     justify-content: center;
     flex-direction: column;
     margin-bottom: 12px;
+    transform: translateY(50px);
+    opacity: 0;
 
     &:nth-child(2n){
       margin-left: 10px;
@@ -316,4 +318,10 @@
   }
 
 
+}
+
+.services__item.visible{
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s all;
 }

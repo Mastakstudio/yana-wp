@@ -9,17 +9,20 @@ mixin footer()
             +e.inner-footer
                 +e.inner
                     +e.wrapper-logo
-                        +e.A.logo(href="#")
+                        +e.A.logo(href="/")
                             +e.image-logo(src=require('./../images/logo.svg'), alt='')
                     +e.wrapper
                         .container
                             +e.inner-wrapper
-                                +social()(class="social__footer")
+                                +e.A.inner-wrapper-link
+                                    +e.IMG.inner-wrapper-image(src=require('./../images/sos.svg'), alt='')
                                 +e.links
                                     +e.A.link(href="#") Карта сайта
                                     +e.A.link(href="#") Интерактивная карта “Ты не одна”
-                                +e.IMG.image(src=require('./../images/canada.png'), alt='')
-                                +e.A.develop(href="")
-                                    +e.SPAN.develop-title Developed:
-                                    +e.IMG.develop-image(src=require('./../images/develop.svg'), alt='')
+                                +e.IMG.image(src=require('./../images/canada.svg'), alt='')
+                                +e.wrapper-link
+                                    +social()(class="social__footer")
+                                    +e.A.develop(target="_blank" href="https://mastakstudio.com/")
+                                        +e.SPAN.develop-title Developed:
+                                        +e.IMG.develop-image(src=require('./../images/develop.svg'), alt='')
 

@@ -58,20 +58,17 @@
   }
 
   .title{
+    width: 240px;
 
 
-
-    @media (min-width: 768px) {
-      width: 300px;
-    }
 
     @media (min-width: 1024px) {
-      width: 430px;
+      width: 330px;
       padding-top: 60px;
     }
 
     @media (min-width: 1920px) {
-      width: 480px;
+      width: 400px;
     }
 
 
@@ -137,7 +134,6 @@
       text-decoration-style: dashed;
       width: 71px;
       display: block;
-      margin-top: -8px;
 
       @media (max-width : 768px - 1px) and (orientation : landscape) {
         width: auto;
@@ -145,6 +141,7 @@
 
       @media (min-width: 768px) {
         width: unset;
+        margin-right: 10px;
       }
 
       @media (min-width: 768px) {
@@ -162,7 +159,8 @@
     }
 
     img{
-
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 100%;
     }
 
   }
