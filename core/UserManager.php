@@ -164,7 +164,6 @@ class UserManager {
 		</form>
 		<?php
 	}
-
 	public function LoginForm(){
 		?>
 		<form class="sign-in__list" action="<?= get_the_permalink().'?login' ?>" method="post">

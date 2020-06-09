@@ -16,8 +16,11 @@ class Course {
 
 		$args = array(
 			'post_type' => 'course',
-			'posts_per_page' => 5,
-			'post__in' => [$id]
+			'posts_per_page' => -1,
+			'post__in' => [$id],
+			"orderby" => 'meta_value_num',
+			"meta_key" => PREFIX.'order',
+			"order" => 'DESC'
 		);
 
 
@@ -61,6 +64,10 @@ class CoursePart {
 	private $preview_desc;
 	/**@var array $main_info*/
 	private $main_info;
+	/**@var array $additional_info*/
+	private $additional_info;
+	/**@var array $test*/
+	private $test;
 
 	/**
 	 * @param $id integer
@@ -81,14 +88,78 @@ class CoursePart {
 
 		$this->preview_desc = carbon_get_post_meta($id, PREFIX.'preview_desc');
 		$this->main_info = carbon_get_post_meta($id, PREFIX.'main_info');
+		$this->additional_info = carbon_get_post_meta($id, PREFIX.'additional_info');
+		$this->test = carbon_get_post_meta($id, PREFIX.'test');
+	}
+
+	public function getTitle(){
+		return $this->part->post_title;
 	}
 
 	public function getPart(){
 		return $this->part;
 	}
-	public function getTitle(){
-		return $this->part->post_title;
+
+	public function getAdditionalInfo(){
+		if (!is_array($this->additional_info) || empty($this->additional_info))
+			return;
+		?>
+        <div class="test__resource">
+            <span class="test__resource-title">Дополнительные ресурсы:</span>
+            <div class="test__resource-list">
+				<?php
+				foreach ($this->additional_info as $section) {
+					echo '<div class="test__resource-item"><span class="test__resource-item-name">'.$section['text'].'</span>';
+
+					foreach ( $section['links'] as $link ) {
+						echo '<a class="test__resource-item-link" href="'.esc_url($link['text']).'"  target="_blank">'.esc_url($link['text']).'</a>';
+					}
+
+					echo '</div>';
+				}?>
+            </div>
+        </div>
+		<?php
 	}
+
+	public function getTest(){
+		if (!is_array($this->test) || empty($this->test))
+			return;
+		?>
+        <div class="test__content">
+            <span class="title title_blue">тестирование</span>
+            <div class="test__content-list">
+
+            <?php
+            for ($i = 0; count($this->test) > $i; $i++){
+                $question = $this->test[$i];
+                ?>
+                <div class="test__content-item" data-id="question-<?= $i+1 ?>">
+                    <div class="test__content-item-head">
+                        <span class="test__content-number"><?= $i+1 ?></span>
+                        <span class="test__content-title"><?= $question['text'] ?></span>
+                    </div>
+                    <div class="test__content-item-check">
+                        <?php
+                        for ($j = 0; count($question['answers']) > $j; $j++){
+                            $answer = $question['answers'][$j];
+                            ?>
+                            <div class="test__content-check ">  <!-- correct error -->
+                                <label class="test__container">
+	                                <?= $answer['text'] ?>
+                                    <input type="radio" checked="checked" name="question-<?= $i ?>">
+                                    <span class="test__checkmark"></span>
+                                </label>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+        <?php
+	}
+
 	public function getPreviewDesc($echo = false){
 		if ($echo) ob_start();
 
@@ -98,8 +169,7 @@ class CoursePart {
 				echo '<span class="course-page__type-content-item"><div class="course-page__type-content-item-number"><span>'. (1 + $i).'</span></div><span class="course-page__type-content-item-text">'.$text.'</span></span>';
 			}
 		}elseif($this->preview_desc[0]['_type'] == 'editor'){
-			echo '<span class="course-page__type-content-item" style="width: 100%">
-<span class="course-page__type-content-item-text" style="width: 100%">'.apply_filters('the_content', $this->preview_desc[0]['text']).'</span></span>';
+			echo '<span class="course-page__type-content-item" style="width: 100%"><span class="course-page__type-content-item-text" style="width: 100%">'.apply_filters('the_content', $this->preview_desc[0]['text']).'</span></span>';
 		}
 
 		if ($echo) return ob_get_clean();
@@ -109,6 +179,7 @@ class CoursePart {
 		$modalCount = 0;
 		foreach ($this->main_info as $mainInfo){
 			if ($mainInfo['_type'] == 'video' ){
+//				if (false ){
 				$modalCount++;
 				$text = $mainInfo['text'];
 				$link = $mainInfo['youtube_link'];

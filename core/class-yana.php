@@ -103,11 +103,12 @@ class Yana{
             elseif (is_page_template('template-faq.php')){
 	            wp_enqueue_script(PREFIX.'questionPage', Assets::getJs('questionPage'), false, null, true);
             }
-            elseif (is_singular('course') || is_page_template('template-course.php')){
-	            wp_enqueue_script(PREFIX.'course', Assets::getJs('course'), false, null, true);
-            }
             elseif (is_singular('course') || is_page_template('template-test.php')){
-	            wp_enqueue_script(PREFIX.'test', Assets::getJs('test'), false, null, true);
+	            if (is_page_template('template-course-part.php')){
+		            wp_enqueue_script(PREFIX.'test', Assets::getJs('test'), false, null, true);
+	            }else{
+		            wp_enqueue_script(PREFIX.'course', Assets::getJs('course'), false, null, true);
+	            }
             }
             elseif (is_page_template('template-experts.php')){
 	            wp_enqueue_script(PREFIX.'experts', Assets::getJs('experts'), false, null, true);

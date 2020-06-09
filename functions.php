@@ -19,6 +19,7 @@ require 'core/functions/hooks.php';
 require 'core/CustomUser.php';
 require 'core/UserManager.php';
 require 'core/Course.php';
+require 'core/CourseTestResult.php';
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/core/carbon/index.php';

@@ -1,5 +1,8 @@
 <?php
 $banner_video  = home_page_banner_video();
+$userManager = UserManager::getInstance();
+/**@var $currentUser CustomUser*/
+$currentUser = $userManager::GetCurrentUser();
 ?>
 <div class="banner-main">
     <div class="container">
@@ -19,8 +22,10 @@ $banner_video  = home_page_banner_video();
                     <img class="banner-main__girl-write" src="/wp-content/themes/Yana/src/icons/girl-write.png" alt="" role="presentation"/>
                 <?php   endif; ?>
             </div>
-            <div class="banner-main__form">
-                <div class="form">
+
+            <?php if ($currentUser->user->get_site_id() === 0): ?>
+                <div class="banner-main__form">
+                    <div class="form">
                     <div class="form__inner">
                         <div class="form__tabs-content">
                             <input type="radio" name="toggle" checked="" id="login">
@@ -91,7 +96,9 @@ $banner_video  = home_page_banner_video();
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+	        <?php endif; ?>
+
         </div>
     </div>
     <div class="banner-main__image">
