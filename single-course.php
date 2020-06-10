@@ -2,12 +2,12 @@
 get_header();
 get_template_part( '/core/views/headerView' );
 
-
+global $post;
 
 if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
-		$course = new Course( get_the_ID() );
+		$course = new Course( get_the_ID(), $post );
 		$sub_title = carbon_get_post_meta( get_the_ID(), PREFIX . 'subtitle' );
 		?>
         <div class="course-page">
@@ -44,7 +44,7 @@ if ( have_posts() ):
                                         <div class="course-page__text-content-item">
                                             <div class="course-page__title-content-item">
                                                 <span>Освещенные темы</span>
-                                                <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/button.png" alt="" role="presentation"/>
+                                                <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt="" role="presentation"/>
                                             </div>
                                             <div class="course-page__list-content-item">
 	                                            <?php $part->getPreviewDesc() ?>
@@ -92,7 +92,7 @@ if ( have_posts() ):
                                         </div>
                                     </div>
                                     <div class="course-page__link-to">
-                                        <a class="link" href="<?= get_permalink( $part->getPart()->ID )?>" >Продолжить обучение</a>
+                                        <a class="link" href="<?= get_permalink( $part->Part()->ID )?>" >Продолжить обучение</a>
                                     </div>
                                 </div>
 

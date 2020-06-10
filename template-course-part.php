@@ -13,8 +13,7 @@ if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
 var_dump($post->post_parent);
-    if ($post->post_parent)
-//        $course = new Course($post->post_parent);
+    if ($post->post_parent) 
 
 		$coursePart = new CoursePart( get_the_ID(), $post);
 

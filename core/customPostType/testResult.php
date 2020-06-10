@@ -20,10 +20,10 @@ function course_test_result_init(){
 
 	$args =[
 		'labels'             => $labels,
-		'public'             => false,
-		'publicly_queryable' => false,
-		'show_ui'            => false,
-		'show_in_menu'       => false,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
 		'query_var'          => true,
 		'rewrite'            => true,
 		'capability_type'    => 'post',
@@ -34,5 +34,5 @@ function course_test_result_init(){
 		'show_in_rest'       => true,
 	];
 
-	register_post_type('course_test_results', $args);
+	register_post_type('course_test_result', $args);
 }

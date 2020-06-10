@@ -11,15 +11,12 @@ $falconGlen = (object)[
     'main' => require 'core/class-yana.php'
 ];
 
-require 'core/views/menu/secondMenu.php';
+require 'core/viewFunctions/includes.php';
 require 'core/wordpressShims.php';
 require 'core/functions/functions.php';
-require 'core/customPostType/index.php';
 require 'core/functions/hooks.php';
-require 'core/CustomUser.php';
-require 'core/UserManager.php';
-require 'core/Course.php';
-require 'core/CourseTestResult.php';
+require 'core/customPostType/includes.php';
+require 'core/includes.php';
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/core/carbon/index.php';
