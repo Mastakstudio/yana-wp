@@ -12,18 +12,17 @@ function crb_attach_theme_options()
         ->set_page_menu_title('Настройки темы')
         ->set_icon('dashicons-admin-generic')
         ->add_tab(__('Main options'), [
-            Field::make_image(PREFIX . 'main_logo', 'Logo'),
-	        Field::make_separator('contact_order_mail', 'Email для заказа звонка'),
+            Field::make_image(TO_MAIN_LOGO, 'Logo'),
 	        Field::make_separator('contact_info_separator', 'Контакты'),
-	        Field::make_text(PREFIX . 'phone_number', 'Phone')->set_width(50),
-	        Field::make_text(PREFIX . 'contact_email', 'Email')->set_width(50),
-	        Field::make_text(PREFIX . 'viber_number', 'Viber')->set_width(50),
-	        Field::make_text(PREFIX . 'whatsapp_number', 'whatsapp')->set_width(50),
-	        Field::make_text(PREFIX . 'instagram_link', 'Instagram'),
-	        Field::make_text(PREFIX . 'address', 'Адресс'),
+	        Field::make_text(TO_PHONE_LOGO, 'Phone')->set_width(50),
+	        Field::make_text(TO_CONTACT_EMAIL, 'Email')->set_width(50),
+	        Field::make_text(TO_VIBER_NUMBER, 'Viber')->set_width(50),
+	        Field::make_text(TO_WHATSAPP_NUMBER, 'whatsapp')->set_width(50),
+	        Field::make_text(TO_INSTAGRAM_LINK, 'Instagram'),
+	        Field::make_text(TO_ADDRESS, 'Адресс'),
         ])
         ->add_tab(__('email'), [
-	        Field::make_text(PREFIX . 'order_contact_email', 'Email для получения писем'),
+	        Field::make_text(TO_ORDER_CONTACT_EMAIL, 'Email для получения писем'),
 	        Field::make_checkbox(PREFIX . 'auto_send_mail', 'Автоматичеси отчечать на запрс презинтации'),
 	        Field::make_text(PREFIX . 'mail_title', 'Заголовок письма'),
 	        Field::make_rich_text(PREFIX . 'mail_body', 'Содиржание письма'),
@@ -39,7 +38,7 @@ function crb_attach_theme_options()
 
         ])
         ->add_tab(' partners', [
-		    Field::make_complex(PREFIX.'partners', 'Партнёры')
+		    Field::make_complex(TO_PARTNERS, 'Партнёры')
 		         ->add_fields('card', 'Карточки',[
 			         Field::make_image('img_id', 'Иконка'),
 			         Field::make_text('title', 'Заголовок'),
@@ -51,7 +50,7 @@ function crb_attach_theme_options()
     Container::make_theme_options('social_settings', 'Настройки Авторизации')
 	    ->set_page_parent($themeSettings)
 	    ->add_tab('Страницы',[
-	    	Field::make_select(PREFIX.'account_page', 'Страница акаунта')
+	    	Field::make_select(TO_ACCOUNT_PAGE, 'Страница акаунта')
 		         ->set_options(page_selecting()),
 		    Field::make_select(PREFIX.'signin_page', 'Страница авторизации')
 		         ->set_options(page_selecting())

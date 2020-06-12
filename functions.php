@@ -10,7 +10,7 @@ require_once __DIR__ . '/utils/Assets.php';
 $falconGlen = (object)[
     'main' => require 'core/class-yana.php'
 ];
-
+require 'core/define.php';
 require 'core/viewFunctions/includes.php';
 require 'core/wordpressShims.php';
 require 'core/functions/functions.php';

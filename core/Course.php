@@ -34,7 +34,7 @@ class Course {
 				$args                                = [
 					'test_id'    => $part->part->ID,
 					'course_id'  => $this->course->ID,
-					'test_title' => $this->course->post_title,
+					'test_title' => $this->course->post_title ."_". $part->part->post_title,
 				];
 				$this->testResult[ $part->part->ID ] = TestResultManager::Create( $args );
 			}
@@ -61,6 +61,15 @@ class Course {
 	public function getParts() {
 		return $this->courseParts;
 	}
+
+	/**
+	 * @param $part CoursePart
+	 *
+	 * @return CourseTestResult
+	 */
+	public function getTestResultByCoursePart( $part ) {
+		return $this->testResult[ $part->part->ID ];
+	}
 }
 
 
@@ -75,6 +84,8 @@ class CoursePart {
 	private $additional_info;
 	/**@var array $test */
 	private $test;
+
+	private $time_limit;
 
 	/**
 	 * @param $id integer
@@ -97,6 +108,7 @@ class CoursePart {
 		$this->main_info       = carbon_get_post_meta( $id, PREFIX . 'main_info' );
 		$this->additional_info = carbon_get_post_meta( $id, PREFIX . 'additional_info' );
 		$this->test            = carbon_get_post_meta( $id, PREFIX . 'test' );
+		$this->time_limit      = carbon_get_post_meta( $id, PREFIX . 'time_limit' );
 	}
 
 	public function getTitle() {
@@ -155,8 +167,9 @@ class CoursePart {
 				<?php
 				for ( $i = 0; count( $this->test ) > $i; $i ++ ) {
 					$question = $this->test[ $i ];
+					$displayOnlyFirst = $i == 0 ? '': 'style="display: none;"';
 					?>
-                    <div class="test__content-item" data-id="question-<?= $i + 1 ?>">
+                    <div class="test__content-item" data-id="question-<?= $i + 1 ?>" <?= $displayOnlyFirst ?>>
                         <div class="test__content-item-head">
                             <span class="test__content-number"><?= $i + 1 ?></span>
                             <span class="test__content-title"><?= $question['text'] ?></span>
@@ -165,11 +178,12 @@ class CoursePart {
 							<?php
 							for ( $j = 0; count( $question['answers'] ) > $j; $j ++ ) {
 								$answer = $question['answers'][ $j ];
+								$is_correct = $answer['is_correct']? 'true': 'false';
 								?>
                                 <div class="test__content-check ">  <!-- correct error -->
                                     <label class="test__container">
 										<?= $answer['text'] ?>
-                                        <input type="radio" checked="checked" name="question-<?= $i ?>">
+                                        <input type="radio" name="question-<?= $i ?>" data-is-correct="<?= $is_correct?>">
                                         <span class="test__checkmark"></span>
                                     </label>
                                 </div>
@@ -241,5 +255,13 @@ class CoursePart {
 				<?php
 			}
 		}
+	}
+
+	public function getTestTimeLimit() {
+		return $this->time_limit;
+	}
+
+	public function getQuestionsQuantity(){
+	    return count($this->test);
 	}
 }

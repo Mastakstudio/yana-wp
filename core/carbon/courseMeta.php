@@ -11,18 +11,23 @@ function crb_course_settings()
         ->where('post_type', '=', 'course')
         ->where('post_template', '=', 'default')
        ->add_fields([
-	       Field::make_textarea(PREFIX.'subtitle', 'Подзаголовок'),
+	       Field::make_textarea(COURSE_SUBTITLE, 'Подзаголовок'),
        ]);
 	Container::make_post_meta("Course Part")
 	         ->where('post_type', '=', 'course')
 	         ->where('post_template', '=', 'template-course-part.php')
 	         ->add_fields([
-		         Field::make_text(PREFIX.'order', 'Приоритет')
+		         Field::make_text(COURSE_ORDER, 'Приоритет')
 			         ->set_default_value(0)
+			         ->set_width(50)
 			         ->set_attribute('type', 'number'),
-		         Field::make_complex(PREFIX.'preview_desc', 'Превью описание')
+		         Field::make_text(COURSE_TIME_LIMIT, 'Дней на решение теста')
+		              ->set_default_value(1)
+		              ->set_width(50)
+		              ->set_attribute('type','number'),
+		         Field::make_complex(COURSE_PREVIEW_DESC, 'Превью описание')
 		              ->add_fields('list',[
-			              Field::make_complex(PREFIX.'preview_desc', 'Превью описание')
+			              Field::make_complex(COURSE_PREVIEW_DESC, 'Превью описание')
 			                   ->add_fields('items',[
 			                   	Field::make_textarea('text', 'Текст')
 			                   ])
@@ -31,7 +36,7 @@ function crb_course_settings()
 			         ->add_fields('editor',[
 				         Field::make_rich_text('text', 'Текст')
 			         ])->set_max(1),
-		         Field::make_complex(PREFIX.'main_info', 'Главная информация')
+		         Field::make_complex(COURSE_MAIN_INFO, 'Главная информация')
 		              ->add_fields('video', 'Видео',[
 			              Field::make_text('text', 'Текст ссылки'),
 			              Field::make_text('youtube_link', 'Ссылка на youtube'),
@@ -41,7 +46,7 @@ function crb_course_settings()
 			              Field::make_text('link', 'Ссылка'),
 		              ])
 		              ->set_collapsed(true),
-		         Field::make_complex(PREFIX.'additional_info', 'Дополнительные ресурсы')
+		         Field::make_complex(COURSE_ADDITIONAL_INFO, 'Дополнительные ресурсы')
 		              ->add_fields('section', 'Секция', [
 		              	  Field::make_text('text', 'Заголовок секции'),
 			              Field::make_complex('links', 'Ссылки')
@@ -54,7 +59,7 @@ function crb_course_settings()
 	         ->where('post_type', '=', 'course')
 	         ->where('post_template', '=', 'template-course-part.php')
 	         ->add_fields([
-		         Field::make_complex(PREFIX.'test', 'Вопросы')
+		         Field::make_complex(COURSE_TEST, 'Вопросы')
 		              ->add_fields('questions', 'Вопрос',[
 			              Field::make_textarea('text'),
 			              Field::make_complex('answers', 'Ответ')
@@ -62,8 +67,10 @@ function crb_course_settings()
 				                   Field::make_textarea('text'),
 				                   Field::make_checkbox('is_correct', 'Верный')
 			                   ])
+			                   ->set_collapsed(true)
 
 		              ])
+		              ->set_collapsed(true)
 
 	         ]);
 }

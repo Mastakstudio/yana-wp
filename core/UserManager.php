@@ -8,7 +8,16 @@ class UserManager {
 	private static $instances = [];
 
 	private function __construct() {
+		$accountPageId = carbon_get_theme_option(TO_ACCOUNT_PAGE);
+		$signinPage = carbon_get_theme_option(TO_SIGNIN_PAGE);
+
 		add_filter( 'auth_redirect_scheme', [$this, 'AuthRedirectScheme'], 10, 1 );
+
+		self::$accountPage = get_permalink($accountPageId);
+		self::$signinPage = get_permalink($signinPage);
+
+		self::$current_user[] = new CustomUser();
+
 	}
 
 	private function AuthRedirectScheme(){
@@ -238,15 +247,6 @@ class UserManager {
 		$cls = static::class;
 		if (!isset(self::$instances[$cls])) {
 			self::$instances[$cls] = new static;
-			$accountPageId = carbon_get_theme_option(PREFIX.'account_page');
-			$signinPage = carbon_get_theme_option(PREFIX.'signin_page');
-
-			self::$accountPage = get_permalink($accountPageId);
-			self::$signinPage = get_permalink($signinPage);
-
-			if (count(self::$current_user) === 0){
-				self::$current_user[] = new CustomUser();
-			}
 		}
 		return self::$instances[$cls];
 	}

@@ -32,6 +32,11 @@ if ( have_posts() ):
 					if ( is_array( $parts ) && count( $parts ) ):
 						/**@var CoursePart $part */
 						foreach ( $parts as $part ) :
+							/**@var CourseTestResult $testResult */
+                            $testResult = $course->getTestResultByCoursePart($part);
+							$intervalTimeLimit = new DateInterval('P'.$part->getTestTimeLimit().'D');
+
+						    $EndTime = $testResult->getEndTime($intervalTimeLimit);
 							?>
                             <div class="course-page__item">
 
@@ -39,12 +44,12 @@ if ( have_posts() ):
                                     <span class="course-page__title"><?= $part->getTitle() ?></span>
                                     <div class="course-page__inner-content-item">
                                         <div class="course-page__image-content-item">
-                                            <img class="course-page__about-image" src="/wp-content/themes/Yana/src/icons/course1.png" alt="" role="presentation"/>
+                                            <img class="course-page__about-image" src="/wp-content/themes/Yana/src/icons/course1.png" alt=""/>
                                         </div>
                                         <div class="course-page__text-content-item">
                                             <div class="course-page__title-content-item">
                                                 <span>Освещенные темы</span>
-                                                <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt="" role="presentation"/>
+                                                <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
                                             </div>
                                             <div class="course-page__list-content-item">
 	                                            <?php $part->getPreviewDesc() ?>
@@ -55,13 +60,11 @@ if ( have_posts() ):
                                 <div class="course-page__info-item">
                                     <div class="course-page__title-info-item">
                                         <span>информация</span>
-                                        <img class="course-page__button"
-                                             src="/wp-content/themes/Yana/src/icons/button.png" alt=""
-                                             role="presentation"/>
+                                        <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
                                     </div>
                                     <div class="course-page__content-info-item">
                                         <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
-                                        <div class="course-page__time-info-item" data-time="Jun 30, 2020 00:00:00">
+                                        <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">
                                             <ul>
                                                 <li><span>Дней:</span><span class="days"></span></li>
                                                 <li><span>Часов:</span><span class="hours"></span></li>
@@ -72,17 +75,17 @@ if ( have_posts() ):
                                             <div class="course-page__type-text-info-item">
                                                 <span class="course-page__type-text-info-item-title">Вопросов всего:</span>
                                                 <div class="course-page__line"></div>
-                                                <span class="course-page__type-text-info-item-number">7</span>
+                                                <span class="course-page__type-text-info-item-number"><?= $part->getQuestionsQuantity() ?></span>
                                             </div>
                                             <div class="course-page__type-text-info-item">
                                                 <span class="course-page__type-text-info-item-title">Отвечено:</span>
                                                 <div class="course-page__line"></div>
-                                                <span class="course-page__type-text-info-item-number">4</span>
+                                                <span class="course-page__type-text-info-item-number"><?= $testResult->getAnsweredQuantity()?></span>
                                             </div>
                                             <div class="course-page__type-text-info-item">
                                                 <span class="course-page__type-text-info-item-title">Правильно:</span>
                                                 <div class="course-page__line"></div>
-                                                <span class="course-page__type-text-info-item-number">2</span>
+                                                <span class="course-page__type-text-info-item-number"><?= $testResult->getRightAnsweredQuantity()?></span>
                                             </div>
                                         </div>
                                         <div class="course-page__procent-info-item">

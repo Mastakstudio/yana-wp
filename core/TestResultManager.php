@@ -2,6 +2,14 @@
 
 
 class TestResultManager {
+
+	private static $current_test_result = [];
+	private static $instances = [];
+
+	private function __construct() {
+		self::$current_test_result[0] = null;
+	}
+
 	/**
 	 * @param Course $course
 	 *
@@ -13,40 +21,6 @@ class TestResultManager {
 		return self::GetTestResultsByCourseID($id);
 	}
 
-	/**
-	 * @param CoursePart $part
-	 *
-	 * @return CourseTestResult
-	 */
-	public static function GetTestResultsByCoursePart($part){
-		$id = $part->part->ID;
-		$userManager = UserManager::getInstance();
-		/**@var $user CustomUser*/
-		$user = $userManager::GetCurrentUser();
-
-		$args = [
-			'post_type'      => 'course_test_result',
-			'posts_per_page' => 1,
-			'meta_query' => [
-				[
-					'key' => PREFIX.'course_id',
-					'value' => $id,
-					'compare' => '=',
-				],
-				[
-					'key' => PREFIX.'user_id',
-					'value' => $user->user->ID,
-					'compare' => '=',
-				]
-			]
-		];
-		$parts = new WP_Query( $args );
-
-		if (is_array($parts->posts) && isset($parts->posts[0]))
-			return new CourseTestResult( $parts->posts[0] );
-
-		return null;
-	}
 	/**
 	 * @param integer $id
 	 *
@@ -62,12 +36,12 @@ class TestResultManager {
 			'posts_per_page' => -1,
 			'meta_query' => [
 				[
-					'key' => PREFIX.'course_id',
+					'key' => '_'.TEST_COURSE_ID,
 					'value' => $id,
 					'compare' => '=',
 				],
 				[
-					'key' => PREFIX.'user_id',
+					'key' => '_'.TEST_USER_ID,
 					'value' => $user->user->ID,
 					'compare' => '=',
 				]
@@ -87,8 +61,72 @@ class TestResultManager {
 		return $result;
 	}
 
+	/**
+	 * @param CoursePart $part
+	 *
+	 * @return CourseTestResult
+	 */
+	public static function GetTestResultsByCoursePart($part){
+		$id = $part->part->ID;
+		return self::GetTestResultsByCoursePartId($id);
+	}
+
+	/**
+	 * @param integer $partId
+	 *
+	 * @return CourseTestResult
+	 */
+	public static function GetTestResultsByCoursePartId($partId){
+		$id = $partId;
+		$userManager = UserManager::getInstance();
+		/**@var $user CustomUser*/
+		$user = $userManager::GetCurrentUser();
+
+		$args = [
+			'post_type'      => 'course_test_result',
+			'posts_per_page' => 1,
+			'meta_query' => [
+				[
+					'key' => '_'.TEST_ID,
+					'value' => $id,
+					'compare' => '=',
+				],
+				[
+					'key' => '_'.TEST_USER_ID,
+					'value' => $user->user->ID,
+					'compare' => '=',
+				]
+			]
+		];
+		$parts = new WP_Query( $args );
+
+		if (is_array($parts->posts) && isset($parts->posts[0]))
+			return new CourseTestResult( $parts->posts[0] );
+
+		return null;
+	}
+
+	/**
+	 * @return null|CourseTestResult
+	 */
+	public static function getCurrentTestResult() {
+		$part = get_post(Get_the_ID());
+
+		if ($part->page_template === "template-course-part.php"){
+			if (is_null(self::$current_test_result[0])){
+				self::$current_test_result[0] = self::GetTestResultsByCoursePartId($part->ID);
+			}
+		}else{
+			return null;
+		}
+		return self::$current_test_result[0];
+	}
+
+
+//	CRUD start
+
 	/**@param array
-	 * @return WP_Post|null
+	 * @return CourseTestResult|WP_Post|null
 	 */
 	public static function Create($args){
 
@@ -97,13 +135,14 @@ class TestResultManager {
 		$user = $userManager::GetCurrentUser();
 
 		$test_results = [
-			PREFIX.'answered' => 0,
-			PREFIX.'right_answered' => 0,
-			PREFIX.'test_id' => $args['test_id'],
-			PREFIX.'course_id' => $args['course_id'],
-			PREFIX.'user_id' =>  $user->user->ID,
-			PREFIX.'started' => false,
-			PREFIX.'time_left' => ''
+			'_'.TEST_ANSWERED => 0,
+			'_'.TEST_RIGHT_ANSWERED => 0,
+			'_'.TEST_ID => $args['test_id'],
+			'_'.TEST_COURSE_ID => $args['course_id'],
+			'_'.TEST_USER_ID =>  $user->user->ID,
+			'_'.TEST_STARTED => false,
+			'_'.TEST_END_TIME => '',
+			'_'.TEST_START_TIME => ''
 		];
 
 		$post_id = wp_insert_post([
@@ -117,28 +156,59 @@ class TestResultManager {
 		$result = null;
 		if ($post_id) {
 			$result = get_post($post_id);
+			$result = new CourseTestResult($result);
 		}
 		return $result;
 	}
 
-	/**@param array*/
-	public static function Save($args){
-		$test_results = [
-			'your_custom_key1' => 'your_custom_value1',
-			'your_custom_key2' => 'your_custom_value2'
-		];
+//	/**@param array $args*/
+//	public static function Save($args){
+//		$test_results = [
+//			'your_custom_key1' => 'your_custom_value1',
+//			'your_custom_key2' => 'your_custom_value2'
+//		];
+//
+//		$post_id = wp_update_post([
+//			'post_title' => $args['user_id'].'_'.$args['test_id'],
+//			'post_type' => 'course_test_result',
+//			'post_status' => 'publish',
+//
+//			'meta_input' => $test_results
+//		]);
+//
+//		if ($post_id) {
+//			// it worked :)
+//		}
+//	}
 
-		$post_id = wp_update_post([
-			'post_title' => $args['user_id'].'_'.$args['test_id'],
-			'post_type' => 'course_test_result',
-			'post_status' => 'publish',
 
-			'meta_input' => $test_results
-		]);
-
-		if ($post_id) {
-			// it worked :)
+	/**
+	 * @param $fields array
+	 * @param $target CourseTestResult
+	 */
+	public static function UpdateMeta($target, $fields){
+		if (is_array($fields) && count($fields) > 0){
+			foreach ( $fields as $key => $value ) {
+				update_post_meta($target->getID(), $key,$value);
+			}
 		}
 	}
 
+//	CRUD end
+
+	protected function __clone() { }
+
+	public function __wakeup()
+	{
+		throw new \Exception("Cannot unserialize a singleton.");
+	}
+
+	public static function getInstance(): TestResultManager
+	{
+		$cls = static::class;
+		if (!isset(self::$instances[$cls])) {
+			self::$instances[$cls] = new static;
+		}
+		return self::$instances[$cls];
+	}
 }
