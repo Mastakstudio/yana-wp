@@ -34,5 +34,7 @@ function crb_test_result_settings()
 	            ->set_attribute( 'readOnly', 'readOnly' ),
 	       Field::make_text(TEST_START_TIME, 'TEST_START_TIME')
 	            ->set_attribute( 'readOnly', 'readOnly' ),
+	       Field::make_checkbox(TEST_SOLVED, 'solved')
+//	            ->set_attribute( 'readOnly', 'readOnly' ),
        ]);
 }

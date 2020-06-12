@@ -23,7 +23,7 @@ $currentUser = $userManager::GetCurrentUser();
                 <?php   endif; ?>
             </div>
 
-            <?php if ($currentUser->user->get_site_id() === 0): ?>
+            <?php if (is_null($currentUser->user)): ?>
                 <div class="banner-main__form">
                     <div class="form">
                     <div class="form__inner">

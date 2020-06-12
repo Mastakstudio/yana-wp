@@ -17,6 +17,7 @@ require 'core/functions/functions.php';
 require 'core/functions/hooks.php';
 require 'core/customPostType/includes.php';
 require 'core/includes.php';
+require 'core/ajax/index.php';
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/core/carbon/index.php';

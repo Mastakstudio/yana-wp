@@ -23,7 +23,47 @@ jQuery(document).ready(function ($) {
         }
 
     })
+
     $("#close_modal").on('click', function () {
         $('#modal_next_part').removeClass('active');
     });
+
+    $('#go_to_next').on('click', function (e) {
+        e.preventDefault();
+
+        let linkToNextPart = $(this).attr('href');
+        let answered = 0;
+        let right = 0 ;
+        $('.test__content-check input:checked').each(function (i, elem ) {
+            answered++;
+
+            let wrapper = $(elem).parents('.test__content-check');
+            console.log('wrapper', wrapper);
+            console.log(wrapper.hasClass('wrapper.hasClass','correct'));
+            if (wrapper.hasClass('correct')){
+                right++;
+            }
+        })
+
+        let data = {
+            action: 'finishTest',
+            answered: answered,
+            right : right,
+            test_id : $('#test-wrapper').data('test_id')
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: mastak_ajax.url,
+            data: data,
+            dataType: 'json'
+        }).done( (response) =>  {
+            console.log(response);
+            if(!response.success) return;
+            window.location.href = linkToNextPart;
+        } ).fail(function () {
+        });
+    })
+
+
 });

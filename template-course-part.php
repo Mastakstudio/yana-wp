@@ -31,7 +31,7 @@ if ( have_posts() ):
 			$coursePart = new CoursePart( get_the_ID(), $post );
 		}
 		?>
-        <div class="test">
+        <div class="test" id="test-wrapper" data-test_id="<?= $coursePart->part->ID ?>">
             <div class="container">
                 <div class="test__inner">
                     <div class="test__head">
@@ -64,20 +64,23 @@ if ( have_posts() ):
                 <div class="test__wrapper-inner"></div>
                 <div class="container">
 					<?php
-					$coursePart->getTest();
+                    if (!$currentTestResult->solved){
+	                    $coursePart->getTest();
+                    }else{
+                        echo ' <div class="test__content"><span class="title title_blue">тестирование пройдено</span></div>';
+                    }
 					$coursePart->getAdditionalInfo();
 					?>
                 </div>
 
                 <div class="modal__wrapper" id="modal_next_part">
                     <div class="modal__next_part">
-                        <h2><?= $nextPart['last']? 'well done' : 'to next part' ?></h2>
+                        <h2><?= $nextPart['last']? 'Получить аттестат' : 'К следующей части' ?></h2>
                         <div class="btn__wrapper">
-                            <span id="close_modal" class="btn btn-warning">close</span>
+                            <span id="close_modal" class="btn btn-warning">Закрыть</span>
 	                        <?php
-                            if (!$nextPart['last']){
-	                            echo '<a href="'.get_permalink($nextPart['id']).'" class="btn btn-primary">go</a>';
-	                        }
+                            $linkTo = !$nextPart['last'] ? get_permalink($nextPart['id']) : get_permalink(carbon_get_theme_option(TO_ACCOUNT_PAGE));
+	                        echo '<a href="'.$linkTo.'" id="go_to_next" class="btn btn-primary">Перейти</a>';
 	                        ?>
                         </div>
                     </div>

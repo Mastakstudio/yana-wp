@@ -18,6 +18,7 @@ define("TEST_RIGHT_ANSWERED", PREFIX.'right_answered');
 define("TEST_STARTED", PREFIX.'started');
 define("TEST_END_TIME", PREFIX.'end_time');
 define("TEST_START_TIME", PREFIX.'start_time');
+define("TEST_SOLVED", PREFIX.'solved');
 
 // "USER"
 define("U_SECOND_NAME", PREFIX.'second_name');

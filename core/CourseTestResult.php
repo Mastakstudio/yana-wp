@@ -11,6 +11,7 @@ class CourseTestResult {
 	public $started;
 	public $end_time;
 	public $start_time;
+	public $solved;
 
 	/**
 	 * @param WP_Post
@@ -26,6 +27,7 @@ class CourseTestResult {
 		$this->started = (boolean)carbon_get_post_meta($post->ID, TEST_STARTED);
 		$this->end_time = carbon_get_post_meta($post->ID, TEST_END_TIME);
 		$this->start_time = carbon_get_post_meta($post->ID, TEST_START_TIME);
+		$this->solved = carbon_get_post_meta($post->ID, TEST_SOLVED);
 
 	}
 

@@ -89,11 +89,11 @@ class Yana{
          * Scripts
          */
         $params = [
-        	'ajax_url' =>  admin_url( 'admin-ajax.php', 'minicart' ),
 	        'url' => admin_url( 'admin-ajax.php' ),
 	        ];
         if (file_exists( get_template_directory()."/src/assets.json")) {
             wp_enqueue_script(PREFIX.'commons', Assets::getJs('common'), false, null, true);
+	        wp_localize_script(PREFIX.'commons', 'mastak_ajax', $params);
             if (is_page_template('template-homepage.php')) {
                 wp_enqueue_script(PREFIX.'index', Assets::getJs('index'), false, null, true);
             }

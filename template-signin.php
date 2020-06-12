@@ -4,7 +4,7 @@
  */
 $userManager = UserManager::getInstance();
 $currentUser = $userManager::GetCurrentUser();
-if ($currentUser !== false){
+if ( !is_null($currentUser->user) ){
 	$userManager->RedirectToAccount();
 }
 $userManager->Init();

@@ -37,6 +37,11 @@ if ( have_posts() ):
 							$intervalTimeLimit = new DateInterval('P'.$part->getTestTimeLimit().'D');
 
 						    $EndTime = $testResult->getEndTime($intervalTimeLimit);
+
+							$questionsQuantity = $part->getQuestionsQuantity();
+							$answeredQuantity = $testResult->getAnsweredQuantity();
+							$rightAnsweredQuantity = $testResult->getRightAnsweredQuantity();
+							$rightP = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
 							?>
                             <div class="course-page__item">
 
@@ -63,14 +68,18 @@ if ( have_posts() ):
                                         <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
                                     </div>
                                     <div class="course-page__content-info-item">
-                                        <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
-                                        <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">
-                                            <ul>
-                                                <li><span>Дней:</span><span class="days"></span></li>
-                                                <li><span>Часов:</span><span class="hours"></span></li>
-                                                <li><span>Минут:</span><span class="minutes"></span></li>
-                                            </ul>
-                                        </div>
+                                        <?php if ($testResult->solved): ?>
+                                            <span class="course-page__desc-info-item" style="margin-bottom: 1rem;">Задание выполнено</span>
+                                        <?php else: ?>
+                                            <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
+                                            <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">
+                                                <ul>
+                                                    <li><span>Дней:</span><span class="days"></span></li>
+                                                    <li><span>Часов:</span><span class="hours"></span></li>
+                                                    <li><span>Минут:</span><span class="minutes"></span></li>
+                                                </ul>
+                                            </div>
+                                        <?php endif; ?>
                                         <div class="course-page__text-info-item">
                                             <div class="course-page__type-text-info-item">
                                                 <span class="course-page__type-text-info-item-title">Вопросов всего:</span>
@@ -90,7 +99,7 @@ if ( have_posts() ):
                                         </div>
                                         <div class="course-page__procent-info-item">
                                             <div class="course-page__circle-procent-info-item"></div>
-                                            <span class="course-page__procent-info-item-number">70%</span>
+                                            <span class="course-page__procent-info-item-number"><?= (integer)$rightP ?>%</span>
                                             <span class="course-page__procent-info-item-text">усвоенного материала</span>
                                         </div>
                                     </div>
