@@ -38,6 +38,4 @@ function finishTest() {
 
 	wp_send_json_success();
 	wp_die();
-
-//	echo json_encode( $response, JSON_UNESCAPED_UNICODE );
 }

@@ -1,5 +1,6 @@
 'use strict';
 /* global jQuery */
+
 jQuery(document).ready(function ($) {
     $('.test__content-check input').on('change', function () {
         let answerWrapper = $(this).parents('.test__content-check');
