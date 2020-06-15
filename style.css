@@ -63,3 +63,9 @@ Version:      0.0.1
 .account__item-update[disabled]:hover{
     background: #00b2ff5e;
 }
+.logIn__container  label[for="rememberme"]{
+    margin-left: 0 !important;
+}
+body > main > div.banner-main > div.container > div > div.banner-main__form > div > div > div > div.form__tabs > label:nth-child(1){
+
+}

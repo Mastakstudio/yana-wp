@@ -2,10 +2,10 @@
 jQuery(document).ready(function ($) {
     /* global mastak_ajax */
 
-    $('#form_login_modal').on('submit', function (event) {
+    $('#sign-in').on('submit', function (event) {
         event.preventDefault();
         // blockPopup();
-        let serializeData = $('#form_login_modal').serializeArray();
+        let serializeData = $('#sign-in').serializeArray();
         if (mastak_ajax.account_url) {
             $.ajax({
                 type: 'POST',
@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
             })
                 .done( response => {
                     // unblockPopup();
-                    // console.log('login form done: ',response);
+                    console.log('login form done: ',response);
                     if(response['user']){
                         $('#close-reg-log-popup').click();
                         $('#header__cabinet-text').text(response['user']['displayName']);
@@ -31,10 +31,6 @@ jQuery(document).ready(function ($) {
                 })
                 .fail(function (response) {
                     console.log('login form error: ',response);
-                    // if(response['error'].length > 0 )
-                    // displayResult(response['error']);
-                    // console.log(response);
-                    // unblockPopup();
                 });
         }
     });

@@ -90,6 +90,7 @@ class Yana{
          */
         $params = [
 	        'url' => admin_url( 'admin-ajax.php' ),
+	        'account_url' => ACCOUNT_AJAX::get_endpoint('%%endpoint%%'),
 	        ];
         if (file_exists( get_template_directory()."/src/assets.json")) {
             wp_enqueue_script(PREFIX.'commons', Assets::getJs('common'), false, null, true);

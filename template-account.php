@@ -126,7 +126,7 @@ get_template_part( '/core/views/headerView' );
                     </div>
                 </form>
 
-<!--                <button class="custom-button">Сохранить</button>-->
+                <a class="custom-button" href="<?= $userManager::LogOut() ?>">Выйти</a>
             </div>
         </div>
     </div>

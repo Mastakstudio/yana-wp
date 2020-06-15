@@ -7,7 +7,7 @@ class ACCOUNT_AJAX
     public static function init()
     {
         self::add_ajax_events();
-        add_action('template_redirect', array(__CLASS__, 'do_prosuhsi_account_ajax'), 0);
+        add_action('template_redirect', array(__CLASS__, 'do_mastak_account_ajax'), 0);
     }
 
     /**
@@ -37,7 +37,7 @@ class ACCOUNT_AJAX
         if ( ! headers_sent() ) {
             send_origin_headers();
             send_nosniff_header();
-            wc_nocache_headers();
+
             header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
             header( 'X-Robots-Tag: noindex' );
             status_header( 200 );
@@ -50,7 +50,7 @@ class ACCOUNT_AJAX
     /**
      * Check for WC Ajax request and fire action.
      */
-    public static function do_prosuhsi_account_ajax() {
+    public static function do_mastak_account_ajax() {
         global $wp_query;
 
         if ( ! empty( $_GET['mastak_account-ajax'] ) ) {
@@ -87,9 +87,13 @@ class ACCOUNT_AJAX
         if (empty($_POST['username']) || empty($_POST['username']) || empty($_POST['username']) || empty($_POST['username']))
             wp_send_json_error();
 
-        $user_data = ['user_login' => $_POST['username'], 'user_password' => $_POST['password'], 'remember' => !empty($_POST['rememberme'])];
+        $user_data = [
+        	'user_login' => $_POST['username'],
+	        'user_password' => $_POST['password'],
+	        'remember' => !empty($_POST['rememberme'])
+        ];
 
-        $loginResult = wp_signon();
+        $loginResult = wp_signon($user_data);
 
         if ( strtolower(get_class($loginResult)) == 'wp_user' ) {
             //User login successful
@@ -97,14 +101,7 @@ class ACCOUNT_AJAX
             $user = $loginResult;
             $return['result'] = true;
 
-            $userName =  isset($user->first_name) && !empty($user->first_name) ? $user->first_name : '';
-            $userName .=  isset($user->last_name) && !empty($user->last_name)? ' '. $user->last_name : '';
-	        $userName =  !empty($userName)? $userName : $user->display_name;
-            $displayName = !empty($userName) ? $userName :  $user->user_email;
-            $return['user'] = [
-                'displayName' => $displayName
-                ];
-            $return['myAccountLink'] = get_permalink(1);
+            $return['myAccountLink'] = get_permalink(carbon_get_theme_option( TO_ACCOUNT_PAGE ));
 
         } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
             //User login failed
@@ -154,7 +151,7 @@ class ACCOUNT_AJAX
                     $result['user'] = [
                         'displayName' => $displayName
                     ];
-                    $result['myAccountLink'] = get_permalink(wc_get_page_id("myaccount"));
+                    $result['myAccountLink'] = get_permalink();
 
                 } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
                     //User login failed

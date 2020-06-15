@@ -17,7 +17,7 @@ $currentUser = $userManager::GetCurrentUser();
                 <?php if ($banner_video->link_exist):?>
                     <a class="banner-main__link" href="#modal">
                         <span>Просмотреть приветствие</span>
-                        <img src="/wp-content/themes/Yana/src/icons/play.png" alt="" role="presentation"/>
+                        <img src="/wp-content/themes/Yana/src/icons/play.svg" alt="" role="presentation"/>
                     </a>
                     <img class="banner-main__girl-write" src="/wp-content/themes/Yana/src/icons/girl-write.png" alt="" role="presentation"/>
                 <?php   endif; ?>
