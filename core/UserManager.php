@@ -6,6 +6,7 @@ class UserManager {
 	private static $signinPage = '';
 	private static $current_user = [];
 	private static $instances = [];
+	private static $errors = [];
 
 	private function __construct() {
 		$accountPageId = carbon_get_theme_option(TO_ACCOUNT_PAGE);
@@ -35,6 +36,9 @@ class UserManager {
 		$pwd = $_POST['pwd'];
 
 		$loginResult = wp_authenticate_username_password(NULL, $log , $pwd );
+		if ($loginResult instanceof WP_Error){
+		    return $loginResult;
+        }
 		wp_set_current_user($loginResult->ID, $loginResult->user_email);
 		wp_set_auth_cookie($loginResult->ID);
 
@@ -71,11 +75,12 @@ class UserManager {
 
 		$result = [];
 		if ( is_wp_error($errors) ){
-			//Something's wrong
-			$result['result'] = false;
-			$result['error'] = $errors->get_error_message();
-			$result['action'] = 'register';
-			return $result;
+
+//			//Something's wrong
+//			$result['result'] = false;
+//			$result['error'] = $errors->get_error_message();
+//			$result['action'] = 'register';
+			return $errors;
 		}
 
 		if( is_multisite() ){
@@ -101,20 +106,26 @@ class UserManager {
 	}
 
 	public function Init(){
+		$result = null;
 		if (isset($_REQUEST['login'])){
-			$this->LogIn();
+			$result = $this->LogIn();
+			if ($result instanceof WP_Error){
+			    self::$errors['loginError'] = $result;
+            }
 		}elseif (isset($_REQUEST['registration'])){
-			$this->Registration();
-		}else{
-
+			$result = $this->Registration();
+			if ($result instanceof WP_Error){
+				self::$errors['regError'] = $result;
+			}
 		}
-
 	}
 
 	public function RegistrationForm(){
 		?>
 		<form class="sign-in__list" action="<?= get_the_permalink().'?registration' ?>" method="post" novalidate="novalidate">
-
+			<?php
+			self::ShowErrors('regError');
+			?>
 			<div class="sign-in__item">
 				<div class="sign-in__item-head">
 					<span class="sign-in__item-title">Через социальные сети</span>
@@ -173,10 +184,28 @@ class UserManager {
 		</form>
 		<?php
 	}
+
+	private static function ShowErrors($section){
+	    if (is_array( self::$errors )){
+		    foreach ( self::$errors as $sectionName => $error ) {
+                if ($sectionName == $section){
+	                foreach ( $error->errors as $error ) {
+		                foreach ( $error as $value ) {
+			                echo '<p style="color: red">'.$value.'</p>';
+		                }
+	                }
+                }
+	        }
+	    }
+
+	}
+
 	public function LoginForm(){
 		?>
 		<form class="sign-in__list" action="<?= get_the_permalink().'?login' ?>" method="post">
-
+			<?php
+            self::ShowErrors('login');
+	        ?>
 			<div class="sign-in__item">
 				<div class="sign-in__item-head">
 					<span class="sign-in__item-title">Через социальные сети</span>

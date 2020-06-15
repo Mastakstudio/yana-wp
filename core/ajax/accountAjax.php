@@ -20,11 +20,11 @@ class ACCOUNT_AJAX
         ];
 
         foreach ( $ajax_events_nopriv as $ajax_event ) {
-            add_action( 'wp_ajax_prosushi_' . $ajax_event, array( __CLASS__, $ajax_event ) );
-            add_action( 'wp_ajax_nopriv_prosushi_' . $ajax_event, array( __CLASS__, $ajax_event ) );
+            add_action( 'wp_ajax_mastak_' . $ajax_event, array( __CLASS__, $ajax_event ) );
+            add_action( 'wp_ajax_nopriv_mastak_' . $ajax_event, array( __CLASS__, $ajax_event ) );
 
             // WC AJAX can be used for frontend ajax requests.
-            add_action( 'prosushi_ajax_' . $ajax_event, array( __CLASS__, $ajax_event ) );
+            add_action( 'mastak_ajax_' . $ajax_event, array( __CLASS__, $ajax_event ) );
         }
     }
 
@@ -33,7 +33,7 @@ class ACCOUNT_AJAX
      *
      * @since 2.5.0
      */
-    private static function prosushi_ajax_headers() {
+    private static function mastak_ajax_headers() {
         if ( ! headers_sent() ) {
             send_origin_headers();
             send_nosniff_header();
@@ -43,7 +43,7 @@ class ACCOUNT_AJAX
             status_header( 200 );
         } elseif ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
             headers_sent( $file, $line );
-            trigger_error( "prosushi_ajax_headers cannot set headers - headers already sent by {$file} on line {$line}", E_USER_NOTICE ); // @codingStandardsIgnoreLine
+            trigger_error( "mastak_ajax_headers cannot set headers - headers already sent by {$file} on line {$line}", E_USER_NOTICE ); // @codingStandardsIgnoreLine
         }
     }
 
@@ -53,16 +53,16 @@ class ACCOUNT_AJAX
     public static function do_prosuhsi_account_ajax() {
         global $wp_query;
 
-        if ( ! empty( $_GET['prosushi_account-ajax'] ) ) {
-            $wp_query->set( 'prosushi_account-ajax', sanitize_text_field( wp_unslash( $_GET['prosushi_account-ajax'] ) ) );
+        if ( ! empty( $_GET['mastak_account-ajax'] ) ) {
+            $wp_query->set( 'mastak_account-ajax', sanitize_text_field( wp_unslash( $_GET['mastak_account-ajax'] ) ) );
         }
 
-        $action = $wp_query->get( 'prosushi_account-ajax' );
+        $action = $wp_query->get( 'mastak_account-ajax' );
 
         if ( $action ) {
-            self::prosushi_ajax_headers();
+            self::mastak_ajax_headers();
             $action = sanitize_text_field( $action );
-            do_action( 'prosushi_ajax_' . $action );
+            do_action( 'mastak_ajax_' . $action );
             wp_die();
         }
     }
@@ -76,7 +76,7 @@ class ACCOUNT_AJAX
      */
     public static function get_endpoint( $request = '' ) {
         return esc_url_raw(
-            add_query_arg( 'prosushi_account-ajax', $request ));
+            add_query_arg( 'mastak_account-ajax', $request ));
     }
 
     /**
