@@ -9,7 +9,7 @@ $currentUser = $userManager::GetCurrentUser();
 if ( ! $currentUser ) {
 	$userManager->RedirectToSignIn();
 }
-//var_dump( $currentUser );
+$userManager->Init();
 
 get_header();
 get_template_part( '/core/views/headerView' );
@@ -31,37 +31,53 @@ get_template_part( '/core/views/headerView' );
             <img class="image" src="/wp-content/themes/Yana/src/icons/account.png" />
         </div>
         <div class="container">
-            <form class="account__list" action="<?= get_the_permalink().'?update'?>" method="post" >
-                <div class="account__item disable">
+            <div class="account__list">
+                <?php
+                $disabled = true;
+                if (empty($currentUser->user->last_name) ||empty($currentUser->user->first_name) ||empty($currentUser->second_name) ){
+	                $disabled = false;
+                }
+                ?>
+                <form class="account__item <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
+
+                    <input type="hidden" name="target_section" value="names">
                     <div class="account__item-head">
                         <span class="account__item-title">ФИО</span>
-                        <button class="account__item-update">Исправить</button>
+                        <button class="account__item-update" <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Фамилия</label>
-                                <input class="form-input__item-input" name="surname" type="text" value="<?= $currentUser->user->last_name ?>" />
+                                <input class="form-input__item-input" name="userLastName" type="text" value="<?= $currentUser->user->last_name ?>" />
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Имя</label>
-                                <input class="form-input__item-input" name="name" type="text" value="<?= $currentUser->user->first_name ?>"/>
+                                <input class="form-input__item-input" name="userFirstName" type="text" value="<?= $currentUser->user->first_name ?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Отчество</label>
-                                <input class="form-input__item-input" name="secondName" type="text" value="<?= $currentUser->second_name ?>"/>
+                                <input class="form-input__item-input" name="userSecondName" type="text" value="<?= $currentUser->second_name ?>"/>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="account__item account__passport">
+                </form>
+
+	            <?php
+	            $disabled = true;
+	            if (empty($currentUser->passport_series) ||empty($currentUser->passport_number) || empty($currentUser->passport_who) || empty($currentUser->passport_when) ){
+		            $disabled = false;
+	            }
+	            ?>
+                <form class="account__item account__passport <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
+                    <input type="hidden" name="target_section" value="passport">
                     <div class="account__item-head">
                         <span class="account__item-title">Паспорт</span>
-                        <button class="account__item-update">Исправить</button>
+                        <button class="account__item-update"  <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
@@ -89,21 +105,29 @@ get_template_part( '/core/views/headerView' );
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="account__item">
+                </form>
+	            <?php
+	            $disabled = true;
+	            if (empty($currentUser->birthday) ){
+		            $disabled = false;
+	            }
+	            ?>
+                <form class="account__item <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
+                    <input type="hidden" name="target_section" value="birthday">
                     <div class="account__item-head">
                         <span class="account__item-title">Дата рождения</span>
-                        <button class="account__item-update">Исправить</button>
+                        <button class="account__item-update"  <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
                             <label class="account__item-label">Дата рождения</label>
-                            <input class="account__date" type="date" name="date" value="<?= $currentUser->birthday?>"/>
+                            <input class="account__date" type="date" name="birthday" value="<?= $currentUser->birthday?>"/>
                         </div>
                     </div>
-                </div>
-                <button class="custom-button">Сохранить</button>
-            </form>
+                </form>
+
+<!--                <button class="custom-button">Сохранить</button>-->
+            </div>
         </div>
     </div>
 <?php

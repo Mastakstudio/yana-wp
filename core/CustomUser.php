@@ -22,12 +22,12 @@ class CustomUser {
 			$this->user = $tryGetUser;
 			$this->authorized = true;
 
-			$this->second_name = $this->CarbonMeta("second_name" );
-			$this->passport_series = $this->CarbonMeta("passport_series" );
-			$this->passport_number = $this->CarbonMeta("passport_number" );
-			$this->passport_when = $this->CarbonMeta("passport_when" );
-			$this->passport_who = $this->CarbonMeta("passport_who" );
-			$this->birthday = $this->CarbonMeta("birthday" );
+			$this->second_name = $this->CarbonMeta(U_SECOND_NAME );
+			$this->passport_series = $this->CarbonMeta(U_PASSPORT_SERIES );
+			$this->passport_number = $this->CarbonMeta(U_PASSPORT_NUMBER );
+			$this->passport_when = $this->CarbonMeta(U_PASSPORT_WHEN );
+			$this->passport_who = $this->CarbonMeta(U_PASSPORT_WHO );
+			$this->birthday = $this->CarbonMeta(U_BIRTHDAY );
 
 
 			$course_test_result_args = array(
@@ -74,6 +74,6 @@ class CustomUser {
 	}
 
 	private function CarbonMeta($key){
-		return carbon_get_user_meta($this->user->get_site_id(), PREFIX.$key );
+		return carbon_get_user_meta($this->user->ID, $key );
 	}
 }
