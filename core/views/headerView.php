@@ -76,20 +76,7 @@ $signin_page = get_permalink(carbon_get_theme_option(PREFIX.'signin_page'));
                         <label class="lbl-on" for="switch-orange">специалист</label>
                     </div>
                 </div>
-                <ul class="menu__list">
-                    <li class="menu__item menu__item menu__item_active">
-                        <a href="">пройти курс</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="">Эксперты</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="">вопрос-ответ</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="">интерактивная карта</a>
-                    </li>
-                </ul>
+                <?php mainMenuView();?>
                 <div class="social social social_menu">
                     <div class="social__list">
                         <a class="social__item" href="">

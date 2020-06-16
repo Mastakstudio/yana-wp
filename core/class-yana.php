@@ -121,18 +121,6 @@ class Yana{
 	            wp_enqueue_script(PREFIX.'signIn', Assets::getJs('signIn'), false, null, true);
             }
         }
-
-//	    if ( is_singular('product') ) {
-//
-//	    }elseif(is_checkout()){
-//
-//	    }  else{
-//
-//	    }
-
-
-
-
     }
 
     /**
@@ -197,16 +185,9 @@ class Yana{
 
         }
         else if ($args->theme_location === 'main_menu') {
-            if ($item->menu_item_parent == 0) {
-                $classes[] = 'header__menu-item';
-                if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
-                    $classes[] = 'active';
-                
-            } else {
-                $classes[] = 'header__menu-item-inner-li';
-                if (in_array( 'current-menu-item', $classes ))
-                    $classes[] = 'header__menu-item-inner-li_active';
-            }
+	        $classes[] = 'menu__item';
+	        if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
+		        $classes[] = 'menu__item_active';
 
         }elseif($args->theme_location === 'mobile_menu'){
 	        if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))

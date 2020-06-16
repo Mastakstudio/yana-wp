@@ -18,3 +18,38 @@ function secondMenuView(){
 	if (has_nav_menu('second_menu'))
 	    wp_nav_menu($secondMenuArgs);
 }
+
+
+function mainMenuView(){
+	$secondMenuArgs = [
+		'theme_location' => 'main_menu',
+		'container' => false,
+		'menu_class' => 'menu__list',
+		'menu_id' => '',
+		'echo' => true,
+		'fallback_cb' => 'wp_page_menu',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
+		'items_wrap' => '<ul  id="%1$s" class="%2$s">%3$s</ul>',
+	];
+
+	if (has_nav_menu('second_menu'))
+		wp_nav_menu($secondMenuArgs);
+}
+//
+//<!--<ul class="menu__list">-->
+//<!--	<li class="menu__item menu__item menu__item_active">-->
+//<!--		<a href="">пройти курс</a>-->
+//<!--	</li>-->
+//<!--	<li class="menu__item">-->
+//<!--		<a href="">Эксперты</a>-->
+//<!--	</li>-->
+//<!--	<li class="menu__item">-->
+//<!--		<a href="">вопрос-ответ</a>-->
+//<!--	</li>-->
+//<!--	<li class="menu__item">-->
+//<!--		<a href="">интерактивная карта</a>-->
+//<!--	</li>-->
+//<!--</ul>-->
