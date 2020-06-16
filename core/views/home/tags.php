@@ -30,7 +30,7 @@ $currentUser = $userManager::GetCurrentUser();
                 <?php
                 if ( is_null($currentUser->user) ) {
 	                if (isset($login_page) || empty($login_page) ){
-		                echo '<a class="link" href="'.get_permalink($login_page).'">Зарегистрироваться</a>';
+		                echo '<a class="link" id="link_to_reg" href="'.get_permalink($login_page).'">Зарегистрироваться</a>';
 	                }
                 } ?>
             </div>

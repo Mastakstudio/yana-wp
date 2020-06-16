@@ -2,7 +2,7 @@
 
 
 ?>
-<div class="banner-main__form">
+<div class="banner-main__form" id="banner-main__form">
 	<div class="form">
 		<div class="form__inner">
 			<div class="form__tabs-content">
@@ -36,7 +36,7 @@
 								</div>
 								<div class="logIn__type">
 									<button class="custom-button" type="submit">Войти</button>
-									<span>Нажимая кнопку "Войти" я<a href="">принимаю пользовательское соглашение</a></span>
+									<span>Нажимая кнопку "Войти" я&nbsp;<a href="">принимаю пользовательское соглашение</a></span>
 								</div>
 							</form>
 						</div>
@@ -46,8 +46,8 @@
                             <div class="logUp">
                                 <form id="sign-up">
                                     <div class="form-input__item">
-                                        <label class="form-input__item-label">Логин</label>
-                                        <input class="form-input__item-input" name="login" type="text"/>
+                                        <label class="form-input__item-label">Email</label>
+                                        <input class="form-input__item-input" name="email" type="text"/>
                                     </div>
                                     <div class="form-input__item">
                                         <label class="form-input__item-label">Пароль</label>
@@ -58,13 +58,14 @@
                                         <input class="form-input__item-input" name="confirmPassword" type="password"/>
                                     </div>
                                     <div class="logUp__remember">
-                                        <div class="logUp__container">Запомнить<input type="checkbox">
+                                        <div class="logUp__container"> <label for="remembermeReg">Запомнить</label>
+                                            <input name="rememberme" type="checkbox" id="remembermeReg" value="forever">
                                             <span class="logUp__checkmark"></span>
                                         </div>
                                     </div>
                                     <div class="logUp__type">
                                         <button class="custom-button" type="submit">Зарегестрироваться</button>
-                                        <span>Нажимая кнопку "Войти" я<a href="">принимаю пользовательское соглашение</a></span>
+                                        <span>Нажимая кнопку "Войти" я&nbsp;<a href=""> принимаю пользовательское соглашение</a></span>
                                     </div>
                                 </form>
                             </div>

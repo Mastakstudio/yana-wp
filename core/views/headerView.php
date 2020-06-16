@@ -33,7 +33,7 @@ $signin_page = get_permalink(carbon_get_theme_option(PREFIX.'signin_page'));
                     <span><?= $user->get_site_id() === 0 ? 'войти/зарегистрироваться': $user->display_name ?></span>
                 </a>
                 <div class="header__desktop">
-                    <a class="header__login" href="<?= $account_page ?>"><?= $user->display_name ?></a>
+                    <a class="header__login" id="user_name" href="<?= $account_page ?>"><?= $user->display_name ?></a>
                     <div class="social social social_blue">
                         <div class="social__list">
                             <a class="social__item" href="">

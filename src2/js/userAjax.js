@@ -35,13 +35,13 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('#form_registration_modal').on('submit', function (event) {
+    $('#sign-up').on('submit', function (event) {
         event.preventDefault();
-        blockPopup();
-        let serializeData = $('#form_registration_modal').serializeArray();
+        // blockPopup();
+        let serializeData = $(this).serializeArray();
 
         let pass = serializeData.find(input => input['name'] === "password");
-        let checkPass = serializeData.find(input => input['name'] === "password_again");
+        let checkPass = serializeData.find(input => input['name'] === "confirmPassword");
         if (pass['value'].localeCompare(checkPass["value"]) === 0) {
             if (mastak_ajax.account_url) {
                 $.ajax({
@@ -54,14 +54,18 @@ jQuery(document).ready(function ($) {
                         // unblockPopup();
                         console.log('registr form done: ',response);
 
-                        if( response['result'] === false){
-                            displayResult.bind(this)(response['error']);
+                        // response.data.displayName
+                        // response.data.result
+                        // #banner-main__form
+                        // #link_to_reg
+                        // #user_name
+
+                        if( response.data.result === false){
                             return;
-                        }else if(response['success'] === true){
-                            $('#close-reg-log-popup').click();
-                            $('#header__cabinet-text').text(response['data']['user']['displayName']);
-                            $('#login-button').attr('style', 'display: none !important');
-                            $('#go-to-acc-button').css("display","flex");
+                        }else if(response.data.result === true){
+                            $('#user_name').text(response.data.displayName);
+                            $('#banner-main__form').hide();
+                            $('#link_to_reg').hide();
                         }
                     })
                     .fail(function (response) {
@@ -69,11 +73,11 @@ jQuery(document).ready(function ($) {
                         // unblockPopup();
                     });
             }else{
-                displayResult('connection error');
+                // displayResult('connection error');
                 // unblockPopup();
             }
         }else{
-            displayResult.bind(this)("passwords are not equal" );
+            // displayResult.bind(this)("passwords are not equal" );
             // unblockPopup();
         }
     });
@@ -83,9 +87,9 @@ jQuery(document).ready(function ($) {
     // function unblockPopup() {
     //     $('.popup__content').find('.ajax_loader_wrapper').removeClass('ajax_loader_wrapper-active');
     // }
-    function displayResult(result) {
-        // let wrapper = $(this).parent().find('.result-wrapper .result');
-        $(this).parent().find('.result-wrapper .result').html('');
-        $(this).parent().find('.result-wrapper .result').append(result);
-    }
+    // function displayResult(result) {
+    //     // let wrapper = $(this).parent().find('.result-wrapper .result');
+    //     $(this).parent().find('.result-wrapper .result').html('');
+    //     $(this).parent().find('.result-wrapper .result').append(result);
+    // }
 });

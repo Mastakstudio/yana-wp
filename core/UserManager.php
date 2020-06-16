@@ -71,7 +71,6 @@ class UserManager {
 		$pwd    = $_POST['pwd'];
 		$errors = register_new_user( $_POST['user_email'], $_POST['user_email'] );
 
-		$result = [];
 		if ( is_wp_error( $errors ) ) {
 
 //			//Something's wrong
@@ -81,9 +80,9 @@ class UserManager {
 			return $errors;
 		}
 
-		if ( is_multisite() ) {
+		if ( is_multisite() )
 			add_user_to_blog( get_current_blog_id(), $errors, get_option( 'default_role' ) );
-		}
+
 		wp_set_password( $_POST['pwd'], $errors );
 		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
 
