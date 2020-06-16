@@ -91,6 +91,6 @@ if ( have_posts() ):
 	<?php
 	endwhile;
 endif;
-get_template_part( '/core/views/home/partners' );
+get_template_part( '/core/views/partners' );
 get_template_part( '/core/views/footerView' );
 get_footer();

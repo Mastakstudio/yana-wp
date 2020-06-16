@@ -38,7 +38,16 @@ function crb_attach_theme_options()
 			         Field::make_text('link', 'Ссылка')
 		         ])
 		         ->set_layout('tabbed-vertical')
-	    ]);
+	    ])
+        ->add_tab('services',[
+		    Field::make_complex(PREFIX.'sos_not_alone_links', 'Ссылки на sos-notalone')
+		         ->add_fields('card', 'Карточки',[
+			         Field::make_image('img_id', 'Иконка'),
+			         Field::make_text('title', 'Заголовок'),
+			         Field::make_text('link', 'Ссылка')
+		         ])
+		         ->set_layout('tabbed-vertical')
+    ]);
 
     Container::make_theme_options('social_settings', 'Настройки Авторизации')
 	    ->set_page_parent($themeSettings)

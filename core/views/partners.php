@@ -1,6 +1,5 @@
 <?php
 $links = home_page_partners();
-
 ?>
 
 

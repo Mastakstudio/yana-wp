@@ -18,7 +18,7 @@ function home_page_experts_video(){
 }
 
 function home_page_services(){
-	$links = carbon_get_post_meta(get_the_ID(), PREFIX.'sos_not_alone_links');
+	$links = carbon_get_theme_option(PREFIX.'sos_not_alone_links');
 
 	return (object)[
 		'link_exist' => isset($links) && !empty($links),

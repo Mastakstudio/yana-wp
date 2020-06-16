@@ -1,7 +1,7 @@
 <?php
 
 function secondMenuView(){
-	$secondMenuArgs = [
+	$menuArgs = [
 		'theme_location' => 'second_menu',
 		'container' => false,
 		'menu_class' => 'links__inner',
@@ -16,12 +16,12 @@ function secondMenuView(){
 	];
 
 	if (has_nav_menu('second_menu'))
-	    wp_nav_menu($secondMenuArgs);
+	    wp_nav_menu($menuArgs);
 }
 
 
 function mainMenuView(){
-	$secondMenuArgs = [
+	$menuArgs = [
 		'theme_location' => 'main_menu',
 		'container' => false,
 		'menu_class' => 'menu__list',
@@ -36,20 +36,5 @@ function mainMenuView(){
 	];
 
 	if (has_nav_menu('second_menu'))
-		wp_nav_menu($secondMenuArgs);
+		wp_nav_menu($menuArgs);
 }
-//
-//<!--<ul class="menu__list">-->
-//<!--	<li class="menu__item menu__item menu__item_active">-->
-//<!--		<a href="">пройти курс</a>-->
-//<!--	</li>-->
-//<!--	<li class="menu__item">-->
-//<!--		<a href="">Эксперты</a>-->
-//<!--	</li>-->
-//<!--	<li class="menu__item">-->
-//<!--		<a href="">вопрос-ответ</a>-->
-//<!--	</li>-->
-//<!--	<li class="menu__item">-->
-//<!--		<a href="">интерактивная карта</a>-->
-//<!--	</li>-->
-//<!--</ul>-->

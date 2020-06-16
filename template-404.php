@@ -21,6 +21,6 @@ get_template_part( '/core/views/headerView' );
         </div>
     </div>
 <?php
-get_template_part( '/core/views/home/partners' );
+get_template_part( '/core/views/partners' );
 get_template_part( '/core/views/footerView' );
 get_footer();

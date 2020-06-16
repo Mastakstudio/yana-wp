@@ -48,7 +48,7 @@ get_template_part( '/core/views/headerView' );
             </div>
             <img class="image" src="/wp-content/themes/Yana/src/icons/account.png"/>
         </div>
-		<?php get_template_part( '/core/views/home/partners' ); ?>
+		<?php get_template_part( '/core/views/partners' ); ?>
     </div>
 <?php
 get_template_part( '/core/views/footerView' );

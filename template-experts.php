@@ -75,50 +75,8 @@ get_template_part( '/core/views/headerView' );
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jemgIOAjGDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
         </div>
     </div>
-    <div class="services">
-        <div class="services__wrapper">
-        </div>
-        <div class="container">
-            <div class="services__inner">
-                <div class="services__content">
-                    <span class="services__desc">Больше поддержки  можно получить на</span>
-                    <span class="title title_white">Интерактивная карта беслпатных услуг для беременных</span>
-                    <p class="text text_black">
-                        Выберите категорию необходимой поддержки и на экране появится интерактивная карта бесплатных услуг с выбранными организациями Минска или  Могилева, Минской или Могилевской области
-                    </p>
-                </div>
-                <div class="services__list">
-                    <div class="services__item">
-                        <div class="services__item-container">
-                            <img class="services__item-image" src="/wp-content/themes/Yana/src/icons/nurse.png" alt="" />
-                        </div>
-                        <SPAN class="services__item-title">Медицинская поддержка</SPAN>
-                    </div>
-                    <div class="services__item">
-                        <img class="services__item-image" src="/wp-content/themes/Yana/src/icons/chat.png" alt=""/>
-                        <SPAN class="services__item-title">психологическая поддержка</SPAN>
-                    </div>
-                    <div class="services__item">
-                        <img class="services__item-image" src="/wp-content/themes/Yana/src/icons/home.png" alt=""/>
-                        <SPAN class="services__item-title">социальная поддержка</SPAN>
-                    </div>
-                    <div class="services__item">
-                        <img class="services__item-image" src="/wp-content/themes/Yana/src/icons/law.png" alt="" />
-                        <SPAN class="services__item-title">юридическая поддержка</SPAN>
-                    </div>
-                    <div class="services__item">
-                        <img class="services__item-image" src="/wp-content/themes/Yana/src/icons/book.png" alt="" />
-                        <SPAN class="services__item-title">саморазвитие</SPAN>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="services__image-content">
-            <img class="services__castle" src="/wp-content/themes/Yana/src/icons/town2.png" alt="" />
-            <img class="services__library" src="/wp-content/themes/Yana/src/icons/town.png" alt="" />
-        </div>
-    </div>
 <?php
-get_template_part( '/core/views/home/partners' );
+get_template_part( '/core/views/services' );
+get_template_part( '/core/views/partners' );
 get_template_part( '/core/views/footerView' );
 get_footer();
