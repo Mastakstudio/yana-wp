@@ -35,8 +35,13 @@ define("TO_CONTACT_EMAIL", PREFIX.'contact_email');
 define("TO_VIBER_NUMBER", PREFIX.'viber_number');
 define("TO_WHATSAPP_NUMBER", PREFIX.'whatsapp_number');
 define("TO_INSTAGRAM_LINK", PREFIX.'instagram_link');
+
+define("TO_FACEBOOK_LINK", PREFIX.'facebook_link');
+define("TO_VK_LINK", PREFIX.'vk_link');
+define("TO_YOUTUBE_LINK", PREFIX.'youtube_link');
+
 define("TO_ADDRESS", PREFIX.'address');
-define("TO_ORDER_CONTACT_EMAIL", PREFIX.'order_contact_email');
+define("TO_QUESTION_CONTACT_EMAIL", PREFIX.'question_contact_email');
 define("TO_PARTNERS", PREFIX.'partners');
 define("TO_ACCOUNT_PAGE", PREFIX.'account_page');
 define("TO_SIGNIN_PAGE", PREFIX.'signin_page');

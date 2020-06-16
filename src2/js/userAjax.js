@@ -14,20 +14,15 @@ jQuery(document).ready(function ($) {
                 dataType: 'json'
             })
                 .done( response => {
-                    // unblockPopup();
                     console.log('login form done: ',response);
-                    if(response['user']){
-                        $('#close-reg-log-popup').click();
-                        $('#header__cabinet-text').text(response['user']['displayName']);
-                        $('#login-button').attr('style', 'display: none !important');
-                        $('#go-to-acc-button').css("display","flex");
-
-                        $('#aside__cabinet-text').text(response['user']['displayName']);
-                        $('#login-button-aside').attr('style', 'display: none !important');
-                        $('#go-to-acc-button-aside').css("display","flex");
+                    if(response.displayName !== undefined){
+                        $('#user_name').text(response.displayName);
+                        $('#banner-main__form').hide();
+                        $('#link_to_reg').hide();
                     }
-                    if( response['result'] === false)
-                        displayResult.bind(this)(response['error']);
+                    if (response.error !== undefined){
+                        $('#login_errors').html(response.error);
+                    }
                 })
                 .fail(function (response) {
                     console.log('login form error: ',response);
@@ -37,7 +32,6 @@ jQuery(document).ready(function ($) {
 
     $('#sign-up').on('submit', function (event) {
         event.preventDefault();
-        // blockPopup();
         let serializeData = $(this).serializeArray();
 
         let pass = serializeData.find(input => input['name'] === "password");
@@ -51,17 +45,10 @@ jQuery(document).ready(function ($) {
                     dataType: 'json'
                 })
                     .done( response => {
-                        // unblockPopup();
                         console.log('registr form done: ',response);
 
-                        // response.data.displayName
-                        // response.data.result
-                        // #banner-main__form
-                        // #link_to_reg
-                        // #user_name
-
-                        if( response.data.result === false){
-                            return;
+                        if( response.error !== undefined){
+                            $('#reg_errors').html(response.error);
                         }else if(response.data.result === true){
                             $('#user_name').text(response.data.displayName);
                             $('#banner-main__form').hide();
@@ -70,26 +57,10 @@ jQuery(document).ready(function ($) {
                     })
                     .fail(function (response) {
                         console.log('registration form error: ',response);
-                        // unblockPopup();
                     });
             }else{
-                // displayResult('connection error');
-                // unblockPopup();
             }
         }else{
-            // displayResult.bind(this)("passwords are not equal" );
-            // unblockPopup();
         }
     });
-    // function blockPopup() {
-    //     $('.popup__content').find('.ajax_loader_wrapper').addClass('ajax_loader_wrapper-active');
-    // }
-    // function unblockPopup() {
-    //     $('.popup__content').find('.ajax_loader_wrapper').removeClass('ajax_loader_wrapper-active');
-    // }
-    // function displayResult(result) {
-    //     // let wrapper = $(this).parent().find('.result-wrapper .result');
-    //     $(this).parent().find('.result-wrapper .result').html('');
-    //     $(this).parent().find('.result-wrapper .result').append(result);
-    // }
 });

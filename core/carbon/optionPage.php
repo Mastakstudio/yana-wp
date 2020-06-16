@@ -14,28 +14,21 @@ function crb_attach_theme_options()
         ->add_tab(__('Main options'), [
             Field::make_image(TO_MAIN_LOGO, 'Logo'),
 	        Field::make_separator('contact_info_separator', 'Контакты'),
-	        Field::make_text(TO_PHONE_LOGO, 'Phone')->set_width(50),
-	        Field::make_text(TO_CONTACT_EMAIL, 'Email')->set_width(50),
-	        Field::make_text(TO_VIBER_NUMBER, 'Viber')->set_width(50),
-	        Field::make_text(TO_WHATSAPP_NUMBER, 'whatsapp')->set_width(50),
+//	        Field::make_text(TO_PHONE_LOGO, 'Phone')->set_width(50),
+//	        Field::make_text(TO_CONTACT_EMAIL, 'Email'),
+//	        Field::make_text(TO_VIBER_NUMBER, 'Viber')->set_width(50),
+//	        Field::make_text(TO_WHATSAPP_NUMBER, 'whatsapp')->set_width(50),
 	        Field::make_text(TO_INSTAGRAM_LINK, 'Instagram'),
-	        Field::make_text(TO_ADDRESS, 'Адресс'),
+	        Field::make_text(TO_FACEBOOK_LINK, 'Facebook'),
+	        Field::make_text(TO_VK_LINK, 'В контакте'),
+	        Field::make_text(TO_YOUTUBE_LINK, 'Youtube'),
+//	        Field::make_text(TO_ADDRESS, 'Адресс'),
         ])
         ->add_tab(__('email'), [
-	        Field::make_text(TO_ORDER_CONTACT_EMAIL, 'Email для получения писем'),
-	        Field::make_checkbox(PREFIX . 'auto_send_mail', 'Автоматичеси отчечать на запрс презинтации'),
+	        Field::make_text(TO_QUESTION_CONTACT_EMAIL, 'Email для получения писем'),
 	        Field::make_text(PREFIX . 'mail_title', 'Заголовок письма'),
-	        Field::make_rich_text(PREFIX . 'mail_body', 'Содиржание письма'),
-	        Field::make_complex(PREFIX.'attached_files', 'Прикреплённые файлы')
-	        ->add_fields([
-	        	Field::make_file('file')
-	        ])->set_layout('tabbed-horizontal')
-
-        ])
-        ->add_tab(__('forms'), [
-	        Field::make_select(PREFIX . 'login_page', 'Login Page')
-	        ->set_options(page_selecting()),
-
+	        Field::make_rich_text(PREFIX . 'mail_body', 'Содиржание письма')
+	        ->help_text('{{Имя}},{{Контактная информация}},{{Сообщение}}'),
         ])
         ->add_tab(' partners', [
 		    Field::make_complex(TO_PARTNERS, 'Партнёры')
@@ -53,7 +46,9 @@ function crb_attach_theme_options()
 	    	Field::make_select(TO_ACCOUNT_PAGE, 'Страница акаунта')
 		         ->set_options(page_selecting()),
 		    Field::make_select(PREFIX.'signin_page', 'Страница авторизации')
-		         ->set_options(page_selecting())
+		         ->set_options(page_selecting()),
+		    Field::make_select(PREFIX . 'login_page', 'Login Page')
+		         ->set_options(page_selecting()),
 	    ]);
     ;
 }

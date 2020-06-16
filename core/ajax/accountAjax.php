@@ -100,8 +100,8 @@ class ACCOUNT_AJAX
             /**@var WP_User loginResult*/
             $user = $loginResult;
             $return['result'] = true;
+	        $return['displayName'] = $user->display_name;
 
-            $return['myAccountLink'] = get_permalink(carbon_get_theme_option( TO_ACCOUNT_PAGE ));
 
         } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
             //User login failed

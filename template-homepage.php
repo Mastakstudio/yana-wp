@@ -73,8 +73,7 @@ get_template_part('/core/views/home/experts');
                     <div class="learn__item"><span class="learn__number">3</span>
                         <div class="learn__item-content">
                             <div class="learn__item-wrapper">
-                                <IMG class="learn__item-image" src="/wp-content/themes/Yana/src/icons/step3.png"
-                                     alt=""></IMG>
+                                <img class="learn__item-image" src="/wp-content/themes/Yana/src/icons/step3.png" alt=""/>
                                 <SPAN class="learn__item-title">пройдите тест</SPAN>
                             </div>
                             <SPAN class="learn__item-text">Ответьте правильнео на вопросы по тематике изложенной в видеофайле</SPAN>
@@ -83,9 +82,8 @@ get_template_part('/core/views/home/experts');
                     <div class="learn__item"><span class="learn__number">4</span>
                         <div class="learn__item-content">
                             <div class="learn__item-wrapper">
-                                <IMG class="learn__item-image" src="/wp-content/themes/Yana/src/icons/step4.png"
-                                     alt=""></IMG>
-                                <SPAN class="learn__item-title">получите сертификат</SPAN>
+                                <img class="learn__item-image" src="/wp-content/themes/Yana/src/icons/step4.png" alt=""/>
+                                <span class="learn__item-title">получите сертификат</span>
                             </div>
                             <SPAN class="learn__item-text">Ответив правильно на все наши вопросы вы получаете сертификат</SPAN>
                         </div>
@@ -96,40 +94,9 @@ get_template_part('/core/views/home/experts');
         </div>
         <img class="learn__girl-comp" src="/wp-content/themes/Yana/src/icons/girl-comp.png" alt="" role="presentation"/>
     </div>
-    <div class="question">
-        <div class="question__wrapper">
-        </div>
-        <div class="container">
-            <div class="question__inner">
-                <div class="question__content">
-                    <div class="question__title"><span class="title title_blue">Остались вопросы?</span>
-                    </div>
-                    <form class="question__form" id="questionForm">
-                        <div class="form-input__item">
-                            <LABEL class="form-input__item-label">Имя</LABEL>
-                            <INPUT class="form-input__item-input" name="name" type="text" placeholder="Имя"></INPUT>
-                        </div>
-                        <div class="form-input__item">
-                            <LABEL class="form-input__item-label">Телефон или электронная почта</LABEL>
-                            <INPUT class="form-input__item-input" name="text" type="text"
-                                   placeholder="Телефон или электронная почта"></INPUT>
-                        </div>
-                        <div class="form-textarea__item">
-                            <LABEL class="form-textarea__item-label">Сообщение</LABEL>
-                            <TEXTAREA class="form-textarea__item-textarea" name="comment" type="text"
-                                      placeholder="Сообщение"></TEXTAREA>
-                        </div>
-                        <BUTTON class="custom-button" type="submit">Отправить</BUTTON>
-                    </form>
-                </div>
-                <img class="question__image" src="/wp-content/themes/Yana/src/icons/hand.png" alt=""
-                     role="presentation"/>
-            </div>
-            <img class="question__logo" src="/wp-content/themes/Yana/src/icons/logo-dop.png" alt=""
-                 role="presentation"/>
-        </div>
-    </div>
+
 <?php
+get_template_part('/core/views/home/question');
 get_template_part('/core/views/home/services');
 get_template_part('/core/views/home/partners');
 get_template_part('/core/views/footerView');

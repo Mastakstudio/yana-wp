@@ -19,6 +19,7 @@
 					<div class="login-content">
 						<div class="logIn">
 							<form id="sign-in" >
+                                <div id="login_errors" style="color: red; position: unset; visibility: unset;"></div>
 								<div class="form-input__item">
 									<label class="form-input__item-label">Логин</label>
 									<input class="form-input__item-input" id="username" type="text" placeholder="E-mail" name="username" autocomplete="username"/>
@@ -34,10 +35,14 @@
                                         <span class="logIn__checkmark"></span>
 									</div>
 								</div>
-								<div class="logIn__type">
-									<button class="custom-button" type="submit">Войти</button>
-									<span>Нажимая кнопку "Войти" я&nbsp;<a href="">принимаю пользовательское соглашение</a></span>
-								</div>
+                                <div class="logIn__type">
+                                    <button class="custom-button" type="submit">Войти</button>
+                                    <?php
+                                    $privacy_policy_url = get_privacy_policy_url();
+                                    if (!empty($privacy_policy_url)): ?>
+                                        <span>Нажимая кнопку "Войти" я&nbsp;<a href="<?= $privacy_policy_url ?>">принимаю пользовательское соглашение</a></span>
+                                    <?php endif; ?>
+                                </div>
 							</form>
 						</div>
 					</div>
@@ -45,6 +50,7 @@
                         <div class="auth-content">
                             <div class="logUp">
                                 <form id="sign-up">
+                                    <div id="reg_errors" style="color: red"></div>
                                     <div class="form-input__item">
                                         <label class="form-input__item-label">Email</label>
                                         <input class="form-input__item-input" name="email" type="text"/>
@@ -65,7 +71,11 @@
                                     </div>
                                     <div class="logUp__type">
                                         <button class="custom-button" type="submit">Зарегестрироваться</button>
-                                        <span>Нажимая кнопку "Войти" я&nbsp;<a href=""> принимаю пользовательское соглашение</a></span>
+	                                    <?php
+	                                    $privacy_policy_url = get_privacy_policy_url();
+	                                    if (!empty($privacy_policy_url)): ?>
+                                            <span>Нажимая кнопку "Войти" я&nbsp;<a href="<?= $privacy_policy_url ?>"> принимаю пользовательское соглашение</a></span>
+	                                    <?php endif; ?>
                                     </div>
                                 </form>
                             </div>

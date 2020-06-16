@@ -9,7 +9,6 @@ $instagram_link  = carbon_get_theme_option( PREFIX . 'instagram_link' );
 /**@var WP_User $user*/
 $user = wp_get_current_user();
 
-//var_dump( $user );
 
 $account_page = get_permalink(carbon_get_theme_option(PREFIX.'account_page'));
 $signin_page = get_permalink(carbon_get_theme_option(PREFIX.'signin_page'));
@@ -65,8 +64,12 @@ $signin_page = get_permalink(carbon_get_theme_option(PREFIX.'signin_page'));
     <div class="menu">
         <div class="container">
             <div class="menu__inner">
-                <div class="menu__type"><a class="menu__auth" href="<?= $user->get_site_id() === 0 ? $signin_page : $account_page ?>">
-                        <span>войти / зарегистрироваться</span></a>
+                <div class="menu__type">
+                    <?php if($user->get_site_id() === 0): ?>
+                    <a class="menu__auth" href="<?=  $signin_page ?>">
+                        <span>войти / зарегистрироваться</span>
+                    </a>
+                    <?php endif; ?>
                     <div class="menu__switch">
                         <label class="lbl-off" for="switch-orange">родитель</label>
                         <input class="switch" id="switch-orange" type="checkbox">
