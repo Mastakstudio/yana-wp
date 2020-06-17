@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/optionPage.php';
 require __DIR__ . '/homePage.php';
+require __DIR__ . '/faqPage.php';
 require __DIR__ . '/userMeta.php';
 require __DIR__ . '/courseMeta.php';
 require __DIR__ . '/testResultMeta.php';

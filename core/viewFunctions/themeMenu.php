@@ -12,7 +12,7 @@ function secondMenuView(){
 		'after' => '',
 		'link_before' => '',
 		'link_after' => '',
-		'items_wrap' => '<div class="links"><div id="%1$s" class="%2$s">%3$s</div></div>',
+		'items_wrap' => '<div class="links"><ul id="%1$s" class="%2$s">%3$s</ul></div>',
 	];
 
 	if (has_nav_menu('second_menu'))

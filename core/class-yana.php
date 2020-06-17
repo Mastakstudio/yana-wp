@@ -10,7 +10,7 @@ class Yana{
         add_filter( 'body_class', [ $this, 'body_classes' ] );
         add_filter( 'nav_menu_css_class', [$this, 'set_menu_classes' ], 1, 3 );
 //        add_filter( 'nav_menu_submenu_css_class', [$this, 'set_submenu_classes' ], 10, 3 );
-//        add_filter( 'walker_nav_menu_start_el', [$this, 'change_product_menu_item' ], 10, 3);
+//        add_filter( 'walker_nav_menu_start_el', [$this, 'change_menu_item_style' ], 10, 4);
     }
 
     public function setup(){
@@ -202,6 +202,20 @@ class Yana{
 	}
 
 	public function header_meta(){}
+
+//	public function change_menu_item_style($item_output, $item, $depth, $args){
+//    	if ($args->theme_location === 'second_menu'){
+//		    $link_classes = ['links__item'];
+//		    if (in_array( 'current-menu-item', $item->classes ) )
+//			    $link_classes[] = 'links__item_active';
+//
+//		    return '<a class="'.implode(" ", $link_classes).'" href="'.$item->url.'">'.$item->title.'</a>';
+//	    }
+
+//		return $item_output;
+//	}
 }
+
+
 
 return new Yana();

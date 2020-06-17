@@ -68,3 +68,15 @@ Version:      0.0.1
     margin-left: 0 !important;
     text-transform: unset !important;
 }
+
+.links__inner{
+    padding: 0;
+    list-style: none;
+}
+.links__inner li a{
+    color: #46555A;
+}
+
+.links__inner .current-menu-item a{
+    color: #fff;
+}
