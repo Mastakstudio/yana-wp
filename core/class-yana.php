@@ -27,6 +27,7 @@ class Yana{
         register_nav_menus([
             'main_menu' => 'Main Menu',
             'second_menu' => 'Second Menu',
+            'footer_menu' => 'Footer Menu',
         ]);
 
         /*
@@ -189,7 +190,8 @@ class Yana{
 	        if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
 		        $classes[] = 'menu__item_active';
 
-        }elseif($args->theme_location === 'mobile_menu'){
+        }elseif($args->theme_location === 'footer_menu'){
+        	$classes[] = 'footer__link';
 	        if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes ))
 		        $classes[] = 'active';
         }

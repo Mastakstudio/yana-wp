@@ -14,15 +14,11 @@ function crb_attach_theme_options()
         ->add_tab(__('Main options'), [
             Field::make_image(TO_MAIN_LOGO, 'Logo'),
 	        Field::make_separator('contact_info_separator', 'Контакты'),
-//	        Field::make_text(TO_PHONE_LOGO, 'Phone')->set_width(50),
-//	        Field::make_text(TO_CONTACT_EMAIL, 'Email'),
-//	        Field::make_text(TO_VIBER_NUMBER, 'Viber')->set_width(50),
-//	        Field::make_text(TO_WHATSAPP_NUMBER, 'whatsapp')->set_width(50),
 	        Field::make_text(TO_INSTAGRAM_LINK, 'Instagram'),
 	        Field::make_text(TO_FACEBOOK_LINK, 'Facebook'),
 	        Field::make_text(TO_VK_LINK, 'В контакте'),
 	        Field::make_text(TO_YOUTUBE_LINK, 'Youtube'),
-//	        Field::make_text(TO_ADDRESS, 'Адресс'),
+	        Field::make_text(TO_SOS_CHILD_VIL, 'SOS Детские деревни'),
         ])
         ->add_tab(__('email'), [
 	        Field::make_text(TO_QUESTION_CONTACT_EMAIL, 'Email для получения писем'),

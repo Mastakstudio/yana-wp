@@ -69,7 +69,8 @@ Version:      0.0.1
     text-transform: unset !important;
 }
 
-.links__inner{
+.links__inner,
+.footer__links{
     padding: 0;
     list-style: none;
 }
@@ -79,4 +80,14 @@ Version:      0.0.1
 
 .links__inner .current-menu-item a{
     color: #fff;
+}
+
+.footer__link a{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    margin-bottom: 6px;
+    text-decoration: none;
 }

@@ -38,3 +38,22 @@ function mainMenuView(){
 	if (has_nav_menu('second_menu'))
 		wp_nav_menu($menuArgs);
 }
+
+function footerMenuView(){
+	$menuArgs = [
+		'theme_location' => 'footer_menu',
+		'container' => false,
+		'menu_class' => 'footer__links',
+		'menu_id' => '',
+		'echo' => true,
+		'fallback_cb' => 'wp_page_menu',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
+		'items_wrap' => '<div  id="%1$s" class="%2$s">%3$s</div>',
+	];
+
+	if (has_nav_menu('second_menu'))
+		wp_nav_menu($menuArgs);
+}
