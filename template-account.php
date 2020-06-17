@@ -3,13 +3,15 @@
  * Template name: account
  */
 
+
+
 $userManager = UserManager::getInstance();
-/**@var CustomUser $currentUser*/
+/**@var $currentUser CustomUser*/
 $currentUser = $userManager::GetCurrentUser();
-if ( ! $currentUser ) {
+if ( !$currentUser::UserIsAuthorized() ){
 	$userManager->RedirectToSignIn();
 }
-$userManager->Init();
+$userManager->FormProcessing();
 
 get_header();
 get_template_part( '/core/views/headerView' );

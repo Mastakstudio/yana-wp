@@ -161,27 +161,6 @@ class TestResultManager {
 		return $result;
 	}
 
-//	/**@param array $args*/
-//	public static function Save($args){
-//		$test_results = [
-//			'your_custom_key1' => 'your_custom_value1',
-//			'your_custom_key2' => 'your_custom_value2'
-//		];
-//
-//		$post_id = wp_update_post([
-//			'post_title' => $args['user_id'].'_'.$args['test_id'],
-//			'post_type' => 'course_test_result',
-//			'post_status' => 'publish',
-//
-//			'meta_input' => $test_results
-//		]);
-//
-//		if ($post_id) {
-//			// it worked :)
-//		}
-//	}
-
-
 	/**
 	 * @param $fields array
 	 * @param $target CourseTestResult

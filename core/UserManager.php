@@ -21,6 +21,38 @@ class UserManager {
 
 	}
 
+	public function Registration() {
+		if ( ! isset( $_POST['user_email'] ) || ! isset( $_POST['pwd'] ) || ! isset( $_POST['confirmpwd'] ) ) {
+			return [
+				'invalidForm' => 'registration',
+				'error'       => 'invalid form data'
+			];
+		}
+		$pwd    = $_POST['pwd'];
+		$errors = register_new_user( $_POST['user_email'], $_POST['user_email'] );
+
+		if ( is_wp_error( $errors ) ) {
+
+//			//Something's wrong
+//			$result['result'] = false;
+//			$result['error'] = $errors->get_error_message();
+//			$result['action'] = 'register';
+			return $errors;
+		}
+
+		if ( is_multisite() )
+			add_user_to_blog( get_current_blog_id(), $errors, get_option( 'default_role' ) );
+
+		wp_set_password( $_POST['pwd'], $errors );
+		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
+
+		$loginResult = wp_authenticate_username_password( null, $_POST['user_email'], $pwd );
+		wp_set_current_user( $loginResult->ID, $loginResult->user_email );
+		wp_set_auth_cookie( $loginResult->ID );
+
+		$this->RedirectToAccount();
+	}
+
 	public function LogIn() {
 		if ( ! isset( $_POST['log'] ) || ! isset( $_POST['pwd'] ) ) {
 			return [
@@ -59,89 +91,6 @@ class UserManager {
 
 	public static function LogOut() {
         return esc_url(wp_logout_url(home_url()));
-	}
-
-	public function Registration() {
-		if ( ! isset( $_POST['user_email'] ) || ! isset( $_POST['pwd'] ) || ! isset( $_POST['confirmpwd'] ) ) {
-			return [
-				'invalidForm' => 'registration',
-				'error'       => 'invalid form data'
-			];
-		}
-		$pwd    = $_POST['pwd'];
-		$errors = register_new_user( $_POST['user_email'], $_POST['user_email'] );
-
-		if ( is_wp_error( $errors ) ) {
-
-//			//Something's wrong
-//			$result['result'] = false;
-//			$result['error'] = $errors->get_error_message();
-//			$result['action'] = 'register';
-			return $errors;
-		}
-
-		if ( is_multisite() )
-			add_user_to_blog( get_current_blog_id(), $errors, get_option( 'default_role' ) );
-
-		wp_set_password( $_POST['pwd'], $errors );
-		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
-
-		$loginResult = wp_authenticate_username_password( null, $_POST['user_email'], $pwd );
-		wp_set_current_user( $loginResult->ID, $loginResult->user_email );
-		wp_set_auth_cookie( $loginResult->ID );
-
-		$this->RedirectToAccount();
-	}
-
-	public function RedirectToAccount() {
-		if ( wp_redirect( static::$accountPage ) ) {
-			exit;
-		}
-	}
-
-	public function RedirectToSignIn() {
-		if ( wp_redirect( static::$signinPage ) ) {
-			exit;
-		}
-	}
-
-	public function Init() {
-		$result = null;
-		if ( isset( $_REQUEST['login'] ) ) {
-			$result = $this->LogIn();
-			if ( $result instanceof WP_Error ) {
-				self::$errors['loginError'] = $result;
-			}
-		} elseif ( isset( $_REQUEST['registration'] ) ) {
-			$result = $this->Registration();
-			if ( $result instanceof WP_Error ) {
-				self::$errors['regError'] = $result;
-			}
-		} elseif ( isset( $_REQUEST['update'] ) ) {
-			$result = $this->Update();
-			if ( $result instanceof WP_Error ) {
-				self::$errors['update'] = $result;
-			}
-		}
-	}
-
-	public static function GetCurrentUser() {
-		return self::$current_user[0];
-	}
-
-	public static function ShowErrors( $section ) {
-		if ( is_array( self::$errors ) ) {
-			foreach ( self::$errors as $sectionName => $errorList ) {
-				if ( $sectionName == $section ) {
-					foreach ( $errorList->errors as $error ) {
-						foreach ( $error as $value ) {
-							echo '<p style="color: red">' . $value . '</p>';
-						}
-					}
-				}
-			}
-		}
-
 	}
 
 	public function LoginForm() {
@@ -286,6 +235,57 @@ class UserManager {
 		<?php
 	}
 
+	public function FormProcessing() {
+		$result = null;
+		if ( isset( $_REQUEST['login'] ) ) {
+			$result = $this->LogIn();
+			if ( $result instanceof WP_Error ) {
+				self::$errors['loginError'] = $result;
+			}
+		} elseif ( isset( $_REQUEST['registration'] ) ) {
+			$result = $this->Registration();
+			if ( $result instanceof WP_Error ) {
+				self::$errors['regError'] = $result;
+			}
+		} elseif ( isset( $_REQUEST['update'] ) ) {
+			$result = $this->Update();
+			if ( $result instanceof WP_Error ) {
+				self::$errors['update'] = $result;
+			}
+		}
+	}
+
+	public static function ShowErrors( $section ) {
+		if ( is_array( self::$errors ) ) {
+			foreach ( self::$errors as $sectionName => $errorList ) {
+				if ( $sectionName == $section ) {
+					foreach ( $errorList->errors as $error ) {
+						foreach ( $error as $value ) {
+							echo '<p style="color: red">' . $value . '</p>';
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	public function RedirectToAccount() {
+		if ( wp_redirect( static::$accountPage ) ) {
+			exit;
+		}
+	}
+
+	public function RedirectToSignIn() {
+		if ( wp_redirect( static::$signinPage ) ) {
+			exit;
+		}
+	}
+
+	private function AuthRedirectScheme() {
+		return static::$accountPage;
+	}
+
 	public function __wakeup() {
 		throw new \Exception( "Cannot unserialize a singleton." );
 	}
@@ -299,8 +299,8 @@ class UserManager {
 		return self::$instances[ $cls ];
 	}
 
-	private function AuthRedirectScheme() {
-		return static::$accountPage;
+	public static function GetCurrentUser() {
+		return self::$current_user[0];
 	}
 
 	private function Update() {

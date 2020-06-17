@@ -4,12 +4,18 @@
  * Template Post Type: course
  */
 
+$userManager = UserManager::getInstance();
+/**@var $user CustomUser*/
+$user = $userManager::GetCurrentUser();
+if (! $user::UserIsAuthorized()){
+	$userManager->RedirectToSignIn();
+}
+
 get_header();
 get_template_part( '/core/views/headerView' );
 
 global $post;
 $nextPart = CourseManager::getNextPartLink($post);
-
 $testResultManager = TestResultManager::getInstance();
 $currentTestResult = $testResultManager::getCurrentTestResult();
 

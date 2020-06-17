@@ -1,5 +1,4 @@
 <?php
-get_header();
 
 global $post;
 
@@ -26,7 +25,5 @@ if ( have_posts() ):
 		echo '<br>';
 		var_dump(carbon_get_post_meta(get_the_ID(), TEST_SOLVED));
 		echo '<br>';
-
 	endwhile;
 endif;
-get_footer();
