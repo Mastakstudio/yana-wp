@@ -2,17 +2,16 @@
 $banner_video  = home_page_banner_video();
 $userManager = UserManager::getInstance();
 $currentUser = $userManager->GetCurrentUser();
+$title = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_title');
+$subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
+
 ?>
 <div class="banner-main">
     <div class="container">
         <div class="banner-main__inner">
             <div class="banner-main__content">
-                <span class="title title_blue">ОБУЧАЮЩИЙ КУРС «БЕРЕМЕННОСТЬ И РОДЫ»</span>
-                <p class="text text_black">
-                    Онлайн курс подготовлен в рамках проекта «Ты не одна» и ориентирован на
-                    семьи, ожидающие рождение ребенка, и на молодых родителей. В курсе Вы узнаете в легкой форме,
-                    как счастливо пройти всю беременность, подготовится к родам, материнству и отцовству.
-                </p>
+                <span class="title title_blue"><?= $title ?></span>
+                <p class="text text_black"><?= $subtitle ?></p>
                 <?php if ($banner_video->link_exist):?>
                     <a class="banner-main__link" href="#modal">
                         <span>Просмотреть приветствие</span>
