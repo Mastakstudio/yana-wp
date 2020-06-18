@@ -29,7 +29,7 @@ class TestResultManager {
 	public static function GetTestResultsByCourseID($id) {
 		$userManager = UserManager::getInstance();
 		/**@var $user CustomUser*/
-		$user = $userManager::GetCurrentUser();
+		$user = $userManager->GetCurrentUser();
 
 		$args = [
 			'post_type'      => 'course_test_result',
@@ -42,7 +42,7 @@ class TestResultManager {
 				],
 				[
 					'key' => '_'.TEST_USER_ID,
-					'value' => $user->user->ID,
+					'value' => $user->GetID(),
 					'compare' => '=',
 				]
 			]
@@ -80,7 +80,7 @@ class TestResultManager {
 		$id = $partId;
 		$userManager = UserManager::getInstance();
 		/**@var $user CustomUser*/
-		$user = $userManager::GetCurrentUser();
+		$user = $userManager->GetCurrentUser();
 
 		$args = [
 			'post_type'      => 'course_test_result',
@@ -93,7 +93,7 @@ class TestResultManager {
 				],
 				[
 					'key' => '_'.TEST_USER_ID,
-					'value' => $user->user->ID,
+					'value' => $user->GetID(),
 					'compare' => '=',
 				]
 			]
@@ -132,21 +132,21 @@ class TestResultManager {
 
 		$userManager = UserManager::getInstance();
 		/**@var $user CustomUser*/
-		$user = $userManager::GetCurrentUser();
+		$user = $userManager->GetCurrentUser();
 
 		$test_results = [
 			'_'.TEST_ANSWERED => 0,
 			'_'.TEST_RIGHT_ANSWERED => 0,
 			'_'.TEST_ID => $args['test_id'],
 			'_'.TEST_COURSE_ID => $args['course_id'],
-			'_'.TEST_USER_ID =>  $user->user->ID,
+			'_'.TEST_USER_ID =>  $user->GetID(),
 			'_'.TEST_STARTED => false,
 			'_'.TEST_END_TIME => '',
 			'_'.TEST_START_TIME => ''
 		];
 
 		$post_id = wp_insert_post([
-			'post_title' => $user->user->display_name.'_'.$args['test_title'],
+			'post_title' => $user->GetDisplayName().'_'.$args['test_title'],
 			'post_type' => 'course_test_result',
 			'post_status' => 'publish',
 

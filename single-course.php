@@ -4,8 +4,7 @@ get_template_part( '/core/views/headerView' );
 
 global $post;
 $userManager = UserManager::getInstance();
-/**@var $user CustomUser*/
-$user        = $userManager::GetCurrentUser();
+$user        = $userManager->GetCurrentUser();
 
 if ( have_posts() ):
 	while ( have_posts() ):
@@ -32,7 +31,7 @@ if ( have_posts() ):
                 <div class="course-page__list">
 					<?php
 
-					if ( $user::UserIsAuthorized() ):
+					if ( !$user->IsAuthorized() ):
 						echo '<span class="course-page__title">Курс только для зарегисстрированных пользователей</span>';
 					else:
                         $course->getPartsView();

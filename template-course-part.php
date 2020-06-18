@@ -5,9 +5,8 @@
  */
 
 $userManager = UserManager::getInstance();
-/**@var $user CustomUser*/
-$user = $userManager::GetCurrentUser();
-if (! $user::UserIsAuthorized()){
+$user = $userManager->GetCurrentUser();
+if (! $user->IsAuthorized()){
 	$userManager->RedirectToSignIn();
 }
 

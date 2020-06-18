@@ -15,7 +15,7 @@ class CourseManager {
 	/**
 	 * @param integer $id
 	 *
-	 * @return array
+	 * @return CoursePart[]
 	 */
 	public static function GetCoursePartByParentID($id) {
 
@@ -42,6 +42,7 @@ class CourseManager {
 
 	/**
 	 * @param $part WP_Post
+	 * @return array
 	 */
 	public static function getNextPartLink($part){
 		$currentID = $part->ID;

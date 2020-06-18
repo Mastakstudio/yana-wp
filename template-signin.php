@@ -3,10 +3,9 @@
  * Template name: signIn
  */
 $userManager = UserManager::getInstance();
-/**@var $currentUser CustomUser*/
-$currentUser = $userManager::GetCurrentUser();
+$currentUser = $userManager->GetCurrentUser();
 
-if ( $currentUser::UserIsAuthorized() ){
+if ( $currentUser->IsAuthorized() ){
 	$userManager->RedirectToAccount();
 }
 $userManager->FormProcessing();

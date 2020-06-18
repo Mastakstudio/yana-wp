@@ -4,7 +4,6 @@ class UserManager {
 
 	private static $accountPage = '';
 	private static $signinPage = '';
-	private static $current_user = [];
 	private static $instances = [];
 	private static $errors = [];
 
@@ -16,9 +15,6 @@ class UserManager {
 
 		self::$accountPage = get_permalink( $accountPageId );
 		self::$signinPage  = get_permalink( $signinPage );
-
-		self::$current_user[] = new CustomUser();
-
 	}
 
 	public function Registration() {
@@ -73,9 +69,10 @@ class UserManager {
 //		$loginResult = wp_authenticate( $log, $pwd );
 
 		$result = [];
-		if ( strtolower( get_class( $loginResult ) ) == 'wp_user' ) {
+		if ( $loginResult instanceof WP_User ) {
 			$this->RedirectToAccount();
-		} elseif ( strtolower( get_class( $loginResult ) ) == 'wp_error' ) {
+            $this->current_user = new CustomUser();
+		} elseif ( $loginResult instanceof WP_Error ) {
 			//User login failed
 			/* @var WP_Error $loginResult */
 			$result['result'] = false;
@@ -292,22 +289,24 @@ class UserManager {
 
 	public static function getInstance(): UserManager {
 		$cls = static::class;
+		$userClass = CustomUser::class;
 		if ( ! isset( self::$instances[ $cls ] ) ) {
 			self::$instances[ $cls ] = new static;
+			self::$instances[ $userClass ] = new CustomUser();
 		}
 
 		return self::$instances[ $cls ];
 	}
 
-	public static function GetCurrentUser() {
-		return self::$current_user[0];
+	/**@return CustomUser*/
+	public function GetCurrentUser() {
+		return self::$instances[CustomUser::class];
 	}
 
 	private function Update() {
-		/**@var $user CustomUser */
-		$user = self::GetCurrentUser();
-		$userID = $user->user->ID;
-		if ( is_null( $user->user ) )
+		$user = $this->GetCurrentUser();
+		$userID = $user->GetID();
+		if ( !$user->IsAuthorized()  )
 			return false;
 
 		switch ( $_POST['target_section'] ) {

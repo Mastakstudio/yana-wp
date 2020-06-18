@@ -2,9 +2,13 @@
 require_once 'TestResultManager.php';
 
 class Course {
-	/** @var array $courseParts */
+	/**
+     * @var CoursePart[] $courseParts
+     */
 	private $courseParts;
-	/** @var array $testResult */
+	/**
+     * @var CourseTestResult[] $testResult
+     */
 	private $testResult;
 	/** @var string $subtitle */
 	private $subtitle;
@@ -22,7 +26,6 @@ class Course {
 		} else {
 			$this->course = $post;
 		}
-
 
 		$this->subtitle = carbon_get_post_meta( $id, PREFIX . 'subtitle' );
 
@@ -58,6 +61,9 @@ class Course {
 		return false;
 	}
 
+	/**
+     * @return CoursePart[]
+     */
 	public function getParts() {
 		return $this->courseParts;
 	}
@@ -74,10 +80,10 @@ class Course {
 	public function getPartsView(){
 		$parts = $this->getParts();
 		if ( is_array( $parts ) && count( $parts ) ):
-			/**@var CoursePart $part */
 			foreach ( $parts as $part ) :
 				/**@var CourseTestResult $testResult */
 				$testResult = $this->getTestResultByCoursePart( $part );
+
 				$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
 
 				$EndTime = $testResult->getEndTime( $intervalTimeLimit );
@@ -209,19 +215,16 @@ class CoursePart {
 
 
 	/**
-	 * @return mixed|WP_Post|null
 	 * @var WP_Post $part
+	 * @return WP_Post|null
 	 */
 	public function Part( $part = null ) {
-		if ( is_null( $part ) ) {
-			return $this->part;
-		} else {
-			$this->part = $part;
-		}
+		if ( is_null( $part ) )  return $this->part;
+		else $this->part = $part;
 	}
 
 	public function getAdditionalInfo() {
-		if ( ! is_array( $this->additional_info ) || empty( $this->additional_info ) ) {
+		if ( empty( $this->additional_info ) ) {
 			return;
 		}
 		?>
@@ -235,7 +238,6 @@ class CoursePart {
 					foreach ( $section['links'] as $link ) {
 						echo '<a class="test__resource-item-link" href="' . esc_url( $link['text'] ) . '"  target="_blank">' . esc_url( $link['text'] ) . '</a>';
 					}
-
 					echo '</div>';
 				} ?>
             </div>
@@ -244,7 +246,7 @@ class CoursePart {
 	}
 
 	public function getTest() {
-		if ( ! is_array( $this->test ) || empty( $this->test ) ) {
+		if ( empty( $this->test ) ) {
 			return;
 		}
 		?>

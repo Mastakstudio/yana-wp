@@ -6,9 +6,9 @@
 
 
 $userManager = UserManager::getInstance();
-/**@var $currentUser CustomUser*/
-$currentUser = $userManager::GetCurrentUser();
-if ( !$currentUser::UserIsAuthorized() ){
+
+$currentUser = $userManager->GetCurrentUser();
+if ( !$currentUser->IsAuthorized() ){
 	$userManager->RedirectToSignIn();
 }
 $userManager->FormProcessing();
@@ -24,9 +24,7 @@ get_template_part( '/core/views/headerView' );
                         Здесь вы можете добавить либо изменить информацию о себе. Данная информация необходима для формирования и регистрации в базе данных Сертификата о прохождении курса.
                     </p>
                 </div>
-                <div class="account__links">
-	                <?php secondMenuView() ?>
-                </div>
+                <div class="account__links"><?php secondMenuView() ?></div>
             </div>
         </div>
         <div class="account__wrapper">
@@ -36,7 +34,7 @@ get_template_part( '/core/views/headerView' );
             <div class="account__list">
                 <?php
                 $disabled = true;
-                if (empty($currentUser->user->last_name) ||empty($currentUser->user->first_name) ||empty($currentUser->second_name) ){
+                if ( empty($currentUser->GetLastName()) || empty($currentUser->GetFirstName()) || empty($currentUser->GetSecondName()) ){
 	                $disabled = false;
                 }
                 ?>
@@ -51,19 +49,19 @@ get_template_part( '/core/views/headerView' );
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Фамилия</label>
-                                <input class="form-input__item-input" name="userLastName" type="text" value="<?= $currentUser->user->last_name ?>" />
+                                <input class="form-input__item-input" name="userLastName" type="text" value="<?= $currentUser->GetLastName() ?>" />
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Имя</label>
-                                <input class="form-input__item-input" name="userFirstName" type="text" value="<?= $currentUser->user->first_name ?>"/>
+                                <input class="form-input__item-input" name="userFirstName" type="text" value="<?= $currentUser->GetFirstName() ?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Отчество</label>
-                                <input class="form-input__item-input" name="userSecondName" type="text" value="<?= $currentUser->second_name ?>"/>
+                                <input class="form-input__item-input" name="userSecondName" type="text" value="<?= $currentUser->GetSecondName() ?>"/>
                             </div>
                         </div>
                     </div>
@@ -71,7 +69,10 @@ get_template_part( '/core/views/headerView' );
 
 	            <?php
 	            $disabled = true;
-	            if (empty($currentUser->passport_series) ||empty($currentUser->passport_number) || empty($currentUser->passport_who) || empty($currentUser->passport_when) ){
+	            if (empty($currentUser->GetPassportSeries())
+                    || empty($currentUser->GetPassportNumber())
+                    || empty($currentUser->GetPassportWho())
+                    || empty($currentUser->GetPassportWhen()) ){
 		            $disabled = false;
 	            }
 	            ?>
@@ -85,32 +86,32 @@ get_template_part( '/core/views/headerView' );
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Серия</label>
-                                <input class="form-input__item-input" name="serial" type="text" value="<?= $currentUser->passport_series?>"/>
+                                <input class="form-input__item-input" name="serial" type="text" value="<?= $currentUser->GetPassportSeries()?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Номер паспорта</label>
-                                <input class="form-input__item-input" name="number" type="text" value="<?= $currentUser->passport_number?>"/>
+                                <input class="form-input__item-input" name="number" type="text" value="<?= $currentUser->GetPassportNumber()?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Кем выдан</label>
-                                <input class="form-input__item-input" name="who" type="text" value="<?= $currentUser->passport_who?>"/>
+                                <input class="form-input__item-input" name="who" type="text" value="<?= $currentUser->GetPassportWho()?>"/>
                             </div>
                         </div>
                         <div class="account__item-input">
                             <div class="form-input__item">
                                 <label class="form-input__item-label">Когда</label>
-                                <input class="form-input__item-input" name="when" type="text" value="<?= $currentUser->passport_when?>"/>
+                                <input class="form-input__item-input" name="when" type="text" value="<?= $currentUser->GetPassportWhen()?>"/>
                             </div>
                         </div>
                     </div>
                 </form>
 	            <?php
 	            $disabled = true;
-	            if (empty($currentUser->birthday) ){
+	            if (empty($currentUser->GetBirthday()) ){
 		            $disabled = false;
 	            }
 	            ?>
@@ -123,7 +124,7 @@ get_template_part( '/core/views/headerView' );
                     <div class="account__item-inputs">
                         <div class="account__item-input">
                             <label class="account__item-label">Дата рождения</label>
-                            <input class="account__date" type="date" name="birthday" value="<?= $currentUser->birthday?>"/>
+                            <input class="account__date" type="date" name="birthday" value="<?= $currentUser->GetBirthday()?>"/>
                         </div>
                     </div>
                 </form>
