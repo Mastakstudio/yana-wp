@@ -1,6 +1,8 @@
 <?php
 if (!defined('ABSPATH')) exit();
 
+
+date_default_timezone_set('Europe/Minsk');
 define('PREFIX', 'yana_');
 define('THEME_NAME', get_template());
 define('BASE_URL', '/wp-content/themes/' . THEME_NAME);

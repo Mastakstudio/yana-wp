@@ -30,7 +30,6 @@ if ( have_posts() ):
             <div class="container">
                 <div class="course-page__list">
 					<?php
-
 					if ( !$user->IsAuthorized() ):
 						echo '<span class="course-page__title">Курс только для зарегисстрированных пользователей</span>';
 					else:

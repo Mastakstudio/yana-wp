@@ -28,7 +28,7 @@ $currentUser = $userManager::GetCurrentUser();
                     А также дадим возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения
                 </p>
                 <?php
-                if ( is_null($currentUser->user) ) {
+                if ( !$currentUser->IsAuthorized() ) {
 	                if (isset($login_page) || empty($login_page) ){
 		                echo '<a class="link" id="link_to_reg" href="'.get_permalink($login_page).'">Зарегистрироваться</a>';
 	                }

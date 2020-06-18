@@ -1,8 +1,7 @@
 <?php
 $banner_video  = home_page_banner_video();
 $userManager = UserManager::getInstance();
-/**@var $currentUser CustomUser*/
-$currentUser = $userManager::GetCurrentUser();
+$currentUser = $userManager->GetCurrentUser();
 ?>
 <div class="banner-main">
     <div class="container">
@@ -22,7 +21,7 @@ $currentUser = $userManager::GetCurrentUser();
                     <img class="banner-main__girl-write" src="/wp-content/themes/Yana/src/icons/girl-write.png" alt="" role="presentation"/>
                 <?php   endif; ?>
             </div>
-            <?php if (is_null($currentUser->user))
+            <?php if (!$currentUser->IsAuthorized())
                 get_template_part('/core/views/home/ajax-login-form' ); ?>
         </div>
     </div>
