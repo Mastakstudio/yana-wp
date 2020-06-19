@@ -44,6 +44,7 @@ if ( have_posts() ):
                         <div class="test__head-text">
                             <span class="test__theme">тема занятия</span>
                             <span class="title title_blue"><?= the_title() ?></span>
+                            <p class="text text_black visible"><?= $coursePart->getSubtitle() ?></p>
                             <img class="image" src="/wp-content/themes/Yana/src/icons/test.png"/>
                         </div>
                         <div class="test__head-list">

@@ -17,10 +17,7 @@ function crb_course_settings()
 	         ->where('post_type', '=', 'course')
 	         ->where('post_template', '=', 'template-course-part.php')
 	         ->add_fields([
-		         Field::make_text(COURSE_ORDER, 'Приоритет')
-			         ->set_default_value(0)
-			         ->set_width(50)
-			         ->set_attribute('type', 'number'),
+		         Field::make_textarea(COURSE_SUBTITLE, 'Подзаголовок'),
 		         Field::make_text(COURSE_TIME_LIMIT, 'Дней на решение теста')
 		              ->set_default_value(1)
 		              ->set_width(50)

@@ -84,6 +84,8 @@ class Course {
 			foreach ( $parts as $part ) :
 				/**@var CourseTestResult $testResult */
 				$testResult = $this->getTestResultByCoursePart( $part );
+                $imgUrl = $part->getImgUrl();
+
 
 				$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
 
@@ -98,10 +100,11 @@ class Course {
                     <div class="course-page__content-item">
                         <span class="course-page__title"><?= $part->getTitle() ?></span>
                         <div class="course-page__inner-content-item">
-                            <div class="course-page__image-content-item">
-                                <img class="course-page__about-image"
-                                     src="/wp-content/themes/Yana/src/icons/course1.png" alt=""/>
-                            </div>
+	                        <?php if (!empty($imgUrl)): ?>
+                                <div class="course-page__image-content-item">
+                                    <img class="course-page__about-image" src="<?= $imgUrl ?>" alt=""/>
+                                </div>
+	                        <?php endif; ?>
                             <div class="course-page__text-content-item">
                                 <div class="course-page__title-content-item">
                                     <span>Освещенные темы</span>
@@ -173,6 +176,8 @@ class CoursePart {
 	public $part;
 	/**@var string $preview_desc */
 	private $preview_desc;
+	/**@var string $subtitle */
+	private $subtitle;
 	/**@var array $main_info */
 	private $main_info;
 	/**@var array $additional_info */
@@ -200,6 +205,7 @@ class CoursePart {
 		}
 
 		$this->preview_desc    = carbon_get_post_meta( $id, PREFIX . 'preview_desc' );
+		$this->subtitle    = carbon_get_post_meta( $id, PREFIX . '$subtitle' );
 		$this->main_info       = carbon_get_post_meta( $id, PREFIX . 'main_info' );
 		$this->additional_info = carbon_get_post_meta( $id, PREFIX . 'additional_info' );
 		$this->test            = carbon_get_post_meta( $id, PREFIX . 'test' );
@@ -244,6 +250,14 @@ class CoursePart {
             </div>
         </div>
 		<?php
+	}
+
+	public function getSubtitle() {
+			return $this->subtitle;
+	}
+
+	public function getImgUrl() {
+		return get_the_post_thumbnail_url( $this->part->ID ,'full' );
 	}
 
 	public function getTest() {
