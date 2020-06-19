@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 require __DIR__ . '/optionPage.php';
 require __DIR__ . '/homePage.php';
 require __DIR__ . '/faqPage.php';

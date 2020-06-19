@@ -3,6 +3,7 @@
  * Template Name: course part
  * Template Post Type: course
  */
+if (!defined('ABSPATH')) exit();
 
 $userManager = UserManager::getInstance();
 $user = $userManager->GetCurrentUser();

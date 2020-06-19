@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 
 
 add_action( 'wp_ajax_sendFormTo', 'sendFormTo' );

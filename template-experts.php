@@ -2,6 +2,7 @@
 /**
  * Template name: experts
  */
+if (!defined('ABSPATH')) exit();
 
 
 $subTitle = carbon_get_post_meta( get_the_ID(), PREFIX . 'subtitle' );

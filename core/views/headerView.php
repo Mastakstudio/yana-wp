@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 
 $logo = carbon_get_theme_option(PREFIX.'main_logo');
 

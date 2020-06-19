@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 $links = home_page_partners();
 ?>
 

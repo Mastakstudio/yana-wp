@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 $socialLinks = SocialLinks::getInstance();
 $child_vil_link = carbon_get_theme_option(TO_SOS_CHILD_VIL);
 ?>

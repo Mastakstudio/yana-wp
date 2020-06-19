@@ -2,6 +2,7 @@
 /**
  * Template name: signIn
  */
+if (!defined('ABSPATH')) exit();
 $userManager = UserManager::getInstance();
 $currentUser = $userManager->GetCurrentUser();
 

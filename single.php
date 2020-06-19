@@ -1,9 +1,5 @@
 <?php
-/**
- * The template for displaying all single posts.
- *
- * @package storefront
- */
+if (!defined('ABSPATH')) exit();
 
 get_header();
 

@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 
 if ( ! function_exists( 'wp_body_open' ) ) {
     function wp_body_open() {

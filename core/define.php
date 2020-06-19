@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('ABSPATH')) exit();
+
 // "COURSE" post type
 define("COURSE_SUBTITLE", PREFIX.'subtitle');
 define("COURSE_ORDER", PREFIX.'order');
@@ -46,3 +48,4 @@ define("TO_QUESTION_CONTACT_EMAIL", PREFIX.'question_contact_email');
 define("TO_PARTNERS", PREFIX.'partners');
 define("TO_ACCOUNT_PAGE", PREFIX.'account_page');
 define("TO_SIGNIN_PAGE", PREFIX.'signin_page');
+define("TO_LOGIN_PAGE", PREFIX.'login_page');

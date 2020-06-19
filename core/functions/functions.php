@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('ABSPATH')) exit();
+
 function home_page_banner_video(){
 	$link = carbon_get_post_meta(get_the_ID(), PREFIX.'banner_video_link');
 

@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('ABSPATH')) exit();
 class ACCOUNT_AJAX
 {
     /**

@@ -2,6 +2,7 @@
 /**
  * Template name: account
  */
+if (!defined('ABSPATH')) exit();
 
 
 

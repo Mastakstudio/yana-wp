@@ -45,7 +45,7 @@ function crb_attach_theme_options()
 		         ->set_layout('tabbed-vertical')
     ]);
 
-    Container::make_theme_options('social_settings', 'Настройки Авторизации')
+    Container::make_theme_options('social_settings', 'Авторизация и пользователи')
 	    ->set_page_parent($themeSettings)
 	    ->add_tab('Страницы',[
 	    	Field::make_select(TO_ACCOUNT_PAGE, 'Страница акаунта')
@@ -54,6 +54,9 @@ function crb_attach_theme_options()
 		         ->set_options(page_selecting()),
 		    Field::make_select(PREFIX . 'login_page', 'Login Page')
 		         ->set_options(page_selecting()),
+	    ])
+	    ->add_tab('сертификат',[
+		    Field::make_file(PREFIX.'certificate', 'Сертификат')
 	    ]);
     ;
 }

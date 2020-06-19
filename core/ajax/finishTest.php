@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 add_filter( 'wp_mail_content_type', 'set_html_content_type' );
 function set_html_content_type() {
 	return "text/html";

@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) exit();
 require_once 'CustomUser.php';
 require_once 'UserManager.php';
 require_once 'Course.php';
