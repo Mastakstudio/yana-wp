@@ -20,6 +20,8 @@ class CustomUser {
 	private $_birthday = "";
 	/** @var $_courseTestResults CourseTestResult[] */
 	private $_courseTestResults = [];
+	/** @var $_allSolved boolean */
+	private $_allSolved = true;
 
 	/**@deprecated */
 	public $authorized = false;
@@ -41,17 +43,20 @@ class CustomUser {
 			$course_test_result_args =[
 				'post_type' => 'course_test_result',
 				'posts_per_page' => -1,
-				"orderby" => 'meta_value_num',
-				"meta_key" => TEST_USER_ID,
-				"order" => 'DESC'
+				'meta_query' => [
+					[
+						'key' => '_'.TEST_USER_ID,
+						'value' => $user->ID,
+						'compare' => '=',
+					]
+				]
 			];
 			$query = new WP_Query($course_test_result_args);
-			$course_test_result_list = [];
 			foreach ($query->posts as $course_test_result){
+				$buff =  new CourseTestResult($course_test_result);
+				$this->_courseTestResults[] = $buff;
 
-				$course_test_result_list[$course_test_result->ID] = new CourseTestResult([
-					'test_result' => $course_test_result
-				]);
+				if (!$buff->solved) $this->_allSolved = false;
 			}
 		}
 
@@ -97,11 +102,17 @@ class CustomUser {
 		return $this->user->display_name;
 	}
 
-
-	/** @deprecated */
-	public static function UserIsAuthorized(){
-		$tryGetUser = wp_get_current_user();
-		return $tryGetUser->get_site_id() !== 0? $tryGetUser : false;
+	public function TestResultsView(){
+		if ($this->_allSolved):
+		?>
+			<p>ваш сертификат</p>
+		<?php
+		else:
+			foreach ( $this->_courseTestResults as $result ) {
+				echo '<p>'.$result->post->post_title.'</p>';
+				echo '<p>результат :<span>'.($result->solved?'пройден':'активен').'</span></p>';
+			}
+		endif;
 	}
 
 	public function LogOut(){
@@ -134,5 +145,12 @@ class CustomUser {
 	 */
 	private function CarbonMeta($key){
 		return carbon_get_user_meta($this->user->ID, $key );
+	}
+
+
+	/** @deprecated */
+	public static function UserIsAuthorized(){
+		$tryGetUser = wp_get_current_user();
+		return $tryGetUser->get_site_id() !== 0? $tryGetUser : false;
 	}
 }

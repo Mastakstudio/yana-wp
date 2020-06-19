@@ -58,6 +58,7 @@ class CourseManager {
 			'post_type'      => 'course',
 			'posts_per_page' => -1,
 			'post_parent'    => $parentID,
+			'orderby' => 'menu_order',
 			'order'          => 'ASC'
 		];
 

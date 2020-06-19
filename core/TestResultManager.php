@@ -25,7 +25,7 @@ class TestResultManager {
 	/**
 	 * @param integer $id
 	 *
-	 * @return array
+	 * @return CourseTestResult[]
 	 */
 	public static function GetTestResultsByCourseID($id) {
 		$userManager = UserManager::getInstance();
@@ -41,6 +41,37 @@ class TestResultManager {
 					'value' => $id,
 					'compare' => '=',
 				],
+				[
+					'key' => '_'.TEST_USER_ID,
+					'value' => $user->GetID(),
+					'compare' => '=',
+				]
+			]
+		];
+
+		$parts = new WP_Query( $args );
+
+		$result = [];
+		if (is_array($parts->posts) && count($parts->posts) > 0){
+			/**@var $part WP_Post */
+			foreach ($parts->posts as $part){
+				$buff = new CourseTestResult( $part );
+				$result[$buff->test_id] = $buff;
+			}
+		}
+		return $result;
+	}
+
+	/**
+	 * @return CourseTestResult[]
+	 */
+	public static function GetTestResultsByUser() {
+		$userManager = UserManager::getInstance();
+		$user = $userManager->GetCurrentUser();
+		$args = [
+			'post_type'      => 'course_test_result',
+			'posts_per_page' => -1,
+			'meta_query' => [
 				[
 					'key' => '_'.TEST_USER_ID,
 					'value' => $user->GetID(),
