@@ -33,6 +33,11 @@ get_template_part( '/core/views/headerView' );
         </div>
         <div class="container">
             <div class="account__list">
+
+<!--                <div class="account__item">-->
+<!--                    <span class="account__item-title">результаты теста</span>-->
+<!--                </div>-->
+
                 <?php
                 $disabled = true;
                 if ( empty($currentUser->GetLastName()) || empty($currentUser->GetFirstName()) || empty($currentUser->GetSecondName()) ){

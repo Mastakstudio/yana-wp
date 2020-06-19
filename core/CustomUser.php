@@ -18,7 +18,8 @@ class CustomUser {
 	private $_passportWho = "";
 	/**@var string $_birthday*/
 	private $_birthday = "";
-	private $course_test_results = [];
+	/** @var $_courseTestResults CourseTestResult[] */
+	private $_courseTestResults = [];
 
 	/**@deprecated */
 	public $authorized = false;
@@ -37,13 +38,13 @@ class CustomUser {
 			$this->_birthday = $this->CarbonMeta(U_BIRTHDAY );
 
 
-			$course_test_result_args = array(
+			$course_test_result_args =[
 				'post_type' => 'course_test_result',
 				'posts_per_page' => -1,
 				"orderby" => 'meta_value_num',
 				"meta_key" => TEST_USER_ID,
 				"order" => 'DESC'
-			);
+			];
 			$query = new WP_Query($course_test_result_args);
 			$course_test_result_list = [];
 			foreach ($query->posts as $course_test_result){
