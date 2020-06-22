@@ -83,6 +83,7 @@ class Course {
 		if ( is_array( $parts ) && count( $parts ) ):
 			foreach ( $parts as $part ) :
 				/**@var CourseTestResult $testResult */
+
 				$testResult = $this->getTestResultByCoursePart( $part );
                 $imgUrl = $part->getImgUrl();
 
@@ -124,7 +125,7 @@ class Course {
                         </div>
                         <div class="course-page__content-info-item">
 							<?php if ( $testResult->solved ): ?>
-                                <span class="course-page__desc-info-item" style="margin-bottom: 1rem;">Задание выполнено</span>
+                                <span class="course-page__desc-info-item" style="margin-bottom: 1rem;">Тест выполнен</span>
 							<?php else: ?>
                                 <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
                                 <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">

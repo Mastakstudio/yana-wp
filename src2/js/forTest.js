@@ -21,6 +21,8 @@ jQuery(document).ready(function ($) {
             $(nextQuestion).show("slow");
         }else{
             $("#modal_next_part").addClass("active");
+            disableModal();
+            updateTestResult();
         }
 
     })
@@ -29,18 +31,13 @@ jQuery(document).ready(function ($) {
         $('#modal_next_part').removeClass('active');
     });
 
-    $('#go_to_next').on('click', function (e) {
-        e.preventDefault();
-
-        let linkToNextPart = $(this).attr('href');
+    function updateTestResult() {
         let answered = 0;
         let right = 0 ;
         $('.test__content-check input:checked').each(function (i, elem ) {
             answered++;
 
             let wrapper = $(elem).parents('.test__content-check');
-            console.log('wrapper', wrapper);
-            console.log(wrapper.hasClass('wrapper.hasClass','correct'));
             if (wrapper.hasClass('correct')){
                 right++;
             }
@@ -52,19 +49,25 @@ jQuery(document).ready(function ($) {
             right : right,
             test_id : $('#test-wrapper').data('test_id')
         };
-
         $.ajax({
             type: 'POST',
             url: mastak_ajax.url,
             data: data,
             dataType: 'json'
         }).done( (response) =>  {
-            console.log(response);
+            // console.log(response);
             if(!response.success) return;
-            window.location.href = linkToNextPart;
+            unDisableModal();
+            // window.location.href = linkToNextPart;
         } ).fail(function () {
         });
-    })
+    }
 
+    function disableModal() {
+        $('.mastak_loader_wrapper').addClass('active_loader');
+    }
+    function unDisableModal() {
+        $('.active_loader').removeClass('active_loader');
+    }
 
 });

@@ -82,6 +82,9 @@ if ( have_posts() ):
 
                 <div class="modal__wrapper" id="modal_next_part">
                     <div class="modal__next_part">
+                        <div class="mastak_loader_wrapper">
+                            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                        </div>
                         <h2><?= $nextPart['last']? 'Получить аттестат' : 'К следующей части' ?></h2>
                         <div class="btn__wrapper">
                             <span id="close_modal" class="btn btn-warning">Закрыть</span>

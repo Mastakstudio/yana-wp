@@ -128,19 +128,25 @@ class ACCOUNT_AJAX
         if( get_option('users_can_register') ){
 
             $regResult = register_new_user( $_POST['email'], $_POST['email']);
-
+	        $regUser = null;
 	        if ( is_wp_error($regResult) ) {
 		        $result['result'] = false;
 		        $result['error'] = $regResult->get_error_message();
 
 		        wp_send_json($result, 200);
 		        die();
+	        }else{
+	        	$regUser = new WP_User($regResult);
 	        }
 
             $result['result'] = true;
 
-            if( is_multisite() )
-                add_user_to_blog(get_current_blog_id(), $regResult, get_option('default_role'));
+            if( is_multisite() ){
+	            add_user_to_blog(get_current_blog_id(), $regResult, 'parent');
+            }
+            else{
+	            $regUser->set_role('parent');
+            }
 
             wp_set_password($_POST['password'], $regResult);
 	        update_user_meta( $regResult, 'show_admin_bar_front', 'false' );

@@ -103,16 +103,22 @@ class CustomUser {
 	}
 
 	public function TestResultsView(){
-		if ($this->_allSolved):
-		?>
-			<p>ваш сертификат</p>
-		<?php
-		else:
-			foreach ( $this->_courseTestResults as $result ) {
-				echo '<p>'.$result->post->post_title.'</p>';
-				echo '<p>результат :<span>'.($result->solved?'пройден':'активен').'</span></p>';
-			}
-		endif;
+	    if (count($this->_courseTestResults) <= 0){
+		    echo '<p>для получкния сертификата пройдите тесты</p>';
+        }
+		elseif ($this->_allSolved){
+	        echo '<p>ваш сертификат</p>';
+        }
+	    else{
+	        foreach ( $this->_courseTestResults as $result ) {
+	            $style = $result->solved? '': 'style="color: red;"';
+	            $text = $result->solved?'пройден':'активен';
+	            $title = get_the_title($result->test_id);
+
+		        echo '<p>'.$title.'</p>';
+		        echo '<p>результат: <span '.$style.'>'.$text.'</span></p>';
+	        }
+        }
 	}
 
 	public function LogOut(){

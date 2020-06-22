@@ -25,20 +25,22 @@ class UserManager {
 				'error'       => 'invalid form data'
 			];
 		}
+
 		$pwd    = $_POST['pwd'];
 		$errors = register_new_user( $_POST['user_email'], $_POST['user_email'] );
+		$regUser = null;
 
 		if ( is_wp_error( $errors ) ) {
-
-//			//Something's wrong
-//			$result['result'] = false;
-//			$result['error'] = $errors->get_error_message();
-//			$result['action'] = 'register';
 			return $errors;
+		}else{
+			$regUser = new WP_User($errors);
 		}
 
-		if ( is_multisite() )
-			add_user_to_blog( get_current_blog_id(), $errors, get_option( 'default_role' ) );
+		if ( is_multisite() ){
+			add_user_to_blog( get_current_blog_id(), $errors, 'parent' );
+        }else{
+			$regUser->set_role('parent');
+        }
 
 		wp_set_password( $_POST['pwd'], $errors );
 		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
