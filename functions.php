@@ -26,10 +26,10 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-remove_role( 'editor' );
-remove_role( 'contributor' );
 remove_role( 'author' );
-remove_role( 'expert' );
+remove_role( 'editor' );
+remove_role( 'subscriber');
+remove_role( 'contributor' );
 
 $specialist_capabilities = [
 	'delete_posts',

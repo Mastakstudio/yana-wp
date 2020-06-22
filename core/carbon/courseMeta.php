@@ -23,11 +23,8 @@ function crb_course_settings()
 		              ->set_width(50)
 		              ->set_attribute('type','number'),
 		         Field::make_multiselect(PREFIX.'target_roles','Целевая аудитория')
-		->set_options([
-			'admin' => 'admin',
-			'parent' => 'parent',
-			'specialist' => 'specialist'
-		]),
+		              ->set_options(get_roles())
+		              ->set_required(true),
 		         Field::make_complex(COURSE_PREVIEW_DESC, 'Превью описание')
 		              ->add_fields('list',[
 			              Field::make_complex(COURSE_PREVIEW_DESC, 'Превью описание')
@@ -90,4 +87,15 @@ function course_part_selecting()
 		}
 	}
 	return $posts_list;
+}
+
+function get_roles() {
+	global $wp_roles;
+
+	$all_roles = $wp_roles->roles;
+	$roles = [];
+	foreach ( $all_roles as $key => $role ) {
+		$roles[$key] = $role['name'];
+	}
+	return $roles;
 }

@@ -80,95 +80,122 @@ class Course {
 
 	public function getPartsView(){
 		$parts = $this->getParts();
-		if ( is_array( $parts ) && count( $parts ) ):
-			foreach ( $parts as $part ) :
-				/**@var CourseTestResult $testResult */
-
-				$testResult = $this->getTestResultByCoursePart( $part );
-                $imgUrl = $part->getImgUrl();
-
-
-				$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
-
-				$EndTime = $testResult->getEndTime( $intervalTimeLimit );
-
-				$questionsQuantity     = $part->getQuestionsQuantity();
-				$answeredQuantity      = $testResult->getAnsweredQuantity();
-				$rightAnsweredQuantity = $testResult->getRightAnsweredQuantity();
-				$rightP                = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
-				?>
-                <div class="course-page__item">
-                    <div class="course-page__content-item">
-                        <span class="course-page__title"><?= $part->getTitle() ?></span>
-                        <div class="course-page__inner-content-item">
-	                        <?php if (!empty($imgUrl)): ?>
-                                <div class="course-page__image-content-item">
-                                    <img class="course-page__about-image" src="<?= $imgUrl ?>" alt=""/>
-                                </div>
-	                        <?php endif; ?>
-                            <div class="course-page__text-content-item">
-                                <div class="course-page__title-content-item">
-                                    <span>Освещенные темы</span>
-                                    <img class="course-page__button"
-                                         src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
-                                </div>
-                                <div class="course-page__list-content-item">
-									<?php $part->getPreviewDesc() ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-page__info-item">
-                        <div class="course-page__title-info-item">
-                            <span>информация</span>
-                            <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
-                        </div>
-                        <div class="course-page__content-info-item">
-							<?php if ( $testResult->solved ): ?>
-                                <span class="course-page__desc-info-item" style="margin-bottom: 1rem;">Тест выполнен</span>
-							<?php else: ?>
-                                <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
-                                <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">
-                                    <ul>
-                                        <li><span>Дней:</span><span class="days"></span></li>
-                                        <li><span>Часов:</span><span class="hours"></span></li>
-                                        <li><span>Минут:</span><span class="minutes"></span></li>
-                                    </ul>
-                                </div>
-							<?php endif; ?>
-                            <div class="course-page__text-info-item">
-                                <div class="course-page__type-text-info-item">
-                                    <span class="course-page__type-text-info-item-title">Вопросов всего:</span>
-                                    <div class="course-page__line"></div>
-                                    <span class="course-page__type-text-info-item-number"><?= $questionsQuantity ?></span>
-                                </div>
-                                <div class="course-page__type-text-info-item">
-                                    <span class="course-page__type-text-info-item-title">Отвечено:</span>
-                                    <div class="course-page__line"></div>
-                                    <span class="course-page__type-text-info-item-number"><?= $answeredQuantity ?></span>
-                                </div>
-                                <div class="course-page__type-text-info-item">
-                                    <span class="course-page__type-text-info-item-title">Правильно:</span>
-                                    <div class="course-page__line"></div>
-                                    <span class="course-page__type-text-info-item-number"><?= $rightAnsweredQuantity ?></span>
-                                </div>
-                            </div>
-                            <div class="course-page__procent-info-item">
-                                <div class="course-page__circle-procent-info-item"></div>
-                                <span class="course-page__procent-info-item-number"><?= (integer) $rightP ?>%</span>
-                                <span class="course-page__procent-info-item-text">усвоенного материала</span>
-                            </div>
-                        </div>
-                        <div class="course-page__link-to">
-                            <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>">Продолжить обучение</a>
-                        </div>
-                    </div>
-
-                </div>
-			<?php
-			endforeach;
-		endif;
+		if ( is_array( $parts ) && count( $parts ) ) {
+			foreach ( $parts as $part ) {
+				$this->PartView($part);
+			}
+		}
     }
+
+    /**
+     * @param $user CustomUser
+     */
+	public function getPartsViewByUserRole($user){
+		$parts = $this->getParts();
+		if ( is_array( $parts ) && count( $parts ) ) {
+			foreach ( $parts as $part ) {
+
+				$currentRoles = $user->GetUserRole();
+				$targetRoles = $part->getTargetRoles();
+
+				$displayToAdmin = in_array('administrator', $currentRoles);
+				$displayToCurrentUser = false;
+
+				foreach ( $currentRoles as $role ) {
+					if (in_array( $role, $targetRoles )){
+						$displayToCurrentUser = true;
+						break;
+					}
+				}
+                if ($displayToAdmin || $displayToCurrentUser){
+	                $this->PartView($part);
+                }
+			}
+		}
+	}
+	/**@param $part CoursePart*/
+	private function PartView($part){
+		$testResult = $this->getTestResultByCoursePart( $part );
+		$imgUrl = $part->getImgUrl();
+
+		$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
+		$EndTime = $testResult->getEndTime( $intervalTimeLimit );
+
+		$questionsQuantity     = $part->getQuestionsQuantity();
+		$answeredQuantity      = $testResult->getAnsweredQuantity();
+		$rightAnsweredQuantity = $testResult->getRightAnsweredQuantity();
+		$rightP                = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
+		?>
+        <div class="course-page__item">
+            <div class="course-page__content-item">
+                <span class="course-page__title"><?= $part->getTitle() ?></span>
+                <div class="course-page__inner-content-item">
+					<?php if (!empty($imgUrl)): ?>
+                        <div class="course-page__image-content-item">
+                            <img class="course-page__about-image" src="<?= $imgUrl ?>" alt=""/>
+                        </div>
+					<?php endif; ?>
+                    <div class="course-page__text-content-item">
+                        <div class="course-page__title-content-item">
+                            <span>Освещенные темы</span>
+                            <img class="course-page__button"
+                                 src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
+                        </div>
+                        <div class="course-page__list-content-item">
+							<?php $part->getPreviewDesc() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-page__info-item">
+                <div class="course-page__title-info-item">
+                    <span>информация</span>
+                    <img class="course-page__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt=""/>
+                </div>
+                <div class="course-page__content-info-item">
+					<?php if ( $testResult->solved ): ?>
+                        <span class="course-page__desc-info-item" style="margin-bottom: 1rem;">Тест выполнен</span>
+					<?php else: ?>
+                        <span class="course-page__desc-info-item">До окончания выполнения задания осталось:</span>
+                        <div class="course-page__time-info-item" data-time="<?= $EndTime ?>">
+                            <ul>
+                                <li><span>Дней:</span><span class="days"></span></li>
+                                <li><span>Часов:</span><span class="hours"></span></li>
+                                <li><span>Минут:</span><span class="minutes"></span></li>
+                            </ul>
+                        </div>
+					<?php endif; ?>
+                    <div class="course-page__text-info-item">
+                        <div class="course-page__type-text-info-item">
+                            <span class="course-page__type-text-info-item-title">Вопросов всего:</span>
+                            <div class="course-page__line"></div>
+                            <span class="course-page__type-text-info-item-number"><?= $questionsQuantity ?></span>
+                        </div>
+                        <div class="course-page__type-text-info-item">
+                            <span class="course-page__type-text-info-item-title">Отвечено:</span>
+                            <div class="course-page__line"></div>
+                            <span class="course-page__type-text-info-item-number"><?= $answeredQuantity ?></span>
+                        </div>
+                        <div class="course-page__type-text-info-item">
+                            <span class="course-page__type-text-info-item-title">Правильно:</span>
+                            <div class="course-page__line"></div>
+                            <span class="course-page__type-text-info-item-number"><?= $rightAnsweredQuantity ?></span>
+                        </div>
+                    </div>
+                    <div class="course-page__procent-info-item">
+                        <div class="course-page__circle-procent-info-item"></div>
+                        <span class="course-page__procent-info-item-number"><?= (integer) $rightP ?>%</span>
+                        <span class="course-page__procent-info-item-text">усвоенного материала</span>
+                    </div>
+                </div>
+                <div class="course-page__link-to">
+                    <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>">Продолжить обучение</a>
+                </div>
+            </div>
+
+        </div>
+		<?php
+	}
 }
 
 
@@ -185,6 +212,8 @@ class CoursePart {
 	private $additional_info;
 	/**@var array $test */
 	private $test;
+	/**@var $targetRole array*/
+	private $targetRole;
 
 	private $time_limit;
 
@@ -211,6 +240,7 @@ class CoursePart {
 		$this->additional_info = carbon_get_post_meta( $id, PREFIX . 'additional_info' );
 		$this->test            = carbon_get_post_meta( $id, PREFIX . 'test' );
 		$this->time_limit      = carbon_get_post_meta( $id, PREFIX . 'time_limit' );
+		$this->targetRole = carbon_get_post_meta($id, PREFIX.'target_roles');
 	}
 
 	public function getTitle() {
@@ -230,6 +260,10 @@ class CoursePart {
 		if ( is_null( $part ) )  return $this->part;
 		else $this->part = $part;
 	}
+
+	public function getID(){
+	    return $this->part->ID;
+    }
 
 	public function getAdditionalInfo() {
 		if ( empty( $this->additional_info ) ) {
@@ -369,5 +403,9 @@ class CoursePart {
 
 	public function getQuestionsQuantity(){
 	    return count($this->test);
+	}
+
+	public function getTargetRoles(){
+	    return $this->targetRole;
 	}
 }

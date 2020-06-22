@@ -97,6 +97,11 @@ class CustomUser {
 	public function GetID(){
 		return $this->user->ID;
 	}
+
+	public function GetUserRole(){
+		return $this->user->roles;
+	}
+
 	/**@return string*/
 	public function GetDisplayName(){
 		return $this->user->display_name;
