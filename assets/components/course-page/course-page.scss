@@ -245,6 +245,10 @@
     display: block;
     margin-left: 10px;
 
+    @include lg{
+      font-size: 16px;
+    }
+
     @include hd{
       font-size: 20px;
       line-height: 20px;
