@@ -187,3 +187,13 @@ Version:      0.0.1
     display: flex;
 }
 /*loader end*/
+
+/*lost password  form */
+form#lostpasswordform input#user_login{
+    position: relative !important;
+    visibility: visible !important;
+}
+
+.lostpasslink{
+    margin-right: 2rem;
+}

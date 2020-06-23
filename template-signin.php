@@ -13,8 +13,43 @@ $userManager->FormProcessing();
 
 get_header();
 get_template_part( '/core/views/headerView' );
-
+if (isset($_GET['action']) && $_GET['action'] === 'lostpassword'):
 ?>
+    <div class="wrapper">
+        <div class="sign-in">
+            <div class="container">
+                <div class="sign-in__inner">
+                    <div class="sign-in__tabs-content">
+                        <input type="radio" name="toggle" checked="" id="login">
+
+                        <div class="sign-in__content">
+                            <div class="login-page">
+                                <div class="sign-in__inner">
+                                    <div class="sign-in__content-type">
+                                        <span class="title title_blue">Забыли пароль?</span>
+                                    </div>
+                                </div>
+								<?php $userManager->LostPasswordForm(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="image" src="/wp-content/themes/Yana/src/icons/account.png"/>
+        </div>
+		<?php get_template_part( '/core/views/partners' ); ?>
+    </div>
+<?php else:
+
+	$message ='';
+    $loaspass = false;
+    if (isset( $_GET['checkemail'] ) && 'confirm' === $_GET['checkemail']){
+	    $message ='<span>'.__( 'Check your email for the confirmation link.' ).'</span>';
+	    $loaspass = true;
+    }
+
+
+    ?>
     <div class="wrapper">
         <div class="sign-in">
             <div class="container">
@@ -34,7 +69,8 @@ get_template_part( '/core/views/headerView' );
                                         <span class="title title_blue">войти</span>
                                     </div>
                                 </div>
-	                            <?php $userManager->LoginForm(); ?>
+                                <?= $message ?>
+								<?php $userManager->LoginForm(); ?>
                             </div>
                             <div class="auth-page">
                                 <div class="sign-in__inner">
@@ -42,7 +78,7 @@ get_template_part( '/core/views/headerView' );
                                         <span class="title title_blue">регистрация</span>
                                     </div>
                                 </div>
-                                <?php $userManager->RegistrationForm(); ?>
+								<?php $userManager->RegistrationForm(); ?>
                             </div>
                         </div>
                     </div>
@@ -53,5 +89,6 @@ get_template_part( '/core/views/headerView' );
 		<?php get_template_part( '/core/views/partners' ); ?>
     </div>
 <?php
+endif;
 get_template_part( '/core/views/footerView' );
 get_footer();

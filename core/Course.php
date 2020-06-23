@@ -115,32 +115,32 @@ class Course {
 	private function FilterPartsByUser($parts){
 		$userManager = UserManager::getInstance();
 		$user        = $userManager->GetCurrentUser();
-
+		$currentRoles = $user->GetUserRole();
 		$result = [];
 		if ( !is_array( $parts ) || count( $parts ) <= 0 )
 		    return $result;
 
+        if (is_array($currentRoles) && count($currentRoles) > 0){
+	        foreach ( $parts as $part ) {
 
-        foreach ( $parts as $part ) {
 
-            $currentRoles = $user->GetUserRole();
-            $targetRoles = $part->getTargetRoles();
+		        $targetRoles = $part->getTargetRoles();
 
-            $displayToAdmin = in_array('administrator', $currentRoles);
-            $displayToCurrentUser = false;
+		        $displayToAdmin = in_array('administrator', $currentRoles);
+		        $displayToCurrentUser = false;
 
-            foreach ( $currentRoles as $role ) {
-                if (in_array( $role, $targetRoles )){
-                    $displayToCurrentUser = true;
-                    break;
-                }
-            }
+		        foreach ( $currentRoles as $role ) {
+			        if (in_array( $role, $targetRoles )){
+				        $displayToCurrentUser = true;
+				        break;
+			        }
+		        }
 
-            if ($displayToAdmin || $displayToCurrentUser){
-	            $result[] = $part;
-            }
+		        if ($displayToAdmin || $displayToCurrentUser){
+			        $result[] = $part;
+		        }
+	        }
         }
-
 		return $result;
     }
 

@@ -160,6 +160,10 @@ class UserManager {
                     </div>
                 </div>
             </div>
+	        <?php
+            if (!isset( $_GET['checkemail'] ) || !$_GET['checkemail'] === 'confirm')
+                echo '<a href="'.self::$signinPage.'?action=lostpassword" class="lostpasslink">Забыли пароль?</a>';
+            ?>
             <button class="custom-button">Войти</button>
         </form>
 		<?php
@@ -237,6 +241,36 @@ class UserManager {
             <button class="custom-button">Зарегестрироваться</button>
         </form>
 		<?php
+	}
+
+	public function LostPasswordForm(){
+	    ?>
+        <form name="lostpasswordform" id="lostpasswordform" class="sign-in__list"
+              action="<?php echo esc_url( network_site_url( 'wp-login.php?action=lostpassword', 'login_post' ) ); ?>" method="post">
+            <div class="sign-in__item">
+
+                <div class="sign-in__item-inputs">
+
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <label class="form-input__item-label" for="user_login">Ваш e-mail</label>
+                            <input class="form-input__item-input" type="text" name="user_login" id="user_login" value="" size="20" autocapitalize="off" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+			<?php
+			do_action( 'lostpassword_form' );
+			?>
+            <input type="hidden" name="redirect_to" value="<?= self::$signinPage.'?checkemail=confirm' ?>" />
+            <p class="submit">
+                <button type="submit" name="wp-submit" id="wp-submit" class="custom-button">
+	                <?php esc_attr_e( 'Get New Password' ); ?>
+                </button>
+            </p>
+        </form>
+        <?php
 	}
 
 	public function FormProcessing() {

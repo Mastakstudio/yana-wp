@@ -89,6 +89,7 @@ class ACCOUNT_AJAX
         if (empty($_POST['username']) || empty($_POST['username']) || empty($_POST['username']) || empty($_POST['username']))
             wp_send_json_error();
 
+	    $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
         $user_data = [
         	'user_login' => $_POST['username'],
 	        'user_password' => $_POST['password'],
@@ -105,6 +106,7 @@ class ACCOUNT_AJAX
 	        $return['displayName'] = $user->display_name;
 
 
+	        $return['redirect'] = get_permalink( $mainCoursePage );
         } elseif ( strtolower(get_class($loginResult)) == 'wp_error' ) {
             //User login failed
             /* @var WP_Error $loginResult */
@@ -161,6 +163,8 @@ class ACCOUNT_AJAX
 
                 $result['displayName'] = $user->display_name;
 	            $result['redirect'] = get_permalink( $mainCoursePage );
+
+	            do_action( 'register_new_user', $user->ID );
             } elseif ( $loginResult instanceof WP_Error) {
                 /* @var WP_Error $loginResult */
                 $result['result'] = false;

@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
                             $('#link_to_reg').hide();
                         }
                         if (response.data.redirect){
-                            window.location.href = response.redirect;
+                            window.location.href = response.data.redirect;
                         }
                     })
                     .fail(function (response) {
