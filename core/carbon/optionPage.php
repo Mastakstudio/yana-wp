@@ -54,9 +54,17 @@ function crb_attach_theme_options()
 		         ->set_options(page_selecting()),
 		    Field::make_select(PREFIX . 'login_page', 'Login Page')
 		         ->set_options(page_selecting()),
+		    Field::make_select(PREFIX . 'main_course_page', 'Страница курса')
+		         ->set_options(course_selecting()),
 	    ])
 	    ->add_tab('сертификат',[
-		    Field::make_file(PREFIX.'certificate', 'Сертификат')
+		    Field::make_complex(PREFIX."certificate_role")
+		         ->add_fields( 'item', [
+			         Field::make_multiselect('target_roles','Целевая аудитория')
+			              ->set_options(get_roles())
+			              ->set_required(true),
+		         		Field::make_file('certificate_id', 'Сертификат')
+			                 ->set_required(true)
+		            ])
 	    ]);
-    ;
 }

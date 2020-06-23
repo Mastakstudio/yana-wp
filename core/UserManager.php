@@ -5,17 +5,20 @@ class UserManager {
 
 	private static $accountPage = '';
 	private static $signinPage = '';
+	private static $mainCoursePage = '';
 	private static $instances = [];
 	private static $errors = [];
 
 	private function __construct() {
 		$accountPageId = carbon_get_theme_option( TO_ACCOUNT_PAGE );
 		$signinPage    = carbon_get_theme_option( TO_SIGNIN_PAGE );
+		$mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 
 		add_filter( 'auth_redirect_scheme', [ $this, 'AuthRedirectScheme' ], 10, 1 );
 
 		self::$accountPage = get_permalink( $accountPageId );
 		self::$signinPage  = get_permalink( $signinPage );
+		self::$mainCoursePage  = get_permalink( $mainCoursePage );
 	}
 
 	public function Registration() {
@@ -49,7 +52,8 @@ class UserManager {
 		wp_set_current_user( $loginResult->ID, $loginResult->user_email );
 		wp_set_auth_cookie( $loginResult->ID );
 
-		$this->RedirectToAccount();
+//		$this->RedirectToAccount();
+		$this->RedirectToCourse();
 	}
 
 	public function LogIn() {
@@ -272,6 +276,11 @@ class UserManager {
 
 	public function RedirectToAccount() {
 		if ( wp_redirect( static::$accountPage ) ) {
+			exit;
+		}
+	}
+	public function RedirectToCourse() {
+		if ( wp_redirect( static::$mainCoursePage ) ) {
 			exit;
 		}
 	}

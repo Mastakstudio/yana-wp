@@ -112,7 +112,20 @@ class CustomUser {
 		    echo '<p>для получкния сертификата пройдите тесты</p>';
         }
 		elseif ($this->_allSolved){
-	        echo '<p>ваш сертификат</p>';
+	    	$certificates = carbon_get_theme_option(PREFIX."certificate_role");
+			$serteficat = '';
+	    	$roles = $this->GetUserRole();
+	    	$role = $roles[0];
+
+			foreach ( $certificates as $item ) {
+				if (in_array($role,$item['target_roles'])){
+					$serteficat = wp_get_attachment_url($item['certificate_id']);
+					break;
+				}
+	    	}
+	        echo '<p><a href="'.esc_url($serteficat).'" target="_blank">ваш сертификат</a></p>';
+
+
         }
 	    else{
 	        foreach ( $this->_courseTestResults as $result ) {

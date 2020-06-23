@@ -45,11 +45,11 @@ $socialLinks = SocialLinks::getInstance();
                         <span>войти / зарегистрироваться</span>
                     </a>
                     <?php endif; ?>
-                    <div class="menu__switch">
-                        <label class="lbl-off" for="switch-orange">родитель</label>
-                        <input class="switch" id="switch-orange" type="checkbox">
-                        <label class="lbl-on" for="switch-orange">специалист</label>
-                    </div>
+<!--                    <div class="menu__switch">-->
+<!--                        <label class="lbl-off" for="switch-orange">родитель</label>-->
+<!--                        <input class="switch" id="switch-orange" type="checkbox">-->
+<!--                        <label class="lbl-on" for="switch-orange">специалист</label>-->
+<!--                    </div>-->
                 </div>
                 <?php mainMenuView();?>
                 <div class="social social social_menu">

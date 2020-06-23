@@ -20,6 +20,9 @@ jQuery(document).ready(function ($) {
                         $('#banner-main__form').hide();
                         $('#link_to_reg').hide();
                     }
+                    if (response.redirect){
+                        window.location.href = response.redirect;
+                    }
                     if (response.error !== undefined){
                         $('#login_errors').html(response.error);
                     }
@@ -54,13 +57,14 @@ jQuery(document).ready(function ($) {
                             $('#banner-main__form').hide();
                             $('#link_to_reg').hide();
                         }
+                        if (response.data.redirect){
+                            window.location.href = response.redirect;
+                        }
                     })
                     .fail(function (response) {
                         console.log('registration form error: ',response);
                     });
-            }else{
             }
-        }else{
         }
     });
 });

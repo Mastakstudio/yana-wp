@@ -30,8 +30,11 @@ class Course {
 
 		$this->subtitle = carbon_get_post_meta( $id, PREFIX . 'subtitle' );
 
-		$this->courseParts = CourseManager::GetCoursePartByParent( $this );
+		$buff = CourseManager::GetCoursePartByParent( $this );
+		$this->courseParts = $this->FilterPartsByUser($buff);
 		$this->testResult  = TestResultManager::GetTestResultsByCourse( $this );
+
+
 
 		foreach ( $this->courseParts as $part ) {
 			if ( ! $this->HasResult( $part->part->ID ) ) {
@@ -43,7 +46,6 @@ class Course {
 				$this->testResult[ $part->part->ID ] = TestResultManager::Create( $args );
 			}
 		}
-
 	}
 
 	/**
@@ -78,15 +80,6 @@ class Course {
 		return $this->testResult[ $part->part->ID ];
 	}
 
-	public function getPartsView(){
-		$parts = $this->getParts();
-		if ( is_array( $parts ) && count( $parts ) ) {
-			foreach ( $parts as $part ) {
-				$this->PartView($part);
-			}
-		}
-    }
-
     /**
      * @param $user CustomUser
      */
@@ -113,7 +106,47 @@ class Course {
 			}
 		}
 	}
-	/**@param $part CoursePart*/
+
+	/**
+	 * @var $parts CoursePart[]
+     *
+     * @return CoursePart[]
+	 */
+	private function FilterPartsByUser($parts){
+		$userManager = UserManager::getInstance();
+		$user        = $userManager->GetCurrentUser();
+
+		$result = [];
+		if ( !is_array( $parts ) || count( $parts ) <= 0 )
+		    return $result;
+
+
+        foreach ( $parts as $part ) {
+
+            $currentRoles = $user->GetUserRole();
+            $targetRoles = $part->getTargetRoles();
+
+            $displayToAdmin = in_array('administrator', $currentRoles);
+            $displayToCurrentUser = false;
+
+            foreach ( $currentRoles as $role ) {
+                if (in_array( $role, $targetRoles )){
+                    $displayToCurrentUser = true;
+                    break;
+                }
+            }
+
+            if ($displayToAdmin || $displayToCurrentUser){
+	            $result[] = $part;
+            }
+        }
+
+		return $result;
+    }
+
+	/**@param $part CoursePart
+	 * @throws Exception
+	 */
 	private function PartView($part){
 		$testResult = $this->getTestResultByCoursePart( $part );
 		$imgUrl = $part->getImgUrl();

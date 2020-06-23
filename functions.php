@@ -26,6 +26,8 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
+
+/* roles */
 remove_role( 'author' );
 remove_role( 'editor' );
 remove_role( 'subscriber');

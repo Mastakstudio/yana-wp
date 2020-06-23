@@ -157,8 +157,10 @@ class ACCOUNT_AJAX
             if ( $loginResult instanceof WP_User ) {
                 /**@var WP_User loginResult*/
                 $user = $loginResult;
-                $result['displayName'] = $user->display_name;
+	            $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 
+                $result['displayName'] = $user->display_name;
+	            $result['redirect'] = get_permalink( $mainCoursePage );
             } elseif ( $loginResult instanceof WP_Error) {
                 /* @var WP_Error $loginResult */
                 $result['result'] = false;
