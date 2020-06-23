@@ -19,15 +19,8 @@ $nextPart = CourseManager::getNextPartLink($post);
 $testResultManager = TestResultManager::getInstance();
 $currentTestResult = $testResultManager::getCurrentTestResult();
 
-if (!$currentTestResult->started){
-    $startDate = new DateTime();
-	$updateMetaArgs = [
-        '_'.TEST_STARTED => true,
-        '_'.TEST_START_TIME => $startDate->format('M d, Y G:i:s')
-    ];
-    $testResultManager::UpdateMeta($currentTestResult, $updateMetaArgs);
-}
-
+if (!$currentTestResult->started)
+    $testResultManager->startTest($currentTestResult);
 
 
 if ( have_posts() ):
@@ -42,6 +35,15 @@ if ( have_posts() ):
                 <div class="test__inner">
                     <div class="test__head">
                         <div class="test__head-text">
+
+                            <div class="test__dop-text-title">
+                                <span>вернуться к
+                                    <a href="<?= get_permalink($post->post_parent)?>">
+                                        <?= get_the_title($post->post_parent)?>
+                                    </a>
+                                </span>
+                            </div><div></div>
+
                             <span class="test__theme">тема занятия</span>
                             <span class="title title_blue"><?= the_title() ?></span>
                             <p class="text text_black visible"><?= $coursePart->getSubtitle() ?></p>
@@ -71,36 +73,16 @@ if ( have_posts() ):
                 <div class="test__wrapper-inner"></div>
                 <div class="container">
 					<?php
-                    if (!$currentTestResult->solved){
-	                    $coursePart->getTest();
-                    }else{
-                        echo ' <div class="test__content"><span class="title title_blue">тестирование пройдено</span></div>';
-                    }
-					$coursePart->getAdditionalInfo();
-					?>
+                    $coursePart->getTest();
+                    $coursePart->getAdditionalInfo();
+                    ?>
                 </div>
-
-                <div class="modal__wrapper" id="modal_next_part">
-                    <div class="modal__next_part">
-                        <div class="mastak_loader_wrapper">
-                            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                        </div>
-                        <h2><?= $nextPart['last']? 'Получить аттестат' : 'К следующей части' ?></h2>
-                        <div class="btn__wrapper">
-                            <span id="close_modal" class="btn btn-warning">Закрыть</span>
-	                        <?php
-                            $linkTo = !$nextPart['last'] ? get_permalink($nextPart['id']) : get_permalink(carbon_get_theme_option(TO_ACCOUNT_PAGE));
-	                        echo '<a href="'.$linkTo.'" id="go_to_next" class="btn btn-primary">Перейти</a>';
-	                        ?>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 	<?php
 	endwhile;
 endif;
 get_template_part( '/core/views/partners' );
+get_template_part( '/core/views/remodals' );
 get_template_part( '/core/views/footerView' );
 get_footer();

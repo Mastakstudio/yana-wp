@@ -148,10 +148,14 @@ class Course {
 	 * @throws Exception
 	 */
 	private function PartView($part){
+
+
+
 		$testResult = $this->getTestResultByCoursePart( $part );
 		$imgUrl = $part->getImgUrl();
 
 		$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
+
 		$EndTime = $testResult->getEndTime( $intervalTimeLimit );
 
 		$questionsQuantity     = $part->getQuestionsQuantity();
@@ -228,6 +232,10 @@ class Course {
 
         </div>
 		<?php
+	}
+
+	private function isExpired(){
+
 	}
 }
 

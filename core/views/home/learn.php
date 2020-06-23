@@ -26,7 +26,7 @@
                             <img class="learn__item-image" src="/wp-content/themes/Yana/src/icons/step2.png" alt=""/>
                             <SPAN class="learn__item-title">ПРОСМОТРИТЕ ОБУЧАЮЩЕЕ ВИДЕО и ИЗУЧИТЕ МАТЕРИАЛЫ КУРСА</SPAN>
                         </div>
-                        <SPAN class="learn__item-text">Смотрите обучающее видео от наших экспертов, общайтесь на форуме, скачивайте дополнительные материалы</SPAN>
+                        <SPAN class="learn__item-text">Смотрите обучающее видео от наших экспертов, изучайте и скачивайте дополнительные материалы</SPAN>
                     </div>
                 </div>
                 <div class="learn__item"><span class="learn__number">3</span>

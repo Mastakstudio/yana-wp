@@ -154,6 +154,14 @@ class TestResultManager {
 		return self::$current_test_result[0];
 	}
 
+	public function startTest( $testResult ){
+		$startDate = new DateTime();
+		$updateMetaArgs = [
+			'_'.TEST_STARTED => true,
+			'_'.TEST_START_TIME => $startDate->format('M d, Y G:i:s')
+		];
+		TestResultManager::UpdateMeta($testResult, $updateMetaArgs);
+	}
 
 //	CRUD start
 

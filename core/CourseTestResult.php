@@ -76,4 +76,6 @@ class CourseTestResult {
 	public function getRightAnsweredQuantity(){
 		return $this->right_answered;
 	}
+
+
 }

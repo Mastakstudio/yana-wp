@@ -22,7 +22,7 @@ function finishTest() {
 	TestResultManager::getInstance();
 	$testResult = TestResultManager::GetTestResultsByCoursePartId($test_id);
 	$newValues = [
-		'_'.TEST_SOLVED => 'yes',
+		'_'.TEST_SOLVED => $answered === $right ? 'yes':'',
 		'_'.TEST_RIGHT_ANSWERED => $right,
 		'_'.TEST_ANSWERED => $answered
 	];
@@ -30,7 +30,6 @@ function finishTest() {
 
 	$newAns= carbon_get_post_meta($testResult->getID(), TEST_ANSWERED);
 	$newRightAns= carbon_get_post_meta($testResult->getID(), TEST_RIGHT_ANSWERED);
-	$newSolved= carbon_get_post_meta($testResult->getID(), TEST_SOLVED);
 
 	if ($newAns != $answered || $newRightAns != $right ){
 		wp_send_json_error(['text' => 'ошибка сохранения теста']);
