@@ -5,7 +5,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="" />
+    <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/footer/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/footer/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/footer/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/footer/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/popup/popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/popup/popup.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +74,11 @@
       <workItem from="1590390552886" duration="53785000" />
       <workItem from="1590738660469" duration="15912000" />
       <workItem from="1590991987624" duration="11565000" />
+      <workItem from="1591180178948" duration="2654000" />
+      <workItem from="1591597802891" duration="4311000" />
+      <workItem from="1592201907803" duration="2051000" />
+      <workItem from="1592467501246" duration="598000" />
+      <workItem from="1592805938951" duration="4564000" />
     </task>
     <servers />
   </component>
@@ -103,10 +114,10 @@
       <screen x="0" y="23" width="2560" height="1360" />
     </state>
     <state width="2518" height="390" key="GridCell.Tab.0.right/0.23.2560.1360@0.23.2560.1360" timestamp="1589963974944" />
-    <state x="789" y="342" key="SettingsEditor" timestamp="1590744175649">
+    <state x="789" y="342" key="SettingsEditor" timestamp="1592899034735">
       <screen x="0" y="23" width="2560" height="1360" />
     </state>
-    <state x="789" y="342" key="SettingsEditor/0.23.2560.1360@0.23.2560.1360" timestamp="1590744175649" />
+    <state x="789" y="342" key="SettingsEditor/0.23.2560.1360@0.23.2560.1360" timestamp="1592899034735" />
     <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup" timestamp="1589983759120">
       <screen x="0" y="23" width="2560" height="1360" />
     </state>

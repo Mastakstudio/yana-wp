@@ -25,4 +25,25 @@ mixin footer()
                                     +e.A.develop(target="_blank" href="https://mastakstudio.com/")
                                         +e.SPAN.develop-title Developed:
                                         +e.IMG.develop-image(src=require('./../images/develop.svg'), alt='')
+        .remodal.footer__remodal(data-remodal-id="success")
+            button.remodal-close(data-remodal-action='close') Закрыть
+            +e.remodal-content
+                +e.remodal-wrapper-inner
+                    +e.SPAN.remodal-title Вы успешно cдали
+                    +e.SPAN.remodal-desc онлайн курс «БЕРЕМЕННОСТЬ И РОДЫ»
+                    +e.SPAN.remodal-text Вы можете получить сертификат о прохождении данного курса заполнив форму с данными
+                    +link('Получить сертификат')(src="#" target="_blank")
+                +e.remodal-image
+                    IMG(src=require('./../images/girl-write.png'), alt='')
+        .remodal.footer__remodal(data-remodal-id="error")
+            button.remodal-close(data-remodal-action='close') Закрыть
+            +e.remodal-content
+                +e.remodal-wrapper-inner
+                    +e.SPAN.remodal-title Вы не прошли
+                    +e.SPAN.remodal-desc онлайн курс «БЕРЕМЕННОСТЬ И РОДЫ»
+                    +e.SPAN.remodal-text Попробуйте пройти еще раз внимательно изучив материалы
+                    +link('Попробовать снова')(src="#" target="_blank")
+                +e.remodal-image
+                    IMG(src=require('./../images/gg.png'), alt='')
+
 

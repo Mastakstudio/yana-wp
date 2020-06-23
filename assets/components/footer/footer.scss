@@ -1,4 +1,6 @@
 @import "./../../common/constants";
+@import "./../../../node_modules/remodal/dist/remodal.css";
+@import "./../../../node_modules/remodal/dist/remodal-default-theme.css";
 
 .footer {
 
@@ -558,6 +560,182 @@
         }
 
     }
+
+    &__remodal-wrapper{
+        background: rgba(44,184,244,.92) !important;
+        overflow: hidden;
+    }
+
+    &__remodal{
+        display: flex;
+        align-items: center;
+        padding: 35px 15px;
+        height: 100vh;
+
+        .remodal-close:after {
+            font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+            font-size: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: 0px;
+            left: unset;
+            right: -9px;
+            display: block;
+            width: 40px;
+            content: "\D7";
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .remodal-close:before {
+            display: none !important;
+        }
+
+        .remodal-close{
+            display: flex;
+            align-items: center;
+            padding-right: 88px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+            text-transform: lowercase;
+
+        }
+    }
+
+    &__remodal-wrapper-inner{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+
+
+
+    }
+
+    &__remodal-title{
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 34px;
+        line-height: 46px;
+        color: #FFFFFF;
+        display: flex;
+        margin-top: 20px;
+
+        @include sm{
+            font-size: 52px;
+            line-height: 46px;
+        }
+    }
+
+    &__remodal-desc{
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 32px;
+        color: #FFFFFF;
+        display: flex;
+
+        @include sm{
+            font-size: 36px;
+            line-height: 32px;
+            margin-top: 10px;
+        }
+    }
+
+    &__remodal-text{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        @include sm{
+            font-size: 16px;
+            line-height: 22px;
+            width: 300px;
+            margin-top: 40px;
+        }
+
+    }
+
+    &__remodal-image{
+        width: 217px;
+        margin-top: 30px;
+        margin-left: 40px;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+
+        @include sm{
+            width: 360px;
+            margin-top: 30px;
+            position: absolute;
+            right: 0;
+        }
+
+        @include md{
+            right: 150px;
+        }
+
+        @include lg{
+            width: 450px;
+            right: 200px;
+            top: -50px;
+        }
+
+        @include hd{
+            right: 500px;
+        }
+
+        @include xhd{
+            right: 700px;
+        }
+
+
+    }
+
+    &__remodal-content{
+        @include sm{
+            display: flex;
+        }
+
+        @include md{
+            padding-left: 10%;
+            padding-right: 10%;
+            width: 100%;
+            position: relative;
+        }
+
+        @include lg{
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        @include hd{
+            padding-left: 30%;
+            padding-right: 30%;
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 }
