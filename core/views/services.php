@@ -25,7 +25,7 @@ $links = home_page_services();
                         <div class="services__item-container">
                             <img class="services__item-image" src="<?= $img ?>" alt="<?= $item['title'] ?>"/>
                         </div>
-                        <SPAN class="services__item-title"><?= $item['title'] ?></SPAN>
+                        <span class="services__item-title"><?= $item['title'] ?></span>
                     </a>
 				<?php }
 				echo '</div>';

@@ -38,10 +38,6 @@ get_template_part( '/core/views/headerView' );
         <div class="container">
             <div class="account__list">
 
-                <div class="account__item">
-                    <span class="account__item-title">результаты тестов</span>
-                    <?php $currentUser->TestResultsView(); ?>
-                </div>
 
                 <?php
                 $disabled = true;
@@ -139,6 +135,11 @@ get_template_part( '/core/views/headerView' );
                         </div>
                     </div>
                 </form>
+
+                <div class="account__item">
+                    <span class="account__item-title">результаты тестов</span>
+		            <?php $currentUser->TestResultsView(); ?>
+                </div>
 
                 <a class="custom-button" href="<?= $userManager::LogOut() ?>">Выйти</a>
             </div>

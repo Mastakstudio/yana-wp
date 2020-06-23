@@ -236,6 +236,7 @@ class Course {
 
 	private function isExpired(){
 
+
 	}
 }
 
