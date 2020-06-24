@@ -563,7 +563,17 @@
 
     &__remodal-wrapper{
         background: rgba(44,184,244,.92) !important;
+        opacity: 1;
+        transition: 1s all;
         overflow: hidden;
+
+
+        .footer__remodal-content{
+
+            opacity: 1;
+            transition: 1s all 1s;
+
+        }
     }
 
     &__remodal{
@@ -707,6 +717,9 @@
     }
 
     &__remodal-content{
+
+        opacity: 0;
+
         @include sm{
             display: flex;
         }
