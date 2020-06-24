@@ -50,7 +50,6 @@ get_template_part( '/core/views/headerView' );
                     <input type="hidden" name="target_section" value="names">
                     <div class="account__item-head">
                         <span class="account__item-title">ФИО</span>
-                        <button class="account__item-update" <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
@@ -72,6 +71,11 @@ get_template_part( '/core/views/headerView' );
                             </div>
                         </div>
                     </div>
+                    <div class="account__item-head-type">
+                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update enable-toggle" type="button">Исправить</button>
+                    </div>
+
                 </form>
 
 	            <?php
@@ -87,7 +91,6 @@ get_template_part( '/core/views/headerView' );
                     <input type="hidden" name="target_section" value="passport">
                     <div class="account__item-head">
                         <span class="account__item-title">Паспорт</span>
-                        <button class="account__item-update"  <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
@@ -115,6 +118,10 @@ get_template_part( '/core/views/headerView' );
                             </div>
                         </div>
                     </div>
+                    <div class="account__item-head-type">
+                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update enable-toggle" type="button">Исправить</button>
+                    </div>
                 </form>
 	            <?php
 	            $disabled = true;
@@ -126,13 +133,16 @@ get_template_part( '/core/views/headerView' );
                     <input type="hidden" name="target_section" value="birthday">
                     <div class="account__item-head">
                         <span class="account__item-title">Дата рождения</span>
-                        <button class="account__item-update"  <?= $disabled ? 'disabled' : ''?>>Исправить</button>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
                             <label class="account__item-label">Дата рождения</label>
                             <input class="account__date" type="date" name="birthday" value="<?= $currentUser->GetBirthday()?>"/>
                         </div>
+                    </div>
+                    <div class="account__item-head-type">
+                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update enable-toggle" type="button">Исправить</button>
                     </div>
                 </form>
 

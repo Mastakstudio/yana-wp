@@ -10,6 +10,7 @@ var mySwiper = new Swiper('.partners__container', {
         nextEl: '.partners__button-next',
         prevEl: '.partners__button-prev',
     },
+    loop:true,
     breakpoints: {
         768: {
             slidesPerView: 2,

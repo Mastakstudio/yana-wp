@@ -67,4 +67,9 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+
+    $('.account__item-update.enable-toggle').on('click', function (e) {
+        e.preventDefault();
+        $(this).parents('form.account__item').toggleClass('disable');
+    })
 });
