@@ -19,15 +19,16 @@ $nextPart = CourseManager::getNextPartLink($post);
 $testResultManager = TestResultManager::getInstance();
 $currentTestResult = $testResultManager::getCurrentTestResult();
 
+$coursePart = new CoursePart( get_the_ID(), $post );
+
 if (!$currentTestResult->started)
-    $testResultManager->startTest($currentTestResult);
+    $testResultManager->startTest($currentTestResult, $coursePart->getTestTimeLimit());
 
 
 if ( have_posts() ):
 	while ( have_posts() ):
 		the_post();
 		if ( $post->post_parent ) {
-			$coursePart = new CoursePart( get_the_ID(), $post );
 		}
 		?>
         <div class="test" id="test-wrapper" data-test_id="<?= $coursePart->part->ID ?>">

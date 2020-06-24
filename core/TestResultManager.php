@@ -154,11 +154,21 @@ class TestResultManager {
 		return self::$current_test_result[0];
 	}
 
-	public function startTest( $testResult ){
-		$startDate = new DateTime();
+	/**
+	 * @param CourseTestResult $testResult
+	 * @param integer $timeLimit
+	 */
+	public function startTest( $testResult , $timeLimit){
+		$intervalTimeLimit = new DateInterval( 'P' . $timeLimit . 'D' );
+		$date = new DateTime();
+
+		$startDate = $date->format('M d, Y G:i:s');
+		$endDate = $date->add($intervalTimeLimit);
+
 		$updateMetaArgs = [
 			'_'.TEST_STARTED => true,
-			'_'.TEST_START_TIME => $startDate->format('M d, Y G:i:s')
+			'_'.TEST_START_TIME => $startDate,
+			'_'.TEST_END_TIME => $endDate->format('M d, Y G:i:s'),
 		];
 		TestResultManager::UpdateMeta($testResult, $updateMetaArgs);
 	}
@@ -174,6 +184,8 @@ class TestResultManager {
 		/**@var $user CustomUser*/
 		$user = $userManager->GetCurrentUser();
 
+
+
 		$test_results = [
 			'_'.TEST_ANSWERED => 0,
 			'_'.TEST_RIGHT_ANSWERED => 0,
@@ -185,11 +197,11 @@ class TestResultManager {
 			'_'.TEST_START_TIME => ''
 		];
 
+
 		$post_id = wp_insert_post([
 			'post_title' => $user->GetDisplayName().'_'.$args['test_title'],
 			'post_type' => 'course_test_result',
 			'post_status' => 'publish',
-
 			'meta_input' => $test_results
 		], true);
 

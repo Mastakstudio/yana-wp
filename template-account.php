@@ -137,7 +137,7 @@ get_template_part( '/core/views/headerView' );
                 </form>
 
                 <div class="account__item">
-                    <span class="account__item-title">результаты тестов</span>
+                    <span class="account__item-title">Результаты тестов</span>
 		            <?php $currentUser->TestResultsView(); ?>
                 </div>
 

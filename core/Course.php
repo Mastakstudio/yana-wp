@@ -34,30 +34,32 @@ class Course {
 		$this->courseParts = $this->FilterPartsByUser($buff);
 		$this->testResult  = TestResultManager::GetTestResultsByCourse( $this );
 
-
-
 		foreach ( $this->courseParts as $part ) {
-			if ( ! $this->HasResult( $part->part->ID ) ) {
+		    $currentPartResult = $this->HasResult( $part->getID() );
+			if ( $currentPartResult == false  ) {
 				$args                                = [
-					'test_id'    => $part->part->ID,
-					'course_id'  => $this->course->ID,
-					'test_title' => $this->course->post_title ."_". $part->part->post_title,
+					'test_id'    => $part->getID(),
+					'course_id'  => $this->getID(),
+					'test_title' => $this->getTitle() ."_". $part->getTitle(),
+                    'time_limit' => $part->getTestTimeLimit()
 				];
-				$this->testResult[ $part->part->ID ] = TestResultManager::Create( $args );
+				$currentPartResult = TestResultManager::Create( $args );
 			}
+			$this->testResult[ $part->getID() ] = $currentPartResult;
 		}
+
+		$this->resetIfExpired();
 	}
 
 	/**
 	 * @param integer
 	 *
-	 * @return boolean
+	 * @return boolean|CourseTestResult
 	 */
 	private function HasResult( $part_id ) {
-		/**@var $item CourseTestResult */
 		foreach ( $this->testResult as $item ) {
 			if ( $item->test_id == $part_id ) {
-				return true;
+				return $item;
 			}
 		}
 
@@ -78,6 +80,20 @@ class Course {
 	 */
 	public function getTestResultByCoursePart( $part ) {
 		return $this->testResult[ $part->part->ID ];
+	}
+
+	/**
+	 * @return integer
+	 */
+	public function getID(){
+	    return $this->course->ID;
+    }
+
+	/**
+	 * @return string
+	 */
+	public function getTitle(){
+		return $this->course->post_title;
 	}
 
     /**
@@ -234,9 +250,35 @@ class Course {
 		<?php
 	}
 
-	private function isExpired(){
+	private function resetIfExpired(){
+		$now = new DateTime();
+		$needReset = false;
+		foreach ( $this->testResult as $item ) {
+		    if (!$item->started)
+		        continue;
 
+			$date = DateTime::createFromFormat('M d, Y G:i:s', $item->end_time);
 
+			if( $date < $now ){
+				$needReset = true;
+				var_dump('is expired');
+				break;
+			}
+
+        }
+
+		if ($needReset){
+			foreach ( $this->testResult as $item ) {
+			    TestResultManager::UpdateMeta($item, [
+				    '_'.TEST_ANSWERED => 0,
+				    '_'.TEST_RIGHT_ANSWERED => 0,
+				    '_'.TEST_STARTED => false,
+				    '_'.TEST_END_TIME => '',
+				    '_'.TEST_START_TIME => '',
+                    '_'.TEST_SOLVED => false
+                ]);
+			}
+		}
 	}
 }
 
@@ -285,6 +327,16 @@ class CoursePart {
 		$this->targetRole = carbon_get_post_meta($id, PREFIX.'target_roles');
 	}
 
+	/**
+	 * @return integer
+	 */
+	public function getID(){
+		return $this->part->ID;
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getTitle() {
 		return $this->part->post_title;
 	}
@@ -303,9 +355,6 @@ class CoursePart {
 		else $this->part = $part;
 	}
 
-	public function getID(){
-	    return $this->part->ID;
-    }
 
 	public function getAdditionalInfo() {
 		if ( empty( $this->additional_info ) ) {

@@ -46,15 +46,16 @@ class CourseTestResult {
 	 * @return string
 	 */
 	public function getEndTime($time_limit){
-		$newDate = null;
-		if ($this->started){
-			$newDate = DateTime::createFromFormat('M d, Y G:i:s', $this->start_time);
-		}else{
-			$newDate = new DateTime();
-			update_post_meta($this->post->ID, TEST_STARTED, $newDate->format('M d, Y G:i:s'));
+		if ($this->started && !empty($this->end_time)){
+			return $this->end_time;
 		}
-		$newDate = $newDate->add($time_limit);
-		return $newDate->format('M d, Y G:i:s');
+		$newDate = new DateTime();
+		$endTest = $newDate->add($time_limit);
+
+		return $endTest->format('M d, Y G:i:s');
+
+//		update_post_meta($this->getID(), '_'.TEST_STARTED, $newDate->format('M d, Y G:i:s'));
+//		update_post_meta($this->getID(), '_'.TEST_END_TIME, $formattedDate);
 	}
 
 	/**
