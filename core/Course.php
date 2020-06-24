@@ -260,8 +260,7 @@ class Course {
 			$date = DateTime::createFromFormat('M d, Y G:i:s', $item->end_time);
 
 			if( $date < $now ){
-				$needReset = true;
-				var_dump('is expired');
+				$needReset = true; 
 				break;
 			}
 
