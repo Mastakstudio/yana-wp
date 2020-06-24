@@ -22,8 +22,9 @@ jQuery(document).ready(function ($) {
 
         console.log(nextQuestion[0]);
         if (nextQuestion[0]){
-            $(nextQuestion).show("slow");
+            $(nextQuestion).addClass('test__content-item_active');
         }else{
+            $('.test__desc-title').addClass('test__desc-title_active');
             var result = getTestData();
             var inst = null;
 
@@ -35,13 +36,15 @@ jQuery(document).ready(function ($) {
                 inst = failedRemodal;
 
             updateTestResult(result);
-            inst.open();
-
+            setTimeout(function () {
+                inst.open();
+            }, 1000);
         }
 
     });
     $('#restart_test').on('click', function (e) {
         e.preventDefault();
+        $('.test__desc-title').addClass('test__desc-title_active');
         $('.test__content-check').each(function (i, item) {
             if ($(item).hasClass('correct')) $(item).removeClass('correct');
             if ($(item).hasClass('error')) $(item).removeClass('error');
@@ -50,8 +53,8 @@ jQuery(document).ready(function ($) {
         $('.test__content-check input:checked').prop('checked', false);
 
         var questions = $('.test__content-item');
-        questions.hide();
-        $(questions[0]).show();
+        questions.removeClass('test__content-item_active');
+        $(questions[0]).addClass('test__content-item_active');
         failedRemodal.close();
     })
 

@@ -391,40 +391,42 @@ class CoursePart {
 			return;
 		}
 		?>
+
         <div class="test__content">
             <span class="title title_blue">тестирование</span>
             <div class="test__content-list">
-
-				<?php
-				for ( $i = 0; count( $this->test ) > $i; $i ++ ) {
-					$question = $this->test[ $i ];
-					$displayOnlyFirst = $i == 0 ? ' test__content-item_active': '';
-					?>
-                    <div class="test__content-item<?= $displayOnlyFirst ?>" data-id="question-<?= $i + 1 ?>" >
+	            <?php
+	            for ( $i = 0; count( $this->test ) > $i; $i ++ ) :
+		            $question = $this->test[ $i ];
+		            $displayOnlyFirst = $i == 0 ? ' test__content-item_active': '';
+		            ?>
+                    <div class="test__content-item<?= $displayOnlyFirst ?>" data-id="question-<?= $i + 1 ?>">
                         <div class="test__content-item-head">
                             <span class="test__content-number"><?= $i + 1 ?></span>
                             <span class="test__content-title"><?= $question['text'] ?></span>
                         </div>
                         <div class="test__content-item-check">
-							<?php
-							for ( $j = 0; count( $question['answers'] ) > $j; $j ++ ) {
-								$answer = $question['answers'][ $j ];
-								$is_correct = $answer['is_correct']? 'true': 'false';
-								?>
-                                <div class="test__content-check ">  <!-- correct error -->
+	                        <?php
+	                        for ( $j = 0; count( $question['answers'] ) > $j; $j ++ ) :
+		                        $answer = $question['answers'][ $j ];
+		                        $is_correct = $answer['is_correct']? 'true': 'false';
+		                        ?>
+                                <div class="test__content-check">
                                     <label class="test__container">
-										<?= $answer['text'] ?>
+	                                    <?= $answer['text'] ?>
                                         <input type="radio" name="question-<?= $i ?>" data-is-correct="<?= $is_correct?>">
                                         <span class="test__checkmark"></span>
                                     </label>
                                 </div>
-							<?php } ?>
+	                        <?php endfor; ?>
                         </div>
                     </div>
-				<?php } ?>
+	            <?php endfor; ?>
             </div>
         </div>
-        <span class="test__desc-title" style="display: none">Спасибо, Ваши ответы приняты</span>
+<!--        <span class="test__desc-title" style="display: none">Спасибо, Ваши ответы приняты</span>-->
+<!--        test__desc-title_active     -->
+        <span class="test__desc-title" >Спасибо, Ваши ответы приняты</span>
 		<?php
 	}
 
