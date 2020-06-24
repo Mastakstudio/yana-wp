@@ -190,6 +190,16 @@
 
   &__content-item{
     margin-bottom: 14px;
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    transition: .5s all;
+
+    &_active{
+      opacity: 0;
+      height: auto;
+      transition: .5s all;
+    }
   }
 
   &__content-item-head{
@@ -464,6 +474,13 @@
     padding-left: 25px;
     display: block;
     margin-top: 30px;
+    opacity: 0;
+
+    &_active{
+      opacity: 1;
+      transition: .5s all;
+    }
+
   }
 
 
