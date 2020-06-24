@@ -398,9 +398,9 @@ class CoursePart {
 				<?php
 				for ( $i = 0; count( $this->test ) > $i; $i ++ ) {
 					$question = $this->test[ $i ];
-					$displayOnlyFirst = $i == 0 ? '': 'style="display: none;"';
+					$displayOnlyFirst = $i == 0 ? ' test__content-item_active': '';
 					?>
-                    <div class="test__content-item" data-id="question-<?= $i + 1 ?>" <?= $displayOnlyFirst ?>>
+                    <div class="test__content-item<?= $displayOnlyFirst ?>" data-id="question-<?= $i + 1 ?>" >
                         <div class="test__content-item-head">
                             <span class="test__content-number"><?= $i + 1 ?></span>
                             <span class="test__content-title"><?= $question['text'] ?></span>
@@ -424,6 +424,7 @@ class CoursePart {
 				<?php } ?>
             </div>
         </div>
+        <span class="test__desc-title" style="display: none">Спасибо, Ваши ответы приняты</span>
 		<?php
 	}
 
@@ -450,7 +451,7 @@ class CoursePart {
 		$modalCount = 0;
 		foreach ( $this->main_info as $mainInfo ) {
 			if ( $mainInfo['_type'] == 'video' ) {
-//				if (false ){
+
 				$modalCount ++;
 				$text = $mainInfo['text'];
 				$link = $mainInfo['youtube_link'];
