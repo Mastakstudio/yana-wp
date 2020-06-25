@@ -72,8 +72,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'lostpassword'):
                                         <span class="title title_blue">войти</span>
                                     </div>
                                 </div>
-                                <?= $message ?>
-								<?php $userManager->LoginForm(); ?>
+	                            <?= $message ?>
+	                            <?php $userManager->LoginForm(); ?>
+
                             </div>
                             <div class="auth-page">
                                 <div class="sign-in__inner">
@@ -81,17 +82,15 @@ if (isset($_GET['action']) && $_GET['action'] === 'lostpassword'):
                                         <span class="title title_blue">регистрация</span>
                                     </div>
                                 </div>
-								<?php $userManager->RegistrationForm(); ?>
+	                            <?php $userManager->RegistrationForm(); ?>
                             </div>
-                        </div>
-                        <div class="partners__button-prev swiper-button-prev">
-                        </div>
-                        <div class="partners__button-next swiper-button-next">
                         </div>
                     </div>
                 </div>
             </div>
+            <IMG class="image" src="/wp-content/themes/Yana/src/icons/account.png"></IMG>
         </div>
+        <?php get_template_part( '/core/views/partners' );?>
     </div>
 <?php
 endif;

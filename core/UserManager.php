@@ -106,10 +106,14 @@ class UserManager {
             <div class="sign-in__item">
                 <div class="sign-in__item-head">
                     <span class="sign-in__item-title">Через социальные сети</span>
-	                <?php
-                    if (function_exists('oa_social_login_render_login_form_wp_login')){
-	                    oa_social_login_render_login_form_wp_login();
-                    }?>
+                    <div class="social social social_account">
+                        <div class="social__list">
+	                        <?php
+	                        if (function_exists('oa_social_login_render_login_form_wp_login')){
+		                        oa_social_login_render_login_form_wp_login();
+	                        }?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="sign-in__item">
@@ -151,10 +155,14 @@ class UserManager {
             <div class="sign-in__item">
                 <div class="sign-in__item-head">
                     <span class="sign-in__item-title">Через социальные сети</span>
-	                <?php
-                    if (function_exists('oa_social_login_render_login_form_wp_registration')){
-		                oa_social_login_render_login_form_wp_registration();
-	                } ?>
+                    <div class="social social social_account">
+                        <div class="social__list">
+	                        <?php
+	                        if (function_exists('oa_social_login_render_login_form_wp_registration')){
+		                        oa_social_login_render_login_form_wp_registration();
+	                        } ?>
+                        </div>
+                    </div>
                 </div>
             </div>
 
