@@ -84,12 +84,14 @@ if (isset($_GET['action']) && $_GET['action'] === 'lostpassword'):
 								<?php $userManager->RegistrationForm(); ?>
                             </div>
                         </div>
+                        <div class="partners__button-prev swiper-button-prev">
+                        </div>
+                        <div class="partners__button-next swiper-button-next">
+                        </div>
                     </div>
                 </div>
             </div>
-            <img class="image" src="/wp-content/themes/Yana/src/icons/account.png"/>
         </div>
-		<?php get_template_part( '/core/views/partners' ); ?>
     </div>
 <?php
 endif;
