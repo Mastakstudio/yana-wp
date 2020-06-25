@@ -197,3 +197,7 @@ form#lostpasswordform input#user_login{
 .lostpasslink{
     margin-right: 2rem;
 }
+.oneall_social_login{
+    visibility: visible !important;
+    opacity: 1 !important;
+}

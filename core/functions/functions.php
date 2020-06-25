@@ -112,8 +112,8 @@ function custom_wp_new_user_notification( $user_id, $deprecated = null, $notify 
 	$switched_locale = switch_to_locale( get_user_locale( $user ) );
 
 	/* translators: %s: User login. */
-	$message .= 'Вы зарегистрировались на сайте '. $blogname . "\r\n\r\n";
-	$message  = sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
+	$message = 'Вы зарегистрировались на сайте '. $blogname . "\r\n\r\n";
+	$message .= sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
 
 
 	$wp_new_user_notification_email = array(
@@ -123,8 +123,6 @@ function custom_wp_new_user_notification( $user_id, $deprecated = null, $notify 
 		'message' => $message,
 		'headers' => '',
 	);
-
-
 
 	wp_mail(
 		$wp_new_user_notification_email['to'],
