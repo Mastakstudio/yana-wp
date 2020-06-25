@@ -2,14 +2,14 @@ mixin form()
     +b.form
         +e.inner
             +e.tabs-content
-                input(type='radio' name='toggle' checked='' id="login")
+                input(type='radio' name='toggle' checked='' id="loginId")
                 input(type='radio' name='toggle' id="auth")
                 +e.tabs
-                    label(for='login') ВОЙТИ
+                    label(for='loginId') ВОЙТИ
                     label(for='auth') зарегистрироваться
                     span
                 +e.content
-                    .login-content
+                    .loginId-content
                         .logIn
                             form(id="sign-in")
                                 +form-input('Логин')(name='login' type='text')
