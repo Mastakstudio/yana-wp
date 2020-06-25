@@ -2,40 +2,40 @@ mixin form()
     +b.form
         +e.inner
             +e.tabs-content
-                input(type='radio' name='toggle' checked='' id="loginId")
+                input(type='radio' name='toggle' checked='' id="signId")
                 input(type='radio' name='toggle' id="auth")
                 +e.tabs
-                    label(for='loginId') ВОЙТИ
+                    label(for='signId') ВОЙТИ
                     label(for='auth') зарегистрироваться
                     span
                 +e.content
-                    .loginId-content
-                        .logIn
+                    .signId-content
+                        .signIn
                             form(id="sign-in")
                                 +form-input('Логин')(name='login' type='text')
                                 +form-input('Пароль')(name='password' type='password')
-                                .logIn__remember
-                                    .logIn__container
+                                .signIn__remember
+                                    .signIn__container
                                         | Запомнить
                                         input(type='checkbox')
-                                        SPAN.logIn__checkmark
-                                .logIn__type
+                                        SPAN.signIn__checkmark
+                                .signIn__type
                                     +custom-button('Войти')(type='submit')
                                     span
                                         | Нажимая кнопку "Войти" я
                                         a(href='') принимаю пользовательское соглашение
                     .auth-content
-                        .logUp
+                        .signUp
                             form(id="sign-up")
                                 +form-input('Логин')(name='login' type='text')
                                 +form-input('Пароль')(name='password' type='password')
                                 +form-input('Подтвердить пароль')(name="confirmPassword" type="password")
-                                .logUp__remember
-                                    .logUp__container
+                                .signUp__remember
+                                    .signUp__container
                                         | Запомнить
                                         input(type='checkbox')
-                                        SPAN.logUp__checkmark
-                                .logUp__type
+                                        SPAN.signUp__checkmark
+                                .signUp__type
                                     +custom-button('Зарегестрироваться')(type='submit')
                                     span
                                         | Нажимая кнопку "Войти" я
