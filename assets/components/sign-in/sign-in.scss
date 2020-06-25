@@ -25,12 +25,12 @@
 
   }
 
-  &__tabs-content [id*="login"], &__tabs-content [id*="auth"] {
+  &__tabs-content [id*="signId"], &__tabs-content [id*="auth"] {
     position: absolute;
     visibility: hidden;
   }
 
-  &__tabs-content [class*="login"], &__tabs-content [class*="auth"] {
+  &__tabs-content [class*="signId"], &__tabs-content [class*="auth"] {
     -moz-transition: opacity 300ms;
     -o-transition: opacity 300ms;
     -webkit-transition: opacity 300ms;
@@ -41,7 +41,7 @@
     margin-right: -100%;
   }
 
-  &__tabs-content [id*="login"]:checked ~ &__content [class*="login"]{
+  &__tabs-content [id*="signId"]:checked ~ &__content [class*="signId"]{
     opacity: 1;
     position: relative;
     z-index: 10;
@@ -53,7 +53,7 @@
     z-index: 10;
   }
 
-  &__tabs-content [id*="login"]:checked ~ &__tabs [for*="login"]{
+  &__tabs-content [id*="signId"]:checked ~ &__tabs [for*="signId"]{
     z-index: 2;
     position: relative;
     font-weight: bold;
@@ -63,7 +63,7 @@
 
   }
 
-  &__tabs-content [id*="login"]:checked ~ &__tabs{
+  &__tabs-content [id*="signId"]:checked ~ &__tabs{
 
     span{
       transition: .5s all;

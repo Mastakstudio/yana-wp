@@ -3,14 +3,14 @@ mixin sign-in()
         .container
             +e.inner
                 +e.tabs-content
-                    input(type='radio' name='toggle' checked='' id="login")
+                    input(type='radio' name='toggle' checked='' id="signId")
                     input(type='radio' name='toggle' id="auth")
                     +e.tabs
-                        label(for='login') ВОЙТИ
+                        label(for='signId') ВОЙТИ
                         label(for='auth') зарегистрироваться
                         span
                     +e.content
-                        .login-page
+                        .signId-page
                             +e.inner
                                 +e.content-type
                                     +title('войти')(class='title_blue')
