@@ -260,7 +260,7 @@ class Course {
 			$date = DateTime::createFromFormat('M d, Y G:i:s', $item->end_time);
 
 			if( $date < $now ){
-				$needReset = true; 
+				$needReset = true;
 				break;
 			}
 

@@ -16,10 +16,6 @@ class Yana{
     public function setup(){
         add_theme_support( 'post-thumbnails' );
 //        add_image_size( 'home-banner', 725, 285, true );
-//	    add_image_size( 'custom_thumbnail', 444, 388, true );
-//	    add_image_size( 'product-gallery', 846, 632, true );
-//	    add_image_size( 'delivery_page_image', 150, 120, true );
-//	    add_image_size( 'for_byers_page', 690, 460, true );
 
         /**
          * Register menu locations.

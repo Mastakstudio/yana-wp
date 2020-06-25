@@ -6,9 +6,12 @@ if (!defined('ABSPATH')) exit();
 $userManager = UserManager::getInstance();
 $currentUser = $userManager->GetCurrentUser();
 
-if ( $currentUser->IsAuthorized() ){
-	$userManager->RedirectToAccount();
+if (!current_user_can('administrator')){
+	if ( $currentUser->IsAuthorized() ){
+		$userManager->RedirectToAccount();
+	}
 }
+
 $userManager->FormProcessing();
 
 get_header();
