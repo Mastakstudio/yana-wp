@@ -28,12 +28,12 @@
 
 
 
-  &__tabs-content [id*="loginId"], &__tabs-content [id*="auth"] {
+  &__tabs-content [id*="signId"], &__tabs-content [id*="auth"] {
     position: absolute;
     visibility: hidden;
   }
 
-  &__tabs-content [class*="loginId"], &__tabs-content [class*="auth"] {
+  &__tabs-content [class*="signId"], &__tabs-content [class*="auth"] {
     -moz-transition: opacity 300ms;
     -o-transition: opacity 300ms;
     -webkit-transition: opacity 300ms;
@@ -44,7 +44,7 @@
     margin-right: -100%;
   }
 
-  &__tabs-content [id*="loginId"]:checked ~ &__content [class*="loginId"]{
+  &__tabs-content [id*="signId"]:checked ~ &__content [class*="signId"]{
     opacity: 1;
     position: relative;
     z-index: 10;
@@ -56,7 +56,7 @@
     z-index: 10;
   }
 
-  &__tabs-content [id*="loginId"]:checked ~ &__tabs [for*="loginId"]{
+  &__tabs-content [id*="signId"]:checked ~ &__tabs [for*="signId"]{
     z-index: 2;
     position: relative;
     font-weight: bold;
@@ -70,7 +70,7 @@
     padding-top: 30px;
   }
 
-  &__tabs-content [id*="loginId"]:checked ~ &__tabs{
+  &__tabs-content [id*="signId"]:checked ~ &__tabs{
 
     span{
       transition: .5s all;
@@ -204,7 +204,7 @@
 
 
 
-.logIn{
+.signIn{
 
   &__type{
     display: flex;
@@ -300,12 +300,12 @@
   }
 }
 
-.logIn__container input:checked ~ .logIn__checkmark:after {
+.signIn__container input:checked ~ .signIn__checkmark:after {
   display: block;
 }
 
 
-.logUp{
+.signUp{
 
   &__type{
     display: flex;
@@ -400,6 +400,6 @@
   }
 }
 
-.logUp__container input:checked ~ .logUp__checkmark:after {
+.signUp__container input:checked ~ .signUp__checkmark:after {
   display: block;
 }
