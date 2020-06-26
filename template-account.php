@@ -72,7 +72,7 @@ get_template_part( '/core/views/headerView' );
                         </div>
                     </div>
                     <div class="account__item-head-type">
-                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update" type="submit">Сохранить</button>
                         <button class="account__item-update enable-toggle" type="button">Исправить</button>
                     </div>
 
@@ -119,7 +119,7 @@ get_template_part( '/core/views/headerView' );
                         </div>
                     </div>
                     <div class="account__item-head-type">
-                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update" type="submit">Сохранить</button>
                         <button class="account__item-update enable-toggle" type="button">Исправить</button>
                     </div>
                 </form>
@@ -141,7 +141,7 @@ get_template_part( '/core/views/headerView' );
                         </div>
                     </div>
                     <div class="account__item-head-type">
-                        <button class="account__item-update" type="submit">Исправить</button>
+                        <button class="account__item-update" type="submit">Сохранить</button>
                         <button class="account__item-update enable-toggle" type="button">Исправить</button>
                     </div>
                 </form>
