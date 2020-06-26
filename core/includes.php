@@ -6,3 +6,4 @@ require_once 'Course.php';
 require_once 'CourseManager.php';
 require_once 'CourseTestResult.php';
 require_once 'SocialLinks.php';
+//require_once 'CertificateManager.php';
