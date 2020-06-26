@@ -181,7 +181,7 @@ class Course {
 		?>
         <div class="course-page__item">
             <div class="course-page__content-item">
-                <span class="course-page__title"><?= $part->getTitle() ?></span>
+                <a class="course-page__title" href="<?= get_permalink( $part->Part()->ID ) ?>"><?= $part->getTitle() ?></a>
                 <div class="course-page__inner-content-item">
 					<?php if (!empty($imgUrl)): ?>
                         <div class="course-page__image-content-item">
@@ -196,6 +196,9 @@ class Course {
                         </div>
                         <div class="course-page__list-content-item">
 							<?php $part->getPreviewDesc() ?>
+                        </div>
+                        <div class="course-page__link-to desktope-link">
+                            <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>" target="_blank">Продолжить обучение</a>
                         </div>
                     </div>
                 </div>
@@ -240,9 +243,9 @@ class Course {
                         <span class="course-page__procent-info-item-number"><?= (integer) $rightP ?>%</span>
                         <span class="course-page__procent-info-item-text">усвоенного материала</span>
                     </div>
-                </div>
-                <div class="course-page__link-to">
-                    <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>">Продолжить обучение</a>
+                    <div class="course-page__link-to mobile-link">
+                        <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>" target="_blank">Продолжить обучение</a>
+                    </div>
                 </div>
             </div>
 
