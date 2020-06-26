@@ -16,10 +16,10 @@
       }
 
       @include sm {
-        width: 70%;
+        width: 48%;
         margin-left: auto;
         display: block;
-        margin-top: -70px;
+        margin-top: -144px;
       }
 
       @include md {
@@ -27,9 +27,17 @@
         width: 60%;
       }
 
+      @include lg{
+        width: 48%;
+      }
+
 
       @include hd{
         margin-top: -432px;
+      }
+
+      @include xhd{
+        width: 35%;
       }
 
     }
@@ -207,6 +215,8 @@
   }
 
   &__text-content-item{
+
+    position: relative;
 
     @include md{
       flex-grow: 1;
@@ -511,7 +521,33 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    bottom: 20px;
+    position: absolute;
+  }
+
+  .mobile-link{
+
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    bottom: 0;
+    position: relative;
+
+
+    @include md{
+      display: none;
+    }
+
+  }
+
+  .desktope-link{
+      display: none;
+
+    @include md{
+      display: flex;
+    }
   }
 
   &__image-content-item{
@@ -540,6 +576,7 @@
     @include lg{
       width: 194px;
       min-width: 194px;
+      margin-bottom: 0;
     }
 
     @include hd{
@@ -553,9 +590,12 @@
   &__list{
     margin-bottom: 50px;
 
+
     @include md{
       margin-top: -50px;
     }
+
+
 
   }
 
@@ -564,6 +604,8 @@
     @include md{
       width: 220px;
       min-width: 220px;
+      display: flex;
+      align-items: center;
     }
 
     @include hd{

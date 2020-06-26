@@ -13,7 +13,7 @@ mixin course-page()
             +e.list
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Все о беременности
+                        +e.A.title Все о беременности
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course1.png'))
@@ -34,6 +34,8 @@ mixin course-page()
                                         +e.type-content-item-number
                                             span 3
                                         +e.SPAN.type-content-item-text Токсикоз 1 половины беременности
+                                +e.link-to.desktope-link
+                                    +link('Продолжить обучение')(href="/test.html" target="_blank")
                     +e.info-item
                         +e.title-info-item
                             span информация
@@ -68,11 +70,11 @@ mixin course-page()
                                 +e.circle-procent-info-item
                                 +e.SPAN.procent-info-item-number 70%
                                 +e.SPAN.procent-info-item-text усвоенного материала
-                        +e.link-to
-                            +link('Продолжить обучение')(href="/test.html" target="_blank")
+                            +e.link-to.mobile-link
+                                +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Внутриутробное развитие ребенка
+                        +e.A.title Внутриутробное развитие ребенка
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course2.png'))
@@ -131,7 +133,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Все о родах
+                        +e.A.title Все о родах
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course3.png'))
@@ -202,7 +204,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Послеродовой период
+                        +e.A.title Послеродовой период
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course4.png'))
@@ -324,7 +326,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Грудное вскармливание
+                        +e.A.title Грудное вскармливание
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course6.png'))
@@ -403,7 +405,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Первый год жизни малыша
+                        +e.A.title Первый год жизни малыша
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course7.png'))
@@ -466,7 +468,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Безопасность и развивающие отношения с ребенком
+                        +e.A.title Безопасность и развивающие отношения с ребенком
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course8.png'))
@@ -521,7 +523,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Психология беременности, родов и родительства
+                        +e.A.title Психология беременности, родов и родительства
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course9.png'))
@@ -584,7 +586,7 @@ mixin course-page()
                             +link('Продолжить обучение')(href="/test.html" target="_blank")
                 +e.item
                     +e.content-item
-                        +e.SPAN.title Социальные гарантии и семейный капитал
+                        +e.A.title Социальные гарантии и семейный капитал
                         +e.inner-content-item
                             +e.image-content-item
                                 +e.IMG.about-image(src=require('./../images/course10.png'))
