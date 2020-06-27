@@ -1,7 +1,7 @@
 <?php
-use setasign\Fpdi\Fpdi;
 
-class CertificateManager extends Fpdi{
+use setasign\Fpdi\Fpdi;
+class CertificateManager  {
 
 	private static $instances = [];
 
@@ -20,21 +20,35 @@ class CertificateManager extends Fpdi{
 		$templateID = self::$certificates[0]['certificate_id'];
 		$source = get_attached_file($templateID);
 		$fileName= explode('.', $source);
+
 		if (end($fileName) !== 'pdf'){
 			return;
 		}
 
-		$baseDir = wp_upload_dir()['basedir'];
-		if (!is_dir($baseDir.'/certificate')){
-			mkdir($baseDir.'/certificate');
-		}
-		$newFile = $baseDir.'/certificate/test.pdf';
-		if (!copy($source, $newFile)) {
-			echo "не удалось скопировать $source...\n";
-		}
 		$pdf = new Fpdi();
 
+		$pdf->AddPage();
+		$pdf->setSourceFile($source);
+		$tplId = $pdf->importPage(1);
+		$pdf->useTemplate($tplId);
+//		$pdf->setPageFormat([297, 210],"P");
+		$pdf->setPageFormat([290, 290],"L");
 
+		// The new content
+		$fontSize = '15';
+		$fontColor = `255,0,0`;
+		$left = 16;
+		$top = 40;
+		$text = 'Sample Text over overlay';
+
+		$pdf->SetFont("helvetica", "B", 15);
+		$pdf->SetTextColor($fontColor);
+		$pdf->Text($left,$top,$text);
+
+		$TemplateSize = $pdf->getTemplateSize($tplId );
+//		$TemplateSize = $pdf->getPage;
+
+		$pdf->Output('I','azaza.pdf');
 
 	}
 

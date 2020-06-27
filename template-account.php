@@ -5,6 +5,8 @@
 if (!defined('ABSPATH')) exit();
 
 
+$certificateMng = CertificateManager::getInstance();
+$certificateMng::createPersonalCertificate();
 
 $userManager = UserManager::getInstance();
 
