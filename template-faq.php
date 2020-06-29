@@ -37,7 +37,7 @@ get_template_part( '/core/views/headerView' );
                             <div class="page-banner__content-item">
                                 <div class="page-banner__number"><?= $i+1 ?></div>
                                 <span class="page-banner__title"><?= $question ?></span>
-                                <img class="page-banner__button" src="/wp-content/themes/Yana/src/icons/button.png" alt="" />
+                                <img class="page-banner__button" src="/wp-content/themes/Yana/src/icons/plus.svg" alt="" />
                             </div>
                             <div class="page-banner__text-item">
                                 <div class="editor-content"><?= $answer ?></div>
