@@ -51,15 +51,17 @@ if (isset($_GET['action']) && $_GET['action'] === 'lostpassword'):
 	    $loaspass = true;
     }
 
-
+    $activeForm = 'login';
+    if (isset($_GET['registration']))
+        $activeForm = 'registration';
     ?>
     <div class="wrapper">
         <div class="sign-in">
             <div class="container">
                 <div class="sign-in__inner">
                     <div class="sign-in__tabs-content">
-                        <input type="radio" name="toggle" checked="" id="signId">
-                        <input type="radio" name="toggle" id="auth">
+                        <input type="radio" name="toggle" <?= $activeForm == 'login' ? 'checked=""' : ''?> id="signId">
+                        <input type="radio" name="toggle" <?= $activeForm == 'registration' ? 'checked=""' : ''?> id="auth">
                         <div class="sign-in__tabs">
                             <label for="signId">ВОЙТИ</label>
                             <label for="auth">зарегистрироваться</label><span></span>

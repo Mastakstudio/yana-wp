@@ -6,6 +6,7 @@ get_template_part( '/core/views/headerView' );
 global $post;
 $userManager = UserManager::getInstance();
 $user        = $userManager->GetCurrentUser();
+$login_page = carbon_get_theme_option(PREFIX . 'login_page');
 
 if ( have_posts() ):
 	while ( have_posts() ):
@@ -33,6 +34,17 @@ if ( have_posts() ):
 					<?php
 					if ( !$user->IsAuthorized() ):
 						echo '<span class="course-page__title">Курс только для зарегистрированных пользователей</span>';
+					?>
+                        <div class="tags__wrap-text" id="link_to_reg">
+							<?php
+							if ( !$user->IsAuthorized() ) {
+								if (isset($login_page) || empty($login_page) ){?>
+                                    <a class="link" href="<?= get_permalink($login_page) ?>?login">Войти</a>
+                                    <a class="link" href="<?= get_permalink($login_page) ?>?registration">Зарегистрироваться</a>
+								<?php }
+							} ?>
+                        </div>
+                    <?php
 					else:
                         $course->getPartsViewByUserRole($user);
 					endif;

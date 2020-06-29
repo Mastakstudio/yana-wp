@@ -57,6 +57,14 @@
     }
   }
 
+  &__wrap-text{
+
+    .link:nth-child(1){
+      margin-right: 15px;
+    }
+
+  }
+
 
   &__mobile-first{
     width: 238px;

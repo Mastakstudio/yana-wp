@@ -25,14 +25,17 @@ $currentUser = $userManager::GetCurrentUser();
             <div class="tags__content">
                 <span class="title title_orange">Мы поможем получить всесторонние знания</span>
                 <p class="text text_white">
-                    А также дадим возможность сравнить мнения, проанализировать разный опыт и даже познакомиться с документальными кадрами рождения
-                </p>
-                <?php
-                if ( !$currentUser->IsAuthorized() ) {
-	                if (isset($login_page) || empty($login_page) ){
-		                echo '<a class="link" id="link_to_reg" href="'.get_permalink($login_page).'">Зарегистрироваться</a>';
-	                }
-                } ?>
+                    А также дадим  возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения</p>
+                <div class="tags__wrap-text" id="link_to_reg">
+	                <?php
+	                if ( !$currentUser->IsAuthorized() ) {
+		                if (isset($login_page) || empty($login_page) ){?>
+                            <a class="link" href="<?= get_permalink($login_page) ?>?login">Войти</a>
+                            <a class="link" href="<?= get_permalink($login_page) ?>?registration">Зарегистрироваться</a>
+		                <?php }
+	                } ?>
+                </div>
+
             </div>
             <div class="tags__second">
                 <div class="tags__mobile-second tags__animate">
