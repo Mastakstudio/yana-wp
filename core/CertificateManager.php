@@ -58,7 +58,7 @@ class CertificateManager  {
 		$pdf->Text($leftFirstName, $topFirstName, $textFirstName);
 		$pdf->Text($leftSecondName, $topSecondName, $textSecondName);
 
-		$pdf->Output('I','сертификат.pdf');
+		$pdf->Output('I','certificate.pdf');
 	}
 
 
