@@ -54,7 +54,7 @@ get_template_part( '/core/views/headerView' );
     <div class="popup">
         <div class="remodal" data-remodal-id="modal">
             <button class="remodal-close" data-remodal-action="close"></button>
-            <iframe width="100%" height="100%" src="<?= esc_url($video) ?>" frameborder="0"
+            <iframe class="youtube-video" width="100%" height="100%" src="<?= esc_url($video) ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>
         </div>

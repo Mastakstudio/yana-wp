@@ -37,7 +37,7 @@ $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
     <div class="popup">
         <div class="remodal" data-remodal-id="modal-banner">
             <button class="remodal-close" data-remodal-action="close"></button>
-            <iframe width="100%" height="100%" src="<?= esc_url($banner_video->link) ?>" frameborder="0"
+            <iframe class="youtube-video" width="100%" height="100%" src="<?= esc_url($banner_video->link) ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>
         </div>
