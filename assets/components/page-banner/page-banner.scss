@@ -16,15 +16,20 @@
       }
 
       @include sm{
-        width: 70%;
+        width: 50%;
         margin-left: auto;
         display: block;
-        margin-top: -70px;
+        margin-top: -140px;
       }
 
       @include md{
-        margin-top: -150px;
-        width: 60%;
+        margin-top: -198px;
+        width: 43%;
+      }
+
+      @include hd{
+        margin-top: -336px;
+        width: 39%;
       }
 
     }
