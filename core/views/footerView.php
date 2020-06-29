@@ -2,6 +2,7 @@
 if (!defined('ABSPATH')) exit();
 $socialLinks = SocialLinks::getInstance();
 $child_vil_link = carbon_get_theme_option(TO_SOS_CHILD_VIL);
+$child_vil_link_img_id = carbon_get_theme_option(TO_SOS_CHILD_VIL_IMG_ID);
 ?>
 
 <div class="footer">
@@ -23,11 +24,20 @@ $child_vil_link = carbon_get_theme_option(TO_SOS_CHILD_VIL);
                 <div class="footer__wrapper">
                     <div class="container">
                         <div class="footer__inner-wrapper">
-                            <?php if (!empty($child_vil_link)): ?>
-                            <a class="footer__inner-wrapper-link" href="<?= esc_url($child_vil_link) ?>">
-                                <img class="footer__inner-wrapper-image" src="/wp-content/themes/Yana/src/icons/sos.svg" alt="" />
+                            <?php
+                            $hideSection = '';
+                            $sos_logo = '';
+                            if (empty($child_vil_link) || empty($child_vil_link_img_id)){
+	                            $hideSection = 'style="opacity: 0; pointer-events: none"';
+	                            $sos_logo = '/wp-content/themes/Yana/src/icons/sos.svg';
+	                            $child_vil_link = '#';
+                            }else{
+	                            $sos_logo = wp_get_attachment_url($child_vil_link_img_id);
+                            }?>
+                            <a class="footer__inner-wrapper-link" <?= $hideSection ?> href="<?= esc_url($child_vil_link) ?>">
+                                <img class="footer__inner-wrapper-image" src="<?= $sos_logo ?>" alt="" />
                             </a>
-                            <?php endif; footerMenuView(); ?>
+                            <?php footerMenuView(); ?>
                             <img class="footer__image" src="/wp-content/themes/Yana/src/icons/canada.svg" alt="" />
                             <div class="footer__wrapper-link">
                                 <div class="social social__footer">

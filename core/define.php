@@ -42,6 +42,7 @@ define("TO_FACEBOOK_LINK", PREFIX.'facebook_link');
 define("TO_YOUTUBE_LINK", PREFIX.'youtube_link');
 define("TO_VK_LINK", PREFIX.'vk_link');
 define("TO_SOS_CHILD_VIL", PREFIX.'child_vil_link');
+define("TO_SOS_CHILD_VIL_IMG_ID", PREFIX.'child_vil_img_id');
 
 define("TO_ADDRESS", PREFIX.'address');
 define("TO_QUESTION_CONTACT_EMAIL", PREFIX.'question_contact_email');

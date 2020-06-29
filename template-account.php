@@ -4,9 +4,10 @@
  */
 if (!defined('ABSPATH')) exit();
 
-
-$certificateMng = CertificateManager::getInstance();
-$certificateMng::createPersonalCertificate();
+if (isset($_GET['certificate'])){
+	$certificateMng = CertificateManager::getInstance();
+	$certificateMng::createPersonalCertificate();
+}
 
 $userManager = UserManager::getInstance();
 

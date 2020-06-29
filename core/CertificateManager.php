@@ -17,6 +17,12 @@ class CertificateManager  {
 	}
 
 	public static function createPersonalCertificate(){
+		$userManager = UserManager::getInstance();
+		$currentUser = $userManager->GetCurrentUser();
+		if ( !$currentUser->IsAuthorized() ){
+			$userManager->RedirectToSignIn();
+		}
+
 		$templateID = self::$certificates[0]['certificate_id'];
 		$source = get_attached_file($templateID);
 		$fileName= explode('.', $source);
@@ -31,25 +37,27 @@ class CertificateManager  {
 		$pdf->setSourceFile($source);
 		$tplId = $pdf->importPage(1);
 		$pdf->useTemplate($tplId);
-//		$pdf->setPageFormat([297, 210],"P");
-		$pdf->setPageFormat([290, 290],"L");
+		$pdf->setPageFormat([200, 297],"L");
 
-		// The new content
-		$fontSize = '15';
-		$fontColor = `255,0,0`;
-		$left = 16;
-		$top = 40;
-		$text = 'Sample Text over overlay';
+		$fontSize = '32';
+//		$leftFirstName = 120;
+//		$topFirstName = 151;
+		$leftFirstName = 297/2 - (strlen($currentUser->GetFirstName()) * 2.4);
+		$topFirstName = 164;
+		$textFirstName = $currentUser->GetFirstName();
 
-		$pdf->SetFont("helvetica", "B", 15);
-		$pdf->SetTextColor($fontColor);
-		$pdf->Text($left,$top,$text);
+//		$leftSecondName = 120;
+//		$topSecondName = 164;
+		$leftSecondName = 297/2 - (strlen($currentUser->GetLastName()) * 2.4);
+		$topSecondName = 151;
+		$textSecondName = $currentUser->GetLastName();
 
-		$TemplateSize = $pdf->getTemplateSize($tplId );
-//		$TemplateSize = $pdf->getPage;
+		$pdf->SetFont('Arial', '', $fontSize);
+		$pdf->SetTextColor(0, 0, 0);
+		$pdf->Text($leftFirstName, $topFirstName, $textFirstName);
+		$pdf->Text($leftSecondName, $topSecondName, $textSecondName);
 
 		$pdf->Output('I','azaza.pdf');
-
 	}
 
 

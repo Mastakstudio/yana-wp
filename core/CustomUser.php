@@ -129,7 +129,7 @@ class CustomUser {
 					break;
 				}
 	    	}
-	        echo '<p><a href="'.esc_url($serteficat).'" target="_blank">ваш сертификат</a></p>';
+	        echo '<p><a href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
         }
 	    else{
 	        foreach ( $this->_courseTestResults as $result ) {

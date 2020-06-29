@@ -18,7 +18,8 @@ function crb_attach_theme_options()
 	        Field::make_text(TO_FACEBOOK_LINK, 'Facebook'),
 	        Field::make_text(TO_VK_LINK, 'В контакте'),
 	        Field::make_text(TO_YOUTUBE_LINK, 'Youtube'),
-	        Field::make_text(TO_SOS_CHILD_VIL, 'SOS Детские деревни'),
+	        Field::make_text(TO_SOS_CHILD_VIL, 'SOS Детские деревни ссылка'),
+	        Field::make_image(TO_SOS_CHILD_VIL_IMG_ID, 'SOS Детские деревни логотип'),
         ])
         ->add_tab(__('email'), [
 	        Field::make_text(TO_QUESTION_CONTACT_EMAIL, 'Email для получения писем'),
