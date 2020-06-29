@@ -4,7 +4,6 @@ $userManager = UserManager::getInstance();
 $currentUser = $userManager->GetCurrentUser();
 $title = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_title');
 $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
-
 ?>
 <div class="banner-main">
     <div class="container">
@@ -13,7 +12,7 @@ $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
                 <span class="title title_blue"><?= $title ?></span>
                 <p class="text text_black"><?= $subtitle ?></p>
                 <?php if ($banner_video->link_exist):?>
-                    <a class="banner-main__link" href="#modal">
+                    <a class="banner-main__link" href="#modal-banner">
                         <span>Просмотреть приветствие</span>
                         <img src="/wp-content/themes/Yana/src/icons/play.svg" alt="" role="presentation"/>
                     </a>
@@ -36,7 +35,7 @@ $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
 </div>
 <?php if ($banner_video->link_exist): ?>
     <div class="popup">
-        <div class="remodal" data-remodal-id="modal">
+        <div class="remodal" data-remodal-id="modal-banner">
             <button class="remodal-close" data-remodal-action="close"></button>
             <iframe width="100%" height="100%" src="<?= esc_url($banner_video->link) ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

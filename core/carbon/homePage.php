@@ -15,20 +15,7 @@ function crb_home_page_settings()
 		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
 
 	    ])
-	    ->add_tab("welcome1",[
-//		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
+	    ->add_tab("experts",[
 		    Field::make_text(PREFIX.'experts_video_link', 'Видео "МНЕНИЯ ЭКСПЕРТОВ"'),
-	    ])
-	    ->add_tab("welcome2",[
-//		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
-//		    Field::make_text(PREFIX.'experts_video_link', 'Видео "МНЕНИЯ ЭКСПЕРТОВ"'),
-	    ])
-	    ->add_tab("welcome3",[
-//		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
-//		    Field::make_text(PREFIX.'experts_video_link', 'Видео "МНЕНИЯ ЭКСПЕРТОВ"'),
-	    ])
-	    ->add_tab("welcome4",[
-//		    Field::make_text(PREFIX.'banner_video_link','Видео «БЕРЕМЕННОСТЬ И РОДЫ»'),
-//		    Field::make_text(PREFIX.'experts_video_link', 'Видео "МНЕНИЯ ЭКСПЕРТОВ"'),
 	    ]);
 }

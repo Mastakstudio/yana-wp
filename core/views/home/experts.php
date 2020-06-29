@@ -1,5 +1,5 @@
 <?php
-$banner_video  = home_page_experts_video();
+$expert_video  = home_page_experts_video();
 ?>
 
 <div class="experts">
@@ -20,8 +20,8 @@ $banner_video  = home_page_experts_video();
                 <div class="experts__video_wrapper">
                     <div class="experts__video">
                         <div class="experts__video_inner">
-	                        <?php if ($banner_video->link_exist):?>
-                            <a class="experts__video_link" href="#modal">
+	                        <?php if ($expert_video->link_exist):?>
+                            <a class="experts__video_link" href="#modal-experts">
                                 <img src="/wp-content/themes/Yana/src/icons/experts-arrow.png" alt="">
                                 <span>смотреть</span>
                             </a>
@@ -33,11 +33,11 @@ $banner_video  = home_page_experts_video();
             <img class="experts__girl-business" src="/wp-content/themes/Yana/src/icons/girl-business.png" alt="" role="presentation"/>
         </div>
     </div>
-	<?php if ($banner_video->link_exist): ?>
+	<?php if ($expert_video->link_exist): ?>
     <div class="popup">
-        <div class="remodal" data-remodal-id="modal">
+        <div class="remodal" data-remodal-id="modal-experts">
             <button class="remodal-close" data-remodal-action="close"></button>
-            <iframe width="100%" height="100%" src="<?= esc_url($banner_video->link) ?>" frameborder="0"
+            <iframe width="100%" height="100%" src="<?= esc_url($expert_video->link) ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen=""></iframe>
         </div>
