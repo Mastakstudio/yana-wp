@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="signUp__type">
-                                        <button class="custom-button" type="submit">Зарегестрироваться</button>
+                                        <button class="custom-button" type="submit">Зарегистрироваться</button>
 										<?php
 										$privacy_policy_url = get_privacy_policy_url();
 										if ( ! empty( $privacy_policy_url ) ): ?>

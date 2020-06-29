@@ -32,7 +32,7 @@ if ( have_posts() ):
                 <div class="course-page__list">
 					<?php
 					if ( !$user->IsAuthorized() ):
-						echo '<span class="course-page__title">Курс только для зарегисстрированных пользователей</span>';
+						echo '<span class="course-page__title">Курс только для зарегистрированных пользователей</span>';
 					else:
                         $course->getPartsViewByUserRole($user);
 					endif;
