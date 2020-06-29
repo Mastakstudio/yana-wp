@@ -15,7 +15,9 @@ mixin tags()
                 +e.content
                     +title('Мы поможем получить всесторонние знания')(class='title_orange')
                     +text('А также дадим  возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения')(class='text_white')
-                    +link('Зарегистрироваться')(src="/signIn.html" target="_blank")
+                    +e.wrap-text
+                        +link('Войти')(src="/signIn.html" target="_blank")
+                        +link('Зарегистрироваться')(src="/signIn.html" target="_blank")
                 +e.second
                     +e.mobile-second.tags__animate
                         img(src=require('./../images/tags-mobile-second.png'))
