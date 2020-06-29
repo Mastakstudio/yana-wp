@@ -175,6 +175,11 @@
       margin-bottom: 20px;
       border-top: none;
 
+
+      span{
+        display: none;
+      }
+
     }
 
   }
@@ -211,6 +216,7 @@
       flex-wrap: wrap;
       background: transparent;
       padding: 0;
+      margin-bottom: 80px;
     }
   }
 
@@ -627,6 +633,19 @@
 
     @include md{
       display: flex;
+    }
+
+  }
+
+  &__content{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    @include md{
+        font-size: 16px;
+        line-height: 22px;
     }
 
   }
