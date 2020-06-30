@@ -201,3 +201,31 @@ form#lostpasswordform input#user_login{
     visibility: visible !important;
     opacity: 1 !important;
 }
+
+.oneall_social_login{
+	margin-left:15px !important;
+}
+
+#branding{
+	display: none !important;
+}
+
+.sign-in .form-input__item-label{
+	margin-left: 0 !important;
+}
+
+.lostpasslink{
+	font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #46555a;
+}
+
+.plugin #providers .provider .button{
+	border-radius: 100% !important;
+}
+
+
