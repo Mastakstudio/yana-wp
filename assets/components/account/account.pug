@@ -21,32 +21,35 @@ mixin account()
                             +form-input('Имя')(name='name' type='text')
                         +e.item-input
                             +form-input('Отчество')(name='secondName' type='text')
-                    +e.item-head-type
-                        +e.BUTTON.item-update Сохранить
-                        +e.BUTTON.item-update Исправить
-                +e.item.account__passport
-                    +e.item-head
-                        +e.SPAN.item-title Паспорт
-                    +e.item-inputs
-                        +e.item-input
-                            +form-input('Серия')(name='serial' type='text')
-                        +e.item-input
-                            +form-input('Номер паспорта')(name='number' type='text')
-                        +e.item-input
-                            +form-input('Кем выдан')(name='who' type='text')
-                        +e.item-input
-                            +form-input('Когда')(name='when' type='text')
-                    +e.item-head-type
-                        +e.BUTTON.item-update Сохранить
-                        +e.BUTTON.item-update Исправить
-                +e.item
-                    +e.item-head
-                        +e.SPAN.item-title Дата рождения
-                    +e.item-inputs
                         +e.item-input
                             +e.LABEL.item-label Дата рождения
                             +e.INPUT.date(type="date" name="date")
                     +e.item-head-type
                         +e.BUTTON.item-update Сохранить
                         +e.BUTTON.item-update Исправить
+                //+e.item.account__passport
+                //    +e.item-head
+                //        +e.SPAN.item-title Паспорт
+                //    +e.item-inputs
+                //        +e.item-input
+                //            +form-input('Серия')(name='serial' type='text')
+                //        +e.item-input
+                //            +form-input('Номер паспорта')(name='number' type='text')
+                //        +e.item-input
+                //            +form-input('Кем выдан')(name='who' type='text')
+                //        +e.item-input
+                //            +form-input('Когда')(name='when' type='text')
+                //    +e.item-head-type
+                //        +e.BUTTON.item-update Сохранить
+                //        +e.BUTTON.item-update Исправить
+                //+e.item
+                //    +e.item-head
+                //        +e.SPAN.item-title Дата рождения
+                //    +e.item-inputs
+                //        +e.item-input
+                //            +e.LABEL.item-label Дата рождения
+                //            +e.INPUT.date(type="date" name="date")
+                //    +e.item-head-type
+                //        +e.BUTTON.item-update Сохранить
+                //        +e.BUTTON.item-update Исправить
                 +custom-button('Сохранить')

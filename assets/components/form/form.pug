@@ -40,3 +40,12 @@ mixin form()
                                     span
                                         | Нажимая кнопку "Войти" я
                                         a(href='') принимаю пользовательское соглашение
+        +e.inner.form__dop-link
+            +e.tabs-content
+                +e.content
+                    .signId-content
+                        .signIn
+                            form(id="sign-in")
+                                +e.dop-content
+                                    IMG(src=require('./../images/grom.png'))
+                                +link('Перейти к обучению')()
