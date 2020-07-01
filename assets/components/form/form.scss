@@ -11,6 +11,34 @@
   box-sizing: border-box;
 
 
+  &__dop-content{
+
+
+
+    img{
+      width: 80%;
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+  }
+
+  &__dop-link{
+
+    .signId-content{
+      opacity: 1 !important;
+    }
+
+    .link{
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+  }
 
   @media (max-width : 768px - 1px) and (orientation : landscape) {
     margin-top: 40px;

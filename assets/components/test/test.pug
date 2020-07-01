@@ -6,6 +6,7 @@ mixin test()
                     +e.head-text
                         +e.SPAN.theme тема занятия
                         +title('беременность')(class='title_blue')
+                        +e.A.desc-text(href="#") вернуться ко всем темам
                         +image()(src=require('./../images/test.png'))
                     +e.head-list
                         +e.A.head-item.test__video(href="#modal1")
