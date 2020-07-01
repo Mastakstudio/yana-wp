@@ -9,6 +9,18 @@ Version:      0.0.1
     pointer-events: none;
 }
 
+.account__item a{
+	pointer-events: none;
+    font-family: "Bebas Neue";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    color: #e08181;
+	text-decoration: underline;
+
+}
+
 .modal__wrapper{
     position: fixed;
     top: 0;

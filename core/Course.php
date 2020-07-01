@@ -198,7 +198,7 @@ class Course {
 							<?php $part->getPreviewDesc() ?>
                         </div>
                         <div class="course-page__link-to desktope-link">
-                            <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>" target="_blank">Продолжить обучение</a>
+                            <a class="link" href="<?= get_permalink( $part->Part()->ID ) ?>" target="_blank">Перейти к обучению</a>
                         </div>
                     </div>
                 </div>
