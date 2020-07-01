@@ -36,17 +36,10 @@ if ( have_posts() ):
                 <div class="test__inner">
                     <div class="test__head">
                         <div class="test__head-text">
-
-                            <div class="test__dop-text-title">
-                                <span>вернуться к
-                                    <a href="<?= get_permalink($post->post_parent)?>">
-                                        <?= get_the_title($post->post_parent)?>
-                                    </a>
-                                </span>
-                            </div><div></div>
-
                             <span class="test__theme">тема занятия</span>
                             <span class="title title_blue"><?= the_title() ?></span>
+                            <a class="test__desc-text" href="<?= get_permalink($post->post_parent)?>">вернуться ко всем темам</a>
+
                             <p class="text text_black visible"><?= $coursePart->getSubtitle() ?></p>
                             <img class="image" src="/wp-content/themes/Yana/src/icons/test.png"/>
                         </div>

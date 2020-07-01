@@ -240,4 +240,8 @@ form#lostpasswordform input#user_login{
 	border-radius: 100% !important;
 }
 
-
+.banner-main__form .main__form_hidden{
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}

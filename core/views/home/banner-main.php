@@ -19,8 +19,7 @@ $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
                     <img class="banner-main__girl-write" src="/wp-content/themes/Yana/src/icons/girl-write.png" alt="" role="presentation"/>
                 <?php   endif; ?>
             </div>
-            <?php if (!$currentUser->IsAuthorized())
-                get_template_part('/core/views/home/ajax-login-form' ); ?>
+            <?php get_template_part('/core/views/home/ajax-login-form' ); ?>
         </div>
     </div>
     <div class="banner-main__image">

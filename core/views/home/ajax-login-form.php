@@ -1,11 +1,13 @@
 <?php
+$userMng = UserManager::getInstance();
+$user = $userMng->GetCurrentUser();
 
-
+$mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 ?>
 
 <div class="banner-main__form" id="banner-main__form">
     <div class="form">
-        <div class="form__inner">
+        <div class="form__inner <?= $user->IsAuthorized()?'main__form_hidden':'' ?>" id="main-banner-forms" >
             <div class="form__tabs-content">
                 <input type="radio" name="toggle" checked="" id="signId">
                 <input type="radio" name="toggle" id="auth">
@@ -20,7 +22,6 @@
                     <div class="signId-content">
                         <div class="signIn">
                             <form id="sign-in">
-                                <div id="login_errors" style="color: red; position: unset; visibility: unset;"></div>
                                 <div class="form-input__item">
                                     <label class="form-input__item-label">Логин</label>
                                     <input class="form-input__item-input" id="username" type="text" placeholder="E-mail" name="username" autocomplete="username"/>
@@ -82,6 +83,22 @@
                             </div>
                         </div>
 					<?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="form__inner form__dop-link <?= $user->IsAuthorized()?'':'main__form_hidden' ?>" id="main-banner-to-course">
+            <div class="form__tabs-content">
+                <div class="form__content">
+                    <div class="signId-content">
+                        <div class="signIn">
+                            <form id="sign-in">
+                                <div class="form__dop-content">
+                                    <IMG src="/wp-content/themes/Yana/src/icons/grom.png"></IMG>
+                                </div>
+                                <a class="link" href="<?= get_permalink($mainCoursePage) ?>">Перейти к обучению</a>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

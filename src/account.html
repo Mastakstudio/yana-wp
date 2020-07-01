@@ -140,54 +140,6 @@
                     <INPUT class="form-input__item-input" name="secondName" type="text"></INPUT>
                   </div>
                 </div>
-              </div>
-              <div class="account__item-head-type">
-                <button class="account__item-update">Сохранить
-                </button>
-                <button class="account__item-update">Исправить
-                </button>
-              </div>
-            </div>
-            <div class="account__item account__passport">
-              <div class="account__item-head"><span class="account__item-title">Паспорт</span>
-              </div>
-              <div class="account__item-inputs">
-                <div class="account__item-input">
-                  <div class="form-input__item">
-                    <LABEL class="form-input__item-label">Серия</LABEL>
-                    <INPUT class="form-input__item-input" name="serial" type="text"></INPUT>
-                  </div>
-                </div>
-                <div class="account__item-input">
-                  <div class="form-input__item">
-                    <LABEL class="form-input__item-label">Номер паспорта</LABEL>
-                    <INPUT class="form-input__item-input" name="number" type="text"></INPUT>
-                  </div>
-                </div>
-                <div class="account__item-input">
-                  <div class="form-input__item">
-                    <LABEL class="form-input__item-label">Кем выдан</LABEL>
-                    <INPUT class="form-input__item-input" name="who" type="text"></INPUT>
-                  </div>
-                </div>
-                <div class="account__item-input">
-                  <div class="form-input__item">
-                    <LABEL class="form-input__item-label">Когда</LABEL>
-                    <INPUT class="form-input__item-input" name="when" type="text"></INPUT>
-                  </div>
-                </div>
-              </div>
-              <div class="account__item-head-type">
-                <button class="account__item-update">Сохранить
-                </button>
-                <button class="account__item-update">Исправить
-                </button>
-              </div>
-            </div>
-            <div class="account__item">
-              <div class="account__item-head"><span class="account__item-title">Дата рождения</span>
-              </div>
-              <div class="account__item-inputs">
                 <div class="account__item-input">
                   <label class="account__item-label">Дата рождения
                   </label><input class="account__date" type="date" name="date"/>
@@ -200,6 +152,31 @@
                 </button>
               </div>
             </div>
+            <!--+e.item.account__passport-->
+            <!--    +e.item-head-->
+            <!--        +e.SPAN.item-title Паспорт-->
+            <!--    +e.item-inputs-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Серия')(name='serial' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Номер паспорта')(name='number' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Кем выдан')(name='who' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Когда')(name='when' type='text')-->
+            <!--    +e.item-head-type-->
+            <!--        +e.BUTTON.item-update Сохранить-->
+            <!--        +e.BUTTON.item-update Исправить-->
+            <!--+e.item-->
+            <!--    +e.item-head-->
+            <!--        +e.SPAN.item-title Дата рождения-->
+            <!--    +e.item-inputs-->
+            <!--        +e.item-input-->
+            <!--            +e.LABEL.item-label Дата рождения-->
+            <!--            +e.INPUT.date(type="date" name="date")-->
+            <!--    +e.item-head-type-->
+            <!--        +e.BUTTON.item-update Сохранить-->
+            <!--        +e.BUTTON.item-update Исправить-->
             <BUTTON class="custom-button">Сохранить</BUTTON>
           </form>
         </div>

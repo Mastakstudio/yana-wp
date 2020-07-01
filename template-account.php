@@ -49,10 +49,9 @@ get_template_part( '/core/views/headerView' );
                 }
                 ?>
                 <form class="account__item <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
-
                     <input type="hidden" name="target_section" value="names">
                     <div class="account__item-head">
-                        <span class="account__item-title">ФИО</span>
+                        <span class="account__item-title">ДАННЫЕ ПОЛЬЗОВАТЕЛЯ</span>
                     </div>
                     <div class="account__item-inputs">
                         <div class="account__item-input">
@@ -73,71 +72,6 @@ get_template_part( '/core/views/headerView' );
                                 <input class="form-input__item-input" name="userSecondName" type="text" value="<?= $currentUser->GetSecondName() ?>"/>
                             </div>
                         </div>
-                    </div>
-                    <div class="account__item-head-type">
-                        <button class="account__item-update" type="submit">Сохранить</button>
-                        <button class="account__item-update enable-toggle" type="button">Исправить</button>
-                    </div>
-
-                </form>
-
-	            <?php
-	            $disabled = true;
-	            if (empty($currentUser->GetPassportSeries())
-                    || empty($currentUser->GetPassportNumber())
-                    || empty($currentUser->GetPassportWho())
-                    || empty($currentUser->GetPassportWhen()) ){
-		            $disabled = false;
-	            }
-	            ?>
-                <form class="account__item account__passport <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
-                    <input type="hidden" name="target_section" value="passport">
-                    <div class="account__item-head">
-                        <span class="account__item-title">Паспорт</span>
-                    </div>
-                    <div class="account__item-inputs">
-                        <div class="account__item-input">
-                            <div class="form-input__item">
-                                <label class="form-input__item-label">Серия</label>
-                                <input class="form-input__item-input" name="serial" type="text" value="<?= $currentUser->GetPassportSeries()?>"/>
-                            </div>
-                        </div>
-                        <div class="account__item-input">
-                            <div class="form-input__item">
-                                <label class="form-input__item-label">Номер паспорта</label>
-                                <input class="form-input__item-input" name="number" type="text" value="<?= $currentUser->GetPassportNumber()?>"/>
-                            </div>
-                        </div>
-                        <div class="account__item-input">
-                            <div class="form-input__item">
-                                <label class="form-input__item-label">Кем выдан</label>
-                                <input class="form-input__item-input" name="who" type="text" value="<?= $currentUser->GetPassportWho()?>"/>
-                            </div>
-                        </div>
-                        <div class="account__item-input">
-                            <div class="form-input__item">
-                                <label class="form-input__item-label">Когда</label>
-                                <input class="form-input__item-input" name="when" type="text" value="<?= $currentUser->GetPassportWhen()?>"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="account__item-head-type">
-                        <button class="account__item-update" type="submit">Сохранить</button>
-                        <button class="account__item-update enable-toggle" type="button">Исправить</button>
-                    </div>
-                </form>
-	            <?php
-	            $disabled = true;
-	            if (empty($currentUser->GetBirthday()) ){
-		            $disabled = false;
-	            }
-	            ?>
-                <form class="account__item <?= $disabled ? 'disable' : ''?>"  action="<?= get_the_permalink().'?update'?>" method="post" >
-                    <input type="hidden" name="target_section" value="birthday">
-                    <div class="account__item-head">
-                        <span class="account__item-title">Дата рождения</span>
-                    </div>
-                    <div class="account__item-inputs">
                         <div class="account__item-input">
                             <label class="account__item-label">Дата рождения</label>
                             <input class="account__date" type="date" name="birthday" value="<?= $currentUser->GetBirthday()?>"/>
@@ -148,6 +82,7 @@ get_template_part( '/core/views/headerView' );
                         <button class="account__item-update enable-toggle" type="button">Исправить</button>
                     </div>
                 </form>
+
 
                 <div class="account__item">
                     <span class="account__item-title">Результаты тестов</span>

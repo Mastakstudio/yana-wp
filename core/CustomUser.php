@@ -108,10 +108,7 @@ class CustomUser {
 	}
 
 	public function TestResultsView(){
-	    if (count($this->_courseTestResults) <= 0){
-		    echo '<p>для получкния сертификата пройдите тесты</p>';
-        }
-		elseif ($this->_allSolved){
+	     if ($this->_allSolved){
 	    	$certificates = carbon_get_theme_option(PREFIX."certificate_role");
 			$serteficat = '';
 	    	$roles = $this->GetUserRole();
@@ -131,16 +128,7 @@ class CustomUser {
 	    	}
 	        echo '<p><a href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
         }
-	    else{
-	        foreach ( $this->_courseTestResults as $result ) {
-	            $style = $result->solved? '': 'style="color: red;"';
-	            $text = $result->solved?'пройден':'активен';
-	            $title = get_the_title($result->test_id);
-
-		        echo '<p>'.$title.'</p>';
-		        echo '<p>результат: <span '.$style.'>'.$text.'</span></p>';
-	        }
-        }
+	     
 	}
 
 	public function LogOut(){

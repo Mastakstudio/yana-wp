@@ -319,32 +319,17 @@ class UserManager {
 				$resultUserUpdateMeta = null;
 				if ( ! empty( $_POST['userSecondName'] ) )
 					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_SECOND_NAME, $_POST['userSecondName']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+                    return $resultUserUpdateMeta;
 
-				if ( $resultUserUpdateMeta instanceof WP_Error )
-					return $resultUserUpdateMeta;
+                $resultUserUpdateMeta = null;
+                if ( ! empty( $_POST['birthday'] ) )
+                    $resultUserUpdateMeta = update_user_meta($userID, '_'.U_BIRTHDAY, $_POST['birthday']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+                    return $resultUserUpdateMeta;
 
-				break;
-			case 'passport':
-				$resultUserUpdateMeta = [];
+                break;
 
-				if ( ! empty( $_POST['serial'] ) )
-					$resultUserUpdateMeta[] = update_user_meta($userID, '_'.U_PASSPORT_SERIES, $_POST['serial']);
-
-				if ( ! empty( $_POST['number'] ) )
-					$resultUserUpdateMeta[] = update_user_meta($userID, '_'.U_PASSPORT_NUMBER, $_POST['number']);
-
-				if ( ! empty( $_POST['who'] ) )
-					$resultUserUpdateMeta[] = update_user_meta($userID, '_'.U_PASSPORT_WHO, $_POST['who']);
-
-				if ( ! empty( $_POST['when'] ) )
-					$resultUserUpdateMeta[] = update_user_meta($userID, '_'.U_PASSPORT_WHEN, $_POST['when']);
-
-				break;
-			case 'birthday':
-				if ( ! empty( $_POST['birthday'] ) )
-					$resultUserUpdateMeta[] = update_user_meta($userID, '_'.U_BIRTHDAY, $_POST['birthday']);
-
-				break;
 		}
 		$this->RedirectToAccount();
 	}
