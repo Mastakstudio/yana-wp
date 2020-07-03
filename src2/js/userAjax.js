@@ -57,7 +57,7 @@ jQuery(document).ready(function ($) {
                             $('#banner-main__form').hide();
                             $('#link_to_reg').hide();
                         }
-                        if (response.data.redirect){
+                        if (response.data != undefined && response.data.redirect != undefined){
                             window.location.href = response.data.redirect;
                         }
                     })
@@ -71,5 +71,10 @@ jQuery(document).ready(function ($) {
     $('.account__item-update.enable-toggle').on('click', function (e) {
         e.preventDefault();
         $(this).parents('form.account__item').toggleClass('disable');
+    })
+
+    $('.signIn__checkmark, .signUp__checkmark').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().find('label').click();
     })
 });
