@@ -44,7 +44,7 @@ jQuery(document).ready(function ($) {
     });
     $('#restart_test').on('click', function (e) {
         e.preventDefault();
-        $('.test__desc-title').addClass('test__desc-title_active');
+        $('.test__desc-title').removeClass('test__desc-title_active');
         $('.test__content-check').each(function (i, item) {
             if ($(item).hasClass('correct')) $(item).removeClass('correct');
             if ($(item).hasClass('error')) $(item).removeClass('error');

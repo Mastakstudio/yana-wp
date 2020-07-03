@@ -3,7 +3,7 @@ $login_page = carbon_get_theme_option(PREFIX . 'login_page');
 
 $userManager = UserManager::getInstance();
 /**@var $currentUser CustomUser*/
-$currentUser = $userManager::GetCurrentUser();
+$currentUser = $userManager->GetCurrentUser();
 ?>
 
 <div class="tags">

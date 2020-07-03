@@ -135,3 +135,21 @@ function custom_wp_new_user_notification( $user_id, $deprecated = null, $notify 
 		restore_previous_locale();
 	}
 }
+
+add_filter( 'retrieve_password_message', 'fixRetryPassword', 10, 4);
+function fixRetryPassword( $message, $key, $user_login, $user_data ){
+    $site_name = get_option( 'blogname' );
+
+    $link = network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) ;
+
+    $message = __( 'Someone has requested a password reset for the following account:' ) . "\r\n\r\n";
+    /* translators: %s: Site name. */
+    $message .= sprintf( __( 'Site Name: %s' ), $site_name ) . "\r\n\r\n";
+    /* translators: %s: User login. */
+    $message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
+    $message .= __( 'If this was a mistake, just ignore this email and nothing will happen.' ) . "\r\n\r\n";
+    $message .= __( 'To reset your password, visit the following address:' ) . "\r\n\r\n";
+    $message .= '<a href="'.$link.'">'.$link.'</a>'. "\r\n\r\n";
+
+    return $message;
+}

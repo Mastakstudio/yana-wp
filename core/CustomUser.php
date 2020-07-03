@@ -126,7 +126,7 @@ class CustomUser {
 					break;
 				}
 	    	}
-	        echo '<p><a href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
+	        echo '<p><a class="link_to_certificate" href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
         }
 	     
 	}

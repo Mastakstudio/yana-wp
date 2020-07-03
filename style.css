@@ -20,6 +20,9 @@ Version:      0.0.1
 	text-decoration: underline;
 
 }
+.account__item a.link_to_certificate{
+    pointer-events: all;
+}
 
 .modal__wrapper{
     position: fixed;

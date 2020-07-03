@@ -437,6 +437,10 @@ class CoursePart {
 			ob_start();
 		}
 
+		if (count($this->preview_desc) === 0){
+            return ob_get_clean();
+        }
+
 		if ( $this->preview_desc[0]['_type'] == 'list' ) {
 			for ( $i = 0; $i < count( $this->preview_desc[0]['yana_preview_desc'] ); $i ++ ) {
 				$text = $this->preview_desc[0]['yana_preview_desc'][ $i ]['text'];
