@@ -744,7 +744,17 @@
 
 
 
+&__inner-wrapper-image{
 
+    @include lg{
+        width: 152px;
+    }
+
+    @include hd{
+        width: 175px;
+    }
+
+}
 
 
 
