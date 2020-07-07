@@ -30,15 +30,13 @@ $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
                                     <label class="form-input__item-label">Пароль</label>
                                     <input class="form-input__item-input" id="password" type="password" placeholder="Password" name="password" autocomplete="current-password"/>
                                 </div>
-                                <div class="signIn__remember">
-                                    <div class="signIn__container">
-                                        <label for="rememberme">Запомнить</label>
-                                        <input name="rememberme" type="checkbox" id="rememberme" value="forever">
-                                        <span class="signIn__checkmark"></span>
+								<div class="signUp__remember">
+                                        <div class="signUp__container" style="padding-left: 0;">
+                                            <a style="display: block; " href="/signin/?action=lostpassword" class="lostpasslink">Забыли пароль?</a>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="signIn__type">
-                                    <button class="custom-button" type="submit">Войти</button>
+									<button class="custom-button" type="submit">Войти</button>
 									<?php
 									$privacy_policy_url = get_privacy_policy_url();
 									if ( ! empty( $privacy_policy_url ) ): ?>

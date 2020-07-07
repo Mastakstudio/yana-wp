@@ -248,3 +248,9 @@ form#lostpasswordform input#user_login{
     height: 0 !important;
     overflow: hidden !important;
 }
+
+@media (min-width: 1024px){
+	.form [for="remembermeReg"]:first-child {
+    margin-left: 0 !important;
+}
+}

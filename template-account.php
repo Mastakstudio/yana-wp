@@ -74,7 +74,7 @@ get_template_part( '/core/views/headerView' );
                         </div>
                         <div class="account__item-input">
                             <label class="account__item-label">Дата рождения</label>
-                            <input class="account__date" type="date" name="birthday" value="<?= $currentUser->GetBirthday()?>"/>
+                            <input class="account__date" type="date" name="birthday" id="date" placeholder="27.10.1994" value="<?= $currentUser->GetBirthday()?>"/>
                         </div>
                     </div>
                     <div class="account__item-head-type">

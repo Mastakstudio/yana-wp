@@ -55,6 +55,6 @@ function footerMenuView(){
 		'items_wrap' => '<div  id="%1$s" class="%2$s">%3$s</div>',
 	];
 
-	if (has_nav_menu('offsetHeight'))
+	if (has_nav_menu('footer_menu'))
 		wp_nav_menu($menuArgs);
 }
