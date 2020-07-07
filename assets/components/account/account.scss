@@ -1,4 +1,5 @@
 @import "./../../common/constants";
+@import "./../../../node_modules/jquery-ui/themes/base/all.css";
 
 .account{
 
@@ -224,6 +225,7 @@
   &__item-input{
     display: flex;
     flex-direction: column;
+    position: relative;
 
 
     @include sm{
@@ -283,11 +285,6 @@
   }
 
 
-
-
-
-
-
   .form-input__item-label{
 
     @include lg{
@@ -331,4 +328,17 @@
 
   }
 
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
 }

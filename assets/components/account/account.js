@@ -1,7 +1,18 @@
 import './account.scss';
 import $ from 'jquery';
 import "jquery-validation"
+import 'jquery-ui/ui/widgets/datepicker';
 
+
+var datefield = document.createElement("input")
+
+datefield.setAttribute("type", "date")
+
+if (datefield.type != "date"){ //if browser doesn't support input type="date", initialize date picker widget:
+    $(document).ready(function() {
+        $('#date').datepicker();
+    });
+}
 
 //Валидация формы
 

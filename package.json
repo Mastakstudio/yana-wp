@@ -49,6 +49,7 @@
         "inputmask": "^4.0.9",
         "jquery": "^3.5.0",
         "jquery-bridget": "^2.0.1",
+        "jquery-ui": "^1.12.1",
         "jquery-validation": "^1.19.1",
         "jquery-viewport-checker": "^1.8.8",
         "paroller.js": "^1.4.6",
