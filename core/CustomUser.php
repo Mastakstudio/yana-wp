@@ -8,6 +8,10 @@ class CustomUser {
 	private $user = null;
 	/**@var string $_secondName*/
 	private $_secondName = "";
+    /**@var string $_certificateFirstName*/
+    private $_certificateFirstName = "";
+    /**@var string $_secondName*/
+    private $_certificateSecondName = "";
 	/**@var string $_passportSeries*/
 	private $_passportSeries = "";
 	/**@var string $_passportNumber*/
@@ -33,6 +37,8 @@ class CustomUser {
 			$this->user = $user;
 
 			$this->_secondName = $this->CarbonMeta(U_SECOND_NAME );
+            $this->_certificateFirstName = $this->CarbonMeta(U_CERTIFICATE_FIRST_NAME );
+            $this->_certificateSecondName = $this->CarbonMeta(U_CERTIFICATE_LAST_NAME );
 			$this->_passportSeries = $this->CarbonMeta(U_PASSPORT_SERIES );
 			$this->_passportNumber = $this->CarbonMeta(U_PASSPORT_NUMBER );
 			$this->_passportWhen = $this->CarbonMeta(U_PASSPORT_WHEN );
@@ -65,6 +71,24 @@ class CustomUser {
 	public function GetSecondName(){
 		return $this->_secondName;
 	}
+    /**@return string*/
+    public function GetCertificateFirstName(){
+        if (empty($this->_certificateFirstName)){
+            carbon_set_user_meta($this->GetID(),U_CERTIFICATE_FIRST_NAME, $this->GetFirstName());
+            return $this->GetFirstName();
+        }
+        return $this->_certificateFirstName;
+    }
+    /**@return string*/
+    public function GetCertificateLastName(){
+        if (empty($this->_certificateSecondName)){
+            carbon_set_user_meta($this->GetID(),U_CERTIFICATE_LAST_NAME, $this->GetLastName());
+            return $this->GetLastName();
+        }
+        return $this->_certificateSecondName;
+    }
+
+
 	/**@return string*/
 	public function GetPassportSeries(){
 		return $this->_passportSeries;
@@ -126,7 +150,11 @@ class CustomUser {
 					break;
 				}
 	    	}
-	        echo '<p><a class="link_to_certificate" href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
+			if (empty($this->GetCertificateFirstName()) || empty($this->GetCertificateLastName())){
+                 echo '<p>Для получения сертификата заполните имя и фамилия в форме выше.</p>';
+             }else{
+                 echo '<p><a class="link_to_certificate" href="'.get_permalink(get_the_ID()).'?certificate" target="_blank">ваш сертификат</a></p>';
+             }
         }
 	     
 	}

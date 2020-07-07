@@ -13,6 +13,12 @@ function crb_user_settings()
 	            Field::make_text(U_SECOND_NAME, "Отчество")
 	                 ->set_attribute( 'readOnly', 'readOnly' )
 	                 ->set_default_value(""),
+                Field::make_text(U_CERTIFICATE_FIRST_NAME, "Имя для сертификата")
+//                    ->set_attribute( 'readOnly', 'readOnly' )
+                    ->set_default_value(""),
+                Field::make_text(U_CERTIFICATE_LAST_NAME, "Фамилия для сертификата")
+//                    ->set_attribute( 'readOnly', 'readOnly' )
+                    ->set_default_value(""),
 	            Field::make_text(U_PASSPORT_SERIES, "Серия паспорта")
 	                 ->set_attribute( 'readOnly', 'readOnly' )
 	                 ->set_default_value(""),

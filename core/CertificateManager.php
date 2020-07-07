@@ -43,12 +43,12 @@ class CertificateManager  {
 		$pdf->useTemplate($tplId);
 		$pdf->setPageFormat([200, 297],"L");
 
-		$textFirstName = $currentUser->GetFirstName();
+		$textFirstName = $currentUser->GetCertificateFirstName();
 		$textFirstName = iconv('UTF-8', 'cp1251', $textFirstName);
 		$leftFirstName = 297/2 - (strlen($textFirstName) * 2.4);
 		$topFirstName = 164;
 
-		$textSecondName = $currentUser->GetLastName();
+		$textSecondName = $currentUser->GetCertificateLastName();
 		$textSecondName = iconv('UTF-8', 'cp1251', $textSecondName);
 		$leftSecondName = 297/2 - (strlen($textSecondName) * 2.4);
 		$topSecondName = 151;

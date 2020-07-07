@@ -24,6 +24,8 @@ define("TEST_SOLVED", PREFIX.'solved');
 
 // "USER"
 define("U_SECOND_NAME", PREFIX.'second_name');
+define("U_CERTIFICATE_FIRST_NAME", PREFIX.'certificate_first_name');
+define("U_CERTIFICATE_LAST_NAME", PREFIX.'certificate_last_name');
 define("U_PASSPORT_SERIES", PREFIX.'passport_series');
 define("U_PASSPORT_NUMBER", PREFIX.'passport_number');
 define("U_PASSPORT_WHEN", PREFIX.'passport_when');
