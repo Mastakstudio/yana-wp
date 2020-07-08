@@ -8,9 +8,6 @@
     <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/account/account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/account/account.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/account/account.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/account/account.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/account/account.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <workItem from="1593425962555" duration="4386000" />
       <workItem from="1593591618256" duration="516000" />
       <workItem from="1593612156087" duration="3457000" />
-      <workItem from="1594046809488" duration="4490000" />
+      <workItem from="1594046809488" duration="8656000" />
     </task>
     <servers />
   </component>
