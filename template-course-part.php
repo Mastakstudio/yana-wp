@@ -11,6 +11,7 @@ if (! $user->IsAuthorized()){
 	$userManager->RedirectToSignIn();
 }
 
+
 get_header();
 get_template_part( '/core/views/headerView' );
 

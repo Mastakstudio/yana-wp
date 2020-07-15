@@ -29,31 +29,29 @@ if ( have_posts() ):
             <div class="course-page__wrapper">
                 <img class="image" src="/wp-content/themes/Yana/src/icons/course-page.png"/>
             </div>
+        <?php
+        if ( !$user->IsAuthorized() ):
+
+        ?>
+            <div class="container">
+                <div class="course-page__list-type">
+                    <?php
+                    $course->PartViewForUnon();
+                    ?>
+                </div>
+            </div>
+        <?php else: ?>
             <div class="container">
                 <div class="course-page__list">
-					<?php
-					if ( !$user->IsAuthorized() ):
-						echo '<span class="course-page__title">Курс только для зарегистрированных пользователей</span>';
-					?>
-                        <div class="tags__wrap-text" id="link_to_reg">
-							<?php
-							if ( !$user->IsAuthorized() ) {
-								if (isset($login_page) || empty($login_page) ){?>
-                                    <a class="link" href="<?= get_permalink($login_page) ?>?login">Войти</a>
-                                    <a class="link" href="<?= get_permalink($login_page) ?>?registration">Зарегистрироваться</a>
-								<?php }
-							} ?>
-                        </div>
                     <?php
-					else:
                         $course->getPartsViewByUserRole($user);
-					endif;
 					?>
                 </div>
             </div>
         </div>
-	<?php
-	endwhile;
+        <?php
+        endif;
+        endwhile;
 endif;
 get_template_part( '/core/views/partners' );
 get_template_part( '/core/views/footerView' );

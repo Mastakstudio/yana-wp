@@ -122,6 +122,33 @@ class Course {
 			}
 		}
 	}
+    public function PartViewForUnon(){
+        $parts = $this->getParts();
+        $partCount = 0;
+        foreach ( $parts as $part ) {
+            $partCount++;
+
+            ?>
+
+            <div class="course-page__item">
+
+                <div class="course-page__content-item">
+                    <span class="course-page__pretitle">Тема №<?=$partCount?></span>
+                    <a class="course-page__title"><?= $part->getTitle() ?></a>
+                    <div class="course-page__inner-content-item">
+                        <div class="course-page__text-content-item">
+                            <div class="course-page__list-content-item">
+                                <?php $part->getPreviewDescForUnon() ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <?php
+        }
+    }
 
 	/**
 	 * @var $parts CoursePart[]
@@ -133,11 +160,18 @@ class Course {
 		$user        = $userManager->GetCurrentUser();
 		$currentRoles = $user->GetUserRole();
 		$result = [];
+		if ($user->GetID() == 0){
+		    return $parts;
+        }
 		if ( !is_array( $parts ) || count( $parts ) <= 0 )
 		    return $result;
 
         if (is_array($currentRoles) && count($currentRoles) > 0){
 	        foreach ( $parts as $part ) {
+	            if ($user->GetID() == 0){
+	                $result[] = $part;
+	                continue;
+                }
 
 
 		        $targetRoles = $part->getTargetRoles();
@@ -164,9 +198,6 @@ class Course {
 	 * @throws Exception
 	 */
 	private function PartView($part){
-
-
-
 		$testResult = $this->getTestResultByCoursePart( $part );
 		$imgUrl = $part->getImgUrl();
 
@@ -454,6 +485,28 @@ class CoursePart {
 			return ob_get_clean();
 		}
 	}
+
+    public function getPreviewDescForUnon( ) {
+	    if (count($this->preview_desc) == 0){
+	        return;
+        }
+        if ( $this->preview_desc[0]['_type'] == 'list' ) {
+            $count = 0;
+            for ( $i = 0; $i < count( $this->preview_desc[0]['yana_preview_desc'] ); $i ++ ) {
+                $count++;
+                $text = $this->preview_desc[0]['yana_preview_desc'][ $i ]['text'];
+                ?>
+                <span class="course-page__type-content-item">
+                    <div class="course-page__type-content-item-number">
+                        <span><?= $count ?></span>
+                    </div>
+                    <span class="course-page__type-content-item-text"><?= $text ?></span>
+                </span>
+                <?php
+            }
+        }
+    }
+
 
 	public function getMainInfoBlock() {
 		$modalCount = 0;

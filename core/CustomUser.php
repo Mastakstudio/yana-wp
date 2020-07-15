@@ -119,15 +119,24 @@ class CustomUser {
 	}
 	/**@return integer*/
 	public function GetID(){
+        if(is_null($this->user)){
+            return 0;
+        }
 		return $this->user->ID;
 	}
 
 	public function GetUserRole(){
+	    if(is_null($this->user)){
+	        return [];
+        }
 		return $this->user->roles;
 	}
 
 	/**@return string*/
 	public function GetDisplayName(){
+	    if (is_null($this->user)){
+	        return '';
+        }
 		return $this->user->display_name;
 	}
 
