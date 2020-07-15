@@ -35,8 +35,13 @@ $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
                                             <a style="display: block; " href="/signin/?action=lostpassword" class="lostpasslink">Забыли пароль?</a>
                                         </div>
                                     </div>
+								
+								
                                 <div class="signIn__type">
-									<button class="custom-button" type="submit">Войти</button>
+									<div class="form__dop-types">
+                                <button class="custom-button" type="submit">Войти</button><a class="link link__dop" href="/course/onlajn-kurs-beremennost-i-rody/">Подробнее о курсе</a>
+                              </div>
+									
 									<?php
 									$privacy_policy_url = get_privacy_policy_url();
 									if ( ! empty( $privacy_policy_url ) ): ?>

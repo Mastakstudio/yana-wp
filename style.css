@@ -9,6 +9,10 @@ Version:      0.0.1
     pointer-events: none;
 }
 
+.link__dop{
+	display: none !important;
+}
+
 .account__item a{
 	pointer-events: none;
     font-family: "Bebas Neue";
@@ -254,3 +258,14 @@ form#lostpasswordform input#user_login{
     margin-left: 0 !important;
 }
 }
+
+@media (min-width: 1024px){
+	
+	
+	.banner-main__link span {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+}
+
+
