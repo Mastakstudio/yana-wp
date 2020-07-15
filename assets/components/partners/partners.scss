@@ -6,6 +6,16 @@
   padding-top: 33px;
   padding-bottom: 70px;
 
+  &__inner{
+
+    @include md{
+      width: 755px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
   &__image{
     height: 100px;
     width: auto;
@@ -21,19 +31,24 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    width: 186px !important;
+    width: 194px !important;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px #8C8C8C;
+      overflow: hidden;
+      margin-bottom: 4px;
+      padding: 1rem;
+      background-color: #FFFFFF;
+      text-align: center;
+      height: 310px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 
-    @include lg{
-      width: 240px !important;
+    @include md{
+      width: 200px !important;
     }
 
-    @include hd{
-      width: 350px !important;
-    }
-
-    @include xhd{
-      width: 300px !important;
-    }
 
   }
 

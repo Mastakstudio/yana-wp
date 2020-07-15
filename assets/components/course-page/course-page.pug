@@ -7,6 +7,27 @@ mixin course-page()
                     +text('В данном разделе вы можете в формате видео получить информацию по конкретной тематике касаемо беременности и родов, подготовки к ним, а также пройти тестирование по усвоенному материалу, для получения диплома')(class='text_black')
                 +e.links
                     +links()
+        .container
+            +e.list-type
+                +e.item
+                    +e.content-item
+                        +e.SPAN.pretitle Тема №1
+                        +e.A.title Все о беременности
+                        +e.inner-content-item
+                            +e.text-content-item
+                                +e.list-content-item
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 1
+                                        +e.SPAN.type-content-item-text Подготовка к беременности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 2
+                                        +e.SPAN.type-content-item-text Стоматологический уход во время беременности
+                                    +e.SPAN.type-content-item
+                                        +e.type-content-item-number
+                                            span 3
+                                        +e.SPAN.type-content-item-text Токсикоз 1 половины беременности
         +e.wrapper
             +image()(src=require('./../images/course-page.png'))
         .container

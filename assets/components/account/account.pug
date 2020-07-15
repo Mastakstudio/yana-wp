@@ -11,7 +11,7 @@ mixin account()
             +image()(src=require('./../images/account.png'))
         .container
             +e.FORM.list(id="account__form")
-                +e.item.disable
+                +e.item
                     +e.item-head
                         +e.SPAN.item-title ФИО
                     +e.item-inputs
@@ -23,7 +23,7 @@ mixin account()
                             +form-input('Отчество')(name='secondName' type='text')
                         +e.item-input
                             +e.LABEL.item-label Дата рождения
-                            +e.INPUT.date(type="date" name="date")
+                            +e.INPUT.date(type="date" name="date" id="date" placeholder="27.10.1994")
                     +e.item-head-type
                         +e.BUTTON.item-update Сохранить
                         +e.BUTTON.item-update Исправить
