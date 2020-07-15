@@ -16,13 +16,7 @@ var mySwiper = new Swiper('.partners__container', {
             slidesPerView: 2,
         },
         1024: {
-            slidesPerView: 4,
-        },
-        1280: {
-            slidesPerView: 5,
-        },
-        1920: {
-            slidesPerView: 5,
+            slidesPerView: 3,
         },
     }
 });

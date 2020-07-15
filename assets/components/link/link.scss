@@ -18,4 +18,29 @@
     background: linear-gradient(88.39deg, rgba(255, 122, 80, 0.906465) -6.88%, #FFD9A0 99.5%);
     transition: 1s background;
   }
+
+  &__dop{
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 19px !important;
+    text-align: center !important;
+    color: #00B2FF !important;
+    background: linear-gradient(77.64deg, #C2EDFF 13.12%, #FFE4FE 87.98%) !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    margin-top: 15px;
+
+    @include md{
+      margin-top: 0;
+      margin-left: 15px;
+    }
+
+    &:hover{
+      background: linear-gradient(88.39deg, rgba(255, 122, 80, 0.906465) -6.88%, #FFD9A0 99.5%);
+      transition: 1s background;
+    }
+
+  }
+
 }

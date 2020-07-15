@@ -20,7 +20,9 @@ mixin form()
                                         input(type='checkbox')
                                         SPAN.signIn__checkmark
                                 .signIn__type
-                                    +custom-button('Войти')(type='submit')
+                                    +e.dop-types
+                                        +custom-button('Войти')(type='submit')
+                                        +link('Подробнее о курсе')(class="link__dop")
                                     span
                                         | Нажимая кнопку "Войти" я
                                         a(href='') принимаю пользовательское соглашение

@@ -7,7 +7,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/account/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/account/account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/course-page/course-page.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/course-page/course-page.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/course-page/course-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/course-page/course-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/form/form.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/form.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/form/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/link/link.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/link/link.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/partners/partners.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/partners/partners.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/partners/partners.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/partners/partners.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +86,9 @@
       <workItem from="1593425962555" duration="4386000" />
       <workItem from="1593591618256" duration="516000" />
       <workItem from="1593612156087" duration="3457000" />
-      <workItem from="1594046809488" duration="8656000" />
+      <workItem from="1594046809488" duration="8691000" />
+      <workItem from="1594738313107" duration="2153000" />
+      <workItem from="1594809782234" duration="2737000" />
     </task>
     <servers />
   </component>
@@ -124,9 +132,9 @@
       <screen x="0" y="23" width="2560" height="1360" />
     </state>
     <state x="451" y="235" width="1422" height="775" key="find.popup/0.23.2560.1360@0.23.2560.1360" timestamp="1593095386430" />
-    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup" timestamp="1589983759120">
+    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup" timestamp="1594809805165">
       <screen x="0" y="23" width="2560" height="1360" />
     </state>
-    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup/0.23.2560.1360@0.23.2560.1360" timestamp="1589983759120" />
+    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup/0.23.2560.1360@0.23.2560.1360" timestamp="1594809805165" />
   </component>
 </project>

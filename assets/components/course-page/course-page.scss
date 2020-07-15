@@ -651,6 +651,48 @@
   }
 
 
+  &__list-type{
+    width: 100%;
+
+
+    @include md{
+      width: 70%;
+    }
+
+    @include hd{
+      width: 50%;
+    }
+
+    .course-page__item{
+      background: transparent;
+      box-shadow: none;
+      padding-left: 0;
+    }
+
+    .course-page__text-content-item{
+      padding-left: 0;
+    }
+
+    .course-page__title{
+      padding-left: 0;
+    }
+
+    .course-page__list-content-item{
+      display: block;
+      background: transparent;
+      padding-left: 0;
+    }
+
+  }
+
+  &__pretitle{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #46555A;
+  }
 
 
 
