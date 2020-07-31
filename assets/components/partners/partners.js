@@ -5,7 +5,9 @@ import Swiper from "swiper";
 //Подключение свайпера
 
 var mySwiper = new Swiper('.partners__container', {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
+    breakpointsInverse: true,
+    spaceBetween: 40,
     navigation: {
         nextEl: '.partners__button-next',
         prevEl: '.partners__button-prev',

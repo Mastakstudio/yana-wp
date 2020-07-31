@@ -9,9 +9,6 @@
   &__inner{
 
     @include md{
-      width: 755px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
   }
@@ -31,43 +28,20 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    width: 194px !important;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px #8C8C8C;
+
       overflow: hidden;
-      margin-bottom: 4px;
-      padding: 1rem;
       background-color: #FFFFFF;
       text-align: center;
-      height: 310px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+
+    @include sm{
+    }
 
     @include md{
-      width: 200px !important;
     }
 
 
   }
 
-  &__button-prev{
-    display: none;
-
-    @include sm{
-      display: block;
-    }
-
-  }
-
-  &__button-next{
-    display: none;
-
-    @include sm{
-      display: block;
-    }
-  }
 
   &__title{
     font-style: normal;
@@ -80,12 +54,10 @@
     text-transform: uppercase;
     color: #415056;
     margin-top: 21px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
 
-    @include lg{
-      width: 180px;
-      margin-left: auto;
-      margin-right: auto;
-    }
 
   }
 
