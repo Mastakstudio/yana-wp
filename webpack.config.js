@@ -32,6 +32,9 @@ let entries = {
     account: './account.js',
     page404: './page404.js',
     signIn: './signIn.js',
+    doctors: './doctors.js',
+    doctorTest: './doctorTest.js',
+    accountMed: './accountMed.js',
 };
 
 let pugs = {
@@ -58,6 +61,15 @@ let pugs = {
     },
     signIn: {
         signIn: "signIn title"
+    },
+    doctors: {
+        doctors: "doctors title"
+    },
+    doctorTest: {
+        doctorTest: "doctorTest title"
+    },
+    accountMed: {
+        accountMed: "accountMed title"
     },
 
 };

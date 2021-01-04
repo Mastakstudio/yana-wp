@@ -1,0 +1,70 @@
+mixin accountMed()
+    +b.accountMed
+        .container
+            +e.links
+                +links()
+            +e.inner
+                +e.content
+                    +title('Личный кабинет')(class='title_blue')
+                    +text('Здесь вы можете добавить либо изменить информацию о себе. Данная информация необходима для формирования и регистрации в базе данных официального Сертификата о прохождении курса.')(class='text_black')
+        +e.wrapper
+            +image()(src=require('./../images/pers.png'))
+        .container
+            +e.FORM.list(id="accountMed__form")
+                +e.item
+                    +e.item-inputs
+                        +e.item-input
+                            +form-input('ФИО/ Ник')(name='name' type='text' value="Эллоида")
+                        +e.item-input
+                            +form-input('Место работы')(name='place' type='text')
+                        +e.item-input
+                            +form-input('Профессия')(name='prof' type='text')
+                        +e.item-input
+                            +form-input('Специальность')(name='spec' type='text')
+                        +e.item-input
+                            +e.LABEL.item-label Дата рождения
+                            +e.INPUT.date(type="date" name="date" id="date" placeholder="27.10.1994")
+                        +e.item-input
+                            +e.LABEL.item-label Пол
+                            +e.pol-inner
+                                +e.LABEL.pol-container
+                                    | Ж
+                                    input(type='radio' checked='checked' name='radio')
+                                    +e.SPAN.pol-checkmark
+                                +e.LABEL.pol-container
+                                    | М
+                                    input(type='radio' name='radio')
+                                    +e.SPAN.pol-checkmark
+                                +e.LABEL.pol-container
+                                    | Иное
+                                    input(type='radio' name='radio')
+                                    +e.SPAN.pol-checkmark
+                    +e.item-head-type
+                        +e.BUTTON.item-update Сохранить
+                        +e.BUTTON.item-update Исправить
+                //+e.item.account__passport
+                //    +e.item-head
+                //        +e.SPAN.item-title Паспорт
+                //    +e.item-inputs
+                //        +e.item-input
+                //            +form-input('Серия')(name='serial' type='text')
+                //        +e.item-input
+                //            +form-input('Номер паспорта')(name='number' type='text')
+                //        +e.item-input
+                //            +form-input('Кем выдан')(name='who' type='text')
+                //        +e.item-input
+                //            +form-input('Когда')(name='when' type='text')
+                //    +e.item-head-type
+                //        +e.BUTTON.item-update Сохранить
+                //        +e.BUTTON.item-update Исправить
+                //+e.item
+                //    +e.item-head
+                //        +e.SPAN.item-title Дата рождения
+                //    +e.item-inputs
+                //        +e.item-input
+                //            +e.LABEL.item-label Дата рождения
+                //            +e.INPUT.date(type="date" name="date")
+                //    +e.item-head-type
+                //        +e.BUTTON.item-update Сохранить
+                //        +e.BUTTON.item-update Исправить
+                +custom-button('Выйти')
