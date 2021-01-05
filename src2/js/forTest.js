@@ -79,7 +79,7 @@ jQuery(document).ready(function ($) {
 
     function updateTestResult(data) {
         data.action = 'finishTest';
-
+        console.log(data);
         $.ajax({
             type: 'POST',
             url: mastak_ajax.url,
@@ -88,6 +88,7 @@ jQuery(document).ready(function ($) {
         }).done( (response) =>  {
             if(!response.success) return;
             unDisableModal();
+            console.log(response);
         } ).fail(function () {
         });
     }

@@ -26,6 +26,18 @@ function finishTest() {
 		'_'.TEST_RIGHT_ANSWERED => $right,
 		'_'.TEST_ANSWERED => $answered
 	];
+	$sesValues = [
+		'test_id' => $test_id,
+		'answered' => $answered,
+		'right' => $right
+	];
+	$sesValuesJson = json_encode($sesValues);
+	session_start();
+
+	$_SESSION['t'.$test_id]=$sesValues;
+
+	
+
 	TestResultManager::UpdateMeta($testResult, $newValues);
 
 	$newAns= carbon_get_post_meta($testResult->getID(), TEST_ANSWERED);
@@ -38,4 +50,6 @@ function finishTest() {
 
 	wp_send_json_success();
 	wp_die();
+
+	echo $_SESSION['t'.$test_id];
 }

@@ -4,6 +4,8 @@ $login_page = carbon_get_theme_option(PREFIX . 'login_page');
 $userManager = UserManager::getInstance();
 /**@var $currentUser CustomUser*/
 $currentUser = $userManager->GetCurrentUser();
+
+$mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 ?>
 
 <div class="tags">
@@ -27,13 +29,17 @@ $currentUser = $userManager->GetCurrentUser();
                 <p class="text text_white">
                     А также дадим  возможность сравнить мнения, проанализировать разный опыт и даже познакомится с документальными кадрами рождения</p>
                 <div class="tags__wrap-text" id="link_to_reg">
-	                <?php
+                    <form id="sign-in">
+                        <a class="link" href="<?= get_permalink($mainCoursePage) ?>">Перейти к обучению</a>
+                    </form>
+	                <?php /*
 	                if ( !$currentUser->IsAuthorized() ) {
 		                if (isset($login_page) || empty($login_page) ){?>
                             <a class="link" href="<?= get_permalink($login_page) ?>?login">Войти</a>
                             <a class="link" href="<?= get_permalink($login_page) ?>?registration">Зарегистрироваться</a>
 		                <?php }
-	                } ?>
+                    } */
+                    ?>
                 </div>
 
             </div>

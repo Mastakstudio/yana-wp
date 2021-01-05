@@ -23,6 +23,55 @@ $results = $testResultsManager::GetTestResultsByUser();
 
 get_header();
 get_template_part( '/core/views/headerView' );
+session_start();
+
+if($_SESSION['loginNew']=='true' && is_user_logged_in()){
+    $categoryId=48;
+    $posts = get_posts(array(
+        'post_status' => 'publish',
+        'post_type' => 'course',
+        'orderby' => 'ID',
+        'order' => 'asc',
+        'numberposts' => -1,
+        'post_parent' => $categoryId,
+    ));
+    
+
+    foreach($posts as $part){
+        $test_id  = $part->ID;
+        if($_SESSION['t'.$test_id]['answered']!=null){
+            $answered = $_SESSION['t'.$test_id]['answered'];
+        }else{
+            $answered = 0;
+        }
+        if($_SESSION['t'.$test_id]['right']!=null){
+            $right    = $_SESSION['t'.$test_id]['right'];
+        }else{
+            $right    = 0;
+        }
+        
+        
+
+        TestResultManager::getInstance();
+        $testResult = TestResultManager::GetTestResultsByCoursePartId($test_id);
+        
+	    $newValues = [
+	    	'_'.TEST_SOLVED => $answered === $right ? 'yes':'',
+	    	'_'.TEST_RIGHT_ANSWERED => $right,
+	    	'_'.TEST_ANSWERED => $answered
+        ];
+        
+        TestResultManager::UpdateMeta($testResult, $newValues);
+        
+	    $newAns= carbon_get_post_meta($testResult->getID(), TEST_ANSWERED);
+	    $newRightAns= carbon_get_post_meta($testResult->getID(), TEST_RIGHT_ANSWERED);
+    }
+    $_SESSION['loginNew']='false';
+    ?>
+    <script>
+        window.location.reload();
+    </script><?php
+}
 ?>
     <div class="account">
         <div class="container">

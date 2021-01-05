@@ -30,7 +30,7 @@ if ( have_posts() ):
                 <img class="image" src="/wp-content/themes/Yana/src/icons/course-page.png"/>
             </div>
         <?php
-        if ( !$user->IsAuthorized() ):
+       /* if ( !$user->IsAuthorized() ):
 
         ?>
             <div class="container">
@@ -40,7 +40,7 @@ if ( have_posts() ):
                     ?>
                 </div>
             </div>
-        <?php else: ?>
+        <?php else: */ ?>
             <div class="container">
                 <div class="course-page__list">
                     <?php
@@ -50,7 +50,7 @@ if ( have_posts() ):
             </div>
         </div>
         <?php
-        endif;
+        // endif;
         endwhile;
 endif;
 get_template_part( '/core/views/partners' );

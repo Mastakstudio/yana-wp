@@ -5,13 +5,20 @@ Author URI:   https://mastakstudio.com/
 Version:      0.0.1
  */
 
+
+.course-page__list-type .course-page__list-content-item{
+	margin-bottom: 0;
+}
+
+.course-page__list-type .course-page__list-content-item {
+    display: flex !important;
+}
+
+
 .test__head-text img.image{
     pointer-events: none;
 }
 
-.link__dop{
-	display: none !important;
-}
 
 .account__item a{
 	pointer-events: none;

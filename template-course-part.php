@@ -4,12 +4,12 @@
  * Template Post Type: course
  */
 if (!defined('ABSPATH')) exit();
-
+session_start();
 $userManager = UserManager::getInstance();
 $user = $userManager->GetCurrentUser();
-if (! $user->IsAuthorized()){
-	$userManager->RedirectToSignIn();
-}
+// if (! $user->IsAuthorized()){
+// 	$userManager->RedirectToSignIn();
+// }
 
 
 get_header();
@@ -28,7 +28,7 @@ if (!$currentTestResult->started)
 
 if ( have_posts() ):
 	while ( have_posts() ):
-		the_post();
+        the_post();
 		if ( $post->post_parent ) {
 		}
 		?>
@@ -37,7 +37,7 @@ if ( have_posts() ):
                 <div class="test__inner">
                     <div class="test__head">
                         <div class="test__head-text">
-                            <span class="test__theme">тема занятия</span>
+                            <span class="test__theme">тема занятия  </span>
                             <span class="title title_blue"><?= the_title() ?></span>
                             <a class="test__desc-text" href="<?= get_permalink($post->post_parent)?>">вернуться ко всем темам</a>
 

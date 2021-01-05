@@ -2,6 +2,8 @@
 if (!defined('ABSPATH')) exit();
 require_once 'TestResultManager.php';
 
+session_start();
+
 class Course {
 	/**
      * @var CoursePart[] $courseParts
@@ -101,12 +103,15 @@ class Course {
      */
 	public function getPartsViewByUserRole($user){
 		$parts = $this->getParts();
+		
 		if ( is_array( $parts ) && count( $parts ) ) {
 			foreach ( $parts as $part ) {
-
+				
 				$currentRoles = $user->GetUserRole();
 				$targetRoles = $part->getTargetRoles();
-
+				if($currentRoles==null){
+					$currentRoles[0] ='parent';
+				}
 				$displayToAdmin = in_array('administrator', $currentRoles);
 				$displayToCurrentUser = false;
 
@@ -131,7 +136,7 @@ class Course {
             ?>
 
             <div class="course-page__item">
-
+				
                 <div class="course-page__content-item">
                     <span class="course-page__pretitle">Тема №<?=$partCount?></span>
                     <a class="course-page__title"><?= $part->getTitle() ?></a>
@@ -200,16 +205,32 @@ class Course {
 	private function PartView($part){
 		$testResult = $this->getTestResultByCoursePart( $part );
 		$imgUrl = $part->getImgUrl();
-
 		$intervalTimeLimit = new DateInterval( 'P' . $part->getTestTimeLimit() . 'D' );
 
 		$EndTime = $testResult->getEndTime( $intervalTimeLimit );
-
-		$questionsQuantity     = $part->getQuestionsQuantity();
-		$answeredQuantity      = $testResult->getAnsweredQuantity();
-		$rightAnsweredQuantity = $testResult->getRightAnsweredQuantity();
-		$rightP                = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
+		if(is_user_logged_in()){
+			$questionsQuantity     = $part->getQuestionsQuantity();
+			$answeredQuantity      = $testResult->getAnsweredQuantity();
+			$rightAnsweredQuantity = $testResult->getRightAnsweredQuantity();
+			$rightP                = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
+		}else{
+			$questionsQuantity     = $part->getQuestionsQuantity();
+			
+			if($_SESSION['t'.$part->getID()]['answered']!=null){
+				$answeredQuantity      = $_SESSION['t'.$part->getID()]['answered'];
+			}else{
+				$answeredQuantity =0;
+			}
+			if($_SESSION['t'.$part->getID()]['right']!=null){
+				$rightAnsweredQuantity      = $_SESSION['t'.$part->getID()]['right'];
+			}else{
+				$rightAnsweredQuantity = 0;
+			}
+			$rightP                = $rightAnsweredQuantity === 0 ? 0 : $rightAnsweredQuantity * 100 / $questionsQuantity;
+		}
+		
 		?>
+		
         <div class="course-page__item">
             <div class="course-page__content-item">
                 <a class="course-page__title" href="<?= get_permalink( $part->Part()->ID ) ?>"><?= $part->getTitle() ?></a>
