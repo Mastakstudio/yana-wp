@@ -21,6 +21,8 @@ body {
     background: #F2F8FC;
 }
 
+html, body { overflow: auto !important }
+
 
 *{
     outline: none;

@@ -1,7 +1,7 @@
 @import "./../../common/constants";
 @import "./../../../node_modules/jquery-ui/themes/base/all.css";
 
-.account{
+.accountMed{
 
   margin-top: 20px;
 
@@ -24,37 +24,62 @@
   }
 
   &__wrapper{
+    overflow: hidden;
+
+    @include sm{
+      margin-top: -220px;
+    }
+
+    @include md{
+      margin-top: -335px;
+    }
+
+    @include lg{
+      margin-top: -310px;
+    }
+
+    @include hd{
+      margin-top: -300px;
+    }
+
+    @include xhd{
+
+    }
+
 
     img{
-      width: 100%;
       display: none;
 
-      @include m-land{
-        width: 50%;
-        margin-left: auto;
-      }
 
       @include sm{
-        width: 48%;
+        width: 667px;
         margin-left: auto;
         display: block;
-        margin-top: -70px;
+
+        margin-right: -130px;
       }
 
       @include md{
-        margin-top: -150px;
-        width: 520.26px;
+
+        margin-right: -135px;
+        width: 667px;
       }
 
       @include lg{
-        margin-top: -200px;
+
+        width: 828px;
+        margin-right: -151px;
       }
 
       @include hd{
+        width: 828px;
 
-        width: 974px;
-        margin-top: -300px;
+        margin-right: 200px;
 
+      }
+
+      @include xhd{
+        margin-right: 490px;
       }
 
     }
@@ -62,30 +87,44 @@
   }
 
   .text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #46555A;
 
     @include sm{
-      width: 433px;
+      width: 416px;
+      font-size: 16px;
+      line-height: 22px;
     }
 
-    @include hd{
-      font-size: 20px;
-      line-height: 26px;
-      width: 546px;
+    @include md{
+      width: 823px;
     }
+
 
   }
 
   .title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 58px;
+    color: #00B2FF;
+
+    @include sm{
+      font-size: 52px;
+      line-height: 58px;
+    }
 
     @include md{
-      padding-top: 80px;
+      padding-top: 20px;
     }
 
     @include hd{
       width: 757px;
-      font-size: 95px;
-      line-height: 95px;
-      padding-top: 145px;
 
     }
 
@@ -100,6 +139,13 @@
 
   }
 
+  &__links{
+    @include md{
+      margin: 0 auto;
+      width: 435px;
+    }
+  }
+
 
   &__inner{
 
@@ -110,12 +156,36 @@
 
   }
 
+  .form-input__item-label{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #00B2FF;
+    display: flex;
+    margin-bottom: 5px;
+
+  }
+
+  .form-input__item{
+    margin-top: 20px;
+  }
+
+  .form-input__item-input{
+    border: 1px solid #99CEE4;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: #9B9B9B;
+  }
+
   [type="date"] {
-    background: #fff url(./../../images/calendar.png) 97% center no-repeat;
+    background: #fff url(./../../images/bird.svg) 97% center no-repeat;
     background-size: 10%;
 
     @include m-land{
-      background: #fff url(/src/icons/calendar.png) 98% center no-repeat;
+      background: #fff url(/src/icons/bird.svg) 98% center no-repeat;
       background-size: 6%;
     }
 
@@ -208,12 +278,13 @@
 
   &__item-label{
     font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 14px;
     line-height: 14px;
-    color: #46555A;
-    margin-left: 0;
-    margin-top: 10px;
+    text-transform: uppercase;
+    color: #00B2FF;
+    margin-top: 20px;
+    margin-bottom: 5px;
 
     @include lg{
       font-size: 14px;
@@ -228,7 +299,8 @@
     position: relative;
 
 
-    @include sm{
+
+    @include md{
       width: 48%;
       margin-right: 20px;
 
@@ -253,13 +325,20 @@
   &__item-inputs{
 
     @include sm{
-
-      display: flex;
-      flex-wrap: wrap;
-
+      width: 390px;
+      margin-top: -470px;
     }
 
     @include md{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -349px;
+
+    }
+
+    @include lg{
+      margin-top: -519px;
       width: 880px;
     }
 
@@ -269,7 +348,7 @@
   &__date{
     background: #FFFFFF;
     opacity: 0.9;
-    border: 1px solid #B8B8B8;
+    border: 1px solid #99CEE4;
     box-sizing: border-box;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -280,9 +359,12 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 14px;
-    color: #46555A;
+    color: #9B9B9B;
+
     padding-left: 10px;
   }
+
+
 
 
   .form-input__item-label{
@@ -326,6 +408,107 @@
     }
 
 
+  }
+
+  &__pol-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__pol-container {
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #EDF8FF;
+    opacity: 0.9;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 93px;
+    height: 43px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #46555A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  &__pol-container{
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__pol-checkmark {
+    position: relative;
+    margin-left: 8px;
+    width: 30px;
+    height: 30px;
+    background: #00B2FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__pol-checkmark{
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  .custom-button{
+    filter: drop-shadow(0px 1.25359px 4.38756px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(356.43deg, rgba(162, 88, 197, 0.82) -7.09%, rgba(237, 86, 207, 0.906465) 50.68%, #FFB7A0 113.17%);
+    border: 0.626794px solid #DA7ED1;
+    border-radius: 22px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 8.77512px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    @include sm{
+      margin-left: unset;
+    }
+  }
+
+
+  &__pol-container{
+    input{
+      &:checked ~ .accountMed__pol-checkmark{
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__pol-container{
+    .accountMed__pol-checkmark{
+      &:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+      }
+    }
   }
 
 }

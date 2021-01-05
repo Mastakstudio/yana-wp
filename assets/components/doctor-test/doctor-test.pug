@@ -1,0 +1,113 @@
+mixin doctor-test()
+    +b.doctor-test
+        +e.inner
+            +image()(src=require('./../images/doc.png'))
+            .container
+                +e.head
+                    +e.head-text
+                        +e.A.desc-text(href="#") вернуться ко всем темам
+                        +title('Особенности женщин и семьей ')(class='title_blue')
+                        +text('Психолого-педагогические особенности детей и семей в трудной жизненной ситуации')(class='text_black')
+                    +e.list-inner
+                        +e.list-item
+                            +e.SPAN.list-item-title Цель курса:
+                            +e.list-item-text
+                                P улучшение качества поддержки беременных женщин и женщин с детьми в трудной жизненной ситуации посредством совершенствования гибких (мягких, soft) навыков специалистов помогающих профессий.
+                                P Беременные женщины и женщин с детьми в трудной жизненной ситуации: жертвы насилия, сироты в прошлом или настоящем, имеющие зависимость или созависимость, наличие инвалидности или тяжелого заболевания у родителя или ребенка, низкий материальный уровень, высказывающие желание отказаться от ребенка или совершить аборт, несовершеннолетние беременные, ожидающие рождения ребенка с особенностями, вышедших из МЛС/закрытых учреждений, БОМЖ, ЛГБТ.
+                        +e.list-item
+                            +e.SPAN.list-item-title Целевая группа курса (специалисты помогающих профессий):
+                            +e.list-item-content
+                                +e.list-item-content-type
+                                    +e.IMG.list-item-content-image(src=require('./../images/c.svg'))
+                                    +e.list-item-content-dop
+                                        +e.SPAN.list-item-content-title специалисты помогающих профессий
+                                        +e.SPAN.list-item-content-desc (специалисты системы образования, здравоохранения и социальной защиты – социальные педагоги и работники, психологи, медики)
+                                +e.list-item-content-type
+                                    +e.IMG.list-item-content-image(src=require('./../images/c.svg'))
+                                    +e.list-item-content-dop
+                                        +e.SPAN.list-item-content-title студенты старших курсов,
+                                        +e.SPAN.list-item-content-desc получающих профессию по данным специальностям
+        +e.wrapper
+            +e.wrapper-inner
+                .container
+                    +e.wrap
+                        +e.head-list
+                            +e.SPAN.head-list-title Материалы для ознакомления
+                            +e.A.head-item.test__video(href="#modal1")
+                                IMG(src=require('./../images/play-video.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text Подготовка к беременности
+                                    +e.SPAN.head-item-link (видео)
+                                    +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal1")
+                            +e.A.head-item.test__video(href="#modal2")
+                                IMG(src=require('./../images/play-video.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text Секс во время беременности
+                                    +e.SPAN.head-item-link (видео)
+                                    +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal2")
+                            +e.A.head-item.test__video(href="#modal3")
+                                IMG(src=require('./../images/play-video.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text Стоматологический уход во время беременности
+                                    +e.SPAN.head-item-link (видео)
+                                    +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal3")
+                            +e.A.head-item.test__video(href="#modal4")
+                                IMG(src=require('./../images/play-video.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text Токсикоз 1 половины беременности
+                                    +e.SPAN.head-item-link (видео)
+                                    +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id="modal4")
+                            +e.A.head-item.test__pdf(href="#")
+                                IMG(src=require('./../images/pd.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 6-20 неделя
+                                    +e.SPAN.head-item-link (инфографика)
+                            +e.A.head-item.test__pdf(href="#")
+                                IMG(src=require('./../images/pd.svg'))
+                                +e.head-item-content
+                                    +e.SPAN.head-item-text минимально необходимый график посещения женской консультации в период беременности. 22-40 неделя
+                                    +e.SPAN.head-item-link (инфографика)
+                        +e.dop-text
+                            +e.dop-text-title
+                                +e.IMG.dop-text-image(src=require('./../images/txt.svg'))
+                                +e.dop-text-content
+                                    +e.SPAN.dop-text-content-title Текстовая версия раздела
+                                    +e.SPAN.dop-text-content-desc улучшение качества поддержки беременных женщин и женщин с детьми в трудной жизненной ситуации посредством совершенствования гибких (мягких, soft) навыков специалистов помогающих профессий.
+                                    +e.A.dop-text-content-link(href="") подробнее
+                        +e.resource
+                            +e.SPAN.resource-title Дополнительные ресурсы:
+                            +e.resource-list
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Про беременность от подготовки до послеродового периода
+                                    +e.A.resource-item-link(href="") http://ffl.unicef.by/bezopasnoe_materinstvo/
+                                    +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/files/24_37.pdf http://ffl.unicef.by/uploads/userfiles/images/04_safe_motherhood.jpg
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Гигиена и питание беременных
+                                    +e.A.resource-item-link(href="") https://bambinostory.com/gigiena-beremennyh/
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Отеки при беременности
+                                    +e.A.resource-item-link(href="") https://bambinostory.com/oteki-pri-beremennosti/
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Про подготовку к беременности
+                                    +e.A.resource-item-link(href="") http://ffl.unicef.by/planirovanie_beremennosti/
+                                    +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/files/16_23.pdf
+                                    +e.A.resource-item-link(href="") http://ffl.unicef.by/uploads/userfiles/images/03_family_planning.jpg
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Питание при беременности. Общие рекомендации
+                                    +e.A.resource-item-link(href="") http://profilaktika.tomsk.ru/?p=21548
+                                    +e.A.resource-item-link(href="") https://pandaland.kz/articles/beremennost-i-rody/podgotovka-k-rodam/vitaminy-dlya-beremennyh-polza-i-vred
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Беременность: физиологические изменения
+                                    +e.A.resource-item-link(href="") https://medportal.ru/enc/procreation/physiology/physiology/ -
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name Беременность по триместрам. Полезные советы акушеров-гинекологов
+                                    +e.A.resource-item-link(href="") https://medportal.ru/enc/procreation/reading/58/
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name 1 триместр - Витамины для беременных
+                                    +e.A.resource-item-link(href="") https://pandaland.kz/articles/beremennost-i-rody/zdorove-261/vitaminy-dlya-beremennyh-v-pervyj-trimestr
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name 2 триместр - Питание для беременных
+                                    +e.A.resource-item-link(href="") http://comfort-kitchen.ru/health/diets/pitanie-pri-beremennosti-vo-vtorom-trimestre.html
+                                +e.resource-item
+                                    +e.SPAN.resource-item-name 2-3 триместр - питание для беременных
+                                    +e.A.resource-item-link(href="") https://www.moirebenok.ua/pregnancy-and-birth/pitanie/pitanie-budushchej-mamy-vtoroj-i-tretij-trimestr/
