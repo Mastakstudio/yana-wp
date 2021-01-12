@@ -35,6 +35,9 @@ session_start();
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/65874877" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<link href="/wp-content/themes/Yana/src/css/doctors.min.css" rel="stylesheet">
+<link href="/wp-content/themes/Yana/src/css/doctorTest.min.css" rel="stylesheet">
+<link href="/wp-content/themes/Yana/src/css/accountMed.min.css" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?>>

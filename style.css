@@ -276,3 +276,10 @@ form#lostpasswordform input#user_login{
 }
 
 
+.doctors__list-item-content-dop b{
+    font-style: normal;
+    font-weight: 800;
+    color: #00aeff;
+    font-size: 16px;
+    line-height: 22px;
+}

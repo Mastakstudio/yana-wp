@@ -5,5 +5,9 @@
 <script src="<?= BASE_URL ?>/src2/js/forTest.js"></script>
 <script src="<?= BASE_URL ?>/src2/js/userAjax.js?ver=0.0.1"></script>
 <script src="<?= BASE_URL ?>/src2/js/sendMail.js"></script>
+
+<script type="text/javascript" src="/wp-content/themes/Yana/src/js/doctors.min.js"></script>
+<script type="text/javascript" src="/wp-content/themes/Yana/src/js/doctorTest.min.js"></script>
+<script type="text/javascript" src="/wp-content/themes/Yana/src/js/accountMed.min.js"></script>
 </body>
 </html>

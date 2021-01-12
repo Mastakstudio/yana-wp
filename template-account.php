@@ -72,7 +72,12 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
         window.location.reload();
     </script><?php
 }
-?>
+?>  
+    <?php
+        $current_user = wp_get_current_user();
+        $role = $current_user->roles[0];
+        if($role!='specialist'):
+    ?>
     <div class="account">
         <div class="container">
             <div class="account__inner">
@@ -142,6 +147,113 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
             </div>
         </div>
     </div>
+    <?php
+    elseif($role=='specialist'):
+    ?>
+    <!--  -->
+
+    <div class="accountMed">
+        <div class="container">
+          <div class="accountMed__links">
+            <div class="links">
+              <div class="links__inner"><a class="links__item" target="_blank" href="/course.html">Пройти курс</a><a class="links__item links__item links__item_active" target="_blank" href="/questionPage.html">ВОПРОС-ОТВЕТ</a><a class="links__item" target="_blank" href="/account.html">Профиль</a>
+              </div>
+            </div>
+          </div>
+          <div class="accountMed__inner">
+            <div class="accountMed__content"><span class="title title_blue">Личный кабинет</span>
+              <p class="text text_black">Здесь вы можете добавить либо изменить информацию о себе. Данная информация необходима для формирования и регистрации в базе данных официального Сертификата о прохождении курса.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accountMed__wrapper">
+          <IMG class="image" src="/wp-content/themes/Yana/src/icons/pers.png"></IMG>
+        </div>
+        <div class="container">
+          <form class="accountMed__list account__item" id="accountMed__form" action="<?= get_the_permalink().'?update'?>" method="post">
+            <div class="accountMed__item">
+              <div class="accountMed__item-inputs">
+                <div class="accountMed__item-input">
+                  <div class="form-input__item">
+                    <LABEL class="form-input__item-label">ФИО/ Ник</LABEL>
+                    <INPUT class="form-input__item-input" name="userFio" type="text" value="Эллоида"></INPUT>
+                  </div>
+                </div>
+                <div class="accountMed__item-input">
+                  <div class="form-input__item">
+                    <LABEL class="form-input__item-label">Место работы</LABEL>
+                    <INPUT class="form-input__item-input" name="userPlace" type="text"></INPUT>
+                  </div>
+                </div>
+                <div class="accountMed__item-input">
+                  <div class="form-input__item">
+                    <LABEL class="form-input__item-label">Профессия</LABEL>
+                    <INPUT class="form-input__item-input" name="userProf" type="text"></INPUT>
+                  </div>
+                </div>
+                <div class="accountMed__item-input">
+                  <div class="form-input__item">
+                    <LABEL class="form-input__item-label">Специальность</LABEL>
+                    <INPUT class="form-input__item-input" name="userSpec" type="text"></INPUT>
+                  </div>
+                </div>
+                <div class="accountMed__item-input">
+                  <label class="accountMed__item-label">Дата рождения
+                  </label><input class="accountMed__date" type="date" name="userDate" id="date" placeholder="27.10.1994"/>
+                </div>
+                <div class="accountMed__item-input">
+                  <label class="accountMed__item-label">Пол
+                  </label>
+                  <div class="accountMed__pol-inner">
+                    <label class="accountMed__pol-container">Ж
+                      <input type="radio" checked="checked" name="userGender" value="woman"><span class="accountMed__pol-checkmark"></span>
+                    </label>
+                    <label class="accountMed__pol-container">М
+                      <input type="radio" name="userGender" value="man"><span class="accountMed__pol-checkmark"></span>
+                    </label>
+                    <label class="accountMed__pol-container">Иное
+                      <input type="radio" name="userGender" value="other"><span class="accountMed__pol-checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="accountMed__item-head-type">
+                <button class="account__item-update" type="submit">Сохранить</button>
+                <button class="accountMed__item-update">Исправить</button>
+              </div>
+            </div>
+            <!--+e.item.account__passport-->
+            <!--    +e.item-head-->
+            <!--        +e.SPAN.item-title Паспорт-->
+            <!--    +e.item-inputs-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Серия')(name='serial' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Номер паспорта')(name='number' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Кем выдан')(name='who' type='text')-->
+            <!--        +e.item-input-->
+            <!--            +form-input('Когда')(name='when' type='text')-->
+            <!--    +e.item-head-type-->
+            <!--        +e.BUTTON.item-update Сохранить-->
+            <!--        +e.BUTTON.item-update Исправить-->
+            <!--+e.item-->
+            <!--    +e.item-head-->
+            <!--        +e.SPAN.item-title Дата рождения-->
+            <!--    +e.item-inputs-->
+            <!--        +e.item-input-->
+            <!--            +e.LABEL.item-label Дата рождения-->
+            <!--            +e.INPUT.date(type="date" name="date")-->
+            <!--    +e.item-head-type-->
+            <!--        +e.BUTTON.item-update Сохранить-->
+            <!--        +e.BUTTON.item-update Исправить-->
+            <BUTTON class="custom-button">Выйти</BUTTON>
+          </form>
+        </div>
+      </div>
+    <?php
+    endif;
+    ?>
 <?php
 get_template_part( '/core/views/partners' );
 get_template_part( '/core/views/footerView' );

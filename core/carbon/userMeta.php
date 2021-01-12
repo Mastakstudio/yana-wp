@@ -33,7 +33,29 @@ function crb_user_settings()
 	                 ->set_default_value(""),
 	            Field::make_text(U_BIRTHDAY, "Дата рождения")
 	                 ->set_attribute( 'readOnly', 'readOnly' )
-	                 ->set_default_value("")
+					 ->set_default_value(""),
+					 
+
+
+
+	            Field::make_text(U_FIO, "ФИО/ НИК")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(U_WORK, "МЕСТО РАБОТЫ")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(U_PROF, "ПРОФЕССИЯ")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_text(U_SPEC, "СПЕЦИАЛЬНОСТЬ")
+	                 ->set_attribute( 'readOnly', 'readOnly' )
+	                 ->set_default_value(""),
+	            Field::make_radio(U_GENDER, "ПОЛ")
+					 ->add_options( array(
+							'woman'     => 'Женщина',
+							'man' => 'Мужчина',
+							'other'  => 'Иное',
+						) )
             ]
         );
 

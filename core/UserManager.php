@@ -326,7 +326,40 @@ class UserManager {
                 if ( ! empty( $_POST['birthday'] ) )
                     $resultUserUpdateMeta = update_user_meta($userID, '_'.U_BIRTHDAY, $_POST['birthday']);
                 if ( $resultUserUpdateMeta instanceof WP_Error )
-                    return $resultUserUpdateMeta;
+					return $resultUserUpdateMeta;
+					
+
+				
+				$resultUserUpdateMeta = null;
+				if ( ! empty( $_POST['userFio'] ) )
+					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_FIO, $_POST['userFio']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+					return $resultUserUpdateMeta;
+					
+				$resultUserUpdateMeta = null;
+				if ( ! empty( $_POST['userPlace'] ) )
+					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_WORK, $_POST['userPlace']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+					return $resultUserUpdateMeta;
+					
+				$resultUserUpdateMeta = null;
+				if ( ! empty( $_POST['userProf'] ) )
+					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_PROF, $_POST['userProf']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+					return $resultUserUpdateMeta;
+					
+				$resultUserUpdateMeta = null;
+				if ( ! empty( $_POST['userSpec'] ) )
+					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_SPEC, $_POST['userSpec']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+					return $resultUserUpdateMeta;
+					
+				$resultUserUpdateMeta = null;
+				if ( ! empty( $_POST['userGender'] ) )
+					$resultUserUpdateMeta = update_user_meta($userID, '_'.U_GENDER, $_POST['userGender']);
+                if ( $resultUserUpdateMeta instanceof WP_Error )
+					return $resultUserUpdateMeta;
+					
 
                 break;
 

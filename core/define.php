@@ -32,6 +32,13 @@ define("U_PASSPORT_WHEN", PREFIX.'passport_when');
 define("U_PASSPORT_WHO", PREFIX.'passport_who');
 define("U_BIRTHDAY", PREFIX.'birthday');
 
+
+define("U_FIO", PREFIX.'fio');
+define("U_WORK", PREFIX.'work');
+define("U_PROF", PREFIX.'prof');
+define("U_SPEC", PREFIX.'spec');
+define("U_GENDER", PREFIX.'gender');
+
 // "THEME OPTIONS"
 define("TO_MAIN_LOGO", PREFIX.'main_logo');
 define("TO_PHONE_LOGO", PREFIX.'phone_number');
