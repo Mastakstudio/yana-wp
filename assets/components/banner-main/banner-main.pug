@@ -11,6 +11,8 @@ mixin banner-main()
                     +e.IMG.girl-write(src=require('./../images/girl-write.png'), alt='')
                 +e.form
                     +form()
+                +e.wrap-text
+                    +link('Перейти к обучению')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
         +e.image
             picture
                 +e.SOURCE.bad(srcSet=require('./../images/bad-mobile.png') media='(max-width: 560px)')

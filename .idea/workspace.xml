@@ -7,91 +7,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/carbon/courseMeta.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/carbon/courseMeta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/carbon/userMeta.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/carbon/userMeta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/define.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/define.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/account.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/account.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/common.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/common.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/course.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/course.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/experts.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/experts.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/index.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/index.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/page404.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/page404.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/questionPage.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/questionPage.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/test.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/test.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/experts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/experts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebook.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebook.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuebook.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuelight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuelight.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuelight.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneueregular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneueregular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneueregular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuethin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuethin.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonts/bebasneuethin.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/canada.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/canada.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/circle-type-mobile-active.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/circle-type-mobile-active.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/circle-type-mobile.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/circle-type-mobile.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/develop.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/develop.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/line-header.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/line-header.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/line-type-mobile.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/line-type-mobile.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/oval-type-header.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/oval-type-header.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/pdf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/pdf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/play-video.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/play-video.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/play.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/play.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/plus.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/plus.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/return.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/return.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/sos.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/sos.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/txt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/txt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/account.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/account.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/course.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/course.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/experts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/experts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/page404.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/page404.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/questionPage.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/questionPage.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/signIn.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/signIn.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/test.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/test.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/page404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/questionPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/questionPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/signIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/signIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-account.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,49 +28,15 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="frontend" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/.htaccess" />
-      </list>
-    </option>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
-      <path value="$PROJECT_DIR$/vendor/setasign/fpdf" />
-      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
-      <path value="$PROJECT_DIR$/vendor/htmlburger/carbon-fields" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-    </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="418" />
-    <option name="y" value="-25" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cA62LqjMYzpXQmuG61kdgNCe4D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -153,10 +44,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
@@ -168,19 +58,7 @@
       <recent name="$PROJECT_DIR$/assets/components" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -210,96 +88,54 @@
       <workItem from="1594738313107" duration="2153000" />
       <workItem from="1594809782234" duration="5756000" />
       <workItem from="1596004954137" duration="1317000" />
-      <workItem from="1609746889526" duration="15755000" />
-      <workItem from="1610104433821" duration="5771000" />
+      <workItem from="1609746889526" duration="16246000" />
+      <workItem from="1610463500602" duration="482000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5821000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2518" height="390" key="GridCell.Tab.0.bottom" />
-    <state width="2518" height="390" key="GridCell.Tab.0.bottom/0.23.2560.1360@0.23.2560.1360" />
-    <state width="2518" height="390" key="GridCell.Tab.0.center" />
-    <state width="2518" height="390" key="GridCell.Tab.0.center/0.23.2560.1360@0.23.2560.1360" />
-    <state width="2518" height="390" key="GridCell.Tab.0.left" />
-    <state width="2518" height="390" key="GridCell.Tab.0.left/0.23.2560.1360@0.23.2560.1360" />
-    <state width="2518" height="390" key="GridCell.Tab.0.right" />
-    <state width="2518" height="390" key="GridCell.Tab.0.right/0.23.2560.1360@0.23.2560.1360" />
-    <state x="789" y="342" key="SettingsEditor" />
-    <state x="789" y="342" key="SettingsEditor/0.23.2560.1360@0.23.2560.1360" />
-    <state x="451" y="235" width="1422" height="775" key="find.popup" />
-    <state x="451" y="235" width="1422" height="775" key="find.popup/0.23.2560.1360@0.23.2560.1360" />
-    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup" />
-    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup/0.23.2560.1360@0.23.2560.1360" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
+    <state width="2518" height="390" key="GridCell.Tab.0.bottom" timestamp="1589963974944">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state width="2518" height="390" key="GridCell.Tab.0.bottom/0.23.2560.1360@0.23.2560.1360" timestamp="1589963974944" />
+    <state width="2518" height="390" key="GridCell.Tab.0.center" timestamp="1589963974944">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state width="2518" height="390" key="GridCell.Tab.0.center/0.23.2560.1360@0.23.2560.1360" timestamp="1589963974944" />
+    <state width="2518" height="390" key="GridCell.Tab.0.left" timestamp="1589963974943">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state width="2518" height="390" key="GridCell.Tab.0.left/0.23.2560.1360@0.23.2560.1360" timestamp="1589963974943" />
+    <state width="2518" height="390" key="GridCell.Tab.0.right" timestamp="1589963974944">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state width="2518" height="390" key="GridCell.Tab.0.right/0.23.2560.1360@0.23.2560.1360" timestamp="1589963974944" />
+    <state x="789" y="342" key="SettingsEditor" timestamp="1592899034735">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state x="789" y="342" key="SettingsEditor/0.23.2560.1360@0.23.2560.1360" timestamp="1592899034735" />
+    <state x="451" y="235" width="1422" height="775" key="find.popup" timestamp="1593095386430">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state x="451" y="235" width="1422" height="775" key="find.popup/0.23.2560.1360@0.23.2560.1360" timestamp="1593095386430" />
+    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup" timestamp="1594809805165">
+      <screen x="0" y="23" width="2560" height="1360" />
+    </state>
+    <state x="1312" y="334" width="670" height="676" key="search.everywhere.popup/0.23.2560.1360@0.23.2560.1360" timestamp="1594809805165" />
   </component>
 </project>
