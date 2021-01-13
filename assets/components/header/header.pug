@@ -15,6 +15,10 @@ mixin header()
                     +e.A.auth(target="_blank" href="/signIn.html")
                         span войти / зарегистрироваться
                     +e.desktop
+                        +e.switch
+                            label.lbl-off(for='switch-orange') родитель
+                            input#switch-orange.switch(type='checkbox')
+                            label.lbl-on(for='switch-orange') специалист
                         +e.A.login(href='') &Bcy;&acy;&rcy;&bcy;&acy;&rcy;&acy; &Rcy;&acy;&dcy;&zcy;&iukcy;&vcy;&iukcy;&lcy;
                         +social()(class='social_blue')
         +menu()
