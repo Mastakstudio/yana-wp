@@ -18,7 +18,12 @@ get_template_part( '/core/views/headerView' );
     <IMG class="image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>"></IMG>
     <div class="container">
       <div class="doctor-test__head">
-        <div class="doctor-test__head-text"><a class="doctor-test__desc-text" href="#">вернуться ко всем темам</a>
+        <div class="doctor-test__head-text">
+          <?php
+            $page = get_post(get_the_ID());
+            $parentPage = $page->post_parent;
+          ?>
+          <a class="doctor-test__desc-text" href="<?php echo get_permalink($parentPage)?>">вернуться ко всем темам</a>
         <span class="title title_blue"><?php echo get_the_title(get_the_ID()); ?></span>
           <p class="text text_black"><?php echo carbon_get_post_meta(get_the_ID(), COURSE_SUBTITLE); ?></p>
         </div>

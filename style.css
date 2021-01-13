@@ -283,3 +283,28 @@ form#lostpasswordform input#user_login{
     font-size: 16px;
     line-height: 22px;
 }
+
+.account__item .custom-button-med{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px !important;
+    line-height: 19px !important;
+    text-align: center;
+    color: #fff !important;
+    background: -o-linear-gradient(1.15deg,rgba(162,88,197,.82) -6.06%,rgba(237,86,207,.906465) 44.65%,#ffb7a0 99.5%);
+    background: linear-gradient(88.85deg,rgba(162,88,197,.82) -6.06%,rgba(237,86,207,.906465) 44.65%,#ffb7a0 99.5%);
+    border-radius: 21.5px;
+    padding: 12px 46px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Open Sans,sans-serif;
+    pointer-events: auto;
+}
+.custom-button-med:hover {
+    background: -o-linear-gradient(1.61deg,rgba(255,122,80,.906465) -6.88%,#ffd9a0 99.5%);
+    background: linear-gradient(88.39deg,rgba(255,122,80,.906465) -6.88%,#ffd9a0 99.5%);
+}
+.accountMed .account__item{
+    border:0 !important;
+}

@@ -62,7 +62,7 @@ function crb_course_settings() {
 	         ->where( 'post_template', '=', 'template-cource-doctor.php' )
 	         ->add_fields( [
 		        //  Field::make_text( 'course_title', 'Заголовок' ),
-				 Field::make_textarea( COURSE_SUBTITLE, 'Подзаголовок' ),
+				//  Field::make_textarea( 'course_subtitle', 'Подзаголовок' ),
 				 Field::make_rich_text( 'course_aim', 'Цель курса' ),
 		         Field::make_complex( 'course_aim_groups', 'Целевая группа курса' )
 			                   ->add_fields( 'course_aim_group', 'группа', [

@@ -156,7 +156,10 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
         <div class="container">
           <div class="accountMed__links">
             <div class="links">
-              <div class="links__inner"><a class="links__item" target="_blank" href="/course.html">Пройти курс</a><a class="links__item links__item links__item_active" target="_blank" href="/questionPage.html">ВОПРОС-ОТВЕТ</a><a class="links__item" target="_blank" href="/account.html">Профиль</a>
+              <div class="links__inner">
+                <a class="links__item" target="_blank" href="/course.html">Пройти курс</a>
+                <a class="links__item" target="_blank" href="/questionPage.html">ВОПРОС-ОТВЕТ</a>
+                <a class="links__item links__item links__item_active" target="_blank" href="/account/">Профиль</a>
               </div>
             </div>
           </div>
@@ -170,56 +173,68 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
           <IMG class="image" src="/wp-content/themes/Yana/src/icons/pers.png"></IMG>
         </div>
         <div class="container">
-          <form class="accountMed__list account__item" id="accountMed__form" action="<?= get_the_permalink().'?update'?>" method="post">
+        <?php
+                $disabled = true;
+                if ( empty($currentUser->GetLastName()) || empty($currentUser->GetFirstName()) || empty($currentUser->GetSecondName()) ){
+	                $disabled = false;
+                }
+                ?>
+          <form class="accountMed__list account__item <?= $disabled ? 'disable' : ''?>" id="accountMed__form" action="<?= get_the_permalink().'?update'?>" method="post" >
+            <input type="hidden" name="target_section" value="names">
             <div class="accountMed__item">
               <div class="accountMed__item-inputs">
                 <div class="accountMed__item-input">
                   <div class="form-input__item">
                     <LABEL class="form-input__item-label">ФИО/ Ник</LABEL>
-                    <INPUT class="form-input__item-input" name="userFio" type="text" value="Эллоида"></INPUT>
+                    <INPUT class="form-input__item-input" name="userFio" type="text" value="<?= $currentUser->GetUserFio() ?>"></INPUT>
                   </div>
                 </div>
                 <div class="accountMed__item-input">
                   <div class="form-input__item">
                     <LABEL class="form-input__item-label">Место работы</LABEL>
-                    <INPUT class="form-input__item-input" name="userPlace" type="text"></INPUT>
+                    <INPUT class="form-input__item-input" name="userPlace" type="text" value="<?= $currentUser->GetUserPlace() ?>"></INPUT>
                   </div>
                 </div>
                 <div class="accountMed__item-input">
                   <div class="form-input__item">
                     <LABEL class="form-input__item-label">Профессия</LABEL>
-                    <INPUT class="form-input__item-input" name="userProf" type="text"></INPUT>
+                    <INPUT class="form-input__item-input" name="userProf" type="text" value="<?= $currentUser->GetUserProf() ?>"></INPUT>
                   </div>
                 </div>
                 <div class="accountMed__item-input">
                   <div class="form-input__item">
                     <LABEL class="form-input__item-label">Специальность</LABEL>
-                    <INPUT class="form-input__item-input" name="userSpec" type="text"></INPUT>
+                    <INPUT class="form-input__item-input" name="userSpec" type="text" value="<?= $currentUser->GetUserSpec() ?>"></INPUT>
                   </div>
                 </div>
                 <div class="accountMed__item-input">
                   <label class="accountMed__item-label">Дата рождения
-                  </label><input class="accountMed__date" type="date" name="userDate" id="date" placeholder="27.10.1994"/>
+                  </label>
+                  <!-- <input class="accountMed__date" type="date" name="userDate" id="date" placeholder="27.10.1994"/> -->
+                  <input class="account__date" type="date" name="birthday" id="date" placeholder="27.10.1994" value="<?= $currentUser->GetBirthday()?>"/>
                 </div>
                 <div class="accountMed__item-input">
                   <label class="accountMed__item-label">Пол
                   </label>
                   <div class="accountMed__pol-inner">
+                    <?php
+                      $gender = $currentUser->GetUserGender();
+                    ?>
                     <label class="accountMed__pol-container">Ж
-                      <input type="radio" checked="checked" name="userGender" value="woman"><span class="accountMed__pol-checkmark"></span>
+                      <input type="radio" name="userGender" value="woman" <?php if($gender=='woman'){?>checked="checked"<?php }?>><span class="accountMed__pol-checkmark"></span>
                     </label>
                     <label class="accountMed__pol-container">М
-                      <input type="radio" name="userGender" value="man"><span class="accountMed__pol-checkmark"></span>
+                      <input type="radio" name="userGender" value="man" <?php if($gender=='man'){?>checked="checked"<?php }?>><span class="accountMed__pol-checkmark"></span>
                     </label>
                     <label class="accountMed__pol-container">Иное
-                      <input type="radio" name="userGender" value="other"><span class="accountMed__pol-checkmark"></span>
+                      <input type="radio" name="userGender" value="other" <?php if($gender=='other'){?>checked="checked"<?php }?>><span class="accountMed__pol-checkmark"></span>
                     </label>
                   </div>
                 </div>
               </div>
               <div class="accountMed__item-head-type">
                 <button class="account__item-update" type="submit">Сохранить</button>
-                <button class="accountMed__item-update">Исправить</button>
+                <button class="account__item-update enable-toggle" type="button">Исправить</button>
               </div>
             </div>
             <!--+e.item.account__passport-->
@@ -247,8 +262,9 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
             <!--    +e.item-head-type-->
             <!--        +e.BUTTON.item-update Сохранить-->
             <!--        +e.BUTTON.item-update Исправить-->
-            <BUTTON class="custom-button">Выйти</BUTTON>
+            <a class="custom-button-med" href="<?= $userManager::LogOut() ?>">Выйти</a>
           </form>
+          
         </div>
       </div>
     <?php

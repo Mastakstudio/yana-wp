@@ -19,7 +19,7 @@ session_start();
 
   gtag('config', 'UA-173158987-1');
 </script>
-<?php wp_head(); ?>
+
 	<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -38,6 +38,7 @@ session_start();
 <link href="/wp-content/themes/Yana/src/css/doctors.min.css" rel="stylesheet">
 <link href="/wp-content/themes/Yana/src/css/doctorTest.min.css" rel="stylesheet">
 <link href="/wp-content/themes/Yana/src/css/accountMed.min.css" rel="stylesheet">
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

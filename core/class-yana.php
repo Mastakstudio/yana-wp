@@ -65,6 +65,9 @@ class Yana{
             elseif (is_page_template('template-faq.php')){
 	            wp_enqueue_style(PREFIX.'questionPage', Assets::getCss('questionPage'), false, null);
             }
+            elseif (is_page_template('template-faq-doctor.php')){
+	            wp_enqueue_style(PREFIX.'questionPage', Assets::getCss('questionPage'), false, null);
+            }
             elseif (is_singular('course')){
             	if (is_page_template('template-course-part.php')){
 		            wp_enqueue_style(PREFIX.'test', Assets::getCss('test'), false, null);
@@ -99,6 +102,9 @@ class Yana{
 	            wp_enqueue_script(PREFIX.'page404', Assets::getJs('page404'), false, null, true);
             }
             elseif (is_page_template('template-faq.php')){
+	            wp_enqueue_script(PREFIX.'questionPage', Assets::getJs('questionPage'), false, null, true);
+            }
+            elseif (is_page_template('template-faq-doctor.php')){
 	            wp_enqueue_script(PREFIX.'questionPage', Assets::getJs('questionPage'), false, null, true);
             }
             elseif (is_singular('course') || is_page_template('template-test.php')){

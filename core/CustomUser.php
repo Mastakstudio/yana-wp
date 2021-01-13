@@ -45,6 +45,12 @@ class CustomUser {
 			$this->_passportWho = $this->CarbonMeta(U_PASSPORT_WHO );
 			$this->_birthday = $this->CarbonMeta(U_BIRTHDAY );
 
+			$this->_userFio = $this->CarbonMeta(U_FIO );
+			$this->_userPlace = $this->CarbonMeta(U_WORK );
+			$this->_userProf = $this->CarbonMeta(U_PROF );
+			$this->_userSpec = $this->CarbonMeta(U_SPEC );
+			$this->_userGender = $this->CarbonMeta(U_GENDER );
+
 
 			$course_test_result_args =[
 				'post_type' => 'course_test_result',
@@ -116,6 +122,26 @@ class CustomUser {
 	/**@return string*/
 	public function GetLastName(){
 		return $this->user->last_name;
+	}
+	/**@return string*/
+	public function GetUserFio(){
+		return $this->_userFio;
+	}
+	/**@return string*/
+	public function GetUserPlace(){
+		return $this->_userPlace;
+	}
+	/**@return string*/
+	public function GetUserProf(){
+		return $this->_userProf;
+	}
+	/**@return string*/
+	public function GetUserSpec(){
+		return $this->_userSpec;
+	}
+	/**@return string*/
+	public function GetUserGender(){
+		return $this->_userGender;
 	}
 	/**@return integer*/
 	public function GetID(){
