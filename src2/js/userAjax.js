@@ -68,6 +68,41 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('.sign-up-doctor-ajax').on('submit', function (event) {
+        event.preventDefault();
+        let serializeData = $(this).serializeArray();
+
+        let pass = serializeData.find(input => input['name'] === "password");
+        let checkPass = serializeData.find(input => input['name'] === "confirmPassword");
+        if (pass['value'].localeCompare(checkPass["value"]) === 0) {
+            if (mastak_ajax.account_url) {
+                $.ajax({
+                    type: 'POST',
+                    url: mastak_ajax.account_url.toString().replace('%%endpoint%%', 'registration'),
+                    data: serializeData,
+                    dataType: 'json'
+                })
+                    .done( response => {
+                        console.log('registr form done: ',response);
+
+                        if( response.error !== undefined){
+                            $('#reg_errors').html(response.error);
+                        }else if(response.data.result === true){
+                            $('#user_name').text(response.data.displayName);
+                            $('#banner-main__form').hide();
+                            $('#link_to_reg').hide();
+                        }
+                        if (response.data != undefined && response.data.redirect != undefined){
+                            window.location.href = response.data.redirect;
+                        }
+                    })
+                    .fail(function (response) {
+                        console.log('registration form error: ',response);
+                    });
+            }
+        }
+    });
+
     $('.account__item-update.enable-toggle').on('click', function (e) {
         e.preventDefault();
         $(this).parents('form.account__item').toggleClass('disable');

@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION['ROLE']==''){
+  $_SESSION['ROLE']='parent';
+}
+
 
 ?>
 

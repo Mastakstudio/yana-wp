@@ -28,6 +28,11 @@ $socialLinks = SocialLinks::getInstance();
                     <span><?= $user->get_site_id() === 0 ? 'войти/зарегистрироваться': $user->display_name ?></span>
                 </a>
                 <div class="header__desktop">
+                    <div class="header__switch">
+                        <label class="lbl-off" for="switch-orange">родитель</label>
+                        <input class="switch" id="switch-orange" type="checkbox" <?php if($_SESSION['ROLE']=='specialist'){?> checked="checked" <?php } ?> >
+                        <label class="lbl-on" for="switch-orange">специалист</label>
+                    </div>
                     <a class="header__login" id="user_name" href="<?= $account_page ?>"><?= $user->display_name ?></a>
                     <div class="social social_blue">
 	                    <?php $socialLinks->getView(); ?>
@@ -45,11 +50,11 @@ $socialLinks = SocialLinks::getInstance();
                         <span>войти / зарегистрироваться</span>
                     </a>
                     <?php endif; ?>
-                    <div class="menu__switch" style="visibility: hidden">
+                    <!-- <div class="menu__switch" style="visibility: hidden">
                         <label class="lbl-off" for="switch-orange">родитель</label>
                         <input class="switch" id="switch-orange" type="checkbox">
                         <label class="lbl-on" for="switch-orange">специалист</label>
-                    </div>
+                    </div> -->
                 </div>
                 <?php mainMenuView();?>
                 <div class="social social social_menu">

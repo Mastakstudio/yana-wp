@@ -19,7 +19,7 @@ get_template_part( '/core/views/headerView' );
               <div class="links">
                 <div class="links__inner">
                   <a class="links__item links__item links__item_active" target="_blank" href="">Пройти курс</a>
-                  <a class="links__item" target="_blank" href="/questionPage.html">ВОПРОС-ОТВЕТ</a>
+                  <a class="links__item" target="_blank" href="/faq222/">ВОПРОС-ОТВЕТ</a>
                   <a class="links__item" target="_blank" href="/account/">Профиль</a>
                 </div>
               </div>

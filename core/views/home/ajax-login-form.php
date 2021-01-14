@@ -54,10 +54,49 @@ $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 					<?php if ( get_option( 'users_can_register' ) ) : ?>
                         <div class="auth-content">
                             <div class="signUp">
-                                <form id="sign-up">
+                                <form id="sign-up" class="sign-up-parent" style="<?php if($_SESSION['ROLE']=='specialist'){?> display:none <?php } ?>">
+                                    <input name="userRole" type="text" style="display:none" value="parent"/>
                                     <div class="form-input__item">
                                         <label class="form-input__item-label">Email</label>
                                         <input class="form-input__item-input" name="email" type="text"/>
+                                    </div>
+                                    <div class="form-input__item">
+                                        <label class="form-input__item-label">Пароль</label>
+                                        <input class="form-input__item-input" name="password" type="password"/>
+                                    </div>
+                                    <div class="form-input__item">
+                                        <label class="form-input__item-label">Подтвердить пароль</label>
+                                        <input class="form-input__item-input" name="confirmPassword" type="password"/>
+                                    </div>
+                                    <div class="signUp__remember">
+                                        <div class="signUp__container">
+                                            <label for="remembermeReg">Запомнить</label>
+                                            <input name="rememberme" type="checkbox" id="remembermeReg" value="forever">
+                                            <span class="signUp__checkmark"></span>
+                                        </div>
+                                    </div>
+                                    <div class="signUp__type">
+                                        <button class="custom-button" type="submit">Зарегистрироваться</button>
+										<?php
+										$privacy_policy_url = get_privacy_policy_url();
+										if ( ! empty( $privacy_policy_url ) ): ?>
+                                            <span>Нажимая кнопку "Войти" я&nbsp;<a href="<?= $privacy_policy_url ?>"> принимаю пользовательское соглашение</a></span>
+										<?php endif; ?>
+                                    </div>
+                                </form>
+                                <form id="sign-up" class="sign-up-doctor sign-up-doctor-ajax" style="<?php if($_SESSION['ROLE']=='parent'){?> display:none <?php } ?>">
+                                    <input name="userRole" type="text" style="display:none" value="specialist"/>
+                                    <div class="form-input__item">
+                                        <label class="form-input__item-label">Email</label>
+                                        <input class="form-input__item-input" name="email" type="text"/>
+                                    </div>
+                                    <div class="form-input__item">
+                                        <label class="form-input__item-label">ФИО/ НИК</label>
+                                        <input class="form-input__item-input" name="fio" type="text"/>
+                                    </div>
+                                    <div class="form-input__item">
+                                        <label class="form-input__item-label">Профессия</label>
+                                        <input class="form-input__item-input" name="prof" type="text"/>
                                     </div>
                                     <div class="form-input__item">
                                         <label class="form-input__item-label">Пароль</label>

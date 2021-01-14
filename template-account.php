@@ -61,10 +61,13 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
 	    	'_'.TEST_ANSWERED => $answered
         ];
         
+      if($testResult!=null){
         TestResultManager::UpdateMeta($testResult, $newValues);
         
-	    $newAns= carbon_get_post_meta($testResult->getID(), TEST_ANSWERED);
-	    $newRightAns= carbon_get_post_meta($testResult->getID(), TEST_RIGHT_ANSWERED);
+        $newAns= carbon_get_post_meta($testResult->getID(), TEST_ANSWERED);
+        $newRightAns= carbon_get_post_meta($testResult->getID(), TEST_RIGHT_ANSWERED);
+      }
+        
     }
     $_SESSION['loginNew']='false';
     ?>
@@ -157,9 +160,9 @@ if($_SESSION['loginNew']=='true' && is_user_logged_in()){
           <div class="accountMed__links">
             <div class="links">
               <div class="links__inner">
-                <a class="links__item" target="_blank" href="/course.html">Пройти курс</a>
-                <a class="links__item" target="_blank" href="/questionPage.html">ВОПРОС-ОТВЕТ</a>
-                <a class="links__item links__item links__item_active" target="_blank" href="/account/">Профиль</a>
+                <a class="links__item" href="/course/dlya-spetsialistov-pomogayushhih-professij/">Пройти курс</a>
+                <a class="links__item" href="/faq222/">ВОПРОС-ОТВЕТ</a>
+                <a class="links__item links__item links__item_active" href="/account/">Профиль</a>
               </div>
             </div>
           </div>

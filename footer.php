@@ -9,5 +9,7 @@
 <script type="text/javascript" src="/wp-content/themes/Yana/src/js/doctors.min.js"></script>
 <script type="text/javascript" src="/wp-content/themes/Yana/src/js/doctorTest.min.js"></script>
 <script type="text/javascript" src="/wp-content/themes/Yana/src/js/accountMed.min.js"></script>
+
+<script type="text/javascript" src="/wp-content/themes/Yana/src2/js/role.js"></script>
 </body>
 </html>

@@ -152,9 +152,19 @@ class ACCOUNT_AJAX
 
             wp_set_password($_POST['password'], $regResult);
 	        update_user_meta( $regResult, 'show_admin_bar_front', 'false' );
+            
+            
 
             $user_data = ['user_login' => $_POST['email'], 'user_password' => $_POST['password'], 'remember' => !empty($_POST['rememberme'])];
             $loginResult = wp_signon($user_data);
+            
+            $role = $_POST['userRole'];
+            $fio = $_POST['fio'];
+            $prof = $_POST['prof'];
+            if($role=='specialist'){   
+                carbon_set_user_meta($loginResult->ID,U_FIO,$fio );
+                carbon_set_user_meta($loginResult->ID,U_PROF,$prof );
+            }
 
             if ( $loginResult instanceof WP_User ) {
                 /**@var WP_User loginResult*/
@@ -170,6 +180,8 @@ class ACCOUNT_AJAX
                 $result['result'] = false;
                 $result['error'] = $loginResult->get_error_message();
             }
+            $role = $_POST['userRole'];
+            $regUser->set_role($role);
 
             wp_send_json_success($result);
             die();

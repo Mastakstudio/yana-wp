@@ -49,8 +49,20 @@ class UserManager {
 		update_user_meta( $errors, 'show_admin_bar_front', 'false' );
 
 		$loginResult = wp_authenticate_username_password( null, $_POST['user_email'], $pwd );
+
+		$role = $_POST['userRole'];
+		$fio = $_POST['fio'];
+		$prof = $_POST['prof'];
+		if($role=='specialist'){   
+			carbon_set_user_meta($loginResult->ID,U_FIO,$fio );
+			carbon_set_user_meta($loginResult->ID,U_PROF,$prof );
+		}
+
 		wp_set_current_user( $loginResult->ID, $loginResult->user_email );
 		wp_set_auth_cookie( $loginResult->ID );
+
+		$role = $_POST['userRole'];
+        $regUser->set_role($role);
 
 //		$this->RedirectToAccount();
 		$this->RedirectToCourse();
@@ -142,8 +154,10 @@ class UserManager {
 
 	public function RegistrationForm() {
 		?>
-        <form class="sign-in__list" action="<?= get_the_permalink() . '?registration' ?>" method="post"
-              novalidate="novalidate">
+        <form class="sign-in__list sign-up-parent" action="<?= get_the_permalink() . '?registration' ?>" method="post" novalidate="novalidate" style="<?php if($_SESSION['ROLE']=='specialist'){?> display:none <?php } ?>">
+			
+			  <input name="userRole" type="text" style="display:none" value="parent"/>
+
 			<?php
 			self::ShowErrors( 'regError' );
 			?>
@@ -167,6 +181,64 @@ class UserManager {
                         <div class="form-input__item">
                             <label class="form-input__item-label" for="user_email">Ваш e-mail</label>
                             <input class="form-input__item-input" name="user_email" id="log"/>
+                        </div>
+                    </div>
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <label class="form-input__item-label">Придумайте пароль (минимум 8 символов)</label>
+                            <input class="form-input__item-input" name="pwd" type="password"/>
+                        </div>
+                    </div>
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <LABEL class="form-input__item-label">Повторите пароль</LABEL>
+                            <input class="form-input__item-input" name="confirmpwd" type="password"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="custom-button">Зарегистрироваться</button>
+		</form>
+		
+		<form class="sign-in__list sign-up-doctor" action="<?= get_the_permalink() . '?registration' ?>" method="post" novalidate="novalidate" style="<?php if($_SESSION['ROLE']=='parent'){?> display:none <?php } ?>">
+			
+			  <input name="userRole" type="text" style="display:none" value="specialist"/>
+
+			<?php
+			self::ShowErrors( 'regError' );
+			?>
+
+            <div class="sign-in__item">
+                <div class="sign-in__item-head">
+                   <span class="sign-in__item-title">Через социальные сети</span>
+                    <?php
+	                        if (function_exists('oa_social_login_render_login_form_wp_registration')){
+		                        oa_social_login_render_login_form_wp_registration();
+	                        } ?>
+                </div>
+            </div>
+
+            <div class="sign-in__item">
+                <div class="sign-in__item-head">
+                <span class="sign-in__item-title">Или через e-mail</span>
+                </div>
+                <div class="sign-in__item-inputs">
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <label class="form-input__item-label" for="user_email">Ваш e-mail</label>
+                            <input class="form-input__item-input" name="user_email" id="log"/>
+                        </div>
+                    </div>
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <label class="form-input__item-label" for="fio">ФИО/ НИК</label>
+                            <input class="form-input__item-input" name="fio"/>
+                        </div>
+                    </div>
+                    <div class="sign-in__item-input">
+                        <div class="form-input__item">
+                            <label class="form-input__item-label" for="prof">Профессия</label>
+                            <input class="form-input__item-input" name="prof"/>
                         </div>
                     </div>
                     <div class="sign-in__item-input">
