@@ -42,6 +42,8 @@ if($_SESSION['ROLE']==''){
 <link href="/wp-content/themes/Yana/src/css/doctors.min.css" rel="stylesheet">
 <link href="/wp-content/themes/Yana/src/css/doctorTest.min.css" rel="stylesheet">
 <link href="/wp-content/themes/Yana/src/css/accountMed.min.css" rel="stylesheet">
+
+
 <?php wp_head(); ?>
 </head>
 
