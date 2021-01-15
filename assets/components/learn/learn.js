@@ -4,6 +4,4 @@ import viewportChecker from './../../../node_modules/jquery-viewport-checker/src
 
 $(document).ready(function(){
     $('.learn__item').viewportChecker();
-
-
 });
