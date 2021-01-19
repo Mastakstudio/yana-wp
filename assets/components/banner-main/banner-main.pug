@@ -8,11 +8,11 @@ mixin banner-main()
                     +e.A.link(href="#modal")
                         span Просмотреть приветствие
                         +e.IMG(src=require('./../images/play.svg'), alt='')
+                    +e.wrap-text
+                        +link('Перейти к обучению')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
                     +e.IMG.girl-write(src=require('./../images/girl-write.png'), alt='')
                 +e.form
                     +form()
-                +e.wrap-text
-                    +link('Перейти к обучению')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
         +e.image
             picture
                 +e.SOURCE.bad(srcSet=require('./../images/bad-mobile.png') media='(max-width: 560px)')

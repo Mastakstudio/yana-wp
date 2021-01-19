@@ -122,8 +122,17 @@
 
   &__wrap-text{
 
-    @include sm{
-      display: none;
+    margin-top: 60px;
+
+    @include lg{
+      margin-top: 30px;
+    }
+
+    .link{
+      font-size: 17px;
+      line-height: 19px;
+      padding: 16px 26px;
+      border-radius: 40px;
     }
 
   }
@@ -181,14 +190,14 @@
     height: 198px;
     position: absolute;
     right: -40px;
-    top: 183px;
+    top: 213px;
 
     @media (max-width : 768px - 1px) and (orientation : landscape) {
       top: 80px;
     }
 
     @media (min-width: 768px) {
-      right: 2px;
+      right: -48px;
       top: 192px;
     }
 
@@ -218,7 +227,7 @@
       width: 663px;
       height: 646px;
       right: -215px;
-      top: 18px;
+      top: 68px;
     }
 
 
@@ -289,14 +298,14 @@
       display: block;
       width: 258.51px;
       height: auto;
-      top: 341px;
-      right: 48px;
+      top: 371px;
+      right: 98px;
     }
 
     @media (min-width: 1024px) {
       width: 307px;
-      top: 224px;
-      right: -4px;
+      top: 324px;
+      right: 156px;
     }
 
     @media (min-width: 1280px) {
