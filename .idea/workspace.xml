@@ -6,11 +6,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf52abdf-b408-47e9-ad1d-f46f81bda5d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/components/doctors-banner/doctors-banner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/doctors-banner/doctors-banner.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/doctors-banner/doctors-banner.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/common/_common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/common/_common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/accountMed/accountMed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/accountMed/accountMed.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/banner-main/banner-main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/form/form.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/form.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/doctors/doctors.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/doctors/doctors.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/doctors/doctors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/doctors/doctors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/experts/experts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/experts/experts.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/experts/experts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/experts/experts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/header/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/header/header.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/header/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/learn/learn.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/learn/learn.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/links/links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/links/links.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/menu/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/menu/menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/passCourse/passCourse.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/passCourse/passCourse.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/passCourse/passCourse.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/passCourse/passCourse.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/question/question.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/question/question.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/question/question.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/question/question.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/services/services.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/services/services.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/services/services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/services/services.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/tags/tags.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/tags/tags.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/tags/tags.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/tags/tags.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mixins.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/mixins.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/index.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/components" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
@@ -56,8 +80,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/templates" />
       <recent name="$PROJECT_DIR$/assets/components" />
+      <recent name="$PROJECT_DIR$/assets/templates" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,7 +120,9 @@
       <workItem from="1610624716969" duration="1386000" />
       <workItem from="1610708109700" duration="3228000" />
       <workItem from="1610952263682" duration="731000" />
-      <workItem from="1611064568172" duration="1597000" />
+      <workItem from="1611064568172" duration="2093000" />
+      <workItem from="1611226307887" duration="2790000" />
+      <workItem from="1614069459420" duration="21798000" />
     </task>
     <servers />
   </component>

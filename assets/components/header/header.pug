@@ -12,13 +12,23 @@ mixin header()
                         +e.logo-oval
                         +e.logo-wrapper
                             +e.IMG.logo(src=require('./../images/logo.svg'), alt='')
-                    +e.A.auth(target="_blank" href="/signIn.html")
-                        span войти / зарегистрироваться
-                    +e.desktop
-                        +e.switch
-                            label.lbl-off(for='switch-orange') родитель
-                            input#switch-orange.switch(type='checkbox')
-                            label.lbl-on(for='switch-orange') специалист
-                        +e.A.login(href='') &Bcy;&acy;&rcy;&bcy;&acy;&rcy;&acy; &Rcy;&acy;&dcy;&zcy;&iukcy;&vcy;&iukcy;&lcy;
-                        +social()(class='social_blue')
+                    +e.menu
+                        +e.menu-scroll
+                            +e.menu-scroll-item.header__menu-scroll-item_active(href="" id="page1") Для  родителей
+                            +e.menu-scroll-item(href="" id="page2") Для  специалистов
+                            +e.SPAN.menu-scroll-roll
+                        +e.UL.menu-list
+                            +e.LI.menu-item
+                                A(href="#experts") Мнения экспертов
+                            +e.LI.menu-item
+                                A(href="#learn") Как пройти обучение
+                            +e.LI.menu-item
+                                A(href="#passCourse") Вы получите
+                            +e.LI.menu-item
+                                A(href="#question") Задать вопрос
+                            +e.LI.menu-item
+                                A(href="#services") Интерактивная карта
+                    +e.A.login
+                        IMG(src=require('./../images/login.svg'), alt='')
+                        SPAN ВОЙТИ
         +menu()

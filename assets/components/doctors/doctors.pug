@@ -4,32 +4,6 @@ mixin doctors()
             +e.inner
                 +e.links
                     +links()
-                +e.content
-                    +title('Онлайн курс ')(class='title_blue')
-                    +text('для специалистов помогающих профессий')(class='text_black')
-        .container
-            +e.list-inner
-                +e.list-item
-                    +e.SPAN.list-item-title Цель курса:
-                    +e.list-item-text
-                        P улучшение качества поддержки беременных женщин и женщин с детьми в трудной жизненной ситуации посредством совершенствования гибких (мягких, soft) навыков специалистов помогающих профессий.
-                        P Беременные женщины и женщин с детьми в трудной жизненной ситуации: жертвы насилия, сироты в прошлом или настоящем, имеющие зависимость или созависимость, наличие инвалидности или тяжелого заболевания у родителя или ребенка, низкий материальный уровень, высказывающие желание отказаться от ребенка или совершить аборт, несовершеннолетние беременные, ожидающие рождения ребенка с особенностями, вышедших из МЛС/закрытых учреждений, БОМЖ, ЛГБТ.
-                +e.list-item
-                    +e.SPAN.list-item-title Целевая группа курса (специалисты помогающих профессий):
-                    +e.list-item-content
-                        +e.list-item-content-type
-                            +e.IMG.list-item-content-image(src=require('./../images/c.svg'))
-                            +e.list-item-content-dop
-                                +e.SPAN.list-item-content-title специалисты помогающих профессий
-                                +e.SPAN.list-item-content-desc (специалисты системы образования, здравоохранения и социальной защиты – социальные педагоги и работники, психологи, медики)
-                        +e.list-item-content-type
-                            +e.IMG.list-item-content-image(src=require('./../images/c.svg'))
-                            +e.list-item-content-dop
-                                +e.SPAN.list-item-content-title студенты старших курсов,
-                                +e.SPAN.list-item-content-desc получающих профессию по данным специальностям
-
-        +e.wrapper
-            +image()(src=require('./../images/doctors1.png'))
         +e.list
             +e.item
                 +e.item-wrapper

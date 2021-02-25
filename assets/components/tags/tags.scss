@@ -27,18 +27,20 @@
 
 
   @include lg{
-    background-image: url(./../../images/tags-desktop.png);
-    background-size: 100% 100%;
-    margin-top: -387px;
+    background-image: url(./../../images/tags-dop.png);
+    background-size: cover;
+    margin-top: -577px;
+    height: 849px;
+    z-index: 2;
   }
 
 
   @include hd{
-    margin-top: -501px;
+    margin-top: -641px;
   }
 
   @include xhd{
-    margin-top: -565px;
+    margin-top: -585px;
   }
 
 
@@ -196,6 +198,39 @@
     @include md{
       display: flex;
     }
+
+    @include lg{
+      margin-top: 100px;
+    }
+
+    @include hd{
+      margin-top: 20px;
+    }
+
+    @include xhd{
+      margin-top: 20px;
+      margin-left: 190px;
+    }
+  }
+
+  &__wrap-text{
+
+    .link{
+      background: linear-gradient(180deg, #FAC36B 0%, #EE718C 100%);
+      border-radius: 38px;
+
+      @include lg{
+        padding: 20px 55px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+    }
+
   }
 
   .link{
@@ -314,6 +349,10 @@
       padding-right: 10px;
       padding-bottom: 100px;
       padding-top: 50px;
+    }
+
+    @include xhd{
+      padding-top: 10px;
     }
 
     .tags__item-title:nth-child(1){

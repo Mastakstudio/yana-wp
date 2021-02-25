@@ -5,6 +5,9 @@
 
   margin-top: 20px;
   margin-bottom: 30px;
+  z-index: 10;
+  position: relative;
+
 
   &__wrapper {
 
@@ -117,8 +120,12 @@
 
     @include md {
       display: block;
-      width: 435px;
+      width: 415px;
       margin: 0 auto;
+      right: 230px;
+      position: absolute;
+      z-index: 1000;
+      top: -97px;
     }
 
   }
@@ -269,7 +276,7 @@
   }
 
   &__list{
-    margin-top: 14px;
+    margin-top: -30px;
     overflow: hidden;
   }
 

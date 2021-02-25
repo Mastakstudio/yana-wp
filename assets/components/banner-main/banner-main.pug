@@ -3,13 +3,16 @@ mixin banner-main()
         .container
             +e.inner
                 +e.content
-                    +title('ОБУЧАЮЩИЙ КУРС «Ты не одна»')(class='title_blue')
+                    +e.SPAN.pretitle Обучающий курс
+                    +title('Беременность и роды')(class='title_blue')
+                    +e.wrap
+                        +e.wrap-text
+                            +link('Начать сейчас')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
+                        +e.A.link(href="#modal")
+                            span Просмотреть приветствие
+                            +e.IMG(src=require('./../images/next.svg'), alt='')
+                    +e.SPAM.pretext Цель курса:
                     +text('Онлайн курс подготовлен в рамках проекта «Ты не одна» и ориентирован на семьи, ожидающие рождение ребенка, и на молодых родителей. В курсе Вы узнаете в легкой форме, как счастливо пройти всю беременность, подготовится к родам, материнству и отцовству.')(class='text_black')
-                    +e.A.link(href="#modal")
-                        span Просмотреть приветствие
-                        +e.IMG(src=require('./../images/play.svg'), alt='')
-                    +e.wrap-text
-                        +link('Перейти к обучению')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
                     +e.IMG.girl-write(src=require('./../images/girl-write.png'), alt='')
                 +e.form
                     +form()
@@ -17,6 +20,7 @@ mixin banner-main()
             picture
                 +e.SOURCE.bad(srcSet=require('./../images/bad-mobile.png') media='(max-width: 560px)')
                 +e.SOURCE.bad(srcSet=require('./../images/bad-desctop.png') media='(max-width : 768px - 1px and orientation : landscape)')
-                +e.IMG.bad(src=require('./../images/bad-desctop.png'), alt='')
+                +e.SOURCE.bad(srcSet=require('./../images/bad-desctop.png') media='(max-width : 1280px)')
+                +e.IMG.bad(src=require('./../images/oval.png'), alt='')
             +e.IMG.baby(src=require('./../images/girl-with-baby.png'), alt='')
     +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id='modal' )

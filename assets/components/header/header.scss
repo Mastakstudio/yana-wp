@@ -3,9 +3,11 @@
 .header{
 
   position: relative;
-  z-index: 999;
+  z-index: 10;
+
 
   &_active{
+    z-index: 999;
     .header__square{
       opacity: 0;
       transition: .5s all;
@@ -250,6 +252,10 @@
     z-index: 1;
     cursor: pointer;
 
+    @include lg{
+        display: none;
+    }
+
 
     span{
       width: 28px;
@@ -364,6 +370,165 @@
     margin-top: -3px;
   }
 
+  &__menu{
+    display: none;
+
+    @include lg{
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      width: 100%;
+    }
+  }
+
+  &__menu-scroll{
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 14px #E5E7FE;
+    border-radius: 30.5px;
+    width: 432px;
+    height: 61px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 140px;
+    display: none;
+
+  }
+
+  &__menu-scroll-item{
+    width: 50%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7B93FD;
+    z-index: 2;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all;
+    cursor: pointer;
+
+    &_active{
+      color: #ffffff;
+      transition: .5s all;
+    }
+  }
+
+  &__menu-scroll-roll{
+    background: #7D90FD;
+    border-radius: 30.5px;
+    width: 232px;
+    height: 61px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: .5s all;
+
+    &_active{
+      left: 50%;
+      transition: .5s all;
+    }
+  }
+
+  &__login{
+    background: #FFFFFF;
+    border: 1px solid #CED6FD;
+    box-sizing: border-box;
+    border-radius: 27.5px;
+    padding: 2px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: unset;
+    margin-top: 3px;
+    height: 26px;
+
+    @include md{
+      height: 55px;
+      padding: 6px;
+      margin-top: 10px;
+    }
+
+    @include lg{
+      margin-top: 28px;
+    }
+
+
+    img{
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+
+      @include md{
+        width: 42px;
+        height: 42px;
+        margin-right: 21px;
+      }
+    }
+
+    span{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #7B93FD;padding-right: 5px;
+
+      @include md{
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @include lg{
+        padding-right: 28px
+      }
+    }
+  }
+
+  &__menu-list{
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 210px;
+    display: none;
+
+    @include lg{
+      margin-right: 40px;
+      margin-left: auto;
+      margin-top: 42px;
+    }
+
+  }
+
+
+  &__menu-item{
+
+    list-style-type: none;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: 80px;
+
+    @include lg{
+      width: unset;
+    }
+
+
+    a{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #7B7998;
+
+    }
+
+  }
 
 
 }
+
+

@@ -131,11 +131,10 @@
 
     @include hd{
       width: 670px;
-      margin-left: 257px;
+      margin-left: 97px;
     }
 
     @include xhd{
-      margin-left: 200px;
     }
 
   }
@@ -144,8 +143,8 @@
     width: 129.42px;
     height: 123.61px;
     background: #FFFFFF;
-    box-shadow: 1.65924px 1.65924px 8.29622px rgba(0, 0, 0, 0.0996094);
-    border-radius: 11.6147px;
+    box-shadow: -13px -13px 23px rgba(255, 255, 255, 0.56), 13px 13px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: center;

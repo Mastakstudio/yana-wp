@@ -4,7 +4,7 @@
 .menu{
   height: 100vh;
   background: #00B2FF;
-  opacity: 0.9;
+  opacity: 1;
   backdrop-filter: blur(60px);
   position: absolute;
   top: 0;
@@ -13,6 +13,7 @@
   transform: translateX(-100%);
   transition: 1s all;
   margin-top: 2px;
+  display: none;
 
   @include md{
     max-width: 500px;
@@ -52,6 +53,7 @@
     transform: translateX(0);
     transition: 1s all;
     left: 0;
+    opacity: 1;
 
 
     .menu__item{

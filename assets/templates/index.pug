@@ -2,11 +2,12 @@ include ./../mixins
 doctype html
 html
     +head()
-    body(class="app")
+    body(class="app homePage")
         //+loader('loader__spinner_falcon')
         main.main
             +header()
             +banner-main()
+            +doctors-banner()
             +tags()
             +experts()
             +passCourse()

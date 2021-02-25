@@ -3,32 +3,53 @@
 
 .links{
 
+
   &__inner{
-    background: #FFFFFF;
-    box-shadow: inset 0px 2px 6px rgba(121, 121, 121, 0.54);
-    border-radius: 42.5px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    &:after{
+      content: "";
+      width: 415px;
+      height: 6px;
+      background: #969AF7;
+      border-radius: 4px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 30px;
+      z-index: 1;
+    }
   }
 
 
   &__item{
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
     line-height: 19px;
     text-align: center;
     text-transform: uppercase;
-    color: #46555A;
-    padding: 8px 24px;
+    color: #7B7998;
     cursor: pointer;
+    width: 151px;
+    position: relative;
 
     &_active{
-      background: #00B2FF;
-      box-shadow: 0px 2px 4px #7ED8FF;
-      border-radius: 42.5px;
-      color: #ffffff;
+      &:after{
+        content: "";
+        width: 95%;
+        height: 14px;
+        background: #FFFFFF;
+        border: 1px solid #CED6FD;
+        box-sizing: border-box;
+        border-radius: 27.5px;
+        position: absolute;
+        left: 2.5%;
+        top: 26px;
+        z-index: 2;
+      }
     }
 
   }

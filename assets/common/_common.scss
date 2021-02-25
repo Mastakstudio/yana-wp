@@ -82,6 +82,37 @@ a {
     flex-grow: 1;
 }
 
+.homePage{
+
+    .header__menu-scroll{
+        display: flex;
+    }
+
+
+
+    .header__menu-list{
+        display: flex;
+    }
+
+    .container {
+
+        @include hd {
+            padding   : {
+                left  : 224px;
+                right : 224px;
+            }
+        }
+
+        @include xhd{
+            padding   : {
+                left  : 557px;
+                right : 557px;
+            }
+        }
+
+    }
+}
+
 @include loader();
 @include iner();
 @include base-setup();

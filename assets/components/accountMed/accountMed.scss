@@ -18,6 +18,29 @@
 
   }
 
+  .links {
+    display: none;
+
+    @include md {
+      display: block;
+      width: 415px;
+      margin: 0 auto;
+      right: 230px;
+      position: absolute;
+      z-index: 1000;
+      top: -97px;
+    }
+
+    @include hd{
+      right: 310px;
+    }
+
+    @include xhd{
+      right: 600px;
+    }
+
+  }
+
   &__item-head-type{
     display: flex;
     margin-top: 20px;
@@ -69,6 +92,7 @@
 
         width: 828px;
         margin-right: -151px;
+        padding-top: 80px;
       }
 
       @include hd{
@@ -126,15 +150,6 @@
     @include hd{
       width: 757px;
 
-    }
-
-  }
-
-  .links{
-    display: none;
-
-    @include md{
-      display: block;
     }
 
   }

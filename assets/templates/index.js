@@ -26,3 +26,4 @@ import './../components/learn/learn';
 import './../components/question/question';
 import './../components/services/services';
 import './../components/partners/partners';
+import './../components/doctors-banner/doctors-banner';
