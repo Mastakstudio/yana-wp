@@ -64,6 +64,26 @@ if ( have_posts() ):
                     </div>
                 </div>
             </div>
+            <?php if(carbon_get_post_meta( get_the_ID(), 'course_audio' )!=null): ?>
+            <div class="header__switch container">
+                <label class="lbl-off" for="switch-orange">Off</label>
+                <input class="switch test_audio_button" id="switch-orange" type="checkbox">
+                <label class="lbl-on" for="switch-orange">On</label>
+            </div>
+            <script>
+                var audio = new Audio(); 
+                audio.src = '<?php echo carbon_get_post_meta( get_the_ID(), 'course_audio' ); ?>'; 
+                audio.autoplay = true; 
+                document.querySelector('.test_audio_button').onclick = function(){
+                    if(this.checked){
+                        audio.play(); 
+                    }else{
+                        audio.pause(); 
+                    }   
+                }
+
+            </script>
+            <?php endif; ?>
             <div class="test__wrapper">
                 <div class="test__wrapper-inner"></div>
                 <div class="container">

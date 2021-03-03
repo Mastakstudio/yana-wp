@@ -15,8 +15,15 @@ function crb_faq_page_settings()
 		    ->add_fields('question',[
 		    	Field::make_textarea('question_text', 'Вопрос'),
 			    Field::make_rich_text('answer_text', 'Ответ')
-			])->set_collapsed(true)
-			
+			])->set_collapsed(true),
+			Field::make('association', 'faq_association','Связанная страница')
+			->set_types(array(
+			  array(
+				'type' => 'post',
+				'post_type' => 'course',
+			  )
+			))
+			->set_max(1)
 		]);
 		
     Container::make_post_meta("Faq Page Fields")

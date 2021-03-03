@@ -18,7 +18,16 @@ get_template_part( '/core/views/headerView' );
                     <p class="text text_black"><?= $subTitle ?></p>
                 </div>
                 <div class="page-banner__links">
-					<?php secondMenuView() ?>
+                <?php 
+                            if(carbon_get_post_meta(get_the_ID(), 'faq_association')[0]['id']!=null){?>
+                    <div class="links">
+                        <div class="links__inner">
+                            <a class="links__item" href="<?php echo get_permalink(carbon_get_post_meta(get_the_ID(), 'faq_association')[0]['id']); ?>">Пройти курс</a>
+                            <a class="links__item links__item links__item_active" href="/faq222/">ВОПРОС-ОТВЕТ</a>
+                            <a class="links__item" href="/account/">Профиль</a>
+                        </div>
+                    </div>
+                    <?}else{ secondMenuView(); } ?>
                 </div>
             </div>
         </div>

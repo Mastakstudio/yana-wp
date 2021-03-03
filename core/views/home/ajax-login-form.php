@@ -39,7 +39,7 @@ $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
 								
                                 <div class="signIn__type">
 									<div class="form__dop-types">
-                                <button class="custom-button" type="submit">Войти</button><a class="link link__dop" href="/course/onlajn-kurs-beremennost-i-rody/">Подробнее о курсе</a>
+                                <button class="custom-button" type="submit">Войти</button>
                               </div>
 									
 									<?php
@@ -145,7 +145,4 @@ $mainCoursePage    = carbon_get_theme_option( PREFIX . 'main_course_page' );
             </div>
         </div>
     </div>
-</div>
-<div class="banner-main__wrap-text">
-    <a href="/course/onlajn-kurs-ty-ne-odna/" class="link" src="/course/onlajn-kurs-ty-ne-odna/" target="_blank">Перейти к обучению</a>
 </div>

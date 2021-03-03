@@ -23,6 +23,8 @@ function crb_course_settings() {
 		              ->set_default_value( 1 )
 		              ->set_width( 50 )
 		              ->set_attribute( 'type', 'number' ),
+				 Field::make_file( 'course_audio', 'Дней на решение теста' )
+				 	  ->set_value_type('url'),
 		         Field::make_multiselect( PREFIX . 'target_roles', 'Целевая аудитория' )
 		              ->set_options( get_roles() )
 		              ->set_required( true ),
@@ -103,7 +105,7 @@ function crb_course_settings() {
 			                   ->add_fields( 'link', 'link', [
 				                   Field::make_text( 'text', 'link' ),
 			                   ] )->set_layout( 'tabbed-vertical' )
-		              ] )
+					  ] )
 	         ] );
 
 	Container::make_post_meta( "Course Part" )
@@ -114,7 +116,16 @@ function crb_course_settings() {
 		         Field::make_complex( 'course_aim_groups', 'Целевая группа курса' )
 			                   ->add_fields( 'course_aim_group', 'группа', [
 				                   Field::make_text( 'text', 'Текст' )
-			                   ] )
+							   ] )
+							   ,
+				Field::make('association', 'course_faq_association','Связанная страница FAQ')
+									->set_types(array(
+									  array(
+										'type' => 'post',
+										'post_type' => 'page',
+									  )
+									))
+									->set_max(1)
 	         ] );
 
 	Container::make_post_meta( "Тест" )

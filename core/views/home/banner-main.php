@@ -16,6 +16,8 @@ $subtitle = carbon_get_post_meta(get_the_ID(),PREFIX.'banner_subtitle');
                         <span>Просмотреть приветствие</span>
                         <img src="/wp-content/themes/Yana/src/icons/play.svg" alt="" role="presentation"/>
                     </a>
+                    <div class="banner-main__wrap-text"><a class="link" href="/course/onlajn-kurs-ty-ne-odna/" >Перейти к обучению</a>
+              		</div>
                     <img class="banner-main__girl-write" src="/wp-content/themes/Yana/src/icons/girl-write.png" alt="" role="presentation"/>
                 <?php   endif; ?>
             </div>

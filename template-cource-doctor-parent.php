@@ -17,10 +17,15 @@ get_template_part( '/core/views/headerView' );
           <div class="doctors__inner">
             <div class="doctors__links">
               <div class="links">
+              <?php
+              $urlFAQ ='';
+               if(carbon_get_post_meta(get_the_ID(), 'course_faq_association')[0]['id']!=null){
+                $urlFAQ = carbon_get_post_meta(get_the_ID(), 'course_faq_association')[0]['id'];
+              }?>
                 <div class="links__inner">
-                  <a class="links__item links__item links__item_active" target="_blank" href="">Пройти курс</a>
-                  <a class="links__item" target="_blank" href="/faq222/">ВОПРОС-ОТВЕТ</a>
-                  <a class="links__item" target="_blank" href="/account/">Профиль</a>
+                  <a class="links__item links__item links__item_active" href="">Пройти курс</a>
+                  <a class="links__item" href="<?php echo get_permalink($urlFAQ);?>">ВОПРОС-ОТВЕТ</a>
+                  <a class="links__item" href="/account/">Профиль</a>
                 </div>
               </div>
             </div>
