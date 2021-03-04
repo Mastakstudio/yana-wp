@@ -7,6 +7,28 @@
   padding-bottom: 100px;
   z-index: 2;
 
+  .links {
+    display: none;
+
+    @include md {
+      display: block;
+      width: 415px;
+      margin: 0 auto;
+      right: 230px;
+      position: absolute;
+      z-index: 1000;
+      top: -97px;
+    }
+
+    @include hd{
+      right: 310px;
+    }
+
+    @include xhd{
+      right: 600px;
+    }
+
+  }
 
   &__wrapper{
     background: radial-gradient(172.81% 82.06% at 14.1% 109.06%, #BDEEF4 0%, rgba(228, 220, 249, 0.53125) 46.87%, rgba(255, 255, 255, 0) 100%);
