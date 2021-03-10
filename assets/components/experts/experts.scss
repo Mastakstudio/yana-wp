@@ -1,7 +1,7 @@
 @import "./../../common/constants";
 .experts{
 
-  margin-top: 52px;
+  //margin-top: 52px;
 
   &__video{
     background-image: url(./../../images/experts-video.png);
@@ -44,6 +44,30 @@
 
 
 
+  }
+
+  .link{
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+
+    @include sm{
+      margin-right: 140px;
+    }
+
+    @include md{
+      margin-right: 250px;
+    }
+
+    @include lg{
+      margin-right: 190px;
+    }
+
+    @include hd{
+      margin-right: 250px;
+    }
   }
 
   &__inner{

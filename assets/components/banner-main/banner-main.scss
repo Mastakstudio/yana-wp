@@ -4,7 +4,7 @@
 
   overflow: hidden;
   position: relative;
-  padding-bottom: 74px;
+  //padding-bottom: 74px;
   min-height: 518px;
 
 
@@ -18,8 +18,33 @@
   //  padding-bottom: 689px;
   //}
 
+  //@media (min-width: 768px) {
+  //  padding-bottom: 620px;
+  //  min-height: 145px;
+  //}
+  //
+  //@include md{
+  //  min-height: 200px;
+  //}
+  //
+  //@media (min-width: 1280px) {
+  //  padding-bottom: 750px;
+  //
+  //}
+  //
+  //@media (min-width: 1920px) {
+  //  padding-bottom: 1081px;
+  //  min-height: 145px;
+  //}
+  //
+  //@media (min-width: 2299px) {
+  //  padding-bottom: 950px;
+  //}
+
+  padding-bottom: 0;
+
   @media (min-width: 768px) {
-    padding-bottom: 620px;
+    padding-bottom: 80px;
     min-height: 145px;
   }
 
@@ -28,19 +53,18 @@
   }
 
   @media (min-width: 1280px) {
-    padding-bottom: 750px;
+    padding-bottom: 50px;
 
   }
 
   @media (min-width: 1920px) {
-    padding-bottom: 1081px;
+    padding-bottom: 180px;
     min-height: 145px;
   }
 
   @media (min-width: 2299px) {
-    padding-bottom: 950px;
+    padding-bottom: 200px;
   }
-
 
 
 
@@ -352,6 +376,7 @@
   &__image{
     position: relative;
     margin-top: -250px;
+    display: none;
 
     @media (min-width: 768px) {
       z-index: 2;

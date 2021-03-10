@@ -14,5 +14,7 @@ mixin experts()
                                 A.experts__video_link(href="#modal")
                                     img(src=require('./../images/experts-arrow.png'), alt='')
                                     span смотреть
+                    .banner-main__wrap-text
+                        +link('Начать сейчас')(src="/course/onlajn-kurs-ty-ne-odna/" target="_blank")
                 +e.IMG.girl-business(src=require('./../images/girl-business.png'), alt='')
         +popup('https://www.youtube.com/embed/jemgIOAjGDw')(data-remodal-id='modal' )

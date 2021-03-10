@@ -22,6 +22,24 @@
 
   }
 
+  .link{
+    opacity: 0;
+    @include sm{
+      margin-left: 0px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    @include md{
+      margin-left: 50px;
+      width: auto;
+    }
+
+    @include lg{
+      width: 170px;
+    }
+  }
+
   &__line-desktop{
     display: none;
 
@@ -419,6 +437,11 @@
   }
 
   .learn__item-text{
+    opacity: 1;
+    transition: 1s all 1.5s;
+  }
+
+  .link{
     opacity: 1;
     transition: 1s all 1.5s;
   }
