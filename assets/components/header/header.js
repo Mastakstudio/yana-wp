@@ -11,7 +11,6 @@ $(".header__menu-scroll-item").click(function (){
 $("#page1").click(function (){
     $(".banner-main").css("display","block")
     $(".doctors-banner").css("display","none")
-    $(".tags").css("display","block")
     $(".experts").css("display","block")
     $(".passCourse").css("display","block")
     $(".learn").css("display","block")
@@ -24,7 +23,6 @@ $("#page1").click(function (){
 $("#page2").click(function (){
     $(".banner-main").css("display","none");
     $(".doctors-banner").css("display","block")
-    $(".tags").css("display","none")
     $(".experts").css("display","none")
     $(".passCourse").css("display","none")
     $(".learn").css("display","none")
