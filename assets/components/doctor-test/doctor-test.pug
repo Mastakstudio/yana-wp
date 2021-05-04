@@ -1,5 +1,7 @@
 mixin doctor-test()
     +b.doctor-test
+        +e.pattern1(style=`background-image:url(${require("./../images/logo.svg")})`)
+        +e.pattern2(style=`background-image:url(${require("./../images/pattern.png")})`)
         +e.inner
             +image()(src=require('./../images/doc.png'))
             .container
@@ -31,7 +33,7 @@ mixin doctor-test()
             +e.wrapper-inner
                 .container
                     +e.wrap
-                        +e.head-list
+                        +e.head-list(id="ID1")
                             +e.SPAN.head-list-title Материалы для ознакомления
                             +e.A.head-item.test__video(href="#modal1")
                                 IMG(src=require('./../images/play-video.svg'))
